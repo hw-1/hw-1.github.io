@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://localhost:4000/page/10/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://localhost:4000"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-/2016/10/ubuntu-max-ulimit.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/31/2016/10/ubuntu-max-ulimit.html/" class="article-date">
+  <time datetime="2016-10-30T19:12:00.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/31/2016/10/ubuntu-max-ulimit.html/">ubuntu max ulimit</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code class="language-bash line-numbers">ulimit -a
+open files                      (-n) 1024
+vim /etc/security/limits.conf
+//append
+* hard nofile 40960
+* soft nofile 40960
+vim /etc/profile
+ulimit -SHn 40960
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://localhost:4000/2016/10/31/2016/10/ubuntu-max-ulimit.html/" data-id="cjpl50buw000ql9u32dj9qvic" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2016/10/reavealapp-dynamic-load.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/24/2016/10/reavealapp-dynamic-load.html/" class="article-date">
+  <time datetime="2016-10-23T22:13:50.000Z" itemprop="datePublished">2016-10-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/24/2016/10/reavealapp-dynamic-load.html/">reavealapp dynamic load</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code class="language-bash line-numbers">1, Add Symbolic Breakpoint
+2, Enter UIApplicationMain into the Symbol field.
+3, Click the Add Action button, and ensure that Action is set to Debugger Command.
+4, Copy and paste the following text into the field below:
+expr (Class)NSClassFromString(@"IBARevealLoader") == nil ? (void *)dlopen("/Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/libReveal.dylib", 0x2) : ((void*)0)
+
+5, Check Automatically continue after evaluating actions.
+6, Right click the newly created breakpoint and select Move Breakpoint To → User.
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://localhost:4000/2016/10/24/2016/10/reavealapp-dynamic-load.html/" data-id="cjpl50buu000pl9u3ex9q852n" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2016/10/alcatraz-install-xcode8.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/22/2016/10/alcatraz-install-xcode8.html/" class="article-date">
+  <time datetime="2016-10-22T01:26:38.000Z" itemprop="datePublished">2016-10-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/22/2016/10/alcatraz-install-xcode8.html/">Xcode8 install Alcatraz</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code class="language-bash line-numbers">sudo codesign --remove-signature /Applications/Xcode.app/Contents/MacOS/Xcode 
+curl -fsSL https://raw.github.com/alcatraz/Alcatraz/master/Scripts/install.sh | sh
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://localhost:4000/2016/10/22/2016/10/alcatraz-install-xcode8.html/" data-id="cjpl50buz000sl9u37rckm6ni" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2016/10/mongodb-example-command.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/15/2016/10/mongodb-example-command.html/" class="article-date">
+  <time datetime="2016-10-14T18:21:38.000Z" itemprop="datePublished">2016-10-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/15/2016/10/mongodb-example-command.html/">mongodb example command</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code class="language-bash line-numbers">./mongorestore   --dir  ./dump/radacctinfo  --db radacctinfo
+./mongodump    --host 127.0.0.1  --db  local
+./mongo  mongodb://127.0.0.1
+sudo ./mongod  --dbpath  /data/db
+show dbs
+use local
+show tables
+db.radacctinfo.find().pretty()
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://localhost:4000/2016/10/15/2016/10/mongodb-example-command.html/" data-id="cjpl50buy000rl9u3yqp3r0i2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2016/09/using-patch-files.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/30/2016/09/using-patch-files.html/" class="article-date">
+  <time datetime="2016-09-30T01:49:14.000Z" itemprop="datePublished">2016-09-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/30/2016/09/using-patch-files.html/">Using patch files</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code class="language-bash line-numbers">Using patch files 
+1.create patch file
+diff -uN  file1 file2 &gt; patchfile
+patch -p0 &lt;  patchfile</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://localhost:4000/2016/09/30/2016/09/using-patch-files.html/" data-id="cjpl50buq000ll9u3efcjorro" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2016/09/xcode-not-set-up-properly-you-may-need-to-confirm-the-license-agreement-by-running-usrbinxcodebuild.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/30/2016/09/xcode-not-set-up-properly-you-may-need-to-confirm-the-license-agreement-by-running-usrbinxcodebuild.html/" class="article-date">
+  <time datetime="2016-09-29T23:35:06.000Z" itemprop="datePublished">2016-09-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/30/2016/09/xcode-not-set-up-properly-you-may-need-to-confirm-the-license-agreement-by-running-usrbinxcodebuild.html/">Xcode not set up properly. You may need to confirm the license agreement by running /usr/bin/xcodebuild</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Xcode not set up properly. You may need to confirm the license agreement by running /usr/bin/xcodebuild</p>
+<pre><code class="language-bash line-numbers">sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+sudo xcodebuild -license
+cd /Applications/Xcode.app/Contents/Developer/usr/bin/
+sudo ln -s xcodebuild xcrun</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://localhost:4000/2016/09/30/2016/09/xcode-not-set-up-properly-you-may-need-to-confirm-the-license-agreement-by-running-usrbinxcodebuild.html/" data-id="cjpl50buo000jl9u3fh6r6tdj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2016/08/ipa-%e4%bd%bf%e7%94%a8%e8%87%aa%e5%b7%b1%e7%9a%84apple%e5%b8%90%e5%8f%b7%e7%ad%be%e5%90%8d%e5%ae%89%e8%a3%85-%ef%bc%8d%ef%bc%8d-cydia-impactor.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/26/2016/08/ipa-%e4%bd%bf%e7%94%a8%e8%87%aa%e5%b7%b1%e7%9a%84apple%e5%b8%90%e5%8f%b7%e7%ad%be%e5%90%8d%e5%ae%89%e8%a3%85-%ef%bc%8d%ef%bc%8d-cydia-impactor.html/" class="article-date">
+  <time datetime="2016-08-25T18:15:16.000Z" itemprop="datePublished">2016-08-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/26/2016/08/ipa-%e4%bd%bf%e7%94%a8%e8%87%aa%e5%b7%b1%e7%9a%84apple%e5%b8%90%e5%8f%b7%e7%ad%be%e5%90%8d%e5%ae%89%e8%a3%85-%ef%bc%8d%ef%bc%8d-cydia-impactor.html/">IPA 使用自己的Apple帐号签名安装 －－ Cydia impactor</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>不知从什么时候起，apple 不用99美玩也可以玩XCODE 连真机调试了，只需要XCODE里面登录自己的Apple帐号就可以了，</p>
+<p>今天要介绍的这款神器就是把Xcode的签名 和安装的这部部功能提出来了，</p>
+<p>做成一个工具，，非常的方便。。</p>
+<p>大家可以到官方网站下载对系统对应版本，</p>
+<p><a href="http://www.cydiaimpactor.com" target="_blank" rel="noopener">http://www.cydiaimpactor.com</a></p>
+<p>怎么使用</p>
+<p>1 打开App 把要签名的IPA拖到APP上面</p>
+<p>2 按提示输入APPLE帐号 密码</p>
+<p>3 什么都不用做，静静的看他忙就好了，（（</p>
+<p>4 不出什么问题，IPA已经安装到你手机上了，</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://localhost:4000/2016/08/26/2016/08/ipa-%e4%bd%bf%e7%94%a8%e8%87%aa%e5%b7%b1%e7%9a%84apple%e5%b8%90%e5%8f%b7%e7%ad%be%e5%90%8d%e5%ae%89%e8%a3%85-%ef%bc%8d%ef%bc%8d-cydia-impactor.html/" data-id="cjpl50bus000nl9u3niqh1tzm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2016/08/idevice-istall-tool.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/24/2016/08/idevice-istall-tool.html/" class="article-date">
+  <time datetime="2016-08-23T21:01:31.000Z" itemprop="datePublished">2016-08-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/24/2016/08/idevice-istall-tool.html/">iDevice istall tool</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code class="language-bash line-numbers">
+apt-get update
+apt-get install top tcpdump network-cmds adv-cmds coreutils cycript diskdev-cmds diffutils  file file-cmds findutils iphone-python  ruby rubygems vim wget 
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://localhost:4000/2016/08/24/2016/08/idevice-istall-tool.html/" data-id="cjpl50bun000il9u3jgvr61gl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2016/08/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/08/2016/08/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux.html/" class="article-date">
+  <time datetime="2016-08-08T05:10:34.000Z" itemprop="datePublished">2016-08-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/08/2016/08/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux.html/">Disable or Enable SSH Root Login and Limit SSH Access in Linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code class="language-bash line-numbers">sudo vim /etc/ssh/sshd_config
+//disable
+PermitRootLogin no
+//enable
+PermitRootLogin yes
+//restart ssh
+sudo /etc/init.d/sshd restart
+
+//
+cat pub.pem >  ~/.ssh/authorized_keys
+chmod o-w ~/; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys
+
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://localhost:4000/2016/08/08/2016/08/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux.html/" data-id="cjpl50buk000el9u319th8g56" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2016/08/ubuntu-install-squid3.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/08/2016/08/ubuntu-install-squid3.html/" class="article-date">
+  <time datetime="2016-08-08T04:21:30.000Z" itemprop="datePublished">2016-08-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/08/2016/08/ubuntu-install-squid3.html/">ubuntu install squid3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code class="language-bash line-numbers">ubuntu install squid3
+
+sudo apt-get install python-setuptools
+
+sudo apt-get install build-essential autoconf libtool pkg-config python-opengl python-imaging python-pyrex python-pyside.qtopengl idle-python2.7 qt4-dev-tools qt4-designer libqtgui4 libqtcore4 libqt4-xml libqt4-test libqt4-script libqt4-network libqt4-dbus python-qt4 python-qt4-gl libgle3 python-dev
+
+sudo apt install squid3 imagemagick
+
+sudo easy_install twisted
+
+sudo apt install openssl php
+
+
+sudo mkdir -p /var/www/tmp
+sudo chown -R proxy:proxy  /var/www/tmp
+sudo twistd web  --path=/var/www --port=8080
+
+
+sudo perl -MCPAN -e'install "LWP::Simple"'
+
+sudo iptables -L --line-number -t nat
+sudo iptables -t nat  -A PREROUTING -s 172.26.0.0/255.255.255.0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 172.26.1.1
+sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j REDIRECT --to-port 3128
+sudo iptables -t nat -D PREROUTING 2
+
+//DEBUG
+
+sudo vim /etc/squid3/squid.conf
+sudo squid -k reconfigure
+netstat -na|grep 3128
+sudo /etc/init.d/squid3 restart
+
+sudo chown -R root:root flip.pl
+
+sudo tail -F /tmp/flipImages_debug.log
+sudo tail -F /var/log/squid3/access.log
+sudo tail -F /var/log/squid3/cache.log
+
+
+OSX
+sudo sysctl -w net.inet.ip.forwarding=1
+sudo pfctl -f pf.conf
+sudo pfctl -e
+sudo /sbin/pfctl -s state
+
+
+Ubuntu
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3128
+sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 3128
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://localhost:4000/2016/08/08/2016/08/ubuntu-install-squid3.html/" data-id="cjpl50bum000hl9u3ghv08iir" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorized/">Uncategorized</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/12/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/03/2018/12/xcode-view-debug.html/">Xcode View Debug</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/2018/11/osx-svn-server-create.html/">osx svn server create</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/19/2018/11/jenkins-for-osx-mojave.html/">jenkins for osx mojave</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/14/2018/11/python-virtualenv-for-osx.html/">python virtualenv for osx</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

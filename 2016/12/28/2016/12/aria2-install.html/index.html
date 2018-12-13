@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title># aria2 install | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="aria2 installosx sudo port install aria2   ubuntu sudo apt install aria2   Aria2 basic downloadSame as it is with wget aria2 also offers one argument command line download. Lets try download such us:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="# aria2 install">
+<meta property="og:url" content="http://localhost:4000/2016/12/28//2016/12/aria2-install.html/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="aria2 installosx sudo port install aria2   ubuntu sudo apt install aria2   Aria2 basic downloadSame as it is with wget aria2 also offers one argument command line download. Lets try download such us:">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-12T07:38:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="# aria2 install">
+<meta name="twitter:description" content="aria2 installosx sudo port install aria2   ubuntu sudo apt install aria2   Aria2 basic downloadSame as it is with wget aria2 also offers one argument command line download. Lets try download such us:">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+</html>
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class="" href="/index.html">Home</a></li>
+        
+          <li><a class="" href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Hexo</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-/2016/12/aria2-install.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      # aria2 install
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/12/28/2016/12/aria2-install.html/" class="article-date"><time datetime="2016-12-27T20:42:18.000Z" itemprop="datePublished">2016-12-28</time></a>
+</div>
+
+    <div class="article-author">admin</div>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="aria2-install"><a href="#aria2-install" class="headerlink" title="aria2 install"></a>aria2 install</h1><h3 id="osx"><a href="#osx" class="headerlink" title="osx"></a>osx</h3><pre><code class="language-bash line-numbers">
+sudo port install aria2
+</code></pre>
+
+<h3 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h3><pre><code class="language-bash line-numbers">
+sudo apt install aria2
+</code></pre>
+
+<h3 id="Aria2-basic-download"><a href="#Aria2-basic-download" class="headerlink" title="Aria2 basic download"></a>Aria2 basic download</h3><p>Same as it is with wget aria2 also offers one argument command line download. Lets try download such us:</p>
+<pre><code class="language-bash line-numbers">
+$ aria2c ftp://local1/linux-distro.iso
+</code></pre>
+
+<p>If disconnected, you may resume download with the same command. Aria2 keeps a log file of the download progress and will reopen it when download resume is required.</p>
+<h3 id="Download-from-more-sources"><a href="#Download-from-more-sources" class="headerlink" title="Download from more sources"></a>Download from more sources</h3><p>To speed up your download you can supply aria2 with more than one source of the same file:</p>
+<pre><code class="language-bash line-numbers">
+$ aria2c ftp://local1/linux-distro.iso http://local2/linux-distro.iso
+</code></pre>
+
+<p>In this case aria2 will recognize that the file to be downloaded is same and will split the file into two parts as well as split the download to fetch from two sources and thus utilizing your download bandwidth to the maximum. In case you have provided two different files aria2 will download them both.</p>
+<h3 id="Torrent-download"><a href="#Torrent-download" class="headerlink" title="Torrent download"></a>Torrent download</h3><p>Downloading data using torrents is simple as downloading data via http or ftp. If you alredy have a torrent file which you want to use to fetch your data, simply suppy it to aria2 as a command line argument:</p>
+<pre><code class="language-bash line-numbers">
+$ aria2c linux-dist.torrent
+</code></pre>
+
+<p>With aria2 you do not even have to bother to download torrent file itself, instead simply supply torrent URL:</p>
+<pre><code class="language-bash line-numbers">
+$ aria2c http://local/linux-dist.torrent
+</code></pre>
+
+<p>In this case aria2 will download the torrent file to your download directory and then start downloading data. If you do not wish aria2 to download a torrent file simplyt use &#8211;follow-torrent=mem option :</p>
+<pre><code class="language-bash line-numbers">
+$ aria2c --follow-torrent=mem http://local/linux-dist.torrent
+</code></pre>
+
+<p>In this case the actual torrent file will be stored into a memory only, and discarded when download is finished.</p>
+<h3 id="Download-using-metalink"><a href="#Download-using-metalink" class="headerlink" title="Download using metalink"></a>Download using metalink</h3><p>Metalink is a file which contains all possible sources for data to be downloaded. Which means that instead supplying aria2 with a multiple sources we need to supply just a single metalink URL or metalink file. For example, you can download Ubuntu TLS Linux ISO using metalink:</p>
+<pre><code class="language-bash line-numbers">
+aria2c http://releases.ubuntu.com/releases/10.04/ubuntu-10.04-desktop-i386.metalink
+</code></pre>
+
+<h3 id="Download-via-torrent-magnet"><a href="#Download-via-torrent-magnet" class="headerlink" title="Download via torrent magnet"></a>Download via torrent magnet</h3><p>As you may have already guessed the syntax to download via torrent magnets is the same as it was in previous examples. All what needs to be done is to supply aria2 with a magnet link:</p>
+<pre><code class="language-bash line-numbers">
+aria2c magnet:?xt=urn:btih:1e99d95f1764644a86a8e99bfd80c ...
+</code></pre>
+
+<h3 id="Configuring-aria2"><a href="#Configuring-aria2" class="headerlink" title="Configuring aria2"></a>Configuring aria2</h3><p>If you find yourself using same aria2 options all over again, to save your time you may create a configuration file and list all aria2 options you wish to supply on the command line. To do that open or create aria2 configuration file ~/.aria2/aria2.conf andadd:</p>
+<pre><code class="language-bash line-numbers">
+enable-xml-rpc
+follow-torrent=mem
+seed-ratio=2
+</code></pre>
+
+<h3 id="Control-Daemon-with-aria2rpc"><a href="#Control-Daemon-with-aria2rpc" class="headerlink" title="Control Daemon with aria2rpc"></a>Control Daemon with aria2rpc</h3><pre><code class="language-bash line-numbers">
+$ cat /usr/share/doc/aria2/xmlrpc/aria2rpc.gz | gzip -d &gt; aria2rpc
+$ chmod +x aria2rpc
+$ aria2rpc addUri [URI] [options]
+[task-id]
+$ aria2rpc remove [task-id]
+$ aria2rpc --help
+</code></pre>
+
+<h3 id="rpc-command-example"><a href="#rpc-command-example" class="headerlink" title="rpc command example"></a>rpc command example</h3><pre><code class="language-bash line-numbers">
+aria2rpc  --secret password getGlobalStat
+
+ aria2rpc  --secret password  tellActive
+ aria2rpc  --secret password tellStopped 0 10
+
+aria2rpc --secret password addUri [URI] [options]
+
+aria2rpc --secret password addTorrent /path/to/torrent_file URI... [options]
+
+aria2rpc --secret password remove [task-id]
+
+aria2rpc  --secret password addUri  https://example.com/1.torrent
+
+aria2rpc  --secret password forceRemove 454dd0ab6e000ee8
+
+aria2rpc  --secret password tellStatus 9729697c4027bc4e
+</code></pre>
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://localhost:4000/2016/12/28/2016/12/aria2-install.html/" data-id="cjpl50bvb0011l9u3e0lupwol" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2016/12/24/2016/12/how-to-send-files-stealthily-to-a-remote-machine-using-dnsteal.html/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">How To Send Files Stealthily To A Remote Machine Using &amp;#8220;DNSteal&amp;#8221;</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2016/12/28/2016/12/execute-pipe-file-on-bash.html/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">execute pipe file on bash</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Uncategorized/">Uncategorized</a><span class="sidebar-module-list-count">97</span></li></ul>
+  </div>
+
+
+
+  
+
+
+  
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2018/12/12/hello-world/">Hello World</a>
+        </li>
+      
+        <li>
+          <a href="/2018/12/03/2018/12/xcode-view-debug.html/">Xcode View Debug</a>
+        </li>
+      
+        <li>
+          <a href="/2018/11/21/2018/11/osx-svn-server-create.html/">osx svn server create</a>
+        </li>
+      
+        <li>
+          <a href="/2018/11/19/2018/11/jenkins-for-osx-mojave.html/">jenkins for osx mojave</a>
+        </li>
+      
+        <li>
+          <a href="/2018/11/14/2018/11/python-virtualenv-for-osx.html/">python virtualenv for osx</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
