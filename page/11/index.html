@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="hw-1">
-<meta property="og:url" content="http://localhost:4000/page/11/index.html">
+<meta property="og:url" content="https://hw-1.github.io/page/11/index.html">
 <meta property="og:site_name" content="hw-1">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -74,13 +74,13 @@
         <div class="col-sm-8 blog-main">
           
   
-    <article id="post-/2016/07/raspberry-support-zh-cn.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-/2016/11/how-to-encrypt-a-big-file-using-openssl-and-someones-public-key.html" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/11/2016/07/raspberry-support-zh-cn.html/">raspberry support zh-cn</a>
+      <a class="article-title" href="/2016/11/18/2016/11/how-to-encrypt-a-big-file-using-openssl-and-someones-public-key.html/">How to encrypt a big file using OpenSSL and someone&amp;#8217;s public key</a>
     </h1>
   
 
@@ -89,7 +89,7 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2016/07/11/2016/07/raspberry-support-zh-cn.html/" class="article-date"><time datetime="2016-07-10T22:19:20.000Z" itemprop="datePublished">2016-07-11</time></a>
+  <a href="/2016/11/18/2016/11/how-to-encrypt-a-big-file-using-openssl-and-someones-public-key.html/" class="article-date"><time datetime="2016-11-17T18:46:27.000Z" itemprop="datePublished">2016-11-18</time></a>
 </div>
 
     <div class="article-author">admin</div>
@@ -100,13 +100,31 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code class="language-bash line-numbers">1 sudo raspi-config
-choose zh-cn.utf-8
-2 install font
-sudo apt-get -y install ttf-wqy-zenhei
-3 install  pinyin
-sudo apt-get -y install scim-pinyin
-</code></pre>
+        <p>How to encrypt a big file using OpenSSL and someone&#8217;s public key<br>The situation</p>
+<p>You have a public key for someone, you have a file you want to send them, you want to send it securely.</p>
+<p>Can you call them, securely chat with them, or send them an encrypted e-mail?</p>
+<p>If you are set up to chat over OTR with them or to send them an encrypted e-mail, just use that to send your file. It&#8217;ll be faster. If you can call them, then call them and agree on a symmetric key. Then just use that key to encrypt the file like this. If you can&#8217;t (or don&#8217;t want to) do either of those, then you can follow this how-to.</p>
+<p>Step 0) Get their public key</p>
+<p>The other person needs to send you their public key in .pem format. If they only have it in rsa format (e.g., they use it for ssh), then have them do:</p>
+<pre><code class="language-bash line-numbers">openssl rsa -in id_rsa -outform pem &gt; id_rsa.pem
+
+openssl rsa -in id_rsa -pubout -outform pem &gt; id_rsa.pub.pem</code></pre>
+
+<p>Have them send you id_rsa.pub.pem</p>
+<p>Step 1) Generate a 256 bit (32 byte) random key</p>
+<pre><code class="language-bash line-numbers">openssl rand -base64 32 &gt; key.bin</code></pre>
+
+<p>Step 2) Encrypt the key</p>
+<pre><code class="language-bash line-numbers">openssl rsautl -encrypt -inkey id_rsa.pub.pem -pubin -in key.bin -out key.bin.enc</code></pre>
+
+<p>Step 3) Actually Encrypt our large file</p>
+<pre><code class="language-bash line-numbers">openssl enc -aes-256-cbc -salt -in SECRET_FILE -out SECRET_FILE.enc -pass file:./key.bin</code></pre>
+
+<p>Step 4) Send/Decrypt the files</p>
+<p>Send the .enc files to the other person and have them do:</p>
+<pre><code class="language-bash line-numbers">openssl rsautl -decrypt -inkey id_rsa.pem -in key.bin.enc -out key.bin
+
+openssl enc -d -aes-256-cbc -in SECRET_FILE.enc -out SECRET_FILE -pass file:./key.bin </code></pre>
       
     </div>
 
@@ -116,7 +134,7 @@ sudo apt-get -y install scim-pinyin
     
 
     <footer class="article-footer">
-      <a data-url="http://localhost:4000/2016/07/11/2016/07/raspberry-support-zh-cn.html/" data-id="cjplwqkr5000be1u3lqeb278w" class="article-share-link">
+      <a data-url="https://hw-1.github.io/2016/11/18/2016/11/how-to-encrypt-a-big-file-using-openssl-and-someones-public-key.html/" data-id="cjplwqkru000xe1u30wgxysl6" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -130,13 +148,13 @@ sudo apt-get -y install scim-pinyin
 
 
   
-    <article id="post-/2016/05/install_name_change.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-/2016/11/delete-osx-account-on-command.html" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/12/2016/05/install_name_change.html/">install_name_change</a>
+      <a class="article-title" href="/2016/11/18/2016/11/delete-osx-account-on-command.html/">delete osx account on command</a>
     </h1>
   
 
@@ -145,7 +163,58 @@ sudo apt-get -y install scim-pinyin
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2016/05/12/2016/05/install_name_change.html/" class="article-date"><time datetime="2016-05-11T22:06:16.000Z" itemprop="datePublished">2016-05-12</time></a>
+  <a href="/2016/11/18/2016/11/delete-osx-account-on-command.html/" class="article-date"><time datetime="2016-11-17T18:04:44.000Z" itemprop="datePublished">2016-11-18</time></a>
+</div>
+
+    <div class="article-author">admin</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code class="language-bash line-numbers">dscl localhost delete /Local/Default/Users/bobross
+rm -rf /Users/bobross</code></pre>
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://hw-1.github.io/2016/11/18/2016/11/delete-osx-account-on-command.html/" data-id="cjplwqkrt000ve1u30428ebsf" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-/2016/11/raspberry-pi3-wifi-config.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/02/2016/11/raspberry-pi3-wifi-config.html/">raspberry pi3  wifi  config</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/11/02/2016/11/raspberry-pi3-wifi-config.html/" class="article-date"><time datetime="2016-11-02T03:12:05.000Z" itemprop="datePublished">2016-11-02</time></a>
 </div>
 
     <div class="article-author">admin</div>
@@ -160,13 +229,27 @@ sudo apt-get -y install scim-pinyin
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code class="language-bash line-numbers">Using otool -D lib.dylib returns the path that is presented by that library to the compiler. To change it you can use install_name_change with the argument -id.
+        <p>###change ssh default keys</p>
+<pre><code class="language-bash line-numbers">rm /etc/ssh/ssh_host_*
+</code></pre>
 
-install_name_tool -id “@executable_path/../Plugins/lib.dylib” lib.dylib
+<p>###dpkg-reconfigure openssh-server</p>
+<pre><code class="language-bash line-numbers">service ssh restart
+</code></pre>
 
-This alters the relative path of lib.dylib to the plugins folder of your bundle. Next you need to change each path in the main executable. You can find out the dependencies and their expected path of the executable using otool -L. For each dependency that needs changing use install_name_tool again with the argument -change.
+<p>###config wifi</p>
+<pre><code class="language-bash line-numbers">vim /etc/network/interfaces
+auto wlan0
+iface wlan0 inet dhcp
+wpa-ssid “your network name”
+wpa-psk “the network password”
+//restart
+service networking restart
+</code></pre>
 
-install_name_tool -change “/usr/lib/lib.dylib” “@executable_path/../Plugins/lib.dylib” applicationname
+<p>###list pci</p>
+<pre><code class="language-bash line-numbers">apt install pciutils
+lspci
 </code></pre>
       
     </div>
@@ -177,7 +260,7 @@ install_name_tool -change “/usr/lib/lib.dylib” “@executable_path/../Plugin
     
 
     <footer class="article-footer">
-      <a data-url="http://localhost:4000/2016/05/12/2016/05/install_name_change.html/" data-id="cjplwqkr30009e1u34nt8aq0k" class="article-share-link">
+      <a data-url="https://hw-1.github.io/2016/11/02/2016/11/raspberry-pi3-wifi-config.html/" data-id="cjplwqkrp000re1u3xwy6g0qz" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -191,13 +274,13 @@ install_name_tool -change “/usr/lib/lib.dylib” “@executable_path/../Plugin
 
 
   
-    <article id="post-/2016/03/%e6%80%8e%e4%b9%88%e5%9c%a8%e6%b2%a1%e8%b6%8a%e7%8b%b1%e7%9a%84iphone%e6%89%8b%e6%9c%ba%e4%b8%8a%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6%ef%bc%8c%e6%80%8e%e4%b9%88%e5%9c%a8%e6%b2%a1%e8%b6%8a%e7%8b%b1.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-/2016/10/ubuntu-max-ulimit.html" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/21/2016/03/%e6%80%8e%e4%b9%88%e5%9c%a8%e6%b2%a1%e8%b6%8a%e7%8b%b1%e7%9a%84iphone%e6%89%8b%e6%9c%ba%e4%b8%8a%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6%ef%bc%8c%e6%80%8e%e4%b9%88%e5%9c%a8%e6%b2%a1%e8%b6%8a%e7%8b%b1.html/">怎么在没越狱的iPhone手机上安装插件，怎么在没越狱的iPhone手机上安装（WeChat）微信抢红包插件，手机没越狱也能抢红包了，App dylib inject</a>
+      <a class="article-title" href="/2016/10/31/2016/10/ubuntu-max-ulimit.html/">ubuntu max ulimit</a>
     </h1>
   
 
@@ -206,161 +289,7 @@ install_name_tool -change “/usr/lib/lib.dylib” “@executable_path/../Plugin
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2016/03/21/2016/03/%e6%80%8e%e4%b9%88%e5%9c%a8%e6%b2%a1%e8%b6%8a%e7%8b%b1%e7%9a%84iphone%e6%89%8b%e6%9c%ba%e4%b8%8a%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6%ef%bc%8c%e6%80%8e%e4%b9%88%e5%9c%a8%e6%b2%a1%e8%b6%8a%e7%8b%b1.html/" class="article-date"><time datetime="2016-03-20T16:20:44.000Z" itemprop="datePublished">2016-03-21</time></a>
-</div>
-
-    <div class="article-author">admin</div>
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>怎么在没越狱的iPhone手机上安装插件，怎么在没越狱的iPhone手机上安装（WeChat）微信抢红包插件，手机没越狱也能抢红包了，App dylib inject</p>
-<p>需要准备：</p>
-<p>没越狱的iPhone手机一部</p>
-<p>越狱的iPhone手机一部（用于解密App）</p>
-<p>苹果开发证书一个</p>
-<p>1,使用dumpdecrypted得到解密后的WeChat</p>
-<pre><code class="language-bash line-numbers">#get WeChat path
-ps aux|grep WeChat
-#dumpdecrypted
-DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib  WeChat_path
-</code></pre>
-
-<p>可得到解密后的可执行文件,最后解密后的App打包成Ｗechat-6.3.13.ipa</p>
-<p>2,编译抢红包插件wctw.dylib</p>
-<p>使用<a href="https://github.com/BishopFox/theos-jailed.git" target="_blank" rel="noopener">theos-jailed</a>创建 tweak wctw</p>
-<p>借用一下<a href="https://github.com/buginux/WeChatRedEnvelop.git" target="_blank" rel="noopener">WeChatRedEnvelop</a>里面的代码</p>
-<p>把代码整合到新建的工程里面</p>
-<p>编译后就可得到 wctw.dylib CydiaSubstrate</p>
-<p>3,Inject wctw.dylib</p>
-<p>解压Ｗechat-6.3.13.ipa 得到 WeChat.app</p>
-<p>复制wctw.dylib CydiaSubstrate 到 WeChat.app</p>
-<pre><code class="language-bash line-numbers">cd WeChat.app
-yololib WeChat wctw.dylib</code></pre>
-
-<p>4,签名打包</p>
-<p>用keychain 找到你的开发证书的名字</p>
-<pre><code class="language-bash line-numbers">codesign -f -s "iPhone Developer: XXXX (XXXX)"  "WeChat.app/CydiaSubstrate"
-codesign -f -s "iPhone Developer: XXXX (XXXX)"  "WeChat.app/wctw.dylib"
-
-#--entitlements Entitlements.plist
-codesign -f -s "iPhone Developer: XXXX (XXXX)"  --entitlements Entitlements.plist  "WeChat.app"
-
-#create ipa
-xcrun -sdk iphoneos PackageApplication -v "WeChat.app"  -o  "pathtosave/WeChat.ipa"
-</code></pre>
-
-<p>5,使用Xcode安装</p>
-<p>窗口－》设备－》选中要安装的手机－》已经安装的应用</p>
-<p>点击下面的加号 选择刚才生成WeChat.ipa</p>
-<p>几分钟就可以安装成功啦</p>
-<p>可能遇到的问题：</p>
-<p>1,安装时提示“已经有一个相同的ID，不能替换”，因为已经是可以替换，后来苹果改不能替换了</p>
-<p>2,打包成功了，安装时提示“证书不匹配”，要先你的开发证书中＊号描述文件安装到你手机中</p>
-<p>3,成功安装到手机中，可是一点开就挂了，可能是dylib 的版本不匹配选成的，yololib 默认是按1.0.0加的，theos 生成的是0.0.0 在make 文件中加上版本设置就可以了</p>
-<pre><code class="language-bash line-numbers">LOCAL_INSTALL_PATH = /usr/lib
-#指定版本
-_THEOS_TARGET_LDFLAGS += -current_version 1.0.0
-_THEOS_TARGET_LDFLAGS += -compatibility_version 1.0.0</code></pre>
-
-<p>4,安装时提示有一个plugin签名不对，删除WeChat.app 目录下Plugins 文件来</p>
-<p>文章中提到的工具和源码下载</p>
-<p><a href="https://github.com/hw-1/wctw.git" target="_blank" rel="noopener">https://github.com/hw-1/wctw.git</a></p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://localhost:4000/2016/03/21/2016/03/%e6%80%8e%e4%b9%88%e5%9c%a8%e6%b2%a1%e8%b6%8a%e7%8b%b1%e7%9a%84iphone%e6%89%8b%e6%9c%ba%e4%b8%8a%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6%ef%bc%8c%e6%80%8e%e4%b9%88%e5%9c%a8%e6%b2%a1%e8%b6%8a%e7%8b%b1.html/" data-id="cjplwqkr7000de1u3fd1igj3s" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-/2016/03/convert-pkcs1-to-pkcs8.html" class="article article-type-post" itemscope="" itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/19/2016/03/convert-pkcs1-to-pkcs8.html/">convert PKCS#1  to  PKCS#8</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2016/03/19/2016/03/convert-pkcs1-to-pkcs8.html/" class="article-date"><time datetime="2016-03-19T01:15:07.000Z" itemprop="datePublished">2016-03-19</time></a>
-</div>
-
-    <div class="article-author">admin</div>
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>BEGIN RSA PRIVATE KEY is PKCS#1 and is just an RSA key.</p>
-<p>BEGIN PRIVATE KEY is PKCS#8 and indicates that the key type is included in the key data itself.</p>
-<pre><code class="language-bash line-numbers">openssl pkcs8 -topk8 -inform pem -in servername.key -outform pem -nocrypt -out servername.key.1</code></pre>
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://localhost:4000/2016/03/19/2016/03/convert-pkcs1-to-pkcs8.html/" data-id="cjplwqkr20008e1u3vq8wkgmr" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-/2016/03/lipo-%e5%88%86%e7%a6%bb%e5%90%88%e5%b9%b6-armv7%e3%80%81arm64%e6%9e%b6%e6%9e%84.html" class="article article-type-post" itemscope="" itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/08/2016/03/lipo-%e5%88%86%e7%a6%bb%e5%90%88%e5%b9%b6-armv7%e3%80%81arm64%e6%9e%b6%e6%9e%84.html/">lipo 分离/合并 ARMV7、ARM64架构</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2016/03/08/2016/03/lipo-%e5%88%86%e7%a6%bb%e5%90%88%e5%b9%b6-armv7%e3%80%81arm64%e6%9e%b6%e6%9e%84.html/" class="article-date"><time datetime="2016-03-07T17:16:45.000Z" itemprop="datePublished">2016-03-08</time></a>
+  <a href="/2016/10/31/2016/10/ubuntu-max-ulimit.html/" class="article-date"><time datetime="2016-10-30T19:12:00.000Z" itemprop="datePublished">2016-10-31</time></a>
 </div>
 
     <div class="article-author">admin</div>
@@ -375,13 +304,14 @@ _THEOS_TARGET_LDFLAGS += -compatibility_version 1.0.0</code></pre>
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###分离：</p>
-<pre><code class="language-bash line-numbers">lipo -thin armv7 xxxx.dylib -output xxxx_v7.a
-lipo -thin arm64  xxxx.dylib -output xxxx_64.a
-</code></pre>
-
-<p>###合并</p>
-<pre><code class="language-bash line-numbers">lipo -create ./xxxx_v7.dylib ./xxxx_64.dylib -output ./xxxx.a
+        <pre><code class="language-bash line-numbers">ulimit -a
+open files                      (-n) 1024
+vim /etc/security/limits.conf
+//append
+* hard nofile 40960
+* soft nofile 40960
+vim /etc/profile
+ulimit -SHn 40960
 </code></pre>
       
     </div>
@@ -392,7 +322,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
     
 
     <footer class="article-footer">
-      <a data-url="http://localhost:4000/2016/03/08/2016/03/lipo-%e5%88%86%e7%a6%bb%e5%90%88%e5%b9%b6-armv7%e3%80%81arm64%e6%9e%b6%e6%9e%84.html/" data-id="cjplwqkqv0004e1u3917wwql4" class="article-share-link">
+      <a data-url="https://hw-1.github.io/2016/10/31/2016/10/ubuntu-max-ulimit.html/" data-id="cjplwqkrs000te1u3hcslbwqp" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -406,13 +336,13 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
 
 
   
-    <article id="post-/2016/03/manually-decrypting-ios-apps.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-/2016/10/reavealapp-dynamic-load.html" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/08/2016/03/manually-decrypting-ios-apps.html/">manually  Decrypting iOS Apps</a>
+      <a class="article-title" href="/2016/10/24/2016/10/reavealapp-dynamic-load.html/">reavealapp dynamic load</a>
     </h1>
   
 
@@ -421,58 +351,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2016/03/08/2016/03/manually-decrypting-ios-apps.html/" class="article-date"><time datetime="2016-03-07T17:05:31.000Z" itemprop="datePublished">2016-03-08</time></a>
-</div>
-
-    <div class="article-author">admin</div>
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Decrypting-iOS-Apps-entry-title-entry-title-single"><a href="#Decrypting-iOS-Apps-entry-title-entry-title-single" class="headerlink" title="Decrypting iOS Apps {.entry-title.entry-title-single}"></a>Decrypting iOS Apps {.entry-title.entry-title-single}</h1><p>a very detail tut for decrypt ios app,</p>
-<blockquote class="wp-embedded-content" data-secret="SNr1lhZiZD"><br>  <p><br>    <a href="http://www.infointox.net/?p=114" target="_blank" rel="noopener">Decrypting iOS Apps</a><br>  </p><br></blockquote>
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://localhost:4000/2016/03/08/2016/03/manually-decrypting-ios-apps.html/" data-id="cjplwqkqx0005e1u344o1awu8" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-/2016/03/patched-ipa-for-unjailed-iphone-inject-dylib-or-framework-to-execute-ii.html" class="article article-type-post" itemscope="" itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/08/2016/03/patched-ipa-for-unjailed-iphone-inject-dylib-or-framework-to-execute-ii.html/">patched ipa for unjailed iphone &amp;#8211; inject dylib or framework to execute II</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2016/03/08/2016/03/patched-ipa-for-unjailed-iphone-inject-dylib-or-framework-to-execute-ii.html/" class="article-date"><time datetime="2016-03-07T17:01:53.000Z" itemprop="datePublished">2016-03-08</time></a>
+  <a href="/2016/10/24/2016/10/reavealapp-dynamic-load.html/" class="article-date"><time datetime="2016-10-23T22:13:50.000Z" itemprop="datePublished">2016-10-24</time></a>
 </div>
 
     <div class="article-author">admin</div>
@@ -487,23 +366,15 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###1 Injector</p>
-<p>source code <a href="https://github.com/nadavrub/Injector" target="_blank" rel="noopener">https://github.com/nadavrub/Injector</a></p>
-<p>run the following to Inject the framework or dylib into the application executable:</p>
-<p>Injector binary &#8220;@executable_path/hook1.dylib&#8221;</p>
-<p>this tool is very usefull for clutch decrypted app</p>
-<p>###2 yololib</p>
-<p>source code <a href="https://github.com/KJCracks/yololib" target="_blank" rel="noopener">https://github.com/KJCracks/yololib</a></p>
-<p>usage</p>
-<pre><code class="language-bash line-numbers">yololib  binary  "@executable_path/hook1.dylib"
+        <pre><code class="language-bash line-numbers">1, Add Symbolic Breakpoint
+2, Enter UIApplicationMain into the Symbol field.
+3, Click the Add Action button, and ensure that Action is set to Debugger Command.
+4, Copy and paste the following text into the field below:
+expr (Class)NSClassFromString(@"IBARevealLoader") == nil ? (void *)dlopen("/Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/libReveal.dylib", 0x2) : ((void*)0)
+
+5, Check Automatically continue after evaluating actions.
+6, Right click the newly created breakpoint and select Move Breakpoint To → User.
 </code></pre>
-
-<p>###3 radare2</p>
-<p>source code <a href="https://github.com/radare/radare2" target="_blank" rel="noopener">https://github.com/radare/radare2</a></p>
-<p>it is very power tool ,but not simply to use,</p>
-<p>there is a tut for this tool use</p>
-<p><a href="http://coscolla.net/injecting-code-to-a-ipa/" target="_blank" rel="noopener">http://coscolla.net/injecting-code-to-a-ipa/</a></p>
-
       
     </div>
 
@@ -513,7 +384,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
     
 
     <footer class="article-footer">
-      <a data-url="http://localhost:4000/2016/03/08/2016/03/patched-ipa-for-unjailed-iphone-inject-dylib-or-framework-to-execute-ii.html/" data-id="cjplwqkqz0006e1u3d7v3jhhb" class="article-share-link">
+      <a data-url="https://hw-1.github.io/2016/10/24/2016/10/reavealapp-dynamic-load.html/" data-id="cjplwqkro000qe1u3us4szw4n" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -527,13 +398,13 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
 
 
   
-    <article id="post-/2016/03/%e3%80%8cproxypy%e3%80%8d%e5%85%8d%e8%b2%bb%e7%b7%9a%e4%b8%8a%e4%bb%a3%e7%90%86%e4%bc%ba%e6%9c%8d%e5%99%a8web-proxy.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-/2016/10/alcatraz-install-xcode8.html" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/2016/03/%e3%80%8cproxypy%e3%80%8d%e5%85%8d%e8%b2%bb%e7%b7%9a%e4%b8%8a%e4%bb%a3%e7%90%86%e4%bc%ba%e6%9c%8d%e5%99%a8web-proxy.html/">「ProxyPy」免費線上代理伺服器Web Proxy</a>
+      <a class="article-title" href="/2016/10/22/2016/10/alcatraz-install-xcode8.html/">Xcode8 install Alcatraz</a>
     </h1>
   
 
@@ -542,112 +413,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2016/03/02/2016/03/%e3%80%8cproxypy%e3%80%8d%e5%85%8d%e8%b2%bb%e7%b7%9a%e4%b8%8a%e4%bb%a3%e7%90%86%e4%bc%ba%e6%9c%8d%e5%99%a8web-proxy.html/" class="article-date"><time datetime="2016-03-02T00:11:48.000Z" itemprop="datePublished">2016-03-02</time></a>
-</div>
-
-    <div class="article-author">admin</div>
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://wirelessbox.net/webproxy/" target="_blank">「ProxyPy」免費線上代理伺服器Web Proxy</a></p>
-<p>&nbsp;</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://localhost:4000/2016/03/02/2016/03/%e3%80%8cproxypy%e3%80%8d%e5%85%8d%e8%b2%bb%e7%b7%9a%e4%b8%8a%e4%bb%a3%e7%90%86%e4%bc%ba%e6%9c%8d%e5%99%a8web-proxy.html/" data-id="cjplwqkqh0000e1u3wqnuw5te" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-/2016/03/call-to-undefined-function-curl_init.html" class="article article-type-post" itemscope="" itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/2016/03/call-to-undefined-function-curl_init.html/">Call to undefined function curl_init()</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2016/03/02/2016/03/call-to-undefined-function-curl_init.html/" class="article-date"><time datetime="2016-03-01T17:59:00.000Z" itemprop="datePublished">2016-03-02</time></a>
-</div>
-
-    <div class="article-author">admin</div>
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code class="language-bash line-numbers">sudo apt-get install php5-curl</code></pre>
-
-<p>&nbsp;</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://localhost:4000/2016/03/02/2016/03/call-to-undefined-function-curl_init.html/" data-id="cjplwqkqp0002e1u30enr0jw6" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-/2016/03/hello-world.html" class="article article-type-post" itemscope="" itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/01/2016/03/hello-world.html/">Hello world!</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2016/03/01/2016/03/hello-world.html/" class="article-date"><time datetime="2016-02-29T21:20:20.000Z" itemprop="datePublished">2016-03-01</time></a>
+  <a href="/2016/10/22/2016/10/alcatraz-install-xcode8.html/" class="article-date"><time datetime="2016-10-22T01:26:38.000Z" itemprop="datePublished">2016-10-22</time></a>
 </div>
 
     <div class="article-author">admin</div>
@@ -662,7 +428,229 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
+        <pre><code class="language-bash line-numbers">sudo codesign --remove-signature /Applications/Xcode.app/Contents/MacOS/Xcode 
+curl -fsSL https://raw.github.com/alcatraz/Alcatraz/master/Scripts/install.sh | sh
+</code></pre>
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://hw-1.github.io/2016/10/22/2016/10/alcatraz-install-xcode8.html/" data-id="cjplwqkrm000pe1u32lgc6ieh" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-/2016/10/mongodb-example-command.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/15/2016/10/mongodb-example-command.html/">mongodb example command</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/10/15/2016/10/mongodb-example-command.html/" class="article-date"><time datetime="2016-10-14T18:21:38.000Z" itemprop="datePublished">2016-10-15</time></a>
+</div>
+
+    <div class="article-author">admin</div>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code class="language-bash line-numbers">./mongorestore   --dir  ./dump/radacctinfo  --db radacctinfo
+./mongodump    --host 127.0.0.1  --db  local
+./mongo  mongodb://127.0.0.1
+sudo ./mongod  --dbpath  /data/db
+show dbs
+use local
+show tables
+db.radacctinfo.find().pretty()
+</code></pre>
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://hw-1.github.io/2016/10/15/2016/10/mongodb-example-command.html/" data-id="cjplwqkrk000oe1u38g3gp8mt" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-/2016/09/using-patch-files.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/30/2016/09/using-patch-files.html/">Using patch files</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/09/30/2016/09/using-patch-files.html/" class="article-date"><time datetime="2016-09-30T01:49:14.000Z" itemprop="datePublished">2016-09-30</time></a>
+</div>
+
+    <div class="article-author">admin</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code class="language-bash line-numbers">Using patch files 
+1.create patch file
+diff -uN  file1 file2 &gt; patchfile
+patch -p0 &lt;  patchfile</code></pre>
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://hw-1.github.io/2016/09/30/2016/09/using-patch-files.html/" data-id="cjplwqkre000ke1u30zm66bna" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-/2016/09/xcode-not-set-up-properly-you-may-need-to-confirm-the-license-agreement-by-running-usrbinxcodebuild.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/30/2016/09/xcode-not-set-up-properly-you-may-need-to-confirm-the-license-agreement-by-running-usrbinxcodebuild.html/">Xcode not set up properly. You may need to confirm the license agreement by running /usr/bin/xcodebuild</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/09/30/2016/09/xcode-not-set-up-properly-you-may-need-to-confirm-the-license-agreement-by-running-usrbinxcodebuild.html/" class="article-date"><time datetime="2016-09-29T23:35:06.000Z" itemprop="datePublished">2016-09-30</time></a>
+</div>
+
+    <div class="article-author">admin</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Xcode not set up properly. You may need to confirm the license agreement by running /usr/bin/xcodebuild</p>
+<pre><code class="language-bash line-numbers">sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+sudo xcodebuild -license
+cd /Applications/Xcode.app/Contents/Developer/usr/bin/
+sudo ln -s xcodebuild xcrun</code></pre>
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://hw-1.github.io/2016/09/30/2016/09/xcode-not-set-up-properly-you-may-need-to-confirm-the-license-agreement-by-running-usrbinxcodebuild.html/" data-id="cjplwqkri000me1u3fff4b6lg" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-/2016/08/ipa-%e4%bd%bf%e7%94%a8%e8%87%aa%e5%b7%b1%e7%9a%84apple%e5%b8%90%e5%8f%b7%e7%ad%be%e5%90%8d%e5%ae%89%e8%a3%85-%ef%bc%8d%ef%bc%8d-cydia-impactor.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/26/2016/08/ipa-%e4%bd%bf%e7%94%a8%e8%87%aa%e5%b7%b1%e7%9a%84apple%e5%b8%90%e5%8f%b7%e7%ad%be%e5%90%8d%e5%ae%89%e8%a3%85-%ef%bc%8d%ef%bc%8d-cydia-impactor.html/">IPA 使用自己的Apple帐号签名安装 －－ Cydia impactor</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/08/26/2016/08/ipa-%e4%bd%bf%e7%94%a8%e8%87%aa%e5%b7%b1%e7%9a%84apple%e5%b8%90%e5%8f%b7%e7%ad%be%e5%90%8d%e5%ae%89%e8%a3%85-%ef%bc%8d%ef%bc%8d-cydia-impactor.html/" class="article-date"><time datetime="2016-08-25T18:15:16.000Z" itemprop="datePublished">2016-08-26</time></a>
+</div>
+
+    <div class="article-author">admin</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>不知从什么时候起，apple 不用99美玩也可以玩XCODE 连真机调试了，只需要XCODE里面登录自己的Apple帐号就可以了，<br>今天要介绍的这款神器就是把Xcode的签名 和安装的这部部功能提出来了，<br>做成一个工具，，非常的方便。。<br>大家可以到官方网站下载对系统对应版本，<br><a href="http://www.cydiaimpactor.com" target="_blank" rel="noopener">http://www.cydiaimpactor.com</a></p>
+<p>怎么使用<br>1 打开App 把要签名的IPA拖到APP上面<br>2 按提示输入APPLE帐号 密码<br>3 什么都不用做，静静的看他忙就好了，（（<br>4 不出什么问题，IPA已经安装到你手机上了，</p>
 
       
     </div>
@@ -673,7 +661,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
     
 
     <footer class="article-footer">
-      <a data-url="http://localhost:4000/2016/03/01/2016/03/hello-world.html/" data-id="cjplwqkql0001e1u3lj7rgyle" class="article-share-link">
+      <a data-url="https://hw-1.github.io/2016/08/26/2016/08/ipa-%e4%bd%bf%e7%94%a8%e8%87%aa%e5%b7%b1%e7%9a%84apple%e5%b8%90%e5%8f%b7%e7%ad%be%e5%90%8d%e5%ae%89%e8%a3%85-%ef%bc%8d%ef%bc%8d-cydia-impactor.html/" data-id="cjs5kwd830003s2u3v8gg13hm" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -690,7 +678,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
 
 
   <div id="page-nav">
-    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/page/10/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/">1</a></li><li class="disabled"><span class="page-space">&hellip;</span></li><li><a class="page-number" href="/page/9/">9</a></li><li><a class="page-number" href="/page/10/">10</a></li><li class="active"><span class="page-number">11</span></li><li class="disabled"><span class="page-next">Next <i class="fa fa-chevron-right"></i></span></li></ul></nav>
+    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/page/10/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/">1</a></li><li class="disabled"><span class="page-space">&hellip;</span></li><li><a class="page-number" href="/page/9/">9</a></li><li><a class="page-number" href="/page/10/">10</a></li><li class="active"><span class="page-number">11</span></li><li><a class="page-number" href="/page/12/">12</a></li><li><a class="page-number" href="/page/13/">13</a></li><li><a class="page-next" rel="next" href="/page/12/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
   </div>
 
 
@@ -708,7 +696,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
   
   <div class="sidebar-module">
     <h4>Categories</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Uncategorized/">Uncategorized</a><span class="sidebar-module-list-count">97</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Uncategorized/">Uncategorized</a><span class="sidebar-module-list-count">111</span></li></ul>
   </div>
 
 
@@ -721,7 +709,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
   
   <div class="sidebar-module">
     <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
   </div>
 
 
@@ -732,23 +720,23 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
     <ul class="sidebar-module-list">
       
         <li>
-          <a href="/2018/12/12/hello-world/">Hello World</a>
+          <a href="/2019/02/15/2019/02/easy-network-monitoring-even-on-non-jailbroken-ios.html/">Easy network monitoring even on non-jailbroken iOS</a>
         </li>
       
         <li>
-          <a href="/2018/12/03/2018/12/xcode-view-debug.html/">Xcode View Debug</a>
+          <a href="/2019/02/12/2019/02/ios%e4%ba%8b%e4%bb%b6%e7%9a%84%e5%88%86%e5%8f%91%e6%9c%ba%e5%88%b6%e5%92%8c%e5%93%8d%e5%ba%94%e8%80%85%e9%93%beswift.html/">iOS事件的分发机制和响应者链(Swift)</a>
         </li>
       
         <li>
-          <a href="/2018/11/21/2018/11/osx-svn-server-create.html/">osx svn server create</a>
+          <a href="/2019/01/25/2019/01/jenkins%e5%bf%98%e8%ae%b0%e7%ae%a1%e7%90%86%e5%91%98%e8%b4%a6%e5%8f%b7%e7%99%bb%e5%bd%95%e5%af%86%e7%a0%81%e5%a6%82%e4%bd%95%e4%bf%ae%e6%94%b9%e7%ae%a1%e7%90%86%e5%91%98%e8%b4%a6%e5%8f%b7.html/">jenkins忘记管理员账号登录密码如何修改管理员账号</a>
         </li>
       
         <li>
-          <a href="/2018/11/19/2018/11/jenkins-for-osx-mojave.html/">jenkins for osx mojave</a>
+          <a href="/2019/01/25/2019/01/ios-%e6%95%b0%e7%bb%84%e9%9b%86%e5%90%88%e6%93%8d%e4%bd%9c%ef%bc%88%e4%ba%a4%e9%9b%86%ef%bc%8c%e5%b9%b6%e9%9b%86%ef%bc%8c%e5%b7%ae%e9%9b%86%ef%bc%8c%e5%ad%90%e9%9b%86%ef%bc%89.html/">iOS 数组集合操作（交集，并集，差集，子集）</a>
         </li>
       
         <li>
-          <a href="/2018/11/14/2018/11/python-virtualenv-for-osx.html/">python virtualenv for osx</a>
+          <a href="/2019/01/25/2019/01/ios%e5%b0%8f%e6%95%b0%e7%82%b9%e6%a0%bc%e5%bc%8f%e5%8c%96%ef%bc%9a%e5%a6%82%e6%9e%9c%e6%9c%89%e4%b8%a4%e4%bd%8d%e5%b0%8f%e6%95%b0%e4%b8%8d%e4%b8%ba0%e5%88%99%e4%bf%9d%e7%95%99%e4%b8%a4%e4%bd%8d.html/">iOS小数点格式化：如果有两位小数不为0则保留两位小数，如果有一位小数不为0则保留一位小数，否则显示整数</a>
         </li>
       
     </ul>
@@ -762,7 +750,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
   <footer class="blog-footer">
   <div class="container">
     <div id="footer-info" class="inner">
-      &copy; 2018 git<br>
+      &copy; 2019 git<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
