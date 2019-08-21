@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>iOS APP启动速度优化的一些经验 | hw-1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="iOS APP启动速度优化的一些经验 应用启动流程iOS应用的启动可分为pre-main阶段和main()阶段，其中系统做的事情依次是：  pre-main阶段1.1. 加载应用的可执行文件1.2. 加载动态链接库加载器dyld（dynamic loader）1.3. dyld递归加载应用所有依赖的dylib（dynamic library 动态链接库）  main()阶段2.1. dyld调用m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS APP启动速度优化的一些经验">
+<meta property="og:url" content="https://hw-1.github.io/2019/03/23/677/index.html">
+<meta property="og:site_name" content="hw-1">
+<meta property="og:description" content="iOS APP启动速度优化的一些经验 应用启动流程iOS应用的启动可分为pre-main阶段和main()阶段，其中系统做的事情依次是：  pre-main阶段1.1. 加载应用的可执行文件1.2. 加载动态链接库加载器dyld（dynamic loader）1.3. dyld递归加载应用所有依赖的dylib（dynamic library 动态链接库）  main()阶段2.1. dyld调用m">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-21T07:10:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS APP启动速度优化的一些经验">
+<meta name="twitter:description" content="iOS APP启动速度优化的一些经验 应用启动流程iOS应用的启动可分为pre-main阶段和main()阶段，其中系统做的事情依次是：  pre-main阶段1.1. 加载应用的可执行文件1.2. 加载动态链接库加载器dyld（dynamic loader）1.3. dyld递归加载应用所有依赖的dylib（dynamic library 动态链接库）  main()阶段2.1. dyld调用m">
+  
+    <link rel="alternate" href="/atom.xml" title="hw-1" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+</html>
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class="" href="/index.html">Home</a></li>
+        
+          <li><a class="" href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">hw-1</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-/2019/03/ios-app%e5%90%af%e5%8a%a8%e9%80%9f%e5%ba%a6%e4%bc%98%e5%8c%96%e7%9a%84%e4%b8%80%e4%ba%9b%e7%bb%8f%e9%aa%8c.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      iOS APP启动速度优化的一些经验
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/23/677/" class="article-date"><time datetime="2019-03-22T17:39:35.000Z" itemprop="datePublished">2019-03-23</time></a>
+</div>
+
+    <div class="article-author">admin</div>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>iOS APP启动速度优化的一些经验</p>
+<p>应用启动流程<br>iOS应用的启动可分为pre-main阶段和main()阶段，其中系统做的事情依次是：</p>
+<ol>
+<li>pre-main阶段<br>1.1. 加载应用的可执行文件<br>1.2. 加载动态链接库加载器dyld（dynamic loader）<br>1.3. dyld递归加载应用所有依赖的dylib（dynamic library 动态链接库）<p></p> </li>
+<li><p>main()阶段<br>2.1. dyld调用main()<br>2.2. 调用UIApplicationMain()<br>2.3. 调用applicationWillFinishLaunching<br>2.4. 调用didFinishLaunchingWithOptions</p>
+</li>
+<li><p>pre-main阶段<br>对于pre-main阶段，Apple提供了一种测量方法，在 Xcode 中 Edit scheme -&gt; Run -&gt; Auguments 将环境变量DYLD_PRINT_STATISTICS 设为1 ：</p>
+</li>
+<li><p>main()阶段<br>对于main()阶段，主要是测量main()函数开始执行到didFinishLaunchingWithOptions执行结束的耗时，就需要自己插入代码到工程中了。先在main()函数里用变量StartTime记录当前时间：<br>CFAbsoluteTime StartTime;<br>int main(int argc, char * argv[]) {<br>StartTime = CFAbsoluteTimeGetCurrent();<br>double launchTime = (CFAbsoluteTimeGetCurrent() &#8211; StartTime);</p>
+</li>
+</ol>
+<p>pre-main阶段的优化  </p>
+<ol>
+<li>Load dylibs<br>1.1 尽量不使用内嵌（embedded）的dylib，加载内嵌dylib性能开销较大<br>1.2 合并已有的dylib和使用静态库（static archives），减少dylib的使用个数 &#8212; podspec set s.static_framework = true<br>1.3 懒加载dylib，但是要注意dlopen()可能造成一些问题，且实际上懒加载做的工作会更多</li>
+</ol>
+<ol start="2"><br>  <li><br>    Rebase/Bind<br> 2.1 减少ObjC类（class）、方法（selector）、分类（category）的数量<br> 2.2 减少C++虚函数的的数量（创建虚函数表有开销）<br> 2.3 使用Swift structs（内部做了优化，符号数量更少）<p></p> <ol start="3"><br>      <li><br>        Objc setup<br> 大部分ObjC初始化工作已经在Rebase/Bind阶段做完了，这一步dyld会注册所有声明过的ObjC类，将分类插入到类的方法列表里，再检查每个selector的唯一性。<br>      </li><br>    </ol><br>  </li><br><br>  <li><br>    Initializers<br> 到了这一阶段，dyld开始运行程序的初始化函数，调用每个Objc类和分类的+load方法，调用C/C++ 中的构造器函数（用attribute((constructor))修饰的函数），和创建非基本类型的C++静态全局变量。Initializers阶段执行完后，dyld开始调用main()函数。<p></p><br>  </li><br></ol>
+
+<p>main阶段的优化<br>1 不使用xib，直接视用代码加载首页视图<br>2 NSUserDefaults实际上是在Library文件夹下会生产一个plist文件，如果文件太大的话一次能读取到内存中可能很耗时，这个影响需要评估，如果耗时很大的话需要拆分(需考虑老版本覆盖安装兼容问题)<br>3 每次用NSLog方式打印会隐式的创建一个Calendar，因此需要删减启动时各业务方打的log，或者仅仅针对内测版输出log<br>4 梳理应用启动时发送的所有网络请求，是否可以统一在异步线程请求</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://hw-1.github.io/2019/03/23/677/" data-id="cjzkyfb2g006shmmpg8ilfdhi" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2019/03/22/674/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">raspberry redsocks forward</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2019/03/23/679/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Set  ulimit -n / open files Permanently  in ubuntu</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Uncategorized/">Uncategorized</a><span class="sidebar-module-list-count">133</span></li></ul>
+  </div>
+
+
+
+  
+
+
+  
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/08/">August 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/06/">June 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2019/08/07/729/">Unable to install (Error: &amp;#8216;cstring&amp;#8217; file not found) &amp;#8211; MacOS Mojave #162</a>
+        </li>
+      
+        <li>
+          <a href="/2019/07/31/723/">“XXX.app can&amp;#8217;t be opened. You should move it to trash.” for flash projector applications on mac os sierra</a>
+        </li>
+      
+        <li>
+          <a href="/2019/07/27/721/">How to Fix mds_stores Consuming High CPU Usage on Mac</a>
+        </li>
+      
+        <li>
+          <a href="/2019/07/27/719/">Operation not permitted while System Integrity Protection is engaged</a>
+        </li>
+      
+        <li>
+          <a href="/2019/07/05/716/">networkextension connect: No route to host</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2019 git<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

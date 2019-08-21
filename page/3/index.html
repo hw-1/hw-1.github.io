@@ -74,13 +74,13 @@
         <div class="col-sm-8 blog-main">
           
   
-    <article id="post-/2018/10/iphone-usb-tethering-working-on-raspberry.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-/2019/02/ubuntu-ssh-disable-password-login.html" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/21/572/">iPhone USB tethering working on raspberry</a>
+      <a class="article-title" href="/2019/02/22/663/">ubuntu ssh disable password login</a>
     </h1>
   
 
@@ -89,7 +89,7 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2018/10/21/572/" class="article-date"><time datetime="2018-10-21T07:03:14.000Z" itemprop="datePublished">2018-10-21</time></a>
+  <a href="/2019/02/22/663/" class="article-date"><time datetime="2019-02-21T18:33:52.000Z" itemprop="datePublished">2019-02-22</time></a>
 </div>
 
     <div class="article-author">admin</div>
@@ -104,8 +104,15 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="iPhone-USB-tethering-working-on-raspberry"><a href="#iPhone-USB-tethering-working-on-raspberry" class="headerlink" title="iPhone USB tethering working on raspberry"></a>iPhone USB tethering working on raspberry</h3><pre><code class="language-bash line-numbers">sudo apt -o Acquire::http::proxy="http://172.24.1.149:8118"  install -y ipheth-utils libimobiledevice-dev libimobiledevice-utils usbmuxd ipheth-utils gvfs
-idevicepair unpair && idevicepair pair
+        <h3 id="ubuntu-ssh-disable-password-login"><a href="#ubuntu-ssh-disable-password-login" class="headerlink" title="ubuntu ssh disable password login"></a>ubuntu ssh disable password login</h3><pre><code class="language-bash line-numbers">in /etc/ssh/sshd_config
+
+change this
+#ChallengeResponseAuthentication yes
+#PasswordAuthentication yes
+to
+ChallengeResponseAuthentication no
+ PasswordAuthentication no
+sudo service ssh restart
 </code></pre>
       
     </div>
@@ -116,7 +123,7 @@ idevicepair unpair && idevicepair pair
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2018/10/21/572/" data-id="cjslpq2th0058bqu3ewfv1bdb" class="article-share-link">
+      <a data-url="https://hw-1.github.io/2019/02/22/663/" data-id="cjzkyfb2e006khmmpqqes7778" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -130,13 +137,13 @@ idevicepair unpair && idevicepair pair
 
 
   
-    <article id="post-/2018/10/raspberry-setlocale-lc_all-cannot-change-locale-en_us-utf-8.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-/2019/02/wordpress-how-to-change-all-the-guid-in-posts-table.html" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/21/570/">raspberry  setlocale: LC_ALL: cannot change locale (en_US.UTF-8)</a>
+      <a class="article-title" href="/2019/02/15/659/">wordpress how to change all the guid in posts table?</a>
     </h1>
   
 
@@ -145,7 +152,7 @@ idevicepair unpair && idevicepair pair
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2018/10/21/570/" class="article-date"><time datetime="2018-10-21T07:01:51.000Z" itemprop="datePublished">2018-10-21</time></a>
+  <a href="/2019/02/15/659/" class="article-date"><time datetime="2019-02-14T21:22:59.000Z" itemprop="datePublished">2019-02-15</time></a>
 </div>
 
     <div class="article-author">admin</div>
@@ -160,9 +167,8 @@ idevicepair unpair && idevicepair pair
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="raspberry-setlocale-LC-ALL-cannot-change-locale-en-US-UTF-8"><a href="#raspberry-setlocale-LC-ALL-cannot-change-locale-en-US-UTF-8" class="headerlink" title="raspberry setlocale: LC_ALL: cannot change locale (en_US.UTF-8)"></a>raspberry setlocale: LC_ALL: cannot change locale (en_US.UTF-8)</h3><p>Edit /etc/locale.gen and uncomment the line with en_US.UTF-8 e.g. sudo nano /etc/locale.gen<br>uncomment line by deleting leading #</p>
-<pre><code class="language-bash line-numbers">sudo locale-gen en_US.UTF-8
-sudo update-locale en_US.UTF-8
+        <p>wordpress how to change all the guid in posts table?</p>
+<pre><code class="language-bash line-numbers">UPDATE wp_posts SET guid = REPLACE(guid, 'oldurl.com', 'newurl.com') WHERE guid LIKE 'http://oldurl.com/%';
 </code></pre>
       
     </div>
@@ -173,7 +179,7 @@ sudo update-locale en_US.UTF-8
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2018/10/21/570/" data-id="cjslpq2ti005abqu3jj2udtcl" class="article-share-link">
+      <a data-url="https://hw-1.github.io/2019/02/15/659/" data-id="cjzkyfb2d006ghmmpn5t4xes0" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -187,13 +193,13 @@ sudo update-locale en_US.UTF-8
 
 
   
-    <article id="post-/2018/10/ubuntu-install-nginx-and-srs.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-/2019/02/easy-network-monitoring-even-on-non-jailbroken-ios.html" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/17/568/">ubuntu install nginx and srs</a>
+      <a class="article-title" href="/2019/02/15/645/">Easy network monitoring even on non-jailbroken iOS</a>
     </h1>
   
 
@@ -202,7 +208,7 @@ sudo update-locale en_US.UTF-8
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2018/10/17/568/" class="article-date"><time datetime="2018-10-16T17:58:50.000Z" itemprop="datePublished">2018-10-17</time></a>
+  <a href="/2019/02/15/645/" class="article-date"><time datetime="2019-02-14T17:03:46.000Z" itemprop="datePublished">2019-02-15</time></a>
 </div>
 
     <div class="article-author">admin</div>
@@ -217,27 +223,10 @@ sudo update-locale en_US.UTF-8
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="ubuntu-install-nginx-and-srs"><a href="#ubuntu-install-nginx-and-srs" class="headerlink" title="ubuntu install nginx and srs"></a>ubuntu install nginx and srs</h3><pre><code class="language-bash line-numbers">//for Ubuntu
-sudo add-apt-repository  -y ppa:ubuntu-toolchain-r/test
-sudo apt-get update -y
-sudo apt-get install -y gcc-5 g++-5
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
-
-
-git clone https://github.com/ossrs/srs.git
-cd srs/trunk
-./configure --with-nginx
- make
-
-./objs/srs -c conf/http.hls.conf
-
-for((;;)); do \
-    ffmpeg -re -i   /home/ubuntu/Rogue\ One\ -\ A\ Star\ Wars\ Story\ -\ Trailer\ 2.mp4 \
-    -vf  scale=360:-2 -c:v libx264 -acodec copy \
-    -f flv -y rtmp://172.104.12.1:1935/live/livestream; \
-    sleep 1; \
-done
-
+        <p>Easy network monitoring even on non-jailbroken iOS:</p>
+<pre><code class="language-bash line-numbers">1/ connect your iOS device to your macOS via USB
+2/ rvictl -s &lt;UDID&gt;
+3/ tcpdump|wireshark -i rvi0
 </code></pre>
       
     </div>
@@ -248,7 +237,7 @@ done
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2018/10/17/568/" data-id="cjslpq2tg0056bqu3gqui2s64" class="article-share-link">
+      <a data-url="https://hw-1.github.io/2019/02/15/645/" data-id="cjzkyfb2d006ehmmp79jawq7f" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -262,13 +251,13 @@ done
 
 
   
-    <article id="post-/2018/10/cgbi-file-format.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-/2019/02/ios%e4%ba%8b%e4%bb%b6%e7%9a%84%e5%88%86%e5%8f%91%e6%9c%ba%e5%88%b6%e5%92%8c%e5%93%8d%e5%ba%94%e8%80%85%e9%93%beswift.html" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/13/564/">CgBI file format</a>
+      <a class="article-title" href="/2019/02/12/640/">iOS事件的分发机制和响应者链(Swift)</a>
     </h1>
   
 
@@ -277,7 +266,7 @@ done
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2018/10/13/564/" class="article-date"><time datetime="2018-10-12T21:10:42.000Z" itemprop="datePublished">2018-10-13</time></a>
+  <a href="/2019/02/12/640/" class="article-date"><time datetime="2019-02-11T20:57:39.000Z" itemprop="datePublished">2019-02-12</time></a>
 </div>
 
     <div class="article-author">admin</div>
@@ -292,12 +281,84 @@ done
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="The-CgBI-file-format-thus-named-for-its-extra-header-is-Apple-8217-s-proprietary-extension-to-the-PNG-1-image-format"><a href="#The-CgBI-file-format-thus-named-for-its-extra-header-is-Apple-8217-s-proprietary-extension-to-the-PNG-1-image-format" class="headerlink" title="The CgBI file format, thus named for its extra header, is Apple&#8217;s proprietary extension to the PNG[1] image format."></a>The CgBI file format, thus named for its extra header, is Apple&#8217;s proprietary extension to the PNG[1] image format.</h3><pre><code class="language-bash line-numbers">Encoding
-Apple's modified pngcrush (xcrun -sdk iphoneos pngcrush -iphone)
-pincrush
-Decoding
-Apple's modified pngcrush (xcrun -sdk iphoneos pngcrush -revert-iphone-optimizations)
+        <h3 id="iOS事件的分发机制和响应者链-Swift"><a href="#iOS事件的分发机制和响应者链-Swift" class="headerlink" title="iOS事件的分发机制和响应者链(Swift)"></a>iOS事件的分发机制和响应者链(Swift)</h3><p>事件沿着具体的路径进行传递，一直到发现对象能够处理该事件，首先，UIApplication单例对象会将该事件将被传递给window对象，window对象会使用hitTest:withEvent:方法来递归的寻找操作初始点所在的view，该视图就称之为hit-test view，寻找hit-test view过程称为hit-testing.</p>
+<p>分发机制(Hit-Testing)<br>   iOS使用hit-testing来找到触摸点所在的视图。hit-testing将会检测是否触摸事件在相关视图的显示区域之内。如果在，将递归检测当前视图的所有子视图。视图层级中最底层的view如果包含触摸点将成为hit-test view.在iOS确认了hit-test view之后，将传递触摸世界给对应的视图进行处理。</p>
+<p>hitTest:withEvent:方法的处理流程如下：调用当前view的pointInside:withEvent:方法来判定触摸点是否在当前view内部，如果返回false，则hitTest:withEvent:返回nil；如果返回true，则向当前view内的subViews发送hitTest:withEvent:消息，所有subView的遍历顺序是从数组的末尾向前遍历，直到有subView返回非空对象或遍历完成。如果有subView返回非空对象，hitTest方法会返回这个对象，如果每个subView返回都是nil，则返回自己。</p>
+<p>许多类型的事件都依赖于响应者链进行事件的传递。响应者链关联着一系列的响应者对象，由第一个响应者对象开始一直到application对象结束，如果第一个响应者不能够处理事件，事件将会被传递到响应者链中的下一个响应者对象。</p>
+<p>一个响应者对象是能够处理和响应事件的对象，UIResponder类是所有响应者对象的基类，它不仅仅定义了事件处理的接口而且还有共有的响应者行为。UIApplication, UIViewController, UIView等类的实例都是响应者对象，这意味着所有的视图(all views)和大多数的关键视图控制器对象都是响应者。但是要注意核心动画中的层(layer)不是响应者</p>
+<p>传递链：由系统向离用户最近的view传递。UIKit –&gt; active app’s event queue –&gt; window –&gt; root view –&gt;……–&gt;lowest view</p>
+<p>响应链：由离用户最近的view向系统传递。initial view –&gt; super view –&gt; …..–&gt; view controller –&gt; window –&gt; Application</p>
+<p>开发中覆盖hitTest:withEvent:的一些用途：</p>
+<p>1：增加视图的触摸区域</p>
+<pre><code>比如：按钮本身大小为20_20，但是太小不便操作，我们可以通过自定义UIButton，重写hitTest方法，增加点击区域：下面是添加了一个20_20的按钮，然后通过操作hitTest方法，实现100*100区域内可点击,即在每个方向增加40，具体实现代码：
+</code></pre><pre><code class="language-bash line-numbers"> class MyButton: UIButton {
+    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -&gt; UIView? {
+        if !self.userInteractionEnabled || self.hidden || self.alpha == 0 {
+            return nil
+        }
 
+        if CGRectContainsPoint(CGRectInset(self.bounds, -40, -40), point){
+            for subview in self.subviews.reverse() {
+                let convertPoint = subview.convertPoint(point, fromView:self)
+                if let sview = subview.hitTest(convertPoint, withEvent: event) {
+                    return sview
+                }
+            }
+            return self
+        }
+        return nil
+    }
+}
+</code></pre>
+
+<p>2：实现传递事件到点击视图之下的视图</p>
+<p>有的时候对于一个视图忽略触摸事件并传递给下面的视图是很重要的。例如，假设一个透明的视图覆盖在应用内所有视图的最上面。覆盖层有子视图应该相应触摸事件的一些控件和按钮。但是触摸覆盖层的其他区域应该传递给覆盖层下面的视图。为了完成这个行为，覆盖层需要覆盖hitTest:withEvent:方法来返回包含触摸点的子视图中的一个，然后其他情况返回nil，包括覆盖层包含触摸点的情况：</p>
+<pre><code class="language-bash line-numbers">class SHView: UIView {
+    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -&gt; UIView? {
+        var hitTestView = super.hitTest(point, withEvent:event)
+        if hitTestView == self{
+           hitTestView = nil
+        }
+        return hitTestView;
+    }
+}
+</code></pre>
+
+<p>3:超出父视图区域部分响应事件</p>
+<p>首先看一下页面效果：当前页面上有3个控件，紫色视图是红色视图的子视图，红色视图是灰色视图的子视图。最上面是一个按钮，方便我们进行测试：现在我们要实现点击红色视图之外的紫色区域能够响应事件。</p>
+<pre><code class="language-bash line-numbers">  class TestView: UIView {
+    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -&gt; UIView? {
+        super.hitTest(point, withEvent: event)
+        return overlapHitTest(point, withEvent: event)
+    }
+}
+
+extension UIView{
+    func overlapHitTest(point: CGPoint, withEvent event: UIEvent?) -&gt; UIView? {
+        // We should not send touch events for hidden or transparent views, or views with userInteractionEnabled set to NO;
+        if !self.userInteractionEnabled || self.hidden || self.alpha == 0 {
+            return nil
+        }
+        // If touch is inside self, self will be considered as potential result.
+        var hitView: UIView? = self
+        if !self.pointInside(point, withEvent: event) {
+            if self.clipsToBounds {
+                return nil
+            } else {
+                hitView = nil
+            }
+        }
+        // Check recursively all subviews for hit. If any, return it.
+        for subview in self.subviews.reverse() {
+            let insideSubview = self.convertPoint(point, toView: subview)
+            if let sview = subview.overlapHitTest(insideSubview, withEvent: event) {
+                return sview
+            }
+        }
+        // Else return self or nil depending on result from step 2.
+        return hitView
+    }
+}
 </code></pre>
       
     </div>
@@ -308,7 +369,7 @@ Apple's modified pngcrush (xcrun -sdk iphoneos pngcrush -revert-iphone-optimizat
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2018/10/13/564/" data-id="cjslpq2tg0054bqu3zuqvzhtc" class="article-share-link">
+      <a data-url="https://hw-1.github.io/2019/02/12/640/" data-id="cjzkyfb2c006chmmpk2j0hphi" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -322,13 +383,13 @@ Apple's modified pngcrush (xcrun -sdk iphoneos pngcrush -revert-iphone-optimizat
 
 
   
-    <article id="post-/2018/10/how-to-use-your-iphones-internet-connection-on-your-ubuntu-machine-via-usb.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-/2019/01/jenkins%e5%bf%98%e8%ae%b0%e7%ae%a1%e7%90%86%e5%91%98%e8%b4%a6%e5%8f%b7%e7%99%bb%e5%bd%95%e5%af%86%e7%a0%81%e5%a6%82%e4%bd%95%e4%bf%ae%e6%94%b9%e7%ae%a1%e7%90%86%e5%91%98%e8%b4%a6%e5%8f%b7.html" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/10/562/">How to use your iPhone&amp;#8217;s internet connection on your Ubuntu machine via USB</a>
+      <a class="article-title" href="/2019/01/25/636/">jenkins忘记管理员账号登录密码如何修改管理员账号</a>
     </h1>
   
 
@@ -337,7 +398,7 @@ Apple's modified pngcrush (xcrun -sdk iphoneos pngcrush -revert-iphone-optimizat
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2018/10/10/562/" class="article-date"><time datetime="2018-10-09T18:24:10.000Z" itemprop="datePublished">2018-10-10</time></a>
+  <a href="/2019/01/25/636/" class="article-date"><time datetime="2019-01-24T22:31:19.000Z" itemprop="datePublished">2019-01-25</time></a>
 </div>
 
     <div class="article-author">admin</div>
@@ -352,12 +413,15 @@ Apple's modified pngcrush (xcrun -sdk iphoneos pngcrush -revert-iphone-optimizat
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="How-to-use-your-iPhone-8217-s-internet-connection-on-your-Ubuntu-machine-via-USB"><a href="#How-to-use-your-iPhone-8217-s-internet-connection-on-your-Ubuntu-machine-via-USB" class="headerlink" title="How to use your iPhone&#8217;s internet connection on your Ubuntu machine via USB"></a>How to use your iPhone&#8217;s internet connection on your Ubuntu machine via USB</h3><pre><code class="language-bash line-numbers">sudo apt install ipheth-utils libimobiledevice-dev libimobiledevice-utils
-idevicepair unpair && idevicepair pair
+        <h3 id="jenkins忘记管理员账号登录密码如何修改管理员账号"><a href="#jenkins忘记管理员账号登录密码如何修改管理员账号" class="headerlink" title="jenkins忘记管理员账号登录密码如何修改管理员账号"></a>jenkins忘记管理员账号登录密码如何修改管理员账号</h3><pre><code class="language-bash line-numbers">（1）用命令打开：
+sudo vi /Users/Shared/Jenkins/Home/users/admin/config.xml 
+（2）找到&lt;passwordHash&gt;节点
+将节点内的&lt;passwordHash&gt;#jbcrypt:$2a$10$lbyWNEX8qFyS47ddBYHgHOOIdnsijELWhprkGA0aZQRfapnzGeVl6&lt;/passwordHash&gt;的值改为：
+#jbcrypt:$2a$10$DdaWzN64JgUtLdvxWIflcuQu2fgrrMSAMabF5TSrGK5nXitqK9ZMS  （该字符串默认密码为6个1）
+注意前后不要输入空格。按Esc键-&gt;：-&gt;wq保存。
+3/重启Jenkins：jenkins restart
+4／打开localhost:8080,输入管理员账号，密码为6个1，点击【登录】登录成功
 </code></pre>
-
-<p>Then unplug your phone and plug it back in. When you plug it back in, a notification should pop up (on your Ubuntu system) saying it has connected to a wired network. (If the notification does not appear, make sure Personal Hotspot is enabled on your phone.)</p>
-
       
     </div>
 
@@ -367,7 +431,7 @@ idevicepair unpair && idevicepair pair
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2018/10/10/562/" data-id="cjslpq2tf0052bqu3ejula7wz" class="article-share-link">
+      <a data-url="https://hw-1.github.io/2019/01/25/636/" data-id="cjzkyfb2b0068hmmpjqok2jvn" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -381,13 +445,13 @@ idevicepair unpair && idevicepair pair
 
 
   
-    <article id="post-/2018/10/frida-cycript-install-osx.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-/2019/01/ios-%e6%95%b0%e7%bb%84%e9%9b%86%e5%90%88%e6%93%8d%e4%bd%9c%ef%bc%88%e4%ba%a4%e9%9b%86%ef%bc%8c%e5%b9%b6%e9%9b%86%ef%bc%8c%e5%b7%ae%e9%9b%86%ef%bc%8c%e5%ad%90%e9%9b%86%ef%bc%89.html" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/09/543/">frida-cycript install  osx</a>
+      <a class="article-title" href="/2019/01/25/634/">iOS 数组集合操作（交集，并集，差集，子集）</a>
     </h1>
   
 
@@ -396,7 +460,7 @@ idevicepair unpair && idevicepair pair
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2018/10/09/543/" class="article-date"><time datetime="2018-10-08T23:57:50.000Z" itemprop="datePublished">2018-10-09</time></a>
+  <a href="/2019/01/25/634/" class="article-date"><time datetime="2019-01-24T22:26:53.000Z" itemprop="datePublished">2019-01-25</time></a>
 </div>
 
     <div class="article-author">admin</div>
@@ -411,30 +475,16 @@ idevicepair unpair && idevicepair pair
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="frida-cycript-install-osx"><a href="#frida-cycript-install-osx" class="headerlink" title="frida-cycript install osx"></a>frida-cycript install osx</h2><pre><code class="language-bash line-numbers"> pip3 install meson
- brew install ninja
+        <p>iOS 数组集合操作（交集，并集，差集，子集）</p>
+<pre><code class="language-bash line-numbers">NSArray *array1 = @[@"1",@"2",@"3"];
+NSArray *array2 = @[@"1",@"5",@"6"]; 
+NSMutableSet *set1 = [NSMutableSet setWithArray:array1];
+NSMutableSet *set2 = [NSMutableSet setWithArray:array2]; 
 
- dx command not found?
- brew tap caskroom/cask
- brew cask install android-sdk
+[set1 unionSet:set2];       //取并集后 set1中为1，2，3，5，6
+[set1 intersectSet:set2];  //取交集后 set1中为1
+[set1 minusSet:set2];      //取差集后 set1中为2，3，5，6
 
-sdkmanager --update
-sdkmanager "platforms;android-25" "build-tools;25.0.2" "extras;google;m2repository" "extras;android;m2repository"
-sdkmanager --licenses
-
-link dx to /usr/bin/dx
-
-
-node module error?
- sudo port install npm3
-
- git clone https://github.com/nowsecure/frida-cycript.git
- cd frida-cycript
- git submodule init
- git submodule update
-
- meson build
- ninja -C build
 </code></pre>
       
     </div>
@@ -445,7 +495,7 @@ node module error?
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2018/10/09/543/" data-id="cjslpq2te0050bqu3680009mt" class="article-share-link">
+      <a data-url="https://hw-1.github.io/2019/01/25/634/" data-id="cjzkyfb2a0064hmmpuj82q8fo" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -459,13 +509,13 @@ node module error?
 
 
   
-    <article id="post-/2018/09/caffe-error.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-/2019/01/ios%e5%b0%8f%e6%95%b0%e7%82%b9%e6%a0%bc%e5%bc%8f%e5%8c%96%ef%bc%9a%e5%a6%82%e6%9e%9c%e6%9c%89%e4%b8%a4%e4%bd%8d%e5%b0%8f%e6%95%b0%e4%b8%8d%e4%b8%ba0%e5%88%99%e4%bf%9d%e7%95%99%e4%b8%a4%e4%bd%8d.html" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/27/540/">caffe error</a>
+      <a class="article-title" href="/2019/01/25/632/">iOS小数点格式化：如果有两位小数不为0则保留两位小数，如果有一位小数不为0则保留一位小数，否则显示整数</a>
     </h1>
   
 
@@ -474,7 +524,7 @@ node module error?
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2018/09/27/540/" class="article-date"><time datetime="2018-09-26T23:32:54.000Z" itemprop="datePublished">2018-09-27</time></a>
+  <a href="/2019/01/25/632/" class="article-date"><time datetime="2019-01-24T22:26:22.000Z" itemprop="datePublished">2019-01-25</time></a>
 </div>
 
     <div class="article-author">admin</div>
@@ -489,11 +539,9 @@ node module error?
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="caffe-error"><a href="#caffe-error" class="headerlink" title="caffe error"></a>caffe error</h3><pre><code class="language-bash line-numbers">erro datum_channels &gt; 0 (0 vs. 0) #5114
-create db with A total of 0 images.
-
-channel mistch
-picture gray or RGB ?
+        <p>iOS小数点格式化：如果有两位小数不为0则保留两位小数，如果有一位小数不为0则保留一位小数，否则显示整数</p>
+<pre><code class="language-bash line-numbers">NSString * priceStr = [NSString stringWithFormat:@"%.2lf",price];
+_totalPriceLabel.text = [NSString stringWithFormat:@"%@%@",RMB,@(priceStr.floatValue)];
 </code></pre>
       
     </div>
@@ -504,7 +552,7 @@ picture gray or RGB ?
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2018/09/27/540/" data-id="cjslpq2td004ybqu3u24q3cvf" class="article-share-link">
+      <a data-url="https://hw-1.github.io/2019/01/25/632/" data-id="cjzkyfb2b0066hmmphmv447vw" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -518,13 +566,13 @@ picture gray or RGB ?
 
 
   
-    <article id="post-/2018/09/osx-10-13-6-install-caffe.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-/2019/01/magicalrecord%e9%bb%98%e8%ae%a4%e4%b8%bb%e9%94%ae.html" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/11/536/">osx 10.13.6 install caffe</a>
+      <a class="article-title" href="/2019/01/25/630/">MagicalRecord默认主键</a>
     </h1>
   
 
@@ -533,7 +581,7 @@ picture gray or RGB ?
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2018/09/11/536/" class="article-date"><time datetime="2018-09-10T17:10:39.000Z" itemprop="datePublished">2018-09-11</time></a>
+  <a href="/2019/01/25/630/" class="article-date"><time datetime="2019-01-24T22:25:37.000Z" itemprop="datePublished">2019-01-25</time></a>
 </div>
 
     <div class="article-author">admin</div>
@@ -548,22 +596,8 @@ picture gray or RGB ?
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="osx-10-13-6-install-caffe"><a href="#osx-10-13-6-install-caffe" class="headerlink" title="osx 10.13.6 install caffe"></a>osx 10.13.6 install caffe</h3><pre><code class="language-bash line-numbers">
-osx caffe install
-sudo port clean all
-sudo port install py27-protobuf @2.6.1_2
-//boost 1.67.0_1
-brew install  boost@1.67 hdf5@1.10
+        <p>实体类的默认主键是MagicalRecord中的<entity>ID 。</entity></p>
 
-git clone https://github.com/BVLC/caffe.git
-cd caffe
-cp Makefile.config.example Makefile.config
-
-CPU_ONLY := 1
-INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /opt/local/include
-LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib  /opt/local/lib
-OPENCV_VERSION := 3
-</code></pre>
       
     </div>
 
@@ -573,7 +607,7 @@ OPENCV_VERSION := 3
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2018/09/11/536/" data-id="cjslpq2tb004wbqu3tdsw9gbj" class="article-share-link">
+      <a data-url="https://hw-1.github.io/2019/01/25/630/" data-id="cjzkyfb2c006ahmmp26789cw9" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -587,13 +621,13 @@ OPENCV_VERSION := 3
 
 
   
-    <article id="post-/2018/08/semirestore11-for-ios-11-3-1.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-/2019/01/phasset%e6%a1%86%e6%9e%b6%e9%87%8c%e9%9d%a2%e7%9a%84phimagemanager%e8%8e%b7%e5%8f%96%e5%8e%9f%e5%9b%be%e5%86%85%e5%ad%98%e8%bf%87%e9%ab%98%e5%b4%a9%e6%ba%83.html" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/21/533/">SemiRestore11 for ios 11.3.1</a>
+      <a class="article-title" href="/2019/01/17/625/">PHAsset框架里面的PHImageManager获取原图内存过高崩溃</a>
     </h1>
   
 
@@ -602,7 +636,7 @@ OPENCV_VERSION := 3
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2018/08/21/533/" class="article-date"><time datetime="2018-08-20T18:34:52.000Z" itemprop="datePublished">2018-08-21</time></a>
+  <a href="/2019/01/17/625/" class="article-date"><time datetime="2019-01-16T17:51:25.000Z" itemprop="datePublished">2019-01-17</time></a>
 </div>
 
     <div class="article-author">admin</div>
@@ -617,7 +651,7 @@ OPENCV_VERSION := 3
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="SemiRestore11-for-ios-11-3-1"><a href="#SemiRestore11-for-ios-11-3-1" class="headerlink" title="SemiRestore11 for ios 11.3.1"></a>SemiRestore11 for ios 11.3.1</h3><p>Rollectra / SemiRestore11 1.0.1 Update!!<br><a href="https://repo.packix.com/" target="_blank" rel="noopener">https://repo.packix.com/</a></p>
+        <p>在iOS开发中我们有时候需要从Photos框架中获取的phasset转化为uiimage,PHAsset框架给我们提供了两个方法一个是PHImageManager的requestImageForAsset这个方法是通过Phasset直接获取到uiimage对象,可能很多人会使用这个方法,但是这有一个巨坑,就是你转化完之后,获得了uiimage对象,但是当你的图片很大的时候,那么极有可能会导致app崩溃<br>还有一个方法是PHImageManager的requestImageDataForAsset方法,这个方法是吧Phasset转化为nsdata对象,我们拿到nsdata对象可以转化为uiimage对象,这样的话可以解决内存暴涨的问题.<br>原因是因为requestImageForAsset会对图片进行渲染,所以导致内存暴涨不下,而requestImageDataForAsset则是直接返回二进制数据,所以内存不会出现暴涨的现象.</p>
 
       
     </div>
@@ -628,7 +662,7 @@ OPENCV_VERSION := 3
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2018/08/21/533/" data-id="cjslpq2tb004ubqu3o1k91614" class="article-share-link">
+      <a data-url="https://hw-1.github.io/2019/01/17/625/" data-id="cjzkyfb290062hmmphy0su2ca" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -642,13 +676,13 @@ OPENCV_VERSION := 3
 
 
   
-    <article id="post-/2018/08/turn-off-macos-system-integrity-protection-sip-check.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-/2019/01/attempt-to-delete-row-containing-first-responder-that-refused-to-resign.html" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/17/528/">turn off macOS System Integrity Protection (SIP) check</a>
+      <a class="article-title" href="/2019/01/09/622/">Attempt to delete row containing first responder that refused to resign</a>
     </h1>
   
 
@@ -657,7 +691,7 @@ OPENCV_VERSION := 3
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2018/08/17/528/" class="article-date"><time datetime="2018-08-16T22:28:56.000Z" itemprop="datePublished">2018-08-17</time></a>
+  <a href="/2019/01/09/622/" class="article-date"><time datetime="2019-01-08T19:29:40.000Z" itemprop="datePublished">2019-01-09</time></a>
 </div>
 
     <div class="article-author">admin</div>
@@ -672,12 +706,11 @@ OPENCV_VERSION := 3
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="turn-off-macOS-System-Integrity-Protection-SIP-check"><a href="#turn-off-macOS-System-Integrity-Protection-SIP-check" class="headerlink" title="turn off macOS System Integrity Protection (SIP) check"></a>turn off macOS System Integrity Protection (SIP) check</h4><p>OS X El Capitan introduced a new Security Feature called System Integrity Protection. With System Integrity Protection Bartender 1 needs additional setup steps performed before it can control Apple menu bar items such as Notification Center, Battery, WiFi etc. Bartender 1 can still control menu bar apps fine, without these additional steps.</p>
-<p>Unfortunately we cannot automate all of the setup and Bartender 1 will need you to temporarily disable System Integrity Protection to allow it to install its System Item control component, System integrity Protection can then be re-enabled.</p>
-<p>Apple have made the steps to temporarily disable SIP quite difficult, so we now recommend only performing these steps if you really must control Apple Menu Items with Bartender</p>
-<p>1 Restart your Mac, and as soon as the screen turns black hold down command+ R<br>2 Now click on the &#8220;Utilities&#8221; menu, and then &#8220;Terminal&#8221;.<br>3 In the Terminal Window that opens type:</p>
-<pre><code class="language-bash line-numbers">
-csrutil disable 
+        <h3 id="Attempt-to-delete-row-containing-first-responder-that-refused-to-resign"><a href="#Attempt-to-delete-row-containing-first-responder-that-refused-to-resign" class="headerlink" title="Attempt to delete row containing first responder that refused to resign"></a>Attempt to delete row containing first responder that refused to resign</h3><p>I&#8217;ve never seen that message before, but my immediate impulse if I were to see it would be: try delayed performance. Even something as simple as this might be an interesting experiment:</p>
+<pre><code class="language-bash line-numbers">dispatch_async(dispatch_get_main_queue(), ^{
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] 
+     withRowAnimation:UITableViewRowAnimationAutomatic];
+});
 </code></pre>
       
     </div>
@@ -688,7 +721,7 @@ csrutil disable
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2018/08/17/528/" data-id="cjslpq2ta004sbqu3ir2jrfbn" class="article-share-link">
+      <a data-url="https://hw-1.github.io/2019/01/09/622/" data-id="cjzkyfb290060hmmpw3kglr55" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -705,7 +738,7 @@ csrutil disable
 
 
   <div id="page-nav">
-    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/page/2/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li class="active"><span class="page-number">3</span></li><li><a class="page-number" href="/page/4/">4</a></li><li><a class="page-number" href="/page/5/">5</a></li><li class="disabled"><span class="page-space">&hellip;</span></li><li><a class="page-number" href="/page/13/">13</a></li><li><a class="page-next" rel="next" href="/page/4/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
+    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/page/2/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li class="active"><span class="page-number">3</span></li><li><a class="page-number" href="/page/4/">4</a></li><li><a class="page-number" href="/page/5/">5</a></li><li class="disabled"><span class="page-space">&hellip;</span></li><li><a class="page-number" href="/page/15/">15</a></li><li><a class="page-next" rel="next" href="/page/4/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
   </div>
 
 
@@ -723,7 +756,7 @@ csrutil disable
   
   <div class="sidebar-module">
     <h4>Categories</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Uncategorized/">Uncategorized</a><span class="sidebar-module-list-count">111</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Uncategorized/">Uncategorized</a><span class="sidebar-module-list-count">133</span></li></ul>
   </div>
 
 
@@ -736,7 +769,7 @@ csrutil disable
   
   <div class="sidebar-module">
     <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/08/">August 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/06/">June 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
   </div>
 
 
@@ -747,23 +780,23 @@ csrutil disable
     <ul class="sidebar-module-list">
       
         <li>
-          <a href="/2019/02/15/645/">Easy network monitoring even on non-jailbroken iOS</a>
+          <a href="/2019/08/07/729/">Unable to install (Error: &amp;#8216;cstring&amp;#8217; file not found) &amp;#8211; MacOS Mojave #162</a>
         </li>
       
         <li>
-          <a href="/2019/02/12/640/">iOS事件的分发机制和响应者链(Swift)</a>
+          <a href="/2019/07/31/723/">“XXX.app can&amp;#8217;t be opened. You should move it to trash.” for flash projector applications on mac os sierra</a>
         </li>
       
         <li>
-          <a href="/2019/01/25/636/">jenkins忘记管理员账号登录密码如何修改管理员账号</a>
+          <a href="/2019/07/27/721/">How to Fix mds_stores Consuming High CPU Usage on Mac</a>
         </li>
       
         <li>
-          <a href="/2019/01/25/634/">iOS 数组集合操作（交集，并集，差集，子集）</a>
+          <a href="/2019/07/27/719/">Operation not permitted while System Integrity Protection is engaged</a>
         </li>
       
         <li>
-          <a href="/2019/01/25/632/">iOS小数点格式化：如果有两位小数不为0则保留两位小数，如果有一位小数不为0则保留一位小数，否则显示整数</a>
+          <a href="/2019/07/05/716/">networkextension connect: No route to host</a>
         </li>
       
     </ul>
