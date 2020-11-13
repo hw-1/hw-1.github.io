@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>IDA逆向常用宏定义 | hw-1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="IDA逆向常用宏定义 [bash] &#x2F;* This file contains definitions used by the Hex-Rays decompiler output. It has type definitions and convenience macros to make the output more readable. Copyright (c) 2007-2011 Hex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IDA逆向常用宏定义">
+<meta property="og:url" content="http://wirelessbox.net/2020/10/30/ida%E9%80%86%E5%90%91%E5%B8%B8%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89/index.html">
+<meta property="og:site_name" content="hw-1">
+<meta property="og:description" content="IDA逆向常用宏定义 [bash] &#x2F;* This file contains definitions used by the Hex-Rays decompiler output. It has type definitions and convenience macros to make the output more readable. Copyright (c) 2007-2011 Hex">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-30T09:39:15.000Z">
+<meta property="article:modified_time" content="2020-11-13T08:43:50.325Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  
+<link rel="stylesheet" href="/hw-1/css/styles.css">
+
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/hw-1/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/hw-1/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">hw-1</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-ida逆向常用宏定义" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      IDA逆向常用宏定义
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/hw-1/2020/10/30/ida%E9%80%86%E5%90%91%E5%B8%B8%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89/" class="article-date"><time datetime="2020-10-30T09:39:15.000Z" itemprop="datePublished">2020-10-30</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>IDA逆向常用宏定义 [bash] /* This file contains definitions used by the Hex-Rays decompiler output. It has type definitions and convenience macros to make the output more readable. Copyright (c) 2007-2011 Hex-Rays */ #if defined(__GNUC__) typedef long long ll; typedef unsigned long long ull; #define __int64 long long #define __int32 int #define __int16 short #define __int8 char #define MAKELL(num) num ## LL #define FMT_64 “ll” #elif defined(_MSC_VER) typedef __int64 ll; typedef unsigned __int64 ull; #define MAKELL(num) num ## i64 #define FMT_64 “I64” #elif defined (__BORLANDC__) typedef __int64 ll; typedef unsigned __int64 ull; #define MAKELL(num) num ## i64 #define FMT_64 “L” #else #error “unknown compiler” #endif typedef unsigned int uint; typedef unsigned char uchar; typedef unsigned short ushort; typedef unsigned long ulong; typedef char int8; typedef signed char sint8; typedef unsigned char uint8; typedef short int16; typedef signed short sint16; typedef unsigned short uint16; typedef int int32; typedef signed int sint32; typedef unsigned int uint32; typedef ll int64; typedef ll sint64; typedef ull uint64; // Partially defined types: #define _BYTE uint8 #define _WORD uint16 #define _DWORD uint32 #define _QWORD uint64 #if !defined(_MSC_VER) #define _LONGLONG __int128 #endif #ifndef _WINDOWS_ typedef int8 BYTE; typedef int16 WORD; typedef int32 DWORD; typedef int32 LONG; #endif typedef int64 QWORD; #ifndef __cplusplus typedef int bool; // we want to use bool in our C programs #endif // Some convenience macros to make partial accesses nicer // first unsigned macros: #define LOBYTE(x) (*((_BYTE*)&amp;(x))) // low byte #define LOWORD(x) (*((_WORD*)&amp;(x))) // low word #define LODWORD(x) (*((_DWORD*)&amp;(x))) // low dword #define HIBYTE(x) (*((_BYTE*)&amp;(x)+1)) #define HIWORD(x) (*((_WORD*)&amp;(x)+1)) #define HIDWORD(x) (*((_DWORD*)&amp;(x)+1)) #define BYTEn(x, n) (*((_BYTE*)&amp;(x)+n)) #define WORDn(x, n) (*((_WORD*)&amp;(x)+n)) #define BYTE1(x) BYTEn(x, 1) // byte 1 (counting from 0) #define BYTE2(x) BYTEn(x, 2) #define BYTE3(x) BYTEn(x, 3) #define BYTE4(x) BYTEn(x, 4) #define BYTE5(x) BYTEn(x, 5) #define BYTE6(x) BYTEn(x, 6) #define BYTE7(x) BYTEn(x, 7) #define BYTE8(x) BYTEn(x, 8) #define BYTE9(x) BYTEn(x, 9) #define BYTE10(x) BYTEn(x, 10) #define BYTE11(x) BYTEn(x, 11) #define BYTE12(x) BYTEn(x, 12) #define BYTE13(x) BYTEn(x, 13) #define BYTE14(x) BYTEn(x, 14) #define BYTE15(x) BYTEn(x, 15) #define WORD1(x) WORDn(x, 1) #define WORD2(x) WORDn(x, 2) // third word of the object, unsigned #define WORD3(x) WORDn(x, 3) #define WORD4(x) WORDn(x, 4) #define WORD5(x) WORDn(x, 5) #define WORD6(x) WORDn(x, 6) #define WORD7(x) WORDn(x, 7) // now signed macros (the same but with sign extension) #define SLOBYTE(x) (*((int8*)&amp;(x))) #define SLOWORD(x) (*((int16*)&amp;(x))) #define SLODWORD(x) (*((int32*)&amp;(x))) #define SHIBYTE(x) (*((int8*)&amp;(x)+1)) #define SHIWORD(x) (*((int16*)&amp;(x)+1)) #define SHIDWORD(x) (*((int32*)&amp;(x)+1)) #define SBYTEn(x, n) (*((int8*)&amp;(x)+n)) #define SWORDn(x, n) (*((int16*)&amp;(x)+n)) #define SBYTE1(x) SBYTEn(x, 1) #define SBYTE2(x) SBYTEn(x, 2) #define SBYTE3(x) SBYTEn(x, 3) #define SBYTE4(x) SBYTEn(x, 4) #define SBYTE5(x) SBYTEn(x, 5) #define SBYTE6(x) SBYTEn(x, 6) #define SBYTE7(x) SBYTEn(x, 7) #define SBYTE8(x) SBYTEn(x, 8) #define SBYTE9(x) SBYTEn(x, 9) #define SBYTE10(x) SBYTEn(x, 10) #define SBYTE11(x) SBYTEn(x, 11) #define SBYTE12(x) SBYTEn(x, 12) #define SBYTE13(x) SBYTEn(x, 13) #define SBYTE14(x) SBYTEn(x, 14) #define SBYTE15(x) SBYTEn(x, 15) #define SWORD1(x) SWORDn(x, 1) #define SWORD2(x) SWORDn(x, 2) #define SWORD3(x) SWORDn(x, 3) #define SWORD4(x) SWORDn(x, 4) #define SWORD5(x) SWORDn(x, 5) #define SWORD6(x) SWORDn(x, 6) #define SWORD7(x) SWORDn(x, 7) // Helper functions to represent some assembly instructions. #ifdef __cplusplus // Fill memory block with an integer value inline void memset32(void *ptr, uint32 value, int count) { uint32 *p = (uint32 *)ptr; for ( int i=0; i &lt; count; i++ ) *p++ = value; } // Generate a reference to pair of operands template<class T> int16 __PAIR__( int8 high, T low) { return ((( int16)high) &lt;&lt; sizeof(high)*8) uint8(low); } template<class T> int32 __PAIR__( int16 high, T low) { return ((( int32)high) &lt;&lt; sizeof(high)*8) uint16(low); } template<class T> int64 __PAIR__( int32 high, T low) { return ((( int64)high) &lt;&lt; sizeof(high)*8) uint32(low); } template<class T> uint16 __PAIR__(uint8 high, T low) { return (((uint16)high) &lt;&lt; sizeof(high)*8) uint8(low); } template<class T> uint32 __PAIR__(uint16 high, T low) { return (((uint32)high) &lt;&lt; sizeof(high)*8) uint16(low); } template<class T> uint64 __PAIR__(uint32 high, T low) { return (((uint64)high) &lt;&lt; sizeof(high)*8) uint32(low); } // rotate left template<class T> T __ROL__(T value, uint count) { const uint nbits = sizeof(T) * 8; count %= nbits; T high = value &gt;&gt; (nbits - count); value &lt;&lt;= count; value = high; return value; } // rotate right template<class T> T __ROR__(T value, uint count) { const uint nbits = sizeof(T) * 8; count %= nbits; T low = value &lt;&lt; (nbits - count); value &gt;&gt;= count; value = low; return value; } // carry flag of left shift template<class T> int8 __MKCSHL__(T value, uint count) { const uint nbits = sizeof(T) * 8; count %= nbits; return (value &gt;&gt; (nbits-count)) &amp; 1; } // carry flag of right shift template<class T> int8 __MKCSHR__(T value, uint count) { return (value &gt;&gt; (count-1)) &amp; 1; } // sign flag template<class T> int8 __SETS__(T x) { if ( sizeof(T) == 1 ) return int8(x) &lt; 0; if ( sizeof(T) == 2 ) return int16(x) &lt; 0; if ( sizeof(T) == 4 ) return int32(x) &lt; 0; return int64(x) &lt; 0; } // overflow flag of subtraction (x-y) template&lt;class T, class U&gt; int8 __OFSUB__(T x, U y) { if ( sizeof(T) &lt; sizeof(U) ) { U x2 = x; int8 sx = __SETS__(x2); return (sx ^ __SETS__(y)) &amp; (sx ^ __SETS__(x2-y)); } else { T y2 = y; int8 sx = __SETS__(x); return (sx ^ __SETS__(y2)) &amp; (sx ^ __SETS__(x-y2)); } } // overflow flag of addition (x+y) template&lt;class T, class U&gt; int8 __OFADD__(T x, U y) { if ( sizeof(T) &lt; sizeof(U) ) { U x2 = x; int8 sx = __SETS__(x2); return ((1 ^ sx) ^ __SETS__(y)) &amp; (sx ^ __SETS__(x2+y)); } else { T y2 = y; int8 sx = __SETS__(x); return ((1 ^ sx) ^ __SETS__(y2)) &amp; (sx ^ __SETS__(x+y2)); } } // carry flag of subtraction (x-y) template&lt;class T, class U&gt; int8 __CFSUB__(T x, U y) { int size = sizeof(T) &gt; sizeof(U) ? sizeof(T) : sizeof(U); if ( size == 1 ) return uint8(x) &lt; uint8(y); if ( size == 2 ) return uint16(x) &lt; uint16(y); if ( size == 4 ) return uint32(x) &lt; uint32(y); return uint64(x) &lt; uint64(y); } // carry flag of addition (x+y) template&lt;class T, class U&gt; int8 __CFADD__(T x, U y) { int size = sizeof(T) &gt; sizeof(U) ? sizeof(T) : sizeof(U); if ( size == 1 ) return uint8(x) &gt; uint8(x+y); if ( size == 2 ) return uint16(x) &gt; uint16(x+y); if ( size == 4 ) return uint32(x) &gt; uint32(x+y); return uint64(x) &gt; uint64(x+y); } #else // The following definition is not quite correct because it always returns // uint64. The above C++ functions are good, though. #define __PAIR__(high, low) (((uint64)(high)&lt;&lt;sizeof(high)*8) low) // For C, we just provide macros, they are not quite correct. #define __ROL__(x, y) __rotl__(x, y) // Rotate left #define __ROR__(x, y) __rotr__(x, y) // Rotate right #define __CFSHL__(x, y) invalid_operation // Generate carry flag for (x&lt;&lt;y) #define __CFSHR__(x, y) invalid_operation // Generate carry flag for (x&gt;&gt;y) #define __CFADD__(x, y) invalid_operation // Generate carry flag for (x+y) #define __CFSUB__(x, y) invalid_operation // Generate carry flag for (x-y) #define __OFADD__(x, y) invalid_operation // Generate overflow flag for (x+y) #define __OFSUB__(x, y) invalid_operation // Generate overflow flag for (x-y) #endif // No definition for rcl/rcr because the carry flag is unknown #define __RCL__(x, y) invalid_operation // Rotate left thru carry #define __RCR__(x, y) invalid_operation // Rotate right thru carry #define __MKCRCL__(x, y) invalid_operation // Generate carry flag for a RCL #define __MKCRCR__(x, y) invalid_operation // Generate carry flag for a RCR #define __SETP__(x, y) invalid_operation // Generate parity flag for (x-y) // In the decompilation listing there are some objects declarared as _UNKNOWN // because we could not determine their types. Since the C compiler does not // accept void item declarations, we replace them by anything of our choice, // for example a char: #define _UNKNOWN char #ifdef _MSC_VER #define snprintf _snprintf #define vsnprintf _vsnprintf #endif [/bash]</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://wirelessbox.net/2020/10/30/ida%E9%80%86%E5%90%91%E5%B8%B8%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89/" data-id="ckhg2azzz003233my1ep55xue" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/hw-1/2020/10/30/use-xcode-debug-macos-app/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Use Xcode debug Macos App</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/hw-1/2020/11/04/sourcetree-set-git-repo-username-password/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">sourceTree set git repo username password</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/categories/uncategorized/">uncategorized</a><span class="sidebar-module-list-count">186</span></li></ul>
+  </div>
+
+
+
+  
+
+
+  
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/11/">November 2020</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/10/">October 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/09/">September 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/08/">August 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/03/">March 2020</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/02/">February 2020</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/01/">January 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/12/">December 2019</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/11/">November 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/08/">August 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/06/">June 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/hw-1/2020/11/11/%E6%B2%BB%E6%84%88%E7%B3%BB%E8%AF%BE%E7%A8%8B-%E4%B8%83%E5%A4%A7%E4%BD%93%E7%B3%BB%E5%85%AB%E5%A4%A7%E5%85%85%E8%8A%82%E5%AE%8C%E6%95%B4%E7%89%88/">治愈系课程-七大体系八大充节完整版 - 免费下载</a>
+        </li>
+      
+        <li>
+          <a href="/hw-1/2020/11/06/%E8%BD%BB%E6%9D%BE%E8%A7%A3%E5%86%B3tensorflow%E6%8A%A5%E9%94%99illegal-instruction-core-dumped/">轻松解决Tensorflow报错illegal instruction (core dumped)</a>
+        </li>
+      
+        <li>
+          <a href="/hw-1/2020/11/06/ios-build-failed-at-compile-time-with-issue-failed-to-find-a-suitable-device-for-the-type-simdevicetype/">iOS Build Failed at compile time with issue “failed to find a suitable device for the type SimDeviceType”</a>
+        </li>
+      
+        <li>
+          <a href="/hw-1/2020/11/05/privacy-data-collection-and-storage-reject/">Privacy - Data Collection and Storage Reject</a>
+        </li>
+      
+        <li>
+          <a href="/hw-1/2020/11/04/sourcetree-set-git-repo-username-password/">sourceTree set git repo username password</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2020 hw-1<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/hw-1/js/script.js"></script>
+
+
+</body>
+</html>
