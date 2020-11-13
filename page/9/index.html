@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
-  <title>hw-1</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="hw-1">
-<meta property="og:url" content="https://hw-1.github.io/page/9/index.html">
-<meta property="og:site_name" content="hw-1">
-<meta property="og:locale" content="default">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://wirelessbox.net/page/9/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hw-1">
   
-    <link rel="alternate" href="/atom.xml" title="hw-1" type="application/atom+xml">
+    <link rel="alternate" href="/hw-1/atom.xml" title="Hexo" type="application/atom+xml">
   
   
   
@@ -24,11 +24,13 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="/css/styles.css">
+  
+<link rel="stylesheet" href="/hw-1/css/styles.css">
+
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
 <body>
   <nav class="navbar navbar-inverse">
   <div class="container">
@@ -47,9 +49,11 @@
     <div class="collapse navbar-collapse" id="main-menu-navbar">
       <ul class="nav navbar-nav">
         
-          <li><a class="" href="/index.html">Home</a></li>
+          <li><a class=""
+                 href="/hw-1/index.html">Home</a></li>
         
-          <li><a class="" href="/archives/">Archives</a></li>
+          <li><a class=""
+                 href="/hw-1/archives/">Archives</a></li>
         
       </ul>
 
@@ -66,7 +70,7 @@
 
   <div class="container">
     <div class="blog-header">
-  <h1 class="blog-title">hw-1</h1>
+  <h1 class="blog-title">Hexo</h1>
   
 </div>
 
@@ -74,13 +78,13 @@
         <div class="col-sm-8 blog-main">
           
   
-    <article id="post-/2017/11/install-webdav-on-raspberry-pi.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-python-virtualenv-for-osx" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/16/445/">install webdav on raspberry pi</a>
+      <a class="article-title" href="/hw-1/2018/11/14/python-virtualenv-for-osx/">python virtualenv for osx</a>
     </h1>
   
 
@@ -89,13 +93,13 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2017/11/16/445/" class="article-date"><time datetime="2017-11-16T02:46:27.000Z" itemprop="datePublished">2017-11-16</time></a>
+  <a href="/hw-1/2018/11/14/python-virtualenv-for-osx/" class="article-date"><time datetime="2018-11-14T03:38:39.000Z" itemprop="datePublished">2018-11-14</time></a>
 </div>
 
-    <div class="article-author">admin</div>
+    
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
   </div>
 
 
@@ -104,33 +108,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="install-webdav-on-raspberry-pi"><a href="#install-webdav-on-raspberry-pi" class="headerlink" title="install webdav on raspberry pi"></a>install webdav on raspberry pi</h2><pre><code class="language-bash line-numbers">
-sudo apt-get  install  -y apache2 vim
-sudo a2enmod dav
-sudo a2enmod dav_fs
-sudo mkdir -p /var/www/webdav
+        <p>###python virtualenv for osx [bash]pip_install virtualenv pip_install virtualenvwrapper // export WORKON_HOME=`pwd` source ~/Library/Python/2.7/bin/virtualenvwrapper.sh lsvirtualenv -b mkvirtualenv pyzk workon pyzk lssitepackages cdvirtualenv cdsitepackages cdsitepackages pip cpvirtualenv env1 env3 rmvirtualenv env2 deactivate [/bash]</p>
 
-sudo vim /etc/apache2/sites-available/000-default.conf
-
-Alias /webdav  /var/www/webdav
-
-&lt;Location /webdav&gt;
- Options Indexes
- DAV On
- AuthType Basic
- AuthName "webdav"
- AuthUserFile /etc/apache2/webdav.password
- Require valid-user
- &lt;/Location&gt;
-
- sudo htpasswd -c /etc/apache2/webdav.password pi
- sudo chown root:www-data /etc/apache2/webdav.password
- sudo chmod 640 /etc/apache2/webdav.password
-
- sudo chown -R www-data:www-data  /var/www/webdav
-
-sudo systemctl restart apache2
-</code></pre>
       
     </div>
 
@@ -140,7 +119,7 @@ sudo systemctl restart apache2
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2017/11/16/445/" data-id="cjzkyfb1d0036hmmp9iyk8g63" class="article-share-link">
+      <a data-url="https://wirelessbox.net/2018/11/14/python-virtualenv-for-osx/" data-id="ckhg1bw5600624hmy8t6ygsdx" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -154,13 +133,13 @@ sudo systemctl restart apache2
 
 
   
-    <article id="post-/2017/10/arp-scan-usage.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-github-fork-update" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/12/439/">arp-scan usage</a>
+      <a class="article-title" href="/hw-1/2018/11/14/github-fork-update/">github fork update</a>
     </h1>
   
 
@@ -169,13 +148,13 @@ sudo systemctl restart apache2
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2017/10/12/439/" class="article-date"><time datetime="2017-10-11T22:15:43.000Z" itemprop="datePublished">2017-10-12</time></a>
+  <a href="/hw-1/2018/11/14/github-fork-update/" class="article-date"><time datetime="2018-11-14T03:37:49.000Z" itemprop="datePublished">2018-11-14</time></a>
 </div>
 
-    <div class="article-author">admin</div>
+    
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
   </div>
 
 
@@ -184,14 +163,8 @@ sudo systemctl restart apache2
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="arp-scan-usage"><a href="#arp-scan-usage" class="headerlink" title="arp-scan usage"></a>arp-scan usage</h3><pre><code class="language-bash line-numbers">
-#scan
-arp-scan --interface=eth1 -l
-#update oui
-get-oui -v
-#update iab
-get-iab -v
-</code></pre>
+        <p>###github fork update [bash]//github fork update git remote -v git remote add upstream <a target="_blank" rel="noopener" href="https://github.com/ORIGINAL/_OWNER/ORIGINAL/_REPOSITORY.git">https://github.com/ORIGINAL\_OWNER/ORIGINAL\_REPOSITORY.git</a> git fetch upstream git checkout master git merge upstream/master git push origin master [/bash]</p>
+
       
     </div>
 
@@ -201,7 +174,7 @@ get-iab -v
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2017/10/12/439/" data-id="cjzkyfb1c0034hmmp2wzmxu0b" class="article-share-link">
+      <a data-url="https://wirelessbox.net/2018/11/14/github-fork-update/" data-id="ckhg1bw3y001u4hmyggi510oq" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -215,13 +188,13 @@ get-iab -v
 
 
   
-    <article id="post-/2017/09/build-ios-device-fails-due-no-crt_extern.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-osx-install-torch-and-fast-neural-style" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/22/434/">Build for iOS (device) fails due to no crt_extern</a>
+      <a class="article-title" href="/hw-1/2018/11/02/osx-install-torch-and-fast-neural-style/">osx install torch and fast neural style</a>
     </h1>
   
 
@@ -230,13 +203,13 @@ get-iab -v
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2017/09/22/434/" class="article-date"><time datetime="2017-09-21T22:24:20.000Z" itemprop="datePublished">2017-09-22</time></a>
+  <a href="/hw-1/2018/11/02/osx-install-torch-and-fast-neural-style/" class="article-date"><time datetime="2018-11-02T07:03:11.000Z" itemprop="datePublished">2018-11-02</time></a>
 </div>
 
-    <div class="article-author">admin</div>
+    
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
   </div>
 
 
@@ -245,7 +218,7 @@ get-iab -v
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Build-for-iOS-device-fails-due-to-no-crt-extern"><a href="#Build-for-iOS-device-fails-due-to-no-crt-extern" class="headerlink" title="Build for iOS (device) fails due to no crt_extern"></a>Build for iOS (device) fails due to no crt_extern</h3><p><a href="https://trac.osgeo.org/gdal/ticket/5197" target="_blank">Build for iOS (device) fails due to no crt_extern</a></p>
+        <p>###osx install torch and fast neural style [bash]<br>lua/5.1/hdf5/ffi.lua:56: ‘)’ expected near ‘_close’ at line 1478 Edit ffi.lua line 44, change local process = io.popen(“gcc -E “ .. headerPath) – TODO pass -I to local process = io.popen(“gcc -D ‘_Nullable=’ -E “ .. headerPath) – TODO pass -I. luarocks install hdf5 brew install <a href="mailto:&#x68;&#100;&#102;&#x35;&#x40;&#49;&#x2e;&#x38;">&#x68;&#100;&#102;&#x35;&#x40;&#49;&#x2e;&#x38;</a> export LDFLAGS=”-L/usr/local/opt/hdf5@1.8/lib” export CPPFLAGS=”-I/usr/local/opt/hdf5@1.8/include” hdf5._config = { HDF5_INCLUDE_PATH = “/usr/local/opt/hdf5@1.8/lib”, HDF5_LIBRARIES = “/usr/local/opt/hdf5@1.8/lib/libhdf5.dylib;/usr/local/lib/libsz.dylib;/usr/lib/libz.dylib;/usr/lib/libdl.dylib;/usr/lib/libm.dylib” } // wget <a target="_blank" rel="noopener" href="http://msvocds.blob.core.windows.net/coco2014/train2014.zip">http://msvocds.blob.core.windows.net/coco2014/train2014.zip</a> // wget <a target="_blank" rel="noopener" href="http://msvocds.blob.core.windows.net/coco2014/val2014.zip">http://msvocds.blob.core.windows.net/coco2014/val2014.zip</a> wget <a target="_blank" rel="noopener" href="http://images.cocodataset.org/zips/train2014.zip">http://images.cocodataset.org/zips/train2014.zip</a> wget <a target="_blank" rel="noopener" href="http://images.cocodataset.org/zips/val2014.zip">http://images.cocodataset.org/zips/val2014.zip</a> jar xvf train2014.zip jar xvf val2014.zip python scripts/make_style_dataset.py \ –train_dir train2014 \ –val_dir val2014 \ –output_file data/ms-coco-256.h5 [/bash]</p>
 
       
     </div>
@@ -256,7 +229,7 @@ get-iab -v
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2017/09/22/434/" data-id="cjzkyfb1b0030hmmp2pap1s8s" class="article-share-link">
+      <a data-url="https://wirelessbox.net/2018/11/02/osx-install-torch-and-fast-neural-style/" data-id="ckhg1bw4y005c4hmydmohdllb" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -270,13 +243,13 @@ get-iab -v
 
 
   
-    <article id="post-/2017/09/use-posix_spawn-replace-deprecated-system-launch-opendiff-objective-c.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-iphone-usb-tethering-working-on-raspberry" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/22/432/">How do you use posix_spawn to replace the deprecated &amp;#8216;system&amp;#8217; to launch opendiff in Objective-C?</a>
+      <a class="article-title" href="/hw-1/2018/10/21/iphone-usb-tethering-working-on-raspberry/">iPhone USB tethering working on raspberry</a>
     </h1>
   
 
@@ -285,13 +258,13 @@ get-iab -v
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2017/09/22/432/" class="article-date"><time datetime="2017-09-21T22:22:32.000Z" itemprop="datePublished">2017-09-22</time></a>
+  <a href="/hw-1/2018/10/21/iphone-usb-tethering-working-on-raspberry/" class="article-date"><time datetime="2018-10-21T15:03:14.000Z" itemprop="datePublished">2018-10-21</time></a>
 </div>
 
-    <div class="article-author">admin</div>
+    
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
   </div>
 
 
@@ -300,33 +273,8 @@ get-iab -v
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="How-do-you-use-posix-spawn-to-replace-the-deprecated-8216-system-8217-to-launch-opendiff-in-Objective-C"><a href="#How-do-you-use-posix-spawn-to-replace-the-deprecated-8216-system-8217-to-launch-opendiff-in-Objective-C" class="headerlink" title="How do you use posix_spawn to replace the deprecated &#8216;system&#8217; to launch opendiff in Objective-C?"></a>How do you use posix_spawn to replace the deprecated &#8216;system&#8217; to launch opendiff in Objective-C?</h3><p>Using posix_spawn(), to answer your question:</p>
-<pre><code class="language-bash line-numbers">
-#include &lt;spawn.h&gt;
-extern char **environ;
-pid_t pid;
-char *argv[] = {
-    "/Applications/Xcode.app/Contents/Developer/usr/bin/opendiff",
-    "/Users/LukeSkywalker/Documents/doc1.rtf",
-    "/Users/LukeSkywalker/Documents/doc2.rtf",
-    NULL
-};
+        <h3 id="iPhone-USB-tethering-working-on-raspberry"><a href="#iPhone-USB-tethering-working-on-raspberry" class="headerlink" title="iPhone USB tethering working on raspberry"></a>iPhone USB tethering working on raspberry</h3><p>[bash]sudo apt -o Acquire::http::proxy=”<a href="http://172.24.1.149:8118&quot;">http://172.24.1.149:8118&quot;</a> install -y ipheth-utils libimobiledevice-dev libimobiledevice-utils usbmuxd ipheth-utils gvfs idevicepair unpair &amp;&amp; idevicepair pair ifuse sudo apt-get install gvfs ipheth-utils sudo apt-get install libimobiledevice-utils gvfs-backends gvfs-bin gvfs-fuse sudo apt-get install ifuse ifconfig -s [/bash]</p>
 
-posix_spawn(&pid, argv[0], NULL, NULL, argv, environ);
-waitpid(pid, NULL, 0);
-</code></pre>
-
-<p>Or, you could use NSTask:</p>
-<pre><code class="language-bash line-numbers">
-NSTask *task = [[NSTask alloc] init];
-task.launchPath = @"/Applications/Xcode.app/Contents/Developer/usr/bin/opendiff";
-task.arguments = [NSArray arrayWithObjects:
-                  @"/Users/LukeSkywalker/Documents/doc1.rtf",
-                  @"/Users/LukeSkywalker/Documents/doc2.rtf",
-                  nil];
-[task launch];
-[task waitUntilExit];
-</code></pre>
       
     </div>
 
@@ -336,7 +284,7 @@ task.arguments = [NSArray arrayWithObjects:
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2017/09/22/432/" data-id="cjzkyfb1c0032hmmp8jz7o8fv" class="article-share-link">
+      <a data-url="https://wirelessbox.net/2018/10/21/iphone-usb-tethering-working-on-raspberry/" data-id="ckhg1bw4j003w4hmy538jedli" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -350,13 +298,13 @@ task.arguments = [NSArray arrayWithObjects:
 
 
   
-    <article id="post-/2017/09/apt-get-action-via-http-proxy.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-raspberry-setlocale-lc-all-cannot-change-locale-en-us-utf-8" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/15/427/">apt-get action via  http proxy</a>
+      <a class="article-title" href="/hw-1/2018/10/21/raspberry-setlocale-lc-all-cannot-change-locale-en-us-utf-8/">raspberry  setlocale: LC_ALL: cannot change locale (en_US.UTF-8)</a>
     </h1>
   
 
@@ -365,13 +313,13 @@ task.arguments = [NSArray arrayWithObjects:
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2017/09/15/427/" class="article-date"><time datetime="2017-09-14T20:42:52.000Z" itemprop="datePublished">2017-09-15</time></a>
+  <a href="/hw-1/2018/10/21/raspberry-setlocale-lc-all-cannot-change-locale-en-us-utf-8/" class="article-date"><time datetime="2018-10-21T15:01:51.000Z" itemprop="datePublished">2018-10-21</time></a>
 </div>
 
-    <div class="article-author">admin</div>
+    
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
   </div>
 
 
@@ -380,10 +328,8 @@ task.arguments = [NSArray arrayWithObjects:
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="apt-get-action-via-http-proxy"><a href="#apt-get-action-via-http-proxy" class="headerlink" title="apt-get action via http proxy"></a>apt-get action via http proxy</h3><pre><code class="language-bash line-numbers">
-sudo apt-get -o Acquire::http::proxy="http://127.0.0.1:8118" update
-sudo apt-get -o Acquire::socks::proxy="socks://127.0.0.1:7070" update
-</code></pre>
+        <h3 id="raspberry-setlocale-LC-ALL-cannot-change-locale-en-US-UTF-8"><a href="#raspberry-setlocale-LC-ALL-cannot-change-locale-en-US-UTF-8" class="headerlink" title="raspberry setlocale: LC_ALL: cannot change locale (en_US.UTF-8)"></a>raspberry setlocale: LC_ALL: cannot change locale (en_US.UTF-8)</h3><p>Edit /etc/locale.gen and uncomment the line with en_US.UTF-8 e.g. sudo nano /etc/locale.gen uncomment line by deleting leading # [bash]sudo locale-gen en_US.UTF-8 sudo update-locale en_US.UTF-8 [/bash]</p>
+
       
     </div>
 
@@ -393,7 +339,7 @@ sudo apt-get -o Acquire::socks::proxy="socks://127.0.0.1:7070" update
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2017/09/15/427/" data-id="cjzkyfb1a002yhmmpac4voopw" class="article-share-link">
+      <a data-url="https://wirelessbox.net/2018/10/21/raspberry-setlocale-lc-all-cannot-change-locale-en-us-utf-8/" data-id="ckhg1bw5b006k4hmy18q0fxaj" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -407,13 +353,13 @@ sudo apt-get -o Acquire::socks::proxy="socks://127.0.0.1:7070" update
 
 
   
-    <article id="post-/2017/09/code-signing-error-xxx-not-support-provisioning-profiles-xxx-not-support-provisioning-profiles-provisioning-profile-no_signing-manually-specified-set-provisioning-profi.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-ubuntu-install-nginx-and-srs" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/14/423/">Code Signing Error: XXX does not support provisioning profiles. XXX does not support provisioning profiles, but provisioning profile NO_SIGNING/ has been manually specified. Set the provisioning profile value to &amp;#8220;Automatic&amp;#8221; in the build settings editor.</a>
+      <a class="article-title" href="/hw-1/2018/10/17/ubuntu-install-nginx-and-srs/">ubuntu install nginx and srs</a>
     </h1>
   
 
@@ -422,13 +368,13 @@ sudo apt-get -o Acquire::socks::proxy="socks://127.0.0.1:7070" update
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2017/09/14/423/" class="article-date"><time datetime="2017-09-13T19:42:53.000Z" itemprop="datePublished">2017-09-14</time></a>
+  <a href="/hw-1/2018/10/17/ubuntu-install-nginx-and-srs/" class="article-date"><time datetime="2018-10-17T01:58:50.000Z" itemprop="datePublished">2018-10-17</time></a>
 </div>
 
-    <div class="article-author">admin</div>
+    
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
   </div>
 
 
@@ -437,14 +383,8 @@ sudo apt-get -o Acquire::socks::proxy="socks://127.0.0.1:7070" update
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Code-Signing-Error-XXX-does-not-support-provisioning-profiles-XXX-does-not-support-provisioning-profiles-but-provisioning-profile-NO-SIGNING-has-been-manually-specified-Set-the-provisioning-profile-value-to-8220-Automatic-8221-in-the-build-settings-editor"><a href="#Code-Signing-Error-XXX-does-not-support-provisioning-profiles-XXX-does-not-support-provisioning-profiles-but-provisioning-profile-NO-SIGNING-has-been-manually-specified-Set-the-provisioning-profile-value-to-8220-Automatic-8221-in-the-build-settings-editor" class="headerlink" title="Code Signing Error: XXX does not support provisioning profiles. XXX does not support provisioning profiles, but provisioning profile NO_SIGNING/ has been manually specified. Set the provisioning profile value to &#8220;Automatic&#8221; in the build settings editor."></a>Code Signing Error: XXX does not support provisioning profiles. XXX does not support provisioning profiles, but provisioning profile NO_SIGNING/ has been manually specified. Set the provisioning profile value to &#8220;Automatic&#8221; in the build settings editor.</h3><p>add this code bottom of Podfile to solve this issuse</p>
-<pre><code class="language-bash line-numbers">
-post_install do |installer|
-    installer.pods_project.build_configurations.each do |config|
-        config.build_settings['PROVISIONING_PROFILE_SPECIFIER'] = ''
-    end
-end
-</code></pre>
+        <h3 id="ubuntu-install-nginx-and-srs"><a href="#ubuntu-install-nginx-and-srs" class="headerlink" title="ubuntu install nginx and srs"></a>ubuntu install nginx and srs</h3><p>[bash]//for Ubuntu sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test sudo apt-get update -y sudo apt-get install -y gcc-5 g++-5 sudo update-alternatives –install /usr/bin/gcc gcc /usr/bin/gcc-5 60 –slave /usr/bin/g++ g++ /usr/bin/g++-5 git clone <a target="_blank" rel="noopener" href="https://github.com/ossrs/srs.git">https://github.com/ossrs/srs.git</a> cd srs/trunk ./configure –with-nginx make ./objs/srs -c conf/http.hls.conf for((;;)); do \ ffmpeg -re -i /home/ubuntu/Rogue\ One\ -\ A\ Star\ Wars\ Story\ -\ Trailer\ 2.mp4 \ -vf scale=360:-2 -c:v libx264 -acodec copy \ -f flv -y rtmp://172.104.12.1:1935/live/livestream; \ sleep 1; \ done [/bash]</p>
+
       
     </div>
 
@@ -454,7 +394,7 @@ end
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2017/09/14/423/" data-id="cjzkyfb1a002whmmpy8z7cznn" class="article-share-link">
+      <a data-url="https://wirelessbox.net/2018/10/17/ubuntu-install-nginx-and-srs/" data-id="ckhg1bw5q00824hmy2itjfq0e" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -468,13 +408,13 @@ end
 
 
   
-    <article id="post-/2017/09/xcode%e5%bf%ab%e6%8d%b7%e9%94%ae.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-cgbi-file-format" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/04/419/">Xcode快捷键</a>
+      <a class="article-title" href="/hw-1/2018/10/13/cgbi-file-format/">CgBI file format</a>
     </h1>
   
 
@@ -483,13 +423,13 @@ end
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2017/09/04/419/" class="article-date"><time datetime="2017-09-03T19:15:19.000Z" itemprop="datePublished">2017-09-04</time></a>
+  <a href="/hw-1/2018/10/13/cgbi-file-format/" class="article-date"><time datetime="2018-10-13T05:10:42.000Z" itemprop="datePublished">2018-10-13</time></a>
 </div>
 
-    <div class="article-author">admin</div>
+    
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
   </div>
 
 
@@ -498,40 +438,7 @@ end
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Mac键盘图标与对应快捷按键"><a href="#Mac键盘图标与对应快捷按键" class="headerlink" title="Mac键盘图标与对应快捷按键"></a>Mac键盘图标与对应快捷按键</h3><p>⌘——Command ()</p>
-<p>⌃ ——Control</p>
-<p>⌥——Option (alt)</p>
-<p>⇧——Shift</p>
-<p>⇪——Caps Lock</p>
-<h3 id="Xcode快捷键"><a href="#Xcode快捷键" class="headerlink" title="Xcode快捷键"></a>Xcode快捷键</h3><p>1.运行:command + R</p>
-<p>2.编译:command + B</p>
-<p>3.停止:command + .</p>
-<p>4.工程导航如图从左到右分别对应 command +1~8.</p>
-<p>5.快速打开/隐藏实用面板 a.command + 0 （注意是“0”不是“o”）</p>
-<p>6,right bar b.command+option+0(zero)</p>
-<p>7,bottom bar c.command + shift + Y</p>
-<p>8.当前类文件查找 command + F</p>
-<p>9.快速跳转到类的特定行command + L</p>
-<p>10.快速定位当前类在项目文件中的位置:command + shift + J (本人非常喜欢这个快捷操作)</p>
-<p>11.类文件&#8221;.h&#8221;与“.m”之间切换：control+command+↑/control+command+↓</p>
-<p>12.清除工程: Command + Shift + K</p>
-<p>13,清除控制台打印信息:command+K</p>
-<p>14.当前类 方法/变量查找:Control+6（键入方法/变量名+Enter跳转）</p>
-<p>15.光标操作：</p>
-<p>control+F: 向右一个字符（forward）</p>
-<p>control+B: 向左一个字符（backward）</p>
-<p>control+P: 前一行（previous）</p>
-<p>control+N: 后一行（next）</p>
-<p>control+A: 去行首</p>
-<p>control+E: 到行尾（end）</p>
-<p>control+T: 调换光标两边的字符（transpose）</p>
-<p>control+D: 删除光标右侧字符（delete）</p>
-<p>control+K: 删除本行剩余的字符（kill）</p>
-<p>16.整体位移代码:</p>
-<p>选中的代码 + command+[ :向左位移</p>
-<p>选中的代码 + command+]: 向右位移</p>
-<p>选中的代码 + command+option+[ :向上位移</p>
-<p>选中的代码 + command+option+]:向下位移</p>
+        <h3 id="The-CgBI-file-format-thus-named-for-its-extra-header-is-Apple’s-proprietary-extension-to-the-PNG-1-image-format"><a href="#The-CgBI-file-format-thus-named-for-its-extra-header-is-Apple’s-proprietary-extension-to-the-PNG-1-image-format" class="headerlink" title="The CgBI file format, thus named for its extra header, is Apple’s proprietary extension to the PNG[1] image format."></a>The CgBI file format, thus named for its extra header, is Apple’s proprietary extension to the PNG[1] image format.</h3><p>[bash]Encoding Apple’s modified pngcrush (xcrun -sdk iphoneos pngcrush -iphone) pincrush Decoding Apple’s modified pngcrush (xcrun -sdk iphoneos pngcrush -revert-iphone-optimizations) [/bash]</p>
 
       
     </div>
@@ -542,7 +449,7 @@ end
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2017/09/04/419/" data-id="cjzkyfb18002uhmmpp0g6zi2h" class="article-share-link">
+      <a data-url="https://wirelessbox.net/2018/10/13/cgbi-file-format/" data-id="ckhg1bw3j000m4hmy025h9nv0" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -556,13 +463,13 @@ end
 
 
   
-    <article id="post-/2017/08/printing-colorful-text-in-terminal-for-osx.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-how-to-use-your-iphones-internet-connection-on-your-ubuntu-machine-via-usb" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/24/377/">Printing colorful text in terminal for osx</a>
+      <a class="article-title" href="/hw-1/2018/10/10/how-to-use-your-iphones-internet-connection-on-your-ubuntu-machine-via-usb/">How to use your iPhone&#39;s internet connection on your Ubuntu machine via USB</a>
     </h1>
   
 
@@ -571,13 +478,13 @@ end
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2017/08/24/377/" class="article-date"><time datetime="2017-08-24T01:38:26.000Z" itemprop="datePublished">2017-08-24</time></a>
+  <a href="/hw-1/2018/10/10/how-to-use-your-iphones-internet-connection-on-your-ubuntu-machine-via-usb/" class="article-date"><time datetime="2018-10-10T02:24:10.000Z" itemprop="datePublished">2018-10-10</time></a>
 </div>
 
-    <div class="article-author">admin</div>
+    
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
   </div>
 
 
@@ -586,39 +493,8 @@ end
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Printing-colorful-text-in-terminal-for-osx"><a href="#Printing-colorful-text-in-terminal-for-osx" class="headerlink" title="Printing colorful text in terminal for osx"></a>Printing colorful text in terminal for osx</h3><pre><code class="language-bash line-numbers">
-console.log('\x1b[36m%s\x1b[0m', info);  //cyan
-console.log('\x1b[33m%s\x1b[0m: ', path);  //yellow
+        <h3 id="How-to-use-your-iPhone’s-internet-connection-on-your-Ubuntu-machine-via-USB"><a href="#How-to-use-your-iPhone’s-internet-connection-on-your-Ubuntu-machine-via-USB" class="headerlink" title="How to use your iPhone’s internet connection on your Ubuntu machine via USB"></a>How to use your iPhone’s internet connection on your Ubuntu machine via USB</h3><p>[bash]sudo apt install ipheth-utils libimobiledevice-dev libimobiledevice-utils idevicepair unpair &amp;&amp; idevicepair pair [/bash] Then unplug your phone and plug it back in. When you plug it back in, a notification should pop up (on your Ubuntu system) saying it has connected to a wired network. (If the notification does not appear, make sure Personal Hotspot is enabled on your phone.)</p>
 
-//color table1
-Reset = "\x1b[0m"
-Bright = "\x1b[1m"
-Dim = "\x1b[2m"
-Underscore = "\x1b[4m"
-Blink = "\x1b[5m"
-Reverse = "\x1b[7m"
-Hidden = "\x1b[8m"
-
-//fgcolor
-FgBlack = "\x1b[30m"
-FgRed = "\x1b[31m"
-FgGreen = "\x1b[32m"
-FgYellow = "\x1b[33m"
-FgBlue = "\x1b[34m"
-FgMagenta = "\x1b[35m"
-FgCyan = "\x1b[36m"
-FgWhite = "\x1b[37m"
-
-//bfcolor
-BgBlack = "\x1b[40m"
-BgRed = "\x1b[41m"
-BgGreen = "\x1b[42m"
-BgYellow = "\x1b[43m"
-BgBlue = "\x1b[44m"
-BgMagenta = "\x1b[45m"
-BgCyan = "\x1b[46m"
-BgWhite = "\x1b[47m"
-</code></pre>
       
     </div>
 
@@ -628,7 +504,7 @@ BgWhite = "\x1b[47m"
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2017/08/24/377/" data-id="cjzkyfb17002shmmpgwng9w1n" class="article-share-link">
+      <a data-url="https://wirelessbox.net/2018/10/10/how-to-use-your-iphones-internet-connection-on-your-ubuntu-machine-via-usb/" data-id="ckhg1bw49002y4hmy2e20b5hh" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -642,13 +518,13 @@ BgWhite = "\x1b[47m"
 
 
   
-    <article id="post-/2017/08/how-to-uncompress-zlib-data-in-unix.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-frida-cycript-install-osx" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/24/375/">How to uncompress zlib data in UNIX?</a>
+      <a class="article-title" href="/hw-1/2018/10/09/frida-cycript-install-osx/">frida-cycript install  osx</a>
     </h1>
   
 
@@ -657,13 +533,13 @@ BgWhite = "\x1b[47m"
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2017/08/24/375/" class="article-date"><time datetime="2017-08-24T01:34:53.000Z" itemprop="datePublished">2017-08-24</time></a>
+  <a href="/hw-1/2018/10/09/frida-cycript-install-osx/" class="article-date"><time datetime="2018-10-09T07:57:50.000Z" itemprop="datePublished">2018-10-09</time></a>
 </div>
 
-    <div class="article-author">admin</div>
+    
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
   </div>
 
 
@@ -672,11 +548,8 @@ BgWhite = "\x1b[47m"
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="decompress-raw-zlib-data"><a href="#decompress-raw-zlib-data" class="headerlink" title="decompress raw zlib data"></a>decompress raw zlib data</h1><pre><code class="language-bash line-numbers">
-printf "\x1f\x8b\x08\x00\x00\x00\x00\x00" |cat - zlib.raw |gzip -dc
+        <h2 id="frida-cycript-install-osx"><a href="#frida-cycript-install-osx" class="headerlink" title="frida-cycript install osx"></a>frida-cycript install osx</h2><p>[bash] pip3 install meson brew install ninja dx command not found? brew tap caskroom/cask brew cask install android-sdk sdkmanager –update sdkmanager “platforms;android-25” “build-tools;25.0.2” “extras;google;m2repository” “extras;android;m2repository” sdkmanager –licenses link dx to /usr/bin/dx node module error? sudo port install npm3 git clone <a target="_blank" rel="noopener" href="https://github.com/nowsecure/frida-cycript.git">https://github.com/nowsecure/frida-cycript.git</a> cd frida-cycript git submodule init git submodule update meson build ninja -C build [/bash]</p>
 
-openssl zlib -d &lt; /tmp/data
-</code></pre>
       
     </div>
 
@@ -686,7 +559,7 @@ openssl zlib -d &lt; /tmp/data
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2017/08/24/375/" data-id="cjzkyfb16002qhmmpwuz2psmv" class="article-share-link">
+      <a data-url="https://wirelessbox.net/2018/10/09/frida-cycript-install-osx/" data-id="ckhg1bw3x001s4hmyetew12nk" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -700,13 +573,13 @@ openssl zlib -d &lt; /tmp/data
 
 
   
-    <article id="post-/2017/08/what-is-the-differences-between-begin-rsa-private-key-and-begin-private-key.html" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-caffe-error" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/15/372/">what is the differences between “BEGIN RSA PRIVATE KEY” and “BEGIN PRIVATE KEY”</a>
+      <a class="article-title" href="/hw-1/2018/09/27/caffe-error/">caffe error</a>
     </h1>
   
 
@@ -715,13 +588,13 @@ openssl zlib -d &lt; /tmp/data
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2017/08/15/372/" class="article-date"><time datetime="2017-08-14T18:07:47.000Z" itemprop="datePublished">2017-08-15</time></a>
+  <a href="/hw-1/2018/09/27/caffe-error/" class="article-date"><time datetime="2018-09-27T07:32:54.000Z" itemprop="datePublished">2018-09-27</time></a>
 </div>
 
-    <div class="article-author">admin</div>
+    
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
   </div>
 
 
@@ -730,8 +603,7 @@ openssl zlib -d &lt; /tmp/data
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>See <a href="https://polarssl.org/kb/cryptography/asn1-key-structures-in-der-and-pem" target="_blank" rel="noopener">https://polarssl.org/kb/cryptography/asn1-key-structures-in-der-and-pem</a> (search the page for &#8220;BEGIN RSA PRIVATE KEY&#8221;) (archive link for posterity, just in case).</p>
-<p>BEGIN RSA PRIVATE KEY is PKCS#1 and is just an RSA key. It is essentially just the key object from PKCS#8, but without the version or algorithm identifier in front. BEGIN PRIVATE KEY is PKCS#8 and indicates that the key type is included in the key data itself. From the link:</p>
+        <h3 id="caffe-error"><a href="#caffe-error" class="headerlink" title="caffe error"></a>caffe error</h3><p>[bash]erro datum_channels &gt; 0 (0 vs. 0) #5114 create db with A total of 0 images. channel mistch picture gray or RGB ? [/bash]</p>
 
       
     </div>
@@ -742,7 +614,7 @@ openssl zlib -d &lt; /tmp/data
     
 
     <footer class="article-footer">
-      <a data-url="https://hw-1.github.io/2017/08/15/372/" data-id="cjzkyfb16002ohmmpat4rdl29" class="article-share-link">
+      <a data-url="https://wirelessbox.net/2018/09/27/caffe-error/" data-id="ckhg1bw3i000i4hmy2sai1x5w" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -759,7 +631,7 @@ openssl zlib -d &lt; /tmp/data
 
 
   <div id="page-nav">
-    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/page/8/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/">1</a></li><li class="disabled"><span class="page-space">&hellip;</span></li><li><a class="page-number" href="/page/7/">7</a></li><li><a class="page-number" href="/page/8/">8</a></li><li class="active"><span class="page-number">9</span></li><li><a class="page-number" href="/page/10/">10</a></li><li><a class="page-number" href="/page/11/">11</a></li><li class="disabled"><span class="page-space">&hellip;</span></li><li><a class="page-number" href="/page/15/">15</a></li><li><a class="page-next" rel="next" href="/page/10/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
+    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/hw-1/hw-1/page/8/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/hw-1/hw-1/">1</a></li><li class="disabled"><span class="page-space">&hellip;</span></li><li><a class="page-number" href="/hw-1/hw-1/page/7/">7</a></li><li><a class="page-number" href="/hw-1/hw-1/page/8/">8</a></li><li class="active"><span class="page-number">9</span></li><li><a class="page-number" href="/hw-1/hw-1/page/10/">10</a></li><li><a class="page-number" href="/hw-1/hw-1/page/11/">11</a></li><li class="disabled"><span class="page-space">&hellip;</span></li><li><a class="page-number" href="/hw-1/hw-1/page/19/">19</a></li><li><a class="page-next" rel="next" href="/hw-1/hw-1/page/10/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
   </div>
 
 
@@ -777,7 +649,7 @@ openssl zlib -d &lt; /tmp/data
   
   <div class="sidebar-module">
     <h4>Categories</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Uncategorized/">Uncategorized</a><span class="sidebar-module-list-count">133</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/categories/uncategorized/">uncategorized</a><span class="sidebar-module-list-count">186</span></li></ul>
   </div>
 
 
@@ -790,7 +662,7 @@ openssl zlib -d &lt; /tmp/data
   
   <div class="sidebar-module">
     <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/08/">August 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/06/">June 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/11/">November 2020</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/10/">October 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/09/">September 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/08/">August 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/03/">March 2020</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/02/">February 2020</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/01/">January 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/12/">December 2019</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/11/">November 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/08/">August 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/06/">June 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
   </div>
 
 
@@ -801,23 +673,23 @@ openssl zlib -d &lt; /tmp/data
     <ul class="sidebar-module-list">
       
         <li>
-          <a href="/2019/08/07/729/">Unable to install (Error: &amp;#8216;cstring&amp;#8217; file not found) &amp;#8211; MacOS Mojave #162</a>
+          <a href="/hw-1/2020/11/11/%E6%B2%BB%E6%84%88%E7%B3%BB%E8%AF%BE%E7%A8%8B-%E4%B8%83%E5%A4%A7%E4%BD%93%E7%B3%BB%E5%85%AB%E5%A4%A7%E5%85%85%E8%8A%82%E5%AE%8C%E6%95%B4%E7%89%88/">治愈系课程-七大体系八大充节完整版 - 免费下载</a>
         </li>
       
         <li>
-          <a href="/2019/07/31/723/">“XXX.app can&amp;#8217;t be opened. You should move it to trash.” for flash projector applications on mac os sierra</a>
+          <a href="/hw-1/2020/11/06/%E8%BD%BB%E6%9D%BE%E8%A7%A3%E5%86%B3tensorflow%E6%8A%A5%E9%94%99illegal-instruction-core-dumped/">轻松解决Tensorflow报错illegal instruction (core dumped)</a>
         </li>
       
         <li>
-          <a href="/2019/07/27/721/">How to Fix mds_stores Consuming High CPU Usage on Mac</a>
+          <a href="/hw-1/2020/11/06/ios-build-failed-at-compile-time-with-issue-failed-to-find-a-suitable-device-for-the-type-simdevicetype/">iOS Build Failed at compile time with issue “failed to find a suitable device for the type SimDeviceType”</a>
         </li>
       
         <li>
-          <a href="/2019/07/27/719/">Operation not permitted while System Integrity Protection is engaged</a>
+          <a href="/hw-1/2020/11/05/privacy-data-collection-and-storage-reject/">Privacy - Data Collection and Storage Reject</a>
         </li>
       
         <li>
-          <a href="/2019/07/05/716/">networkextension connect: No route to host</a>
+          <a href="/hw-1/2020/11/04/sourcetree-set-git-repo-username-password/">sourceTree set git repo username password</a>
         </li>
       
     </ul>
@@ -831,7 +703,7 @@ openssl zlib -d &lt; /tmp/data
   <footer class="blog-footer">
   <div class="container">
     <div id="footer-info" class="inner">
-      &copy; 2019 git<br>
+      &copy; 2020 John Doe<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
@@ -845,7 +717,9 @@ openssl zlib -d &lt; /tmp/data
 
 
 
-<script src="/js/script.js"></script>
+
+<script src="/hw-1/js/script.js"></script>
+
 
 </body>
 </html>
