@@ -5,15 +5,15 @@
   
   <title>osx svn server create | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###osx svn server create [bash]mkdir -p ~&#x2F;Documents&#x2F;svn svnadmin create ~&#x2F;Documents&#x2F;svn&#x2F;myexample sed -i ‘’ ‘s&#x2F;#anon-access.*&#x2F;anon-access &#x3D; none&#x2F;g’ ~&#x2F;Documents&#x2F;svn&#x2F;myexample&#x2F;conf&#x2F;svnserve.conf sed -i">
+  <meta name="description" content="###osx svn server create mkdir -p  ~&#x2F;Documents&#x2F;svn svnadmin create ~&#x2F;Documents&#x2F;svn&#x2F;myexample  sed -i &#39;&#39; &#39;s&#x2F;#anon-access.*&#x2F;anon-access &#x3D; none&#x2F;g&#39; ~&#x2F;Documents&#x2F;svn&#x2F;myexample&#x2F;conf&#x2F;svnserve.conf sed -i &#39;&#39; &#39;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="osx svn server create">
 <meta property="og:url" content="http://wirelessbox.net/2018/11/21/osx-svn-server-create/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="###osx svn server create [bash]mkdir -p ~&#x2F;Documents&#x2F;svn svnadmin create ~&#x2F;Documents&#x2F;svn&#x2F;myexample sed -i ‘’ ‘s&#x2F;#anon-access.*&#x2F;anon-access &#x3D; none&#x2F;g’ ~&#x2F;Documents&#x2F;svn&#x2F;myexample&#x2F;conf&#x2F;svnserve.conf sed -i">
+<meta property="og:description" content="###osx svn server create mkdir -p  ~&#x2F;Documents&#x2F;svn svnadmin create ~&#x2F;Documents&#x2F;svn&#x2F;myexample  sed -i &#39;&#39; &#39;s&#x2F;#anon-access.*&#x2F;anon-access &#x3D; none&#x2F;g&#39; ~&#x2F;Documents&#x2F;svn&#x2F;myexample&#x2F;conf&#x2F;svnserve.conf sed -i &#39;&#39; &#39;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2018-11-21T07:56:47.000Z">
-<meta property="article:modified_time" content="2020-11-13T08:43:50.225Z">
+<meta property="article:published_time" content="2018-11-20T23:56:47.000Z">
+<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -79,7 +79,7 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          <article id="post-osx-svn-server-create" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="post-2018-11-21-osx-svn-server-create" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
@@ -94,23 +94,46 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2018/11/21/osx-svn-server-create/" class="article-date"><time datetime="2018-11-21T07:56:47.000Z" itemprop="datePublished">2018-11-21</time></a>
+  <a href="/hw-1/2018/11/21/osx-svn-server-create/" class="article-date"><time datetime="2018-11-20T23:56:47.000Z" itemprop="datePublished">2018-11-21</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###osx svn server create [bash]mkdir -p ~/Documents/svn svnadmin create ~/Documents/svn/myexample sed -i ‘’ ‘s/#anon-access.*/anon-access = none/g’ ~/Documents/svn/myexample/conf/svnserve.conf sed -i ‘’ ‘s/#auth-access.*/auth-access = write/g’ ~/Documents/svn/myexample/conf/svnserve.conf sed -i ‘’ ‘s/#password-db.*/password-db = passwd/g’ ~/Documents/svn/myexample/conf/svnserve.conf sed -i ‘’ ‘s/#authz-db.*/authz-db = authz/g’ ~/Documents/svn/myexample/conf/svnserve.conf cat &lt;<EOF >&gt; ~/Documents/svn/myexample/conf/authz [/] harry = rw jianglincen = rw sally = rw EOF cat &lt;<EOF >&gt; ~/Documents/svn/myexample/conf/passwd [/] [users] harry = harryssecret sally = sallyssecret EOF svnserve -d -r ~/Documents/svn/myexample svn import ~/Downloads/myexampleProj svn://192.168.1.235/myexample/myexampleProj –username=harry –password=harryssecret -m “myexampleProj” [/bash]</p>
+        <p>###osx svn server create</p>
+<pre class="brush: bash; title: ; notranslate" title="">mkdir -p  ~/Documents/svn
+svnadmin create ~/Documents/svn/myexample
 
+sed -i '' 's/#anon-access.*/anon-access = none/g' ~/Documents/svn/myexample/conf/svnserve.conf
+sed -i '' 's/#auth-access.*/auth-access = write/g' ~/Documents/svn/myexample/conf/svnserve.conf
+sed -i '' 's/#password-db.*/password-db = passwd/g' ~/Documents/svn/myexample/conf/svnserve.conf
+sed -i '' 's/#authz-db.*/authz-db = authz/g' ~/Documents/svn/myexample/conf/svnserve.conf
+
+cat &lt;&lt;EOF &gt;&gt; ~/Documents/svn/myexample/conf/authz
+[/]
+harry = rw
+jianglincen = rw
+sally = rw
+
+EOF
+
+cat &lt;&lt;EOF &gt;&gt; ~/Documents/svn/myexample/conf/passwd
+[/]
+[users]
+harry = harryssecret
+sally = sallyssecret
+
+EOF
+
+svnserve -d -r ~/Documents/svn/myexample
+
+svn import  ~/Downloads/myexampleProj   svn://192.168.1.235/myexample/myexampleProj --username=harry --password=harryssecret -m "myexampleProj"
+</pre>
       
     </div>
 
@@ -120,7 +143,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/11/21/osx-svn-server-create/" data-id="ckhg2b00p005g33my3hajgpqz" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/11/21/osx-svn-server-create/" data-id="ckhhbad32003198my8ox01g8g" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -169,7 +192,7 @@
   
   <div class="sidebar-module">
     <h4>Categories</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/categories/uncategorized/">uncategorized</a><span class="sidebar-module-list-count">186</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/categories/Uncategorized/">Uncategorized</a><span class="sidebar-module-list-count">13</span></li></ul>
   </div>
 
 
@@ -193,7 +216,7 @@
     <ul class="sidebar-module-list">
       
         <li>
-          <a href="/hw-1/2020/11/11/%E6%B2%BB%E6%84%88%E7%B3%BB%E8%AF%BE%E7%A8%8B-%E4%B8%83%E5%A4%A7%E4%BD%93%E7%B3%BB%E5%85%AB%E5%A4%A7%E5%85%85%E8%8A%82%E5%AE%8C%E6%95%B4%E7%89%88/">治愈系课程-七大体系八大充节完整版 - 免费下载</a>
+          <a href="/hw-1/2020/11/11/%E6%B2%BB%E6%84%88%E7%B3%BB%E8%AF%BE%E7%A8%8B-%E4%B8%83%E5%A4%A7%E4%BD%93%E7%B3%BB%E5%85%AB%E5%A4%A7%E5%85%85%E8%8A%82%E5%AE%8C%E6%95%B4%E7%89%88/">治愈系课程-七大体系八大充节完整版 &amp;#8211; 免费下载</a>
         </li>
       
         <li>
@@ -205,11 +228,11 @@
         </li>
       
         <li>
-          <a href="/hw-1/2020/11/05/privacy-data-collection-and-storage-reject/">Privacy - Data Collection and Storage Reject</a>
+          <a href="/hw-1/2020/11/05/privacy-data-collection-and-storage-reject/">Privacy &amp;#8211; Data Collection and Storage Reject</a>
         </li>
       
         <li>
-          <a href="/hw-1/2020/11/04/sourcetree-set-git-repo-username-password/">sourceTree set git repo username password</a>
+          <a href="/hw-1/2020/11/03/sourcetree-set-git-repo-username-password/">sourceTree set git repo username password</a>
         </li>
       
     </ul>

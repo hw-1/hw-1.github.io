@@ -5,15 +5,15 @@
   
   <title>raspberry add kali repo ,import kali repo publick key | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="import kali repo publick key[bash] sudo apt install dirmngr gpg –keyserver pgpkeys.mit.edu –recv-key ED444FF07D8D0BF6 gpg -a –export ED444FF07D8D0BF6 sudo apt-key add - gpg –keyserver hkp:&#x2F;&#x2F;keys.gnupg">
+  <meta name="description" content="import kali repo publick keysudo apt install dirmngr gpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6 gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -  gpg --keyserver hkp:&#x2F;&#x2F;keys.gnup">
 <meta property="og:type" content="article">
 <meta property="og:title" content="raspberry add kali repo ,import kali repo publick key">
 <meta property="og:url" content="http://wirelessbox.net/2018/02/08/raspberry-add-kali-repo-import-kali-repo-publick-key/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="import kali repo publick key[bash] sudo apt install dirmngr gpg –keyserver pgpkeys.mit.edu –recv-key ED444FF07D8D0BF6 gpg -a –export ED444FF07D8D0BF6 sudo apt-key add - gpg –keyserver hkp:&#x2F;&#x2F;keys.gnupg">
+<meta property="og:description" content="import kali repo publick keysudo apt install dirmngr gpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6 gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -  gpg --keyserver hkp:&#x2F;&#x2F;keys.gnup">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2018-02-08T02:41:43.000Z">
-<meta property="article:modified_time" content="2020-11-13T08:43:50.177Z">
+<meta property="article:published_time" content="2018-02-07T18:41:43.000Z">
+<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -79,7 +79,7 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          <article id="post-raspberry-add-kali-repo-import-kali-repo-publick-key" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="post-2018-02-08-raspberry-add-kali-repo-import-kali-repo-publick-key" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
@@ -94,24 +94,35 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2018/02/08/raspberry-add-kali-repo-import-kali-repo-publick-key/" class="article-date"><time datetime="2018-02-08T02:41:43.000Z" itemprop="datePublished">2018-02-08</time></a>
+  <a href="/hw-1/2018/02/08/raspberry-add-kali-repo-import-kali-repo-publick-key/" class="article-date"><time datetime="2018-02-07T18:41:43.000Z" itemprop="datePublished">2018-02-08</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="import-kali-repo-publick-key"><a href="#import-kali-repo-publick-key" class="headerlink" title="import kali repo publick key"></a>import kali repo publick key</h3><p>[bash] sudo apt install dirmngr gpg –keyserver pgpkeys.mit.edu –recv-key ED444FF07D8D0BF6 gpg -a –export ED444FF07D8D0BF6 sudo apt-key add - gpg –keyserver hkp://keys.gnupg.net –recv-key 7D8D0BF6 gpg -a –export 7D8D0BF6 sudo apt-key add - #<a target="_blank" rel="noopener" href="https://docs.kali.org/introduction/download-official-kali-linux-images">https://docs.kali.org/introduction/download-official-kali-linux-images</a> [/bash]</p>
-<h3 id="raspberry-add-kali-repo"><a href="#raspberry-add-kali-repo" class="headerlink" title="raspberry add kali repo"></a>raspberry add kali repo</h3><p>[bash] sudo vi /etc/apt/sources.list.d/kali.list deb <a target="_blank" rel="noopener" href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main contrib non-free # For source package access, uncomment the following line # deb-src <a target="_blank" rel="noopener" href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main contrib non-free #<a target="_blank" rel="noopener" href="https://www.kali.org/news/kali-linux-metapackages/">https://www.kali.org/news/kali-linux-metapackages/</a> #<a target="_blank" rel="noopener" href="https://docs.kali.org/general-use/kali-linux-sources-list-repositories">https://docs.kali.org/general-use/kali-linux-sources-list-repositories</a> #<a target="_blank" rel="noopener" href="https://www.raspberrypi.org/forums/viewtopic.php?f=41&amp;t=107001">https://www.raspberrypi.org/forums/viewtopic.php?f=41&amp;t=107001</a> [/bash]</p>
+        <h3 id="import-kali-repo-publick-key"><a href="#import-kali-repo-publick-key" class="headerlink" title="import kali repo publick key"></a>import kali repo publick key</h3><pre class="brush: bash; title: ; notranslate" title="">sudo apt install dirmngr
+gpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6
+gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -
 
+gpg --keyserver hkp://keys.gnupg.net --recv-key 7D8D0BF6
+gpg -a --export 7D8D0BF6 | sudo apt-key add -
+
+#https://docs.kali.org/introduction/download-official-kali-linux-images
+</pre>
+
+<h3 id="raspberry-add-kali-repo"><a href="#raspberry-add-kali-repo" class="headerlink" title="raspberry add kali repo"></a>raspberry add kali repo</h3><pre class="brush: bash; title: ; notranslate" title="">sudo vi /etc/apt/sources.list.d/kali.list
+deb http://http.kali.org/kali kali-rolling main contrib non-free
+# For source package access, uncomment the following line
+# deb-src http://http.kali.org/kali kali-rolling main contrib non-free
+#https://www.kali.org/news/kali-linux-metapackages/
+#https://docs.kali.org/general-use/kali-linux-sources-list-repositories
+#https://www.raspberrypi.org/forums/viewtopic.php?f=41&amp;t=107001
+</pre>
       
     </div>
 
@@ -121,7 +132,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/02/08/raspberry-add-kali-repo-import-kali-repo-publick-key/" data-id="ckhg2b00v006433myexd1gbkz" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/02/08/raspberry-add-kali-repo-import-kali-repo-publick-key/" data-id="ckhhbad2q002398myf6q01s3e" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -170,7 +181,7 @@
   
   <div class="sidebar-module">
     <h4>Categories</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/categories/uncategorized/">uncategorized</a><span class="sidebar-module-list-count">186</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/categories/Uncategorized/">Uncategorized</a><span class="sidebar-module-list-count">13</span></li></ul>
   </div>
 
 
@@ -194,7 +205,7 @@
     <ul class="sidebar-module-list">
       
         <li>
-          <a href="/hw-1/2020/11/11/%E6%B2%BB%E6%84%88%E7%B3%BB%E8%AF%BE%E7%A8%8B-%E4%B8%83%E5%A4%A7%E4%BD%93%E7%B3%BB%E5%85%AB%E5%A4%A7%E5%85%85%E8%8A%82%E5%AE%8C%E6%95%B4%E7%89%88/">治愈系课程-七大体系八大充节完整版 - 免费下载</a>
+          <a href="/hw-1/2020/11/11/%E6%B2%BB%E6%84%88%E7%B3%BB%E8%AF%BE%E7%A8%8B-%E4%B8%83%E5%A4%A7%E4%BD%93%E7%B3%BB%E5%85%AB%E5%A4%A7%E5%85%85%E8%8A%82%E5%AE%8C%E6%95%B4%E7%89%88/">治愈系课程-七大体系八大充节完整版 &amp;#8211; 免费下载</a>
         </li>
       
         <li>
@@ -206,11 +217,11 @@
         </li>
       
         <li>
-          <a href="/hw-1/2020/11/05/privacy-data-collection-and-storage-reject/">Privacy - Data Collection and Storage Reject</a>
+          <a href="/hw-1/2020/11/05/privacy-data-collection-and-storage-reject/">Privacy &amp;#8211; Data Collection and Storage Reject</a>
         </li>
       
         <li>
-          <a href="/hw-1/2020/11/04/sourcetree-set-git-repo-username-password/">sourceTree set git repo username password</a>
+          <a href="/hw-1/2020/11/03/sourcetree-set-git-repo-username-password/">sourceTree set git repo username password</a>
         </li>
       
     </ul>

@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>How to encrypt a big file using OpenSSL and someone&#39;s public key | hw-1</title>
+  <title>How to encrypt a big file using OpenSSL and someone&amp;#8217;s public key | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="How to encrypt a big file using OpenSSL and someone’s public key The situation You have a public key for someone, you have a file you want to send them, you want to send it securely. Can you call them">
+  <meta name="description" content="How to encrypt a big file using OpenSSL and someone&amp;#8217;s public keyThe situation You have a public key for someone, you have a file you want to send them, you want to send it securely. Can you call">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to encrypt a big file using OpenSSL and someone&#39;s public key">
+<meta property="og:title" content="How to encrypt a big file using OpenSSL and someone&amp;#8217;s public key">
 <meta property="og:url" content="http://wirelessbox.net/2016/11/18/how-to-encrypt-a-big-file-using-openssl-and-someones-public-key/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="How to encrypt a big file using OpenSSL and someone’s public key The situation You have a public key for someone, you have a file you want to send them, you want to send it securely. Can you call them">
+<meta property="og:description" content="How to encrypt a big file using OpenSSL and someone&amp;#8217;s public keyThe situation You have a public key for someone, you have a file you want to send them, you want to send it securely. Can you call">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2016-11-18T02:46:27.000Z">
-<meta property="article:modified_time" content="2020-11-13T08:43:50.046Z">
+<meta property="article:published_time" content="2016-11-17T18:46:27.000Z">
+<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -79,13 +79,13 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          <article id="post-how-to-encrypt-a-big-file-using-openssl-and-someones-public-key" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="post-2016-11-18-how-to-encrypt-a-big-file-using-openssl-and-someones-public-key" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 class="article-title" itemprop="name">
-      How to encrypt a big file using OpenSSL and someone&#39;s public key
+      How to encrypt a big file using OpenSSL and someone&amp;#8217;s public key
     </h1>
   
 
@@ -94,23 +94,42 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2016/11/18/how-to-encrypt-a-big-file-using-openssl-and-someones-public-key/" class="article-date"><time datetime="2016-11-18T02:46:27.000Z" itemprop="datePublished">2016-11-18</time></a>
+  <a href="/hw-1/2016/11/18/how-to-encrypt-a-big-file-using-openssl-and-someones-public-key/" class="article-date"><time datetime="2016-11-17T18:46:27.000Z" itemprop="datePublished">2016-11-18</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>How to encrypt a big file using OpenSSL and someone’s public key The situation You have a public key for someone, you have a file you want to send them, you want to send it securely. Can you call them, securely chat with them, or send them an encrypted e-mail? If you are set up to chat over OTR with them or to send them an encrypted e-mail, just use that to send your file. It’ll be faster. If you can call them, then call them and agree on a symmetric key. Then just use that key to encrypt the file like this. If you can’t (or don’t want to) do either of those, then you can follow this how-to. Step 0) Get their public key The other person needs to send you their public key in .pem format. If they only have it in rsa format (e.g., they use it for ssh), then have them do: [bash]openssl rsa -in id_rsa -outform pem &gt; id_rsa.pem openssl rsa -in id_rsa -pubout -outform pem &gt; id_rsa.pub.pem[/bash] Have them send you id_rsa.pub.pem Step 1) Generate a 256 bit (32 byte) random key [bash]openssl rand -base64 32 &gt; key.bin[/bash] Step 2) Encrypt the key [bash]openssl rsautl -encrypt -inkey id_rsa.pub.pem -pubin -in key.bin -out key.bin.enc[/bash] Step 3) Actually Encrypt our large file [bash]openssl enc -aes-256-cbc -salt -in SECRET_FILE -out SECRET_FILE.enc -pass file:./key.bin[/bash] Step 4) Send/Decrypt the files Send the .enc files to the other person and have them do: [bash]openssl rsautl -decrypt -inkey id_rsa.pem -in key.bin.enc -out key.bin openssl enc -d -aes-256-cbc -in SECRET_FILE.enc -out SECRET_FILE -pass file:./key.bin [/bash]</p>
+        <p>How to encrypt a big file using OpenSSL and someone&#8217;s public key<br>The situation</p>
+<p>You have a public key for someone, you have a file you want to send them, you want to send it securely.</p>
+<p>Can you call them, securely chat with them, or send them an encrypted e-mail?</p>
+<p>If you are set up to chat over OTR with them or to send them an encrypted e-mail, just use that to send your file. It&#8217;ll be faster. If you can call them, then call them and agree on a symmetric key. Then just use that key to encrypt the file like this. If you can&#8217;t (or don&#8217;t want to) do either of those, then you can follow this how-to.</p>
+<p>Step 0) Get their public key</p>
+<p>The other person needs to send you their public key in .pem format. If they only have it in rsa format (e.g., they use it for ssh), then have them do:</p>
+<pre class="brush: bash; title: ; notranslate" title="">openssl rsa -in id_rsa -outform pem &gt; id_rsa.pem
 
+openssl rsa -in id_rsa -pubout -outform pem &gt; id_rsa.pub.pem</pre>
+
+<p>Have them send you id_rsa.pub.pem</p>
+<p>Step 1) Generate a 256 bit (32 byte) random key</p>
+<pre class="brush: bash; title: ; notranslate" title="">openssl rand -base64 32 &gt; key.bin</pre>
+
+<p>Step 2) Encrypt the key</p>
+<pre class="brush: bash; title: ; notranslate" title="">openssl rsautl -encrypt -inkey id_rsa.pub.pem -pubin -in key.bin -out key.bin.enc</pre>
+
+<p>Step 3) Actually Encrypt our large file</p>
+<pre class="brush: bash; title: ; notranslate" title="">openssl enc -aes-256-cbc -salt -in SECRET_FILE -out SECRET_FILE.enc -pass file:./key.bin</pre>
+
+<p>Step 4) Send/Decrypt the files</p>
+<p>Send the .enc files to the other person and have them do:</p>
+<pre class="brush: bash; title: ; notranslate" title="">openssl rsautl -decrypt -inkey id_rsa.pem -in key.bin.enc -out key.bin
+
+openssl enc -d -aes-256-cbc -in SECRET_FILE.enc -out SECRET_FILE -pass file:./key.bin </pre>
       
     </div>
 
@@ -120,7 +139,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/11/18/how-to-encrypt-a-big-file-using-openssl-and-someones-public-key/" data-id="ckhg2azzr002c33my91a0d49r" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/11/18/how-to-encrypt-a-big-file-using-openssl-and-someones-public-key/" data-id="ckhhbad21000o98mybc1c4x85" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -169,7 +188,7 @@
   
   <div class="sidebar-module">
     <h4>Categories</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/categories/uncategorized/">uncategorized</a><span class="sidebar-module-list-count">186</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/categories/Uncategorized/">Uncategorized</a><span class="sidebar-module-list-count">13</span></li></ul>
   </div>
 
 
@@ -193,7 +212,7 @@
     <ul class="sidebar-module-list">
       
         <li>
-          <a href="/hw-1/2020/11/11/%E6%B2%BB%E6%84%88%E7%B3%BB%E8%AF%BE%E7%A8%8B-%E4%B8%83%E5%A4%A7%E4%BD%93%E7%B3%BB%E5%85%AB%E5%A4%A7%E5%85%85%E8%8A%82%E5%AE%8C%E6%95%B4%E7%89%88/">治愈系课程-七大体系八大充节完整版 - 免费下载</a>
+          <a href="/hw-1/2020/11/11/%E6%B2%BB%E6%84%88%E7%B3%BB%E8%AF%BE%E7%A8%8B-%E4%B8%83%E5%A4%A7%E4%BD%93%E7%B3%BB%E5%85%AB%E5%A4%A7%E5%85%85%E8%8A%82%E5%AE%8C%E6%95%B4%E7%89%88/">治愈系课程-七大体系八大充节完整版 &amp;#8211; 免费下载</a>
         </li>
       
         <li>
@@ -205,11 +224,11 @@
         </li>
       
         <li>
-          <a href="/hw-1/2020/11/05/privacy-data-collection-and-storage-reject/">Privacy - Data Collection and Storage Reject</a>
+          <a href="/hw-1/2020/11/05/privacy-data-collection-and-storage-reject/">Privacy &amp;#8211; Data Collection and Storage Reject</a>
         </li>
       
         <li>
-          <a href="/hw-1/2020/11/04/sourcetree-set-git-repo-username-password/">sourceTree set git repo username password</a>
+          <a href="/hw-1/2020/11/03/sourcetree-set-git-repo-username-password/">sourceTree set git repo username password</a>
         </li>
       
     </ul>
