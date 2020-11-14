@@ -77,13 +77,13 @@
         <div class="col-sm-8 blog-main">
           
   
-    <article id="post-lipo-分离合并-armv7、arm64架构" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2016-03-08-lipo-e58886e7a6bbe59088e5b9b6-armv7e38081arm64e69eb6e69e84" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2016/03/08/lipo-%E5%88%86%E7%A6%BB%E5%90%88%E5%B9%B6-armv7%E3%80%81arm64%E6%9E%B6%E6%9E%84/">lipo 分离/合并 ARMV7、ARM64架构</a>
+      <a class="article-title" href="/hw-1/index.php/2016/03/08/lipo-%E5%88%86%E7%A6%BB%E5%90%88%E5%B9%B6-armv7%E3%80%81arm64%E6%9E%B6%E6%9E%84/">lipo 分离/合并 ARMV7、ARM64架构</a>
     </h1>
   
 
@@ -92,23 +92,25 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2016/03/08/lipo-%E5%88%86%E7%A6%BB%E5%90%88%E5%B9%B6-armv7%E3%80%81arm64%E6%9E%B6%E6%9E%84/" class="article-date"><time datetime="2016-03-08T01:16:45.000Z" itemprop="datePublished">2016-03-08</time></a>
+  <a href="/hw-1/index.php/2016/03/08/lipo-%E5%88%86%E7%A6%BB%E5%90%88%E5%B9%B6-armv7%E3%80%81arm64%E6%9E%B6%E6%9E%84/" class="article-date"><time datetime="2016-03-07T17:16:45.000Z" itemprop="datePublished">2016-03-08</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###分离： [bash]lipo -thin armv7 xxxx.dylib -output xxxx_v7.a lipo -thin arm64 xxxx.dylib -output xxxx_64.a [/bash] ###合并 [bash]lipo -create ./xxxx_v7.dylib ./xxxx_64.dylib -output ./xxxx.a [/bash]</p>
+        <p>###分离：</p>
+<pre class="brush: bash; title: ; notranslate" title="">lipo -thin armv7 xxxx.dylib -output xxxx_v7.a
+lipo -thin arm64  xxxx.dylib -output xxxx_64.a
+</pre>
 
+<p>###合并</p>
+<pre class="brush: bash; title: ; notranslate" title="">lipo -create ./xxxx_v7.dylib ./xxxx_64.dylib -output ./xxxx.a
+</pre>
       
     </div>
 
@@ -118,7 +120,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/03/08/lipo-%E5%88%86%E7%A6%BB%E5%90%88%E5%B9%B6-armv7%E3%80%81arm64%E6%9E%B6%E6%9E%84/" data-id="ckhg2b00d004a33mya24hd6wp" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2016/03/08/lipo-%e5%88%86%e7%a6%bb%e5%90%88%e5%b9%b6-armv7%e3%80%81arm64%e6%9e%b6%e6%9e%84/" data-id="ckhh9j5yu0004lmmy7itr9eh3" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -132,13 +134,13 @@
 
 
   
-    <article id="post-manually-decrypting-ios-apps" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2016-03-08-manually-decrypting-ios-apps" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2016/03/08/manually-decrypting-ios-apps/">manually  Decrypting iOS Apps</a>
+      <a class="article-title" href="/hw-1/index.php/2016/03/08/manually-decrypting-ios-apps/">manually  Decrypting iOS Apps</a>
     </h1>
   
 
@@ -147,22 +149,19 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2016/03/08/manually-decrypting-ios-apps/" class="article-date"><time datetime="2016-03-08T01:05:31.000Z" itemprop="datePublished">2016-03-08</time></a>
+  <a href="/hw-1/index.php/2016/03/08/manually-decrypting-ios-apps/" class="article-date"><time datetime="2016-03-07T17:05:31.000Z" itemprop="datePublished">2016-03-08</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Decrypting-iOS-Apps"><a href="#Decrypting-iOS-Apps" class="headerlink" title="Decrypting iOS Apps"></a>Decrypting iOS Apps</h1><p>a very detail tut for decrypt ios app, <a target="_blank" rel="noopener" href="http://www.infointox.net/?p=114">http://www.infointox.net/?p=114</a></p>
+        <h1 id="Decrypting-iOS-Apps-entry-title-entry-title-single"><a href="#Decrypting-iOS-Apps-entry-title-entry-title-single" class="headerlink" title="Decrypting iOS Apps {.entry-title.entry-title-single}"></a>Decrypting iOS Apps {.entry-title.entry-title-single}</h1><p>a very detail tut for decrypt ios app,</p>
+<p><a target="_blank" rel="noopener" href="http://www.infointox.net/?p=114">http://www.infointox.net/?p=114</a></p>
 
       
     </div>
@@ -173,7 +172,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/03/08/manually-decrypting-ios-apps/" data-id="ckhg2b00i004s33my1jw11c85" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2016/03/08/manually-decrypting-ios-apps/" data-id="ckhh9j5yu0005lmmy69lbccjh" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -187,13 +186,13 @@
 
 
   
-    <article id="post-patched-ipa-for-unjailed-iphone-inject-dylib-or-framework-to-execute-ii" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2016-03-08-patched-ipa-for-unjailed-iphone-inject-dylib-or-framework-to-execute-ii" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2016/03/08/patched-ipa-for-unjailed-iphone-inject-dylib-or-framework-to-execute-ii/">patched ipa for unjailed iphone - inject dylib or framework to execute II</a>
+      <a class="article-title" href="/hw-1/index.php/2016/03/08/patched-ipa-for-unjailed-iphone-inject-dylib-or-framework-to-execute-ii/">patched ipa for unjailed iphone &amp;#8211; inject dylib or framework to execute II</a>
     </h1>
   
 
@@ -202,22 +201,23 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2016/03/08/patched-ipa-for-unjailed-iphone-inject-dylib-or-framework-to-execute-ii/" class="article-date"><time datetime="2016-03-08T01:01:53.000Z" itemprop="datePublished">2016-03-08</time></a>
+  <a href="/hw-1/index.php/2016/03/08/patched-ipa-for-unjailed-iphone-inject-dylib-or-framework-to-execute-ii/" class="article-date"><time datetime="2016-03-07T17:01:53.000Z" itemprop="datePublished">2016-03-08</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###1 Injector source code <a target="_blank" rel="noopener" href="https://github.com/nadavrub/Injector">https://github.com/nadavrub/Injector</a> run the following to Inject the framework or dylib into the application executable: Injector binary “@executable_path/hook1.dylib” this tool is very usefull for clutch decrypted app ###2 yololib source code <a target="_blank" rel="noopener" href="https://github.com/KJCracks/yololib">https://github.com/KJCracks/yololib</a> usage [bash]yololib binary “@executable_path/hook1.dylib” [/bash] ###3 radare2 source code <a target="_blank" rel="noopener" href="https://github.com/radare/radare2">https://github.com/radare/radare2</a> it is very power tool ,but not simply to use, there is a tut for this tool use <a target="_blank" rel="noopener" href="http://coscolla.net/injecting-code-to-a-ipa/">http://coscolla.net/injecting-code-to-a-ipa/</a></p>
+        <p>###1 Injector<br>source code <a target="_blank" rel="noopener" href="https://github.com/nadavrub/Injector">https://github.com/nadavrub/Injector</a><br>run the following to Inject the framework or dylib into the application executable:<br>Injector binary &#8220;@executable_path/hook1.dylib&#8221;<br>this tool is very usefull for clutch decrypted app</p>
+<p>###2 yololib<br>source code <a target="_blank" rel="noopener" href="https://github.com/KJCracks/yololib">https://github.com/KJCracks/yololib</a><br>usage</p>
+<pre class="brush: bash; title: ; notranslate" title="">yololib  binary  "@executable_path/hook1.dylib"
+</pre>
+
+<p>###3 radare2<br>source code <a target="_blank" rel="noopener" href="https://github.com/radare/radare2">https://github.com/radare/radare2</a><br>it is very power tool ,but not simply to use,<br>there is a tut for this tool use<br><a target="_blank" rel="noopener" href="http://coscolla.net/injecting-code-to-a-ipa/">http://coscolla.net/injecting-code-to-a-ipa/</a></p>
 
       
     </div>
@@ -228,7 +228,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/03/08/patched-ipa-for-unjailed-iphone-inject-dylib-or-framework-to-execute-ii/" data-id="ckhg2b00p005i33my5korhdaj" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2016/03/08/patched-ipa-for-unjailed-iphone-inject-dylib-or-framework-to-execute-ii/" data-id="ckhh9j5yv0006lmmyhynm3l5t" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -242,13 +242,13 @@
 
 
   
-    <article id="post-「proxypy」免費線上代理伺服器web-proxy" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2016-03-02-e3808cproxypye3808de5858de8b2bbe7b79ae4b88ae4bba3e79086e4bcbae69c8de599a8web-proxy" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2016/03/02/%E3%80%8Cproxypy%E3%80%8D%E5%85%8D%E8%B2%BB%E7%B7%9A%E4%B8%8A%E4%BB%A3%E7%90%86%E4%BC%BA%E6%9C%8D%E5%99%A8web-proxy/">「ProxyPy」免費線上代理伺服器Web Proxy</a>
+      <a class="article-title" href="/hw-1/index.php/2016/03/02/%E3%80%8Cproxypy%E3%80%8D%E5%85%8D%E8%B2%BB%E7%B7%9A%E4%B8%8A%E4%BB%A3%E7%90%86%E4%BC%BA%E6%9C%8D%E5%99%A8web-proxy/">「ProxyPy」免費線上代理伺服器Web Proxy</a>
     </h1>
   
 
@@ -257,22 +257,19 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2016/03/02/%E3%80%8Cproxypy%E3%80%8D%E5%85%8D%E8%B2%BB%E7%B7%9A%E4%B8%8A%E4%BB%A3%E7%90%86%E4%BC%BA%E6%9C%8D%E5%99%A8web-proxy/" class="article-date"><time datetime="2016-03-02T08:11:48.000Z" itemprop="datePublished">2016-03-02</time></a>
+  <a href="/hw-1/index.php/2016/03/02/%E3%80%8Cproxypy%E3%80%8D%E5%85%8D%E8%B2%BB%E7%B7%9A%E4%B8%8A%E4%BB%A3%E7%90%86%E4%BC%BA%E6%9C%8D%E5%99%A8web-proxy/" class="article-date"><time datetime="2016-03-02T00:11:48.000Z" itemprop="datePublished">2016-03-02</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://wirelessbox.net/webproxy/">「ProxyPy」免費線上代理伺服器Web Proxy</a></p>
+        <p><a href="https://wirelessbox.net/webproxy/" target="_blank">「ProxyPy」免費線上代理伺服器Web Proxy</a></p>
+<p>&nbsp;</p>
 
       
     </div>
@@ -283,7 +280,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/03/02/%E3%80%8Cproxypy%E3%80%8D%E5%85%8D%E8%B2%BB%E7%B7%9A%E4%B8%8A%E4%BB%A3%E7%90%86%E4%BC%BA%E6%9C%8D%E5%99%A8web-proxy/" data-id="ckhg2b01v009q33myb6lkg9cx" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2016/03/02/%e3%80%8cproxypy%e3%80%8d%e5%85%8d%e8%b2%bb%e7%b7%9a%e4%b8%8a%e4%bb%a3%e7%90%86%e4%bc%ba%e6%9c%8d%e5%99%a8web-proxy/" data-id="ckhh9j5yt0003lmmy5vml6q4p" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -297,13 +294,13 @@
 
 
   
-    <article id="post-call-to-undefined-function-curl-init" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2016-03-02-call-to-undefined-function-curl_init" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2016/03/02/call-to-undefined-function-curl-init/">Call to undefined function curl_init()</a>
+      <a class="article-title" href="/hw-1/index.php/2016/03/02/call-to-undefined-function-curl_init/">Call to undefined function curl_init()</a>
     </h1>
   
 
@@ -312,22 +309,20 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2016/03/02/call-to-undefined-function-curl-init/" class="article-date"><time datetime="2016-03-02T01:59:00.000Z" itemprop="datePublished">2016-03-02</time></a>
+  <a href="/hw-1/index.php/2016/03/02/call-to-undefined-function-curl_init/" class="article-date"><time datetime="2016-03-01T17:59:00.000Z" itemprop="datePublished">2016-03-02</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[bash]sudo apt-get install php5-curl[/bash]</p>
+        <pre class="brush: bash; title: ; notranslate" title="">sudo apt-get install php5-curl</pre>
+
+<p>&nbsp;</p>
 
       
     </div>
@@ -338,7 +333,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/03/02/call-to-undefined-function-curl-init/" data-id="ckhg2azz4000m33my44lrew3g" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2016/03/02/call-to-undefined-function-curl_init/" data-id="ckhh9j5yr0001lmmy8vx6b066" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -352,13 +347,13 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2016-03-01-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2016/03/01/hello-world/">Hello world!</a>
+      <a class="article-title" href="/hw-1/index.php/2016/03/01/hello-world/">Hello world!</a>
     </h1>
   
 
@@ -367,13 +362,13 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2016/03/01/hello-world/" class="article-date"><time datetime="2016-03-01T05:20:20.000Z" itemprop="datePublished">2016-03-01</time></a>
+  <a href="/hw-1/index.php/2016/03/01/hello-world/" class="article-date"><time datetime="2016-02-29T21:20:20.000Z" itemprop="datePublished">2016-03-01</time></a>
 </div>
 
-    
+    <div class="article-author">hw-1</div>
     
   <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
+    <a class="article-category-link" href="/hw-1/categories/Uncategorized/">Uncategorized</a>
   </div>
 
 
@@ -393,7 +388,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/03/01/hello-world/" data-id="ckhg2azzo002033my90kf3wfj" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2016/03/01/hello-world/" data-id="ckhh9j5yo0000lmmyftdm3z64" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -428,7 +423,7 @@
   
   <div class="sidebar-module">
     <h4>Categories</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/categories/uncategorized/">uncategorized</a><span class="sidebar-module-list-count">186</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/categories/Uncategorized/">Uncategorized</a><span class="sidebar-module-list-count">13</span></li></ul>
   </div>
 
 
@@ -452,23 +447,23 @@
     <ul class="sidebar-module-list">
       
         <li>
-          <a href="/hw-1/2020/11/11/%E6%B2%BB%E6%84%88%E7%B3%BB%E8%AF%BE%E7%A8%8B-%E4%B8%83%E5%A4%A7%E4%BD%93%E7%B3%BB%E5%85%AB%E5%A4%A7%E5%85%85%E8%8A%82%E5%AE%8C%E6%95%B4%E7%89%88/">治愈系课程-七大体系八大充节完整版 - 免费下载</a>
+          <a href="/hw-1/index.php/2020/11/11/%E6%B2%BB%E6%84%88%E7%B3%BB%E8%AF%BE%E7%A8%8B-%E4%B8%83%E5%A4%A7%E4%BD%93%E7%B3%BB%E5%85%AB%E5%A4%A7%E5%85%85%E8%8A%82%E5%AE%8C%E6%95%B4%E7%89%88/">治愈系课程-七大体系八大充节完整版 &amp;#8211; 免费下载</a>
         </li>
       
         <li>
-          <a href="/hw-1/2020/11/06/%E8%BD%BB%E6%9D%BE%E8%A7%A3%E5%86%B3tensorflow%E6%8A%A5%E9%94%99illegal-instruction-core-dumped/">轻松解决Tensorflow报错illegal instruction (core dumped)</a>
+          <a href="/hw-1/index.php/2020/11/06/%E8%BD%BB%E6%9D%BE%E8%A7%A3%E5%86%B3tensorflow%E6%8A%A5%E9%94%99illegal-instruction-core-dumped/">轻松解决Tensorflow报错illegal instruction (core dumped)</a>
         </li>
       
         <li>
-          <a href="/hw-1/2020/11/06/ios-build-failed-at-compile-time-with-issue-failed-to-find-a-suitable-device-for-the-type-simdevicetype/">iOS Build Failed at compile time with issue “failed to find a suitable device for the type SimDeviceType”</a>
+          <a href="/hw-1/index.php/2020/11/06/ios-build-failed-at-compile-time-with-issue-failed-to-find-a-suitable-device-for-the-type-simdevicetype/">iOS Build Failed at compile time with issue “failed to find a suitable device for the type SimDeviceType”</a>
         </li>
       
         <li>
-          <a href="/hw-1/2020/11/05/privacy-data-collection-and-storage-reject/">Privacy - Data Collection and Storage Reject</a>
+          <a href="/hw-1/index.php/2020/11/05/privacy-data-collection-and-storage-reject/">Privacy &amp;#8211; Data Collection and Storage Reject</a>
         </li>
       
         <li>
-          <a href="/hw-1/2020/11/04/sourcetree-set-git-repo-username-password/">sourceTree set git repo username password</a>
+          <a href="/hw-1/index.php/2020/11/03/sourcetree-set-git-repo-username-password/">sourceTree set git repo username password</a>
         </li>
       
     </ul>

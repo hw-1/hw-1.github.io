@@ -77,13 +77,13 @@
         <div class="col-sm-8 blog-main">
           
   
-    <article id="post-ubuntu-fix-mysqld-high-memory-usage" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2020-09-18-ubuntu-fix-mysqld-high-memory-usage" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2020/09/18/ubuntu-fix-mysqld-high-memory-usage/">ubuntu fix mysqld high memory usage</a>
+      <a class="article-title" href="/hw-1/index.php/2020/09/18/ubuntu-fix-mysqld-high-memory-usage/">ubuntu fix mysqld high memory usage</a>
     </h1>
   
 
@@ -92,13 +92,13 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2020/09/18/ubuntu-fix-mysqld-high-memory-usage/" class="article-date"><time datetime="2020-09-18T01:06:56.000Z" itemprop="datePublished">2020-09-18</time></a>
+  <a href="/hw-1/index.php/2020/09/18/ubuntu-fix-mysqld-high-memory-usage/" class="article-date"><time datetime="2020-09-17T17:06:56.000Z" itemprop="datePublished">2020-09-18</time></a>
 </div>
 
-    
+    <div class="article-author">hw-1</div>
     
   <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
+    <a class="article-category-link" href="/hw-1/categories/Uncategorized/">Uncategorized</a>
   </div>
 
 
@@ -107,8 +107,18 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###ubuntu fix mysqld high memory usage [bash] vim /etc/mysql/mysql.conf.d/mysqld.cnf key_buffer_size = 6M max_binlog_size = 6M max_allowed_packet = 6M table_open_cache = 128 max_connections = 15 table_definition_cache = 100 temptable_max_ram = 16M performance_schema=OFF service mysql restart [/bash]</p>
-
+        <p>###ubuntu fix mysqld high memory usage</p>
+<pre class="brush: bash; title: ; notranslate" title="">vim /etc/mysql/mysql.conf.d/mysqld.cnf
+key_buffer_size         = 6M
+max_binlog_size   = 6M
+max_allowed_packet      = 6M
+table_open_cache       = 128
+max_connections        = 15
+table_definition_cache = 100
+temptable_max_ram  = 16M
+performance_schema=OFF
+service mysql restart
+</pre>
       
     </div>
 
@@ -118,7 +128,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/09/18/ubuntu-fix-mysqld-high-memory-usage/" data-id="ckhg2b01d007y33my4p3v6lde" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2020/09/18/ubuntu-fix-mysqld-high-memory-usage/" data-id="ckhh9j60s004xlmmybkhhh722" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -132,13 +142,13 @@
 
 
   
-    <article id="post-ubuntu-mount-usb" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2020-08-26-ubuntu-mount-usb" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2020/08/26/ubuntu-mount-usb/">ubuntu mount usb</a>
+      <a class="article-title" href="/hw-1/index.php/2020/08/26/ubuntu-mount-usb/">ubuntu mount usb</a>
     </h1>
   
 
@@ -147,13 +157,13 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2020/08/26/ubuntu-mount-usb/" class="article-date"><time datetime="2020-08-26T15:25:32.000Z" itemprop="datePublished">2020-08-26</time></a>
+  <a href="/hw-1/index.php/2020/08/26/ubuntu-mount-usb/" class="article-date"><time datetime="2020-08-26T07:25:32.000Z" itemprop="datePublished">2020-08-26</time></a>
 </div>
 
-    
+    <div class="article-author">hw-1</div>
     
   <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
+    <a class="article-category-link" href="/hw-1/categories/Uncategorized/">Uncategorized</a>
   </div>
 
 
@@ -162,8 +172,11 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="ubuntu-mount-usb"><a href="#ubuntu-mount-usb" class="headerlink" title="ubuntu mount usb"></a>ubuntu mount usb</h3><p>[bash] sudo fidks -l sudo mkdir -p /mnt/usb sudo mount /dev/sdb2 /mnt/usb sudo umount /dev/sdb2 [/bash]</p>
-
+        <h3 id="ubuntu-mount-usb"><a href="#ubuntu-mount-usb" class="headerlink" title="ubuntu mount usb"></a>ubuntu mount usb</h3><pre class="brush: bash; title: ; notranslate" title="">sudo fidks -l
+sudo mkdir -p /mnt/usb
+sudo mount /dev/sdb2 /mnt/usb
+sudo umount  /dev/sdb2
+</pre>
       
     </div>
 
@@ -173,7 +186,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/08/26/ubuntu-mount-usb/" data-id="ckhg2b01g008833my03lz5op8" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2020/08/26/ubuntu-mount-usb/" data-id="ckhh9j60r004wlmmycw0z6f9a" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -187,13 +200,13 @@
 
 
   
-    <article id="post-apt-install-fix-broken-and-overwrite" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2020-08-20-apt-install-fix-broken-and-overwrite" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2020/08/21/apt-install-fix-broken-and-overwrite/">apt install fix broken and overwrite</a>
+      <a class="article-title" href="/hw-1/index.php/2020/08/20/apt-install-fix-broken-and-overwrite/">apt install fix broken and overwrite</a>
     </h1>
   
 
@@ -202,23 +215,19 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2020/08/21/apt-install-fix-broken-and-overwrite/" class="article-date"><time datetime="2020-08-21T01:30:40.000Z" itemprop="datePublished">2020-08-21</time></a>
+  <a href="/hw-1/index.php/2020/08/20/apt-install-fix-broken-and-overwrite/" class="article-date"><time datetime="2020-08-20T13:30:40.000Z" itemprop="datePublished">2020-08-20</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="apt-install-fix-broken-and-overwrite"><a href="#apt-install-fix-broken-and-overwrite" class="headerlink" title="apt install fix broken and overwrite"></a>apt install fix broken and overwrite</h3><p>[bash] sudo apt-get -o Dpkg::Options::=”–force-overwrite” install –fix-broken [/bash]</p>
-
+        <h3 id="apt-install-fix-broken-and-overwrite"><a href="#apt-install-fix-broken-and-overwrite" class="headerlink" title="apt install fix broken and overwrite"></a>apt install fix broken and overwrite</h3><pre class="brush: bash; title: ; notranslate" title="">sudo apt-get -o Dpkg::Options::=&quot;--force-overwrite&quot; install --fix-broken
+</pre>
       
     </div>
 
@@ -228,7 +237,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/08/21/apt-install-fix-broken-and-overwrite/" data-id="ckhg2azyw000433my0grf5tvh" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2020/08/20/apt-install-fix-broken-and-overwrite/" data-id="ckhh9j60r004ulmmybd7yaj3j" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -242,13 +251,13 @@
 
 
   
-    <article id="post-github-加速" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2020-08-20-github-e58aa0e9809f" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2020/08/20/github-%E5%8A%A0%E9%80%9F/">github 加速</a>
+      <a class="article-title" href="/hw-1/index.php/2020/08/20/github-%E5%8A%A0%E9%80%9F/">github 加速</a>
     </h1>
   
 
@@ -257,23 +266,25 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2020/08/20/github-%E5%8A%A0%E9%80%9F/" class="article-date"><time datetime="2020-08-20T09:36:35.000Z" itemprop="datePublished">2020-08-20</time></a>
+  <a href="/hw-1/index.php/2020/08/20/github-%E5%8A%A0%E9%80%9F/" class="article-date"><time datetime="2020-08-19T21:36:35.000Z" itemprop="datePublished">2020-08-20</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="github-加速"><a href="#github-加速" class="headerlink" title="github 加速"></a>github 加速</h3><p>github 镜像 支持 git https [bash] <a target="_blank" rel="noopener" href="https://github.com.cnpmjs.org/">https://github.com.cnpmjs.org</a> <a target="_blank" rel="noopener" href="https://hub.fastgit.org/">https://hub.fastgit.org</a> [/bash] github 镜像 支持 git ssh [bash] <a target="_blank" rel="noopener" href="https://github.zhlh6.cn/">https://github.zhlh6.cn/</a> [/bash]</p>
+        <h3 id="github-加速"><a href="#github-加速" class="headerlink" title="github 加速"></a>github 加速</h3><p>github 镜像 支持 git https</p>
+<pre class="brush: bash; title: ; notranslate" title="">https://github.com.cnpmjs.org
+https://hub.fastgit.org
+</pre>
 
+<p>github 镜像 支持 git ssh</p>
+<pre class="brush: bash; title: ; notranslate" title="">https://github.zhlh6.cn/
+</pre>
       
     </div>
 
@@ -283,7 +294,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/08/20/github-%E5%8A%A0%E9%80%9F/" data-id="ckhg2azzk001w33my7kxa6juo" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2020/08/20/github-%e5%8a%a0%e9%80%9f/" data-id="ckhh9j60r004vlmmy7jpt80p7" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -297,13 +308,13 @@
 
 
   
-    <article id="post-tensorboard-1-14-0-has-requirement-setuptools41-0-0-but-youll-have-setuptools-39-1-0" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2020-08-19-tensorboard-1-14-0-has-requirement-setuptools41-0-0-but-youll-have-setuptools-39-1-0" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2020/08/20/tensorboard-1-14-0-has-requirement-setuptools41-0-0-but-youll-have-setuptools-39-1-0/">tensorboard 1.14.0 has requirement setuptools&gt;=41.0.0, but you&#39;ll have setuptools 39.1.0</a>
+      <a class="article-title" href="/hw-1/index.php/2020/08/19/tensorboard-1-14-0-has-requirement-setuptools41-0-0-but-youll-have-setuptools-39-1-0/">tensorboard 1.14.0 has requirement setuptools&gt;=41.0.0, but you&amp;#8217;ll have setuptools 39.1.0</a>
     </h1>
   
 
@@ -312,23 +323,22 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2020/08/20/tensorboard-1-14-0-has-requirement-setuptools41-0-0-but-youll-have-setuptools-39-1-0/" class="article-date"><time datetime="2020-08-20T03:05:46.000Z" itemprop="datePublished">2020-08-20</time></a>
+  <a href="/hw-1/index.php/2020/08/19/tensorboard-1-14-0-has-requirement-setuptools41-0-0-but-youll-have-setuptools-39-1-0/" class="article-date"><time datetime="2020-08-19T15:05:46.000Z" itemprop="datePublished">2020-08-19</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="tensorboard-1-14-0-has-requirement-setuptools-gt-41-0-0-but-you’ll-have-setuptools-39-1-0"><a href="#tensorboard-1-14-0-has-requirement-setuptools-gt-41-0-0-but-you’ll-have-setuptools-39-1-0" class="headerlink" title="tensorboard 1.14.0 has requirement setuptools&gt;=41.0.0, but you’ll have setuptools 39.1.0"></a>tensorboard 1.14.0 has requirement setuptools&gt;=41.0.0, but you’ll have setuptools 39.1.0</h3><p>tensorboard 1.14.0 has requirement setuptools&gt;=41.0.0, but you’ll have setuptools 39.1.0 which is incompatible. 解决方法： [bash] pip uninstall setuptools pip install –ignore-installed setuptools==41.0.0 [/bash]</p>
-
+        <h3 id="tensorboard-1-14-0-has-requirement-setuptools-gt-41-0-0-but-you-8217-ll-have-setuptools-39-1-0"><a href="#tensorboard-1-14-0-has-requirement-setuptools-gt-41-0-0-but-you-8217-ll-have-setuptools-39-1-0" class="headerlink" title="tensorboard 1.14.0 has requirement setuptools&gt;=41.0.0, but you&#8217;ll have setuptools 39.1.0"></a>tensorboard 1.14.0 has requirement setuptools&gt;=41.0.0, but you&#8217;ll have setuptools 39.1.0</h3><p>tensorboard 1.14.0 has requirement setuptools&gt;=41.0.0, but you&#8217;ll have setuptools 39.1.0 which is incompatible.</p>
+<p>解决方法：</p>
+<pre class="brush: bash; title: ; notranslate" title="">pip uninstall setuptools
+pip install --ignore-installed setuptools==41.0.0
+</pre>
       
     </div>
 
@@ -338,7 +348,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/08/20/tensorboard-1-14-0-has-requirement-setuptools41-0-0-but-youll-have-setuptools-39-1-0/" data-id="ckhg2b017007i33my94fe2jww" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2020/08/19/tensorboard-1-14-0-has-requirement-setuptools41-0-0-but-youll-have-setuptools-39-1-0/" data-id="ckhh9j60r004tlmmy3h657ymb" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -352,13 +362,13 @@
 
 
   
-    <article id="post-pip-install-repo-use-tuna" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2020-03-16-pip-install-repo-use-tuna" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2020/03/16/pip-install-repo-use-tuna/">pip install  repo use tuna</a>
+      <a class="article-title" href="/hw-1/index.php/2020/03/16/pip-install-repo-use-tuna/">pip install  repo use tuna</a>
     </h1>
   
 
@@ -367,23 +377,20 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2020/03/16/pip-install-repo-use-tuna/" class="article-date"><time datetime="2020-03-16T02:46:49.000Z" itemprop="datePublished">2020-03-16</time></a>
+  <a href="/hw-1/index.php/2020/03/16/pip-install-repo-use-tuna/" class="article-date"><time datetime="2020-03-15T18:46:49.000Z" itemprop="datePublished">2020-03-16</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>pip install repo use tuna [bash] pip3 install -i <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> -r requirements.txt [/bash]</p>
-
+        <p>pip install repo use tuna</p>
+<pre class="brush: bash; title: ; notranslate" title="">pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
+</pre>
       
     </div>
 
@@ -393,7 +400,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/pip-install-repo-use-tuna/" data-id="ckhg2b00r005o33myg9oo6z1u" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2020/03/16/pip-install-repo-use-tuna/" data-id="ckhh9j60p004olmmy1ke3817j" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -407,13 +414,13 @@
 
 
   
-    <article id="post-usbmux-log-port-forward" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2020-03-16-usbmux-log-port-forward" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2020/03/16/usbmux-log-port-forward/">usbmux log &amp; port forward</a>
+      <a class="article-title" href="/hw-1/index.php/2020/03/16/usbmux-log-port-forward/">usbmux log &amp;#038; port forward</a>
     </h1>
   
 
@@ -422,23 +429,30 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2020/03/16/usbmux-log-port-forward/" class="article-date"><time datetime="2020-03-16T02:45:10.000Z" itemprop="datePublished">2020-03-16</time></a>
+  <a href="/hw-1/index.php/2020/03/16/usbmux-log-port-forward/" class="article-date"><time datetime="2020-03-15T18:45:10.000Z" itemprop="datePublished">2020-03-16</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>usbmux log &amp; port forward [bash] usbmux log sudo mv /var/run/usbmuxd /var/run/usbmux_real // -x sudo socat -t100 -x -v UNIX-LISTEN:/var/run/usbmuxd,mode=777,reuseaddr,fork UNIX-CONNECT:/var/run/usbmux_real sudo mv /var/run/usbmux_real /var/run/usbmuxd usbmux forward sudo mv /var/run/usbmuxd /var/run/usbmux_real sudo socat UNIX-LISTEN:/var/run/usbmuxd,mode=777,reuseaddr,fork TCP:XXX.XXX.XXX.XXX:8555 socat TCP-LISTEN:8555,reuseaddr,fork UNIX-CONNECT:/var/run/usbmuxd [/bash]</p>
+        <p>usbmux log &amp; port forward</p>
+<pre class="brush: bash; title: ; notranslate" title="">usbmux log
+sudo mv /var/run/usbmuxd /var/run/usbmux_real
+// -x
+sudo socat -t100  -x  -v UNIX-LISTEN:/var/run/usbmuxd,mode=777,reuseaddr,fork UNIX-CONNECT:/var/run/usbmux_real
+sudo mv /var/run/usbmux_real /var/run/usbmuxd
 
+usbmux forward
+sudo  mv /var/run/usbmuxd /var/run/usbmux_real
+sudo socat UNIX-LISTEN:/var/run/usbmuxd,mode=777,reuseaddr,fork TCP:XXX.XXX.XXX.XXX:8555
+
+socat TCP-LISTEN:8555,reuseaddr,fork UNIX-CONNECT:/var/run/usbmuxd
+</pre>
       
     </div>
 
@@ -448,7 +462,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/usbmux-log-port-forward/" data-id="ckhg2b01k008m33my7xzt48v8" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2020/03/16/usbmux-log-port-forward/" data-id="ckhh9j60q004rlmmy071o3jn2" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -462,13 +476,13 @@
 
 
   
-    <article id="post-ssh-port-forward" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2020-03-16-ssh-port-forward" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2020/03/16/ssh-port-forward/">ssh port forward</a>
+      <a class="article-title" href="/hw-1/index.php/2020/03/16/ssh-port-forward/">ssh port forward</a>
     </h1>
   
 
@@ -477,23 +491,22 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2020/03/16/ssh-port-forward/" class="article-date"><time datetime="2020-03-16T02:43:55.000Z" itemprop="datePublished">2020-03-16</time></a>
+  <a href="/hw-1/index.php/2020/03/16/ssh-port-forward/" class="article-date"><time datetime="2020-03-15T18:43:55.000Z" itemprop="datePublished">2020-03-16</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ssh port forward [bash] /usr/bin/ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -q -i $IFPOD_HOME/etc/ln1.pem <a href="mailto:&#x72;&#x6f;&#111;&#x74;&#x40;&#x31;&#x37;&#x2e;&#x38;&#x2e;&#50;&#x37;&#x2e;&#x31;&#x37;">&#x72;&#x6f;&#111;&#x74;&#x40;&#x31;&#x37;&#x2e;&#x38;&#x2e;&#50;&#x37;&#x2e;&#x31;&#x37;</a> -p 22 -N -g -L 3333:localhost:2222 ssh -D 9000 -N <a href="mailto:&#119;&#x64;&#49;&#64;&#x31;&#x32;&#55;&#46;&#48;&#46;&#x30;&#x2e;&#x31;">&#119;&#x64;&#49;&#64;&#x31;&#x32;&#55;&#46;&#48;&#46;&#x30;&#x2e;&#x31;</a> -p 3333 [/bash]</p>
+        <p>ssh port forward</p>
+<pre class="brush: bash; title: ; notranslate" title="">/usr/bin/ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -q  -i $IFPOD_HOME/etc/ln1.pem   root@17.8.27.17 -p 22 -N -g -L  3333:localhost:2222
 
+ssh -D 9000  -N wd1@127.0.0.1 -p 3333
+</pre>
       
     </div>
 
@@ -503,7 +516,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/ssh-port-forward/" data-id="ckhg2b014007233myee21c6fk" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2020/03/16/ssh-port-forward/" data-id="ckhh9j60p004plmmy98qb8e30" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -517,13 +530,13 @@
 
 
   
-    <article id="post-itunes-account-auth" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2020-03-16-itunes-account-auth" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2020/03/16/itunes-account-auth/">itunes account  auth</a>
+      <a class="article-title" href="/hw-1/index.php/2020/03/16/itunes-account-auth/">itunes account  auth</a>
     </h1>
   
 
@@ -532,23 +545,30 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2020/03/16/itunes-account-auth/" class="article-date"><time datetime="2020-03-16T02:10:51.000Z" itemprop="datePublished">2020-03-16</time></a>
+  <a href="/hw-1/index.php/2020/03/16/itunes-account-auth/" class="article-date"><time datetime="2020-03-15T18:10:51.000Z" itemprop="datePublished">2020-03-16</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>itunes account auth [bash] /private/var/mobile/Media/AirFair/sync/afsync.rq key=GetValue string=FairPlayCertificate –&gt; cert generate grappaID grappaData Grappa(grappaData) –&gt; afsync.rq cert rq –&gt; rsbuffer rsbuffer GrappaID –&gt; sigBuffer (afsync.rs) /private/var/mobile/Media/AirFair/sync /AirFair/sync/afsync.rq /AirFair/sync/afsync.rs [/bash]</p>
+        <p>itunes account auth</p>
+<pre class="brush: bash; title: ; notranslate" title="">/private/var/mobile/Media/AirFair/sync/afsync.rq
 
+key=GetValue string=FairPlayCertificate --&gt; cert
+generate grappaID  grappaData
+Grappa(grappaData) --&gt; afsync.rq
+cert  rq --&gt;  rsbuffer
+rsbuffer GrappaID --&gt;  sigBuffer (afsync.rs)
+
+/private/var/mobile/Media/AirFair/sync
+/AirFair/sync/afsync.rq
+/AirFair/sync/afsync.rs
+</pre>
       
     </div>
 
@@ -558,7 +578,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/itunes-account-auth/" data-id="ckhg2b009003y33my4kc3gg9u" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2020/03/16/itunes-account-auth/" data-id="ckhh9j60o004klmmy5zubdh8u" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -572,13 +592,13 @@
 
 
   
-    <article id="post-lldb-command-line" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2020-03-16-lldb-command-line" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2020/03/16/lldb-command-line/">lldb command line</a>
+      <a class="article-title" href="/hw-1/index.php/2020/03/16/lldb-command-line/">lldb command line</a>
     </h1>
   
 
@@ -587,23 +607,24 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2020/03/16/lldb-command-line/" class="article-date"><time datetime="2020-03-16T02:09:40.000Z" itemprop="datePublished">2020-03-16</time></a>
+  <a href="/hw-1/index.php/2020/03/16/lldb-command-line/" class="article-date"><time datetime="2020-03-15T18:09:40.000Z" itemprop="datePublished">2020-03-16</time></a>
 </div>
 
+    <div class="article-author">hw-1</div>
     
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hw-1/categories/uncategorized/">uncategorized</a>
-  </div>
-
 
   </div>
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>lldb command line [bash] im list br set -a “0x0000000107156000+0x000000000034a676” //0x0000000107156000 baseaddress //0x000000000034a676 offset po (__bridge_transfer NSDictionary*)0x00007000011ecc90; [/bash]</p>
-
+        <p>lldb command line</p>
+<pre class="brush: bash; title: ; notranslate" title="">im list
+br set -a &quot;0x0000000107156000+0x000000000034a676&quot;
+//0x0000000107156000 baseaddress
+//0x000000000034a676 offset
+po (__bridge_transfer  NSDictionary*)0x00007000011ecc90;
+</pre>
       
     </div>
 
@@ -613,7 +634,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/lldb-command-line/" data-id="ckhg2b00e004c33my5e3vcwvx" class="article-share-link">
+      <a data-url="http://wirelessbox.net/index.php/2020/03/16/lldb-command-line/" data-id="ckhh9j60o004mlmmyaa39clj0" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -648,7 +669,7 @@
   
   <div class="sidebar-module">
     <h4>Categories</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/categories/uncategorized/">uncategorized</a><span class="sidebar-module-list-count">186</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/categories/Uncategorized/">Uncategorized</a><span class="sidebar-module-list-count">13</span></li></ul>
   </div>
 
 
@@ -672,23 +693,23 @@
     <ul class="sidebar-module-list">
       
         <li>
-          <a href="/hw-1/2020/11/11/%E6%B2%BB%E6%84%88%E7%B3%BB%E8%AF%BE%E7%A8%8B-%E4%B8%83%E5%A4%A7%E4%BD%93%E7%B3%BB%E5%85%AB%E5%A4%A7%E5%85%85%E8%8A%82%E5%AE%8C%E6%95%B4%E7%89%88/">治愈系课程-七大体系八大充节完整版 - 免费下载</a>
+          <a href="/hw-1/index.php/2020/11/11/%E6%B2%BB%E6%84%88%E7%B3%BB%E8%AF%BE%E7%A8%8B-%E4%B8%83%E5%A4%A7%E4%BD%93%E7%B3%BB%E5%85%AB%E5%A4%A7%E5%85%85%E8%8A%82%E5%AE%8C%E6%95%B4%E7%89%88/">治愈系课程-七大体系八大充节完整版 &amp;#8211; 免费下载</a>
         </li>
       
         <li>
-          <a href="/hw-1/2020/11/06/%E8%BD%BB%E6%9D%BE%E8%A7%A3%E5%86%B3tensorflow%E6%8A%A5%E9%94%99illegal-instruction-core-dumped/">轻松解决Tensorflow报错illegal instruction (core dumped)</a>
+          <a href="/hw-1/index.php/2020/11/06/%E8%BD%BB%E6%9D%BE%E8%A7%A3%E5%86%B3tensorflow%E6%8A%A5%E9%94%99illegal-instruction-core-dumped/">轻松解决Tensorflow报错illegal instruction (core dumped)</a>
         </li>
       
         <li>
-          <a href="/hw-1/2020/11/06/ios-build-failed-at-compile-time-with-issue-failed-to-find-a-suitable-device-for-the-type-simdevicetype/">iOS Build Failed at compile time with issue “failed to find a suitable device for the type SimDeviceType”</a>
+          <a href="/hw-1/index.php/2020/11/06/ios-build-failed-at-compile-time-with-issue-failed-to-find-a-suitable-device-for-the-type-simdevicetype/">iOS Build Failed at compile time with issue “failed to find a suitable device for the type SimDeviceType”</a>
         </li>
       
         <li>
-          <a href="/hw-1/2020/11/05/privacy-data-collection-and-storage-reject/">Privacy - Data Collection and Storage Reject</a>
+          <a href="/hw-1/index.php/2020/11/05/privacy-data-collection-and-storage-reject/">Privacy &amp;#8211; Data Collection and Storage Reject</a>
         </li>
       
         <li>
-          <a href="/hw-1/2020/11/04/sourcetree-set-git-repo-username-password/">sourceTree set git repo username password</a>
+          <a href="/hw-1/index.php/2020/11/03/sourcetree-set-git-repo-username-password/">sourceTree set git repo username password</a>
         </li>
       
     </ul>
