@@ -5,15 +5,15 @@
   
   <title>make  ubuntu startup usb | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="make ubuntu startup usb hdiutil convert -format UDRW ubuntu-18.04.2-live-server-amd64.iso  -o ubuntu-18.04.2-live-server-amd64.img  diskutil list diskutil unmountDisk &#x2F;dev&#x2F;disk3 sudo dd if&#x3D;&#x2F;Volumes&#x2F;do">
+  <meta name="description" content="make ubuntu startup usb 12345678910hdiutil convert -format UDRW ubuntu-18.04.2-live-server-amd64.iso  -o ubuntu-18.04.2-live-server-amd64.imgdiskutil listdiskutil unmountDisk &#x2F;dev&#x2F;disk3sudo dd if&#x3D;&#x2F;Vol">
 <meta property="og:type" content="article">
 <meta property="og:title" content="make  ubuntu startup usb">
 <meta property="og:url" content="http://wirelessbox.net/2019/05/17/make-ubuntu-startup-usb/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="make ubuntu startup usb hdiutil convert -format UDRW ubuntu-18.04.2-live-server-amd64.iso  -o ubuntu-18.04.2-live-server-amd64.img  diskutil list diskutil unmountDisk &#x2F;dev&#x2F;disk3 sudo dd if&#x3D;&#x2F;Volumes&#x2F;do">
+<meta property="og:description" content="make ubuntu startup usb 12345678910hdiutil convert -format UDRW ubuntu-18.04.2-live-server-amd64.iso  -o ubuntu-18.04.2-live-server-amd64.imgdiskutil listdiskutil unmountDisk &#x2F;dev&#x2F;disk3sudo dd if&#x3D;&#x2F;Vol">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-05-16T23:14:50.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.516Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,17 +106,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>make ubuntu startup usb</p>
-<pre class="brush: bash; title: ; notranslate" title="">hdiutil convert -format UDRW ubuntu-18.04.2-live-server-amd64.iso  -o ubuntu-18.04.2-live-server-amd64.img
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">hdiutil convert -format UDRW ubuntu-18.04.2-live-server-amd64.iso  -o ubuntu-18.04.2-live-server-amd64.img</span><br><span class="line"></span><br><span class="line">diskutil list</span><br><span class="line">diskutil unmountDisk /dev/disk3</span><br><span class="line">sudo dd <span class="keyword">if</span>=/Volumes/downloads/ubuntu-18.04.2-live-server-amd64.img of=/dev/disk3 bs=1m</span><br><span class="line"></span><br><span class="line">sudo qemu-system-x86_64 -hda /dev/disk3</span><br><span class="line"></span><br><span class="line">diskutil eject /dev/disk3</span><br><span class="line">sudo dd <span class="keyword">if</span>=/dev/urandom of=/dev/disk3</span><br></pre></td></tr></table></figure>
 
-diskutil list
-diskutil unmountDisk /dev/disk3
-sudo dd if=/Volumes/downloads/ubuntu-18.04.2-live-server-amd64.img of=/dev/disk3 bs=1m
-
-sudo qemu-system-x86_64 -hda /dev/disk3
-
-diskutil eject /dev/disk3
-sudo dd if=/dev/urandom of=/dev/disk3
-</pre>
       
     </div>
 
@@ -126,7 +117,7 @@ sudo dd if=/dev/urandom of=/dev/disk3
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/05/17/make-ubuntu-startup-usb/" data-id="ckhhbad3c003v98mydwvb0fo9" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/05/17/make-ubuntu-startup-usb/" data-id="ckhmph3jc003uh4y24bgza4kz" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

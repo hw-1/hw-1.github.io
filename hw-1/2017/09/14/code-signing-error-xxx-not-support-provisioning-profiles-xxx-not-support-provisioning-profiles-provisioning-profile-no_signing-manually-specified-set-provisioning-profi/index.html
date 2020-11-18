@@ -13,7 +13,7 @@
 <meta property="og:description" content="Code Signing Error: XXX does not support provisioning profiles. XXX does not support provisioning profiles, but provisioning profile NO_SIGNING&#x2F; has been manually specified. Set the provisioning profi">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-09-13T19:42:53.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.183Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,12 +106,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="Code-Signing-Error-XXX-does-not-support-provisioning-profiles-XXX-does-not-support-provisioning-profiles-but-provisioning-profile-NO-SIGNING-has-been-manually-specified-Set-the-provisioning-profile-value-to-8220-Automatic-8221-in-the-build-settings-editor"><a href="#Code-Signing-Error-XXX-does-not-support-provisioning-profiles-XXX-does-not-support-provisioning-profiles-but-provisioning-profile-NO-SIGNING-has-been-manually-specified-Set-the-provisioning-profile-value-to-8220-Automatic-8221-in-the-build-settings-editor" class="headerlink" title="Code Signing Error: XXX does not support provisioning profiles. XXX does not support provisioning profiles, but provisioning profile NO_SIGNING/ has been manually specified. Set the provisioning profile value to &#8220;Automatic&#8221; in the build settings editor."></a>Code Signing Error: XXX does not support provisioning profiles. XXX does not support provisioning profiles, but provisioning profile NO_SIGNING/ has been manually specified. Set the provisioning profile value to &#8220;Automatic&#8221; in the build settings editor.</h3><p>add this code bottom of Podfile to solve this issuse</p>
-<pre class="brush: bash; title: ; notranslate" title="">post_install do |installer|
-    installer.pods_project.build_configurations.each do |config|
-        config.build_settings['PROVISIONING_PROFILE_SPECIFIER'] = ''
-    end
-end
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">post_install <span class="keyword">do</span> |installer|</span><br><span class="line">    installer.pods_project.build_configurations.each <span class="keyword">do</span> |config|</span><br><span class="line">        config.build_settings[<span class="string">&#x27;PROVISIONING_PROFILE_SPECIFIER&#x27;</span>] = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -121,7 +117,7 @@ end
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/09/14/code-signing-error-xxx-not-support-provisioning-profiles-xxx-not-support-provisioning-profiles-provisioning-profile-no_signing-manually-specified-set-provisioning-profi/" data-id="ckhhbad2l001p98my325fg39d" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/09/14/code-signing-error-xxx-not-support-provisioning-profiles-xxx-not-support-provisioning-profiles-provisioning-profile-no_signing-manually-specified-set-provisioning-profi/" data-id="ckhmph3in001ph4y2a2piewks" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

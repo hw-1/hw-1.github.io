@@ -13,7 +13,7 @@
 <meta property="og:description" content="BEGIN RSA PRIVATE KEY is PKCS#1 and is just an RSA key.BEGIN PRIVATE KEY is PKCS#8 and indicates that the key type is included in the key data itself. openssl pkcs8 -topk8 -inform pem -in servername.k">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2016-03-19T01:15:07.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.252Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,7 +106,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>BEGIN RSA PRIVATE KEY is PKCS#1 and is just an RSA key.<br>BEGIN PRIVATE KEY is PKCS#8 and indicates that the key type is included in the key data itself.</p>
-<pre class="brush: bash; title: ; notranslate" title="">openssl pkcs8 -topk8 -inform pem -in servername.key -outform pem -nocrypt -out servername.key.1</pre>
+<pre><code class="bash">openssl pkcs8 -topk8 -inform pem -in servername.key -outform pem -nocrypt -out servername.key.1```</code></pre>
+
       
     </div>
 
@@ -116,7 +117,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/03/19/convert-pkcs1-to-pkcs8/" data-id="ckhhbad1r000998mye6t143le" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/03/19/convert-pkcs1-to-pkcs8/" data-id="ckhmph3h90007h4y2ak42e0cj" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

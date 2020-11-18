@@ -5,15 +5,15 @@
   
   <title>osx install torch and fast neural style | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###osx install torch and fast neural style &lt;br &#x2F;&gt; lua&#x2F;5.1&#x2F;hdf5&#x2F;ffi.lua:56: &#39;)&#39; expected near &#39;_close&#39; at line 1478  Edit ffi.lua line 44, change local process &#x3D; io.popen(&quot;gcc -E &quot; .. headerPath)">
+  <meta name="description" content="###osx install torch and fast neural style 1234567891011121314151617181920212223242526272829303132&amp;lt;br &#x2F;&amp;gt; lua&#x2F;5.1&#x2F;hdf5&#x2F;ffi.lua:56: &amp;#x27;)&amp;#x27; expected near &amp;#x27;_close&amp;#x27; at line 1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="osx install torch and fast neural style">
 <meta property="og:url" content="http://wirelessbox.net/2018/11/02/osx-install-torch-and-fast-neural-style/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="###osx install torch and fast neural style &lt;br &#x2F;&gt; lua&#x2F;5.1&#x2F;hdf5&#x2F;ffi.lua:56: &#39;)&#39; expected near &#39;_close&#39; at line 1478  Edit ffi.lua line 44, change local process &#x3D; io.popen(&quot;gcc -E &quot; .. headerPath)">
+<meta property="og:description" content="###osx install torch and fast neural style 1234567891011121314151617181920212223242526272829303132&amp;lt;br &#x2F;&amp;gt; lua&#x2F;5.1&#x2F;hdf5&#x2F;ffi.lua:56: &amp;#x27;)&amp;#x27; expected near &amp;#x27;_close&amp;#x27; at line 1">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-11-01T23:03:11.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.159Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,39 +106,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>###osx install torch and fast neural style</p>
-<pre class="brush: bash; title: ; notranslate" title="">&lt;br /&gt; lua/5.1/hdf5/ffi.lua:56: ')' expected near '_close' at line 1478
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;br /&amp;gt; lua/5.1/hdf5/ffi.lua:56: <span class="string">&#x27;)&#x27;</span> expected near <span class="string">&#x27;_close&#x27;</span> at line 1478</span><br><span class="line"></span><br><span class="line">Edit ffi.lua line 44,</span><br><span class="line">change</span><br><span class="line"><span class="built_in">local</span> process = io.popen(<span class="string">&quot;gcc -E &quot;</span> .. headerPath) -- TODO pass -I</span><br><span class="line">to</span><br><span class="line"><span class="built_in">local</span> process = io.popen(<span class="string">&quot;gcc -D &#x27;_Nullable=&#x27; -E &quot;</span> .. headerPath) -- TODO pass -I.</span><br><span class="line"></span><br><span class="line">luarocks  install  hdf5</span><br><span class="line">brew install hdf5@1.8</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> LDFLAGS=<span class="string">&quot;-L/usr/local/opt/hdf5@1.8/lib&quot;</span></span><br><span class="line"><span class="built_in">export</span> CPPFLAGS=<span class="string">&quot;-I/usr/local/opt/hdf5@1.8/include&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">hdf5._config = &#123; HDF5_INCLUDE_PATH = <span class="string">&quot;/usr/local/opt/hdf5@1.8/lib&quot;</span>, HDF5_LIBRARIES = <span class="string">&quot;/usr/local/opt/hdf5@1.8/lib/libhdf5.dylib;/usr/local/lib/libsz.dylib;/usr/lib/libz.dylib;/usr/lib/libdl.dylib;/usr/lib/libm.dylib&quot;</span> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// wget http://msvocds.blob.core.windows.net/coco2014/train2014.zip</span><br><span class="line">// wget http://msvocds.blob.core.windows.net/coco2014/val2014.zip</span><br><span class="line">wget http://images.cocodataset.org/zips/train2014.zip</span><br><span class="line">wget http://images.cocodataset.org/zips/val2014.zip</span><br><span class="line"></span><br><span class="line">jar xvf train2014.zip</span><br><span class="line">jar xvf val2014.zip</span><br><span class="line"></span><br><span class="line">python scripts/make_style_dataset.py \</span><br><span class="line">  --train_dir train2014 \</span><br><span class="line">  --val_dir val2014 \</span><br><span class="line">  --output_file data/ms-coco-256.h5</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-Edit ffi.lua line 44,
-change
-local process = io.popen("gcc -E " .. headerPath) -- TODO pass -I
-to
-local process = io.popen("gcc -D '_Nullable=' -E " .. headerPath) -- TODO pass -I.
-
-luarocks  install  hdf5
-brew install hdf5@1.8
-
-
-export LDFLAGS="-L/usr/local/opt/hdf5@1.8/lib"
-export CPPFLAGS="-I/usr/local/opt/hdf5@1.8/include"
-
-
-hdf5._config = { HDF5_INCLUDE_PATH = "/usr/local/opt/hdf5@1.8/lib", HDF5_LIBRARIES = "/usr/local/opt/hdf5@1.8/lib/libhdf5.dylib;/usr/local/lib/libsz.dylib;/usr/lib/libz.dylib;/usr/lib/libdl.dylib;/usr/lib/libm.dylib" }
-
-
-// wget http://msvocds.blob.core.windows.net/coco2014/train2014.zip
-// wget http://msvocds.blob.core.windows.net/coco2014/val2014.zip
-wget http://images.cocodataset.org/zips/train2014.zip
-wget http://images.cocodataset.org/zips/val2014.zip
-
-jar xvf train2014.zip
-jar xvf val2014.zip
-
-python scripts/make_style_dataset.py \
-  --train_dir train2014 \
-  --val_dir val2014 \
-  --output_file data/ms-coco-256.h5
-
-</pre>
       
     </div>
 
@@ -148,7 +117,7 @@ python scripts/make_style_dataset.py \
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/11/02/osx-install-torch-and-fast-neural-style/" data-id="ckhhbad30002x98myed5uf2dw" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/11/02/osx-install-torch-and-fast-neural-style/" data-id="ckhmph3j1002xh4y23xxuhj44" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

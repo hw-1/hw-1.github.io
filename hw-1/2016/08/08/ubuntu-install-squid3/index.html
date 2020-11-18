@@ -5,15 +5,15 @@
   
   <title>ubuntu install squid3 | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ubuntu install squid3  sudo apt-get install python-setuptools  sudo apt-get install build-essential autoconf libtool pkg-config python-opengl python-imaging python-pyrex python-pyside.qtopengl idle-py">
+  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950ubuntu install squid3sudo apt-get install python-setuptoolssudo apt-get install build-essential autoconf libt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu install squid3">
 <meta property="og:url" content="http://wirelessbox.net/2016/08/08/ubuntu-install-squid3/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="ubuntu install squid3  sudo apt-get install python-setuptools  sudo apt-get install build-essential autoconf libtool pkg-config python-opengl python-imaging python-pyrex python-pyside.qtopengl idle-py">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950ubuntu install squid3sudo apt-get install python-setuptoolssudo apt-get install build-essential autoconf libt">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2016-08-08T04:21:30.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.556Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -105,57 +105,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">ubuntu install squid3
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">ubuntu install squid3</span><br><span class="line"></span><br><span class="line">sudo apt-get install python-setuptools</span><br><span class="line"></span><br><span class="line">sudo apt-get install build-essential autoconf libtool pkg-config python-opengl python-imaging python-pyrex python-pyside.qtopengl idle-python2.7 qt4-dev-tools qt4-designer libqtgui4 libqtcore4 libqt4-xml libqt4-test libqt4-script libqt4-network libqt4-dbus python-qt4 python-qt4-gl libgle3 python-dev</span><br><span class="line"></span><br><span class="line">sudo apt install squid3 imagemagick</span><br><span class="line"></span><br><span class="line">sudo easy_install twisted</span><br><span class="line"></span><br><span class="line">sudo apt install openssl php</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo mkdir -p /var/www/tmp</span><br><span class="line">sudo chown -R proxy:proxy  /var/www/tmp</span><br><span class="line">sudo twistd web  --path=/var/www --port=8080</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo perl -MCPAN -e<span class="string">&#x27;install &quot;LWP::Simple&quot;&#x27;</span></span><br><span class="line"></span><br><span class="line">sudo iptables -L --line-number -t nat</span><br><span class="line">sudo iptables -t nat  -A PREROUTING -s 172.26.0.0/255.255.255.0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 172.26.1.1</span><br><span class="line">sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j REDIRECT --to-port 3128</span><br><span class="line">sudo iptables -t nat -D PREROUTING 2</span><br><span class="line"></span><br><span class="line">//DEBUG</span><br><span class="line"></span><br><span class="line">sudo vim /etc/squid3/squid.conf</span><br><span class="line">sudo squid -k reconfigure</span><br><span class="line">netstat -na|grep 3128</span><br><span class="line">sudo /etc/init.d/squid3 restart</span><br><span class="line"></span><br><span class="line">sudo chown -R root:root flip.pl</span><br><span class="line"></span><br><span class="line">sudo tail -F /tmp/flipImages_debug.log</span><br><span class="line">sudo tail -F /var/<span class="built_in">log</span>/squid3/access.log</span><br><span class="line">sudo tail -F /var/<span class="built_in">log</span>/squid3/cache.log</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">OSX</span><br><span class="line">sudo sysctl -w net.inet.ip.forwarding=1</span><br><span class="line">sudo pfctl -f pf.conf</span><br><span class="line">sudo pfctl -e</span><br><span class="line">sudo /sbin/pfctl -s state</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Ubuntu</span><br><span class="line">sudo sysctl -w net.ipv4.ip_forward=1</span><br><span class="line">sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3128</span><br><span class="line">sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 3128</span><br></pre></td></tr></table></figure>
 
-sudo apt-get install python-setuptools
-
-sudo apt-get install build-essential autoconf libtool pkg-config python-opengl python-imaging python-pyrex python-pyside.qtopengl idle-python2.7 qt4-dev-tools qt4-designer libqtgui4 libqtcore4 libqt4-xml libqt4-test libqt4-script libqt4-network libqt4-dbus python-qt4 python-qt4-gl libgle3 python-dev
-
-sudo apt install squid3 imagemagick
-
-sudo easy_install twisted
-
-sudo apt install openssl php
-
-
-sudo mkdir -p /var/www/tmp
-sudo chown -R proxy:proxy  /var/www/tmp
-sudo twistd web  --path=/var/www --port=8080
-
-
-sudo perl -MCPAN -e'install "LWP::Simple"'
-
-sudo iptables -L --line-number -t nat
-sudo iptables -t nat  -A PREROUTING -s 172.26.0.0/255.255.255.0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 172.26.1.1
-sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j REDIRECT --to-port 3128
-sudo iptables -t nat -D PREROUTING 2
-
-//DEBUG
-
-sudo vim /etc/squid3/squid.conf
-sudo squid -k reconfigure
-netstat -na|grep 3128
-sudo /etc/init.d/squid3 restart
-
-sudo chown -R root:root flip.pl
-
-sudo tail -F /tmp/flipImages_debug.log
-sudo tail -F /var/log/squid3/access.log
-sudo tail -F /var/log/squid3/cache.log
-
-
-OSX
-sudo sysctl -w net.inet.ip.forwarding=1
-sudo pfctl -f pf.conf
-sudo pfctl -e
-sudo /sbin/pfctl -s state
-
-
-Ubuntu
-sudo sysctl -w net.ipv4.ip_forward=1
-sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3128
-sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 3128
-</pre>
       
     </div>
 
@@ -165,7 +116,7 @@ sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j REDIRECT --to-p
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/08/08/ubuntu-install-squid3/" data-id="ckhhbad1u000d98my1l3yayac" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/08/08/ubuntu-install-squid3/" data-id="ckhmph3i0000dh4y2c7fw2swq" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

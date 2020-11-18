@@ -5,15 +5,15 @@
   
   <title>raspberry add kali repo ,import kali repo publick key | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="import kali repo publick keysudo apt install dirmngr gpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6 gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -  gpg --keyserver hkp:&#x2F;&#x2F;keys.gnup">
+  <meta name="description" content="import kali repo publick key12345678sudo apt install dirmngrgpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -gpg --keyserver hkp:&#x2F;&#x2F;keys.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="raspberry add kali repo ,import kali repo publick key">
 <meta property="og:url" content="http://wirelessbox.net/2018/02/08/raspberry-add-kali-repo-import-kali-repo-publick-key/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="import kali repo publick keysudo apt install dirmngr gpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6 gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -  gpg --keyserver hkp:&#x2F;&#x2F;keys.gnup">
+<meta property="og:description" content="import kali repo publick key12345678sudo apt install dirmngrgpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -gpg --keyserver hkp:&#x2F;&#x2F;keys.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-02-07T18:41:43.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.451Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -105,24 +105,11 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="import-kali-repo-publick-key"><a href="#import-kali-repo-publick-key" class="headerlink" title="import kali repo publick key"></a>import kali repo publick key</h3><pre class="brush: bash; title: ; notranslate" title="">sudo apt install dirmngr
-gpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6
-gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -
+        <h3 id="import-kali-repo-publick-key"><a href="#import-kali-repo-publick-key" class="headerlink" title="import kali repo publick key"></a>import kali repo publick key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install dirmngr</span><br><span class="line">gpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6</span><br><span class="line">gpg -a --<span class="built_in">export</span> ED444FF07D8D0BF6 | sudo apt-key add -</span><br><span class="line"></span><br><span class="line">gpg --keyserver hkp://keys.gnupg.net --recv-key 7D8D0BF6</span><br><span class="line">gpg -a --<span class="built_in">export</span> 7D8D0BF6 | sudo apt-key add -</span><br><span class="line"></span><br><span class="line"><span class="comment">#https://docs.kali.org/introduction/download-official-kali-linux-images</span></span><br></pre></td></tr></table></figure>
 
-gpg --keyserver hkp://keys.gnupg.net --recv-key 7D8D0BF6
-gpg -a --export 7D8D0BF6 | sudo apt-key add -
 
-#https://docs.kali.org/introduction/download-official-kali-linux-images
-</pre>
+<h3 id="raspberry-add-kali-repo"><a href="#raspberry-add-kali-repo" class="headerlink" title="raspberry add kali repo"></a>raspberry add kali repo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/apt/sources.list.d/kali.list</span><br><span class="line">deb http://http.kali.org/kali kali-rolling main contrib non-free</span><br><span class="line"><span class="comment"># For source package access, uncomment the following line</span></span><br><span class="line"><span class="comment"># deb-src http://http.kali.org/kali kali-rolling main contrib non-free</span></span><br><span class="line"><span class="comment">#https://www.kali.org/news/kali-linux-metapackages/</span></span><br><span class="line"><span class="comment">#https://docs.kali.org/general-use/kali-linux-sources-list-repositories</span></span><br><span class="line"><span class="comment">#https://www.raspberrypi.org/forums/viewtopic.php?f=41&amp;amp;t=107001</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="raspberry-add-kali-repo"><a href="#raspberry-add-kali-repo" class="headerlink" title="raspberry add kali repo"></a>raspberry add kali repo</h3><pre class="brush: bash; title: ; notranslate" title="">sudo vi /etc/apt/sources.list.d/kali.list
-deb http://http.kali.org/kali kali-rolling main contrib non-free
-# For source package access, uncomment the following line
-# deb-src http://http.kali.org/kali kali-rolling main contrib non-free
-#https://www.kali.org/news/kali-linux-metapackages/
-#https://docs.kali.org/general-use/kali-linux-sources-list-repositories
-#https://www.raspberrypi.org/forums/viewtopic.php?f=41&amp;t=107001
-</pre>
       
     </div>
 
@@ -132,7 +119,7 @@ deb http://http.kali.org/kali kali-rolling main contrib non-free
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/02/08/raspberry-add-kali-repo-import-kali-repo-publick-key/" data-id="ckhhbad2q002398myf6q01s3e" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/02/08/raspberry-add-kali-repo-import-kali-repo-publick-key/" data-id="ckhmph3is0025h4y273fudk6x" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

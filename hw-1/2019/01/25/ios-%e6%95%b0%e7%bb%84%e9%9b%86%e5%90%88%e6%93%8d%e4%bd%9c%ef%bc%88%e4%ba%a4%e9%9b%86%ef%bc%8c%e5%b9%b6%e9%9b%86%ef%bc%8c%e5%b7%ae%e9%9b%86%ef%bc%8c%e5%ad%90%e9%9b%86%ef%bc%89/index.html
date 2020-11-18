@@ -5,15 +5,15 @@
   
   <title>iOS 数组集合操作（交集，并集，差集，子集） | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="iOS 数组集合操作（交集，并集，差集，子集） NSArray *array1 &#x3D; @[@&quot;1&quot;,@&quot;2&quot;,@&quot;3&quot;]; NSArray *array2 &#x3D; @[@&quot;1&quot;,@&quot;5&quot;,@&quot;6&quot;];  NSMutableSet *set1 &#x3D; [NSMutableSet setWithArray:array1]; NSMutableSet *set2 &#x3D; [NSMutableSet setWithAr">
+  <meta name="description" content="iOS 数组集合操作（交集，并集，差集，子集） 123456789NSArray *array1 &#x3D; @[@&quot;1&quot;,@&quot;2&quot;,@&quot;3&quot;];NSArray *array2 &#x3D; @[@&quot;1&quot;,@&quot;5&quot;,@&quot;6&quot;]; NSMutableSet *set1 &#x3D; [NSMutableSet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS 数组集合操作（交集，并集，差集，子集）">
 <meta property="og:url" content="http://wirelessbox.net/2019/01/25/ios-%e6%95%b0%e7%bb%84%e9%9b%86%e5%90%88%e6%93%8d%e4%bd%9c%ef%bc%88%e4%ba%a4%e9%9b%86%ef%bc%8c%e5%b9%b6%e9%9b%86%ef%bc%8c%e5%b7%ae%e9%9b%86%ef%bc%8c%e5%ad%90%e9%9b%86%ef%bc%89/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="iOS 数组集合操作（交集，并集，差集，子集） NSArray *array1 &#x3D; @[@&quot;1&quot;,@&quot;2&quot;,@&quot;3&quot;]; NSArray *array2 &#x3D; @[@&quot;1&quot;,@&quot;5&quot;,@&quot;6&quot;];  NSMutableSet *set1 &#x3D; [NSMutableSet setWithArray:array1]; NSMutableSet *set2 &#x3D; [NSMutableSet setWithAr">
+<meta property="og:description" content="iOS 数组集合操作（交集，并集，差集，子集） 123456789NSArray *array1 &#x3D; @[@&quot;1&quot;,@&quot;2&quot;,@&quot;3&quot;];NSArray *array2 &#x3D; @[@&quot;1&quot;,@&quot;5&quot;,@&quot;6&quot;]; NSMutableSet *set1 &#x3D; [NSMutableSet">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-01-24T22:26:53.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.162Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,16 +106,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>iOS 数组集合操作（交集，并集，差集，子集）</p>
-<pre class="brush: bash; title: ; notranslate" title="">NSArray *array1 = @[@"1",@"2",@"3"];
-NSArray *array2 = @[@"1",@"5",@"6"]; 
-NSMutableSet *set1 = [NSMutableSet setWithArray:array1];
-NSMutableSet *set2 = [NSMutableSet setWithArray:array2]; 
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">NSArray *array1 = @[@<span class="string">&quot;1&quot;</span>,@<span class="string">&quot;2&quot;</span>,@<span class="string">&quot;3&quot;</span>];</span><br><span class="line">NSArray *array2 = @[@<span class="string">&quot;1&quot;</span>,@<span class="string">&quot;5&quot;</span>,@<span class="string">&quot;6&quot;</span>]; </span><br><span class="line">NSMutableSet *set1 = [NSMutableSet setWithArray:array1];</span><br><span class="line">NSMutableSet *set2 = [NSMutableSet setWithArray:array2]; </span><br><span class="line"></span><br><span class="line">[set1 unionSet:set2];       //取并集后 set1中为1，2，3，5，6</span><br><span class="line">[set1 intersectSet:set2];  //取交集后 set1中为1</span><br><span class="line">[set1 minusSet:set2];      //取差集后 set1中为2，3，5，6</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-[set1 unionSet:set2];       //取并集后 set1中为1，2，3，5，6
-[set1 intersectSet:set2];  //取交集后 set1中为1
-[set1 minusSet:set2];      //取差集后 set1中为2，3，5，6
-
-</pre>
       
     </div>
 
@@ -125,7 +117,7 @@ NSMutableSet *set2 = [NSMutableSet setWithArray:array2];
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/01/25/ios-%e6%95%b0%e7%bb%84%e9%9b%86%e5%90%88%e6%93%8d%e4%bd%9c%ef%bc%88%e4%ba%a4%e9%9b%86%ef%bc%8c%e5%b9%b6%e9%9b%86%ef%bc%8c%e5%b7%ae%e9%9b%86%ef%bc%8c%e5%ad%90%e9%9b%86%ef%bc%89/" data-id="ckhhbad35003b98my61760qdl" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/01/25/ios-%e6%95%b0%e7%bb%84%e9%9b%86%e5%90%88%e6%93%8d%e4%bd%9c%ef%bc%88%e4%ba%a4%e9%9b%86%ef%bc%8c%e5%b9%b6%e9%9b%86%ef%bc%8c%e5%b7%ae%e9%9b%86%ef%bc%8c%e5%ad%90%e9%9b%86%ef%bc%89/" data-id="ckhmph3j6003bh4y212n68ty7" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

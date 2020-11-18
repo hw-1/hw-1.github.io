@@ -5,15 +5,15 @@
   
   <title>swift Localizable strings | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="swift Localizable strings #fastlane  AppleLocale FASTLANE_SNAPSHOT  #get current language code Locale.current.languageCode  #swift NSLocalizedString(&quot;Enter the file pssword&quot;, comment: &quot;">
+  <meta name="description" content="swift Localizable strings 12345678910111213141516171819202122232425262728293031323334#fastlane AppleLocaleFASTLANE_SNAPSHOT#get current language codeLocale.current.languageCode#swiftNSLocalizedString(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="swift Localizable strings">
 <meta property="og:url" content="http://wirelessbox.net/2019/12/19/swift-localizable-strings/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="swift Localizable strings #fastlane  AppleLocale FASTLANE_SNAPSHOT  #get current language code Locale.current.languageCode  #swift NSLocalizedString(&quot;Enter the file pssword&quot;, comment: &quot;">
+<meta property="og:description" content="swift Localizable strings 12345678910111213141516171819202122232425262728293031323334#fastlane AppleLocaleFASTLANE_SNAPSHOT#get current language codeLocale.current.languageCode#swiftNSLocalizedString(">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-12-18T23:28:43.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.283Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,41 +106,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>swift Localizable strings</p>
-<pre class="brush: bash; title: ; notranslate" title="">#fastlane 
-AppleLocale
-FASTLANE_SNAPSHOT
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#fastlane </span></span><br><span class="line">AppleLocale</span><br><span class="line">FASTLANE_SNAPSHOT</span><br><span class="line"></span><br><span class="line"><span class="comment">#get current language code</span></span><br><span class="line">Locale.current.languageCode</span><br><span class="line"></span><br><span class="line"><span class="comment">#swift</span></span><br><span class="line">NSLocalizedString(&amp;quot;Enter the file pssword&amp;quot;, comment: &amp;quot;&amp;quot;)</span><br><span class="line"><span class="comment">#objc</span></span><br><span class="line">NSLocalizedString(@&amp;quot;Close&amp;quot;, nil)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">extension String &#123;</span><br><span class="line">    var localized: String &#123;</span><br><span class="line">        <span class="built_in">return</span> NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: &amp;quot;&amp;quot;, comment: &amp;quot;&amp;quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tempfile=$(mktemp -t 1234)</span><br><span class="line">find . \( -name &amp;quot;*.swift&amp;quot; ! -path &amp;quot;./Carthage/*&amp;quot; ! -path &amp;quot;./Pods/*&amp;quot;  ! -name String+ext.swift \)| <span class="keyword">while</span> <span class="built_in">read</span> var</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">   genstrings &amp;quot;<span class="variable">$var</span>&amp;quot;</span><br><span class="line">   [ -e Localizable.strings ] &amp;amp;&amp;amp; cat Localizable.strings &amp;gt;&amp;gt;  <span class="variable">$tempfile</span> &amp;amp;&amp;amp; rm -rf Localizable.strings</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">cp <span class="variable">$tempfile</span> Localizable.strings</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Use your XCode &amp;quot;Find and Replace&amp;quot; option based on the regular expression. As <span class="keyword">for</span> the given example (<span class="keyword">if</span> you have no comments) the regular expression will be:</span><br><span class="line"></span><br><span class="line">NSLocalizedString\((.*)\, comment:\ \&amp;quot;(.*)\&amp;quot;\)</span><br><span class="line">and replace it with</span><br><span class="line"><span class="variable">$1</span>.localized</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-#get current language code
-Locale.current.languageCode
-
-#swift
-NSLocalizedString(&quot;Enter the file pssword&quot;, comment: &quot;&quot;)
-#objc
-NSLocalizedString(@&quot;Close&quot;, nil)
-
-
-extension String {
-    var localized: String {
-        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: &quot;&quot;, comment: &quot;&quot;)
-    }
-}
-
-tempfile=$(mktemp -t 1234)
-find . \( -name &quot;*.swift&quot; ! -path &quot;./Carthage/*&quot; ! -path &quot;./Pods/*&quot;  ! -name String+ext.swift \)| while read var
-do
-   genstrings &quot;$var&quot;
-   [ -e Localizable.strings ] &amp;&amp; cat Localizable.strings &gt;&gt;  $tempfile &amp;&amp; rm -rf Localizable.strings
-done
-cp $tempfile Localizable.strings
-
-
-Use your XCode &quot;Find and Replace&quot; option based on the regular expression. As for the given example (if you have no comments) the regular expression will be:
-
-NSLocalizedString\((.*)\, comment:\ \&quot;(.*)\&quot;\)
-and replace it with
-$1.localized
-
-</pre>
       
     </div>
 
@@ -150,7 +117,7 @@ $1.localized
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/12/19/swift-localizable-strings/" data-id="ckhhbad3i004d98my60gi1vh9" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/12/19/swift-localizable-strings/" data-id="ckhmph3ji004ch4y2c1tm4oob" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

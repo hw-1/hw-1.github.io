@@ -103,7 +103,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="uninstall-unused-ios-simulator"><a href="#uninstall-unused-ios-simulator" class="headerlink" title="uninstall unused ios simulator"></a>uninstall unused ios simulator</h2><pre class="brush: bash; title: ; notranslate" title="">rm -rf /Library/Developer/CoreSimulator/Profiles/Runtimes/* </pre>
+        <h2 id="uninstall-unused-ios-simulator"><a href="#uninstall-unused-ios-simulator" class="headerlink" title="uninstall unused ios simulator"></a>uninstall unused ios simulator</h2><pre><code class="bash">rm -rf /Library/Developer/CoreSimulator/Profiles/Runtimes/* ```</code></pre>
+
       
     </div>
 
@@ -113,7 +114,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/11/21/uninstall-unused-ios-simulator/" data-id="ckhhbad3e004398mygy6z4h2y" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/11/21/uninstall-unused-ios-simulator/" data-id="ckhmph3jf0042h4y25aoc557n" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -154,8 +155,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Unable to install (Error: &#8216;cstring&#8217; file not found) &#8211; MacOS Mojave #162</p>
-<pre class="brush: bash; title: ; notranslate" title="">-std=c++11  -stdlib=libc++
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-std=c++11  -stdlib=libc++</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -165,7 +166,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/08/07/unable-to-install-error-cstring-file-not-found-macos-mojave-162/" data-id="ckhhbad3e004298my3v47ggau" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/08/07/unable-to-install-error-cstring-file-not-found-macos-mojave-162/" data-id="ckhmph3jf0043h4y2hcthbkjk" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -208,12 +209,12 @@
         <h3 id="“XXX-app-can-8217-t-be-opened-You-should-move-it-to-trash-”-for-flash-projector-applications-on-mac-os-sierra"><a href="#“XXX-app-can-8217-t-be-opened-You-should-move-it-to-trash-”-for-flash-projector-applications-on-mac-os-sierra" class="headerlink" title="“XXX.app can&#8217;t be opened. You should move it to trash.” for flash projector applications on mac os sierra"></a>“XXX.app can&#8217;t be opened. You should move it to trash.” for flash projector applications on mac os sierra</h3><p>This is actually a macOS Gatekeeper issue try these steps:</p>
 <p>To resolute Gatekeeper issues on macOS Sierra you might have to partially or completely disable Gatekeeper checks.</p>
 <p>1 For a certain application run in Terminal:</p>
-<pre class="brush: bash; title: ; notranslate" title="">sudo xattr -rd com.apple.quarantine /Applications/[LockedApp].app
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo xattr -rd com.apple.quarantine /Applications/[LockedApp].app</span><br></pre></td></tr></table></figure>
+
 
 <p>2 To disable checks globally run in Terminal:</p>
-<pre class="brush: bash; title: ; notranslate" title="">sudo spctl --master-disable
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -223,7 +224,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/07/31/xxx-app-cant-be-opened-you-should-move-it-to-trash-for-flash-projector-applications-on-mac-os-sierra/" data-id="ckhhbad3d004198my1hxl2zk4" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/07/31/xxx-app-cant-be-opened-you-should-move-it-to-trash-for-flash-projector-applications-on-mac-os-sierra/" data-id="ckhmph3je0041h4y2by5aea7c" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -264,11 +265,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>How to Fix mds_stores Consuming High CPU Usage on Mac</p>
-<pre class="brush: bash; title: ; notranslate" title="">// Stop Spotlight on Mac
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
-// Restart Spotlight on Mac
-sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Stop Spotlight on Mac</span><br><span class="line">sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist</span><br><span class="line">// Restart Spotlight on Mac</span><br><span class="line">sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -278,7 +276,7 @@ sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plis
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/07/27/how-to-fix-mds_stores-consuming-high-cpu-usage-on-mac/" data-id="ckhhbad3d003z98my35ivaji3" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/07/27/how-to-fix-mds_stores-consuming-high-cpu-usage-on-mac/" data-id="ckhmph3je003zh4y28stp1wn2" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -320,10 +318,8 @@ sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plis
       
         <p>Operation not permitted while System Integrity Protection is engaged</p>
 <p>To boot into recovery mode, restart your Mac and hold Command+R as it boots. You’ll enter the recovery environment. Click the “Utilities” menu and select “Terminal” to open a terminal window.</p>
-<pre class="brush: bash; title: ; notranslate" title="">csrutil status
-csrutil disable
-csrutil enable
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">csrutil status</span><br><span class="line">csrutil <span class="built_in">disable</span></span><br><span class="line">csrutil <span class="built_in">enable</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -333,7 +329,7 @@ csrutil enable
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/07/27/operation-not-permitted-while-system-integrity-protection-is-engaged/" data-id="ckhhbad3d004098mydrz22kvp" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/07/27/operation-not-permitted-while-system-integrity-protection-is-engaged/" data-id="ckhmph3je0040h4y238jx485c" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -384,7 +380,7 @@ csrutil enable
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/07/05/networkextension-connect-no-route-to-host/" data-id="ckhhbad3d003y98my7r487hc3" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/07/05/networkextension-connect-no-route-to-host/" data-id="ckhmph3je003yh4y23743brsw" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -424,25 +420,8 @@ csrutil enable
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="ubuntu-Advanced-Routing-network"><a href="#ubuntu-Advanced-Routing-network" class="headerlink" title="ubuntu Advanced Routing network"></a>ubuntu Advanced Routing network</h3><pre class="brush: bash; title: ; notranslate" title="">1. forward 10.11.11.0/24  10.12.12.0/24 to  RDS
+        <h3 id="ubuntu-Advanced-Routing-network"><a href="#ubuntu-Advanced-Routing-network" class="headerlink" title="ubuntu Advanced Routing network"></a>ubuntu Advanced Routing network</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1. forward 10.11.11.0/24  10.12.12.0/24 to  RDS</span><br><span class="line"></span><br><span class="line">ip route add default via 10.1.1.1 dev eth1 table RDS</span><br><span class="line">ip rule add from 10.11.11.0/24 table RDS</span><br><span class="line">ip rule add from 10.12.12.0/24 table RDS</span><br><span class="line"></span><br><span class="line">ip rule show            <span class="comment"># all the rule list</span></span><br><span class="line">ip rule show | grep ASTRAL  <span class="comment"># only for ASRAL</span></span><br><span class="line">ip rule show | grep RDS     <span class="comment"># only for RDS</span></span><br><span class="line"></span><br><span class="line">2 , dst port 22 forward to RDS , dst port 80 forward  ASTRAL</span><br><span class="line">iptables -A PREROUTING -t mangle -i eth0 -p tcp --dport 22 -j MARK --set-mark 1</span><br><span class="line">iptables -A PREROUTING -t mangle -i eth0 -p tcp --dport 80 -j MARK --set-mark 2</span><br><span class="line"></span><br><span class="line">ip route add default via 10.1.1.1 dev eth1 table RDS    <span class="comment"># the same like in the first example</span></span><br><span class="line">ip route add default via 10.8.8.1 dev eth2 table ASTRAL <span class="comment"># the same like in the first example</span></span><br><span class="line">ip rule add from all fwmark 1 table RDS</span><br><span class="line">ip rule add from all fwmark 2 table ASTRAL</span><br></pre></td></tr></table></figure>
 
-ip route add default via 10.1.1.1 dev eth1 table RDS
-ip rule add from 10.11.11.0/24 table RDS
-ip rule add from 10.12.12.0/24 table RDS
-
-ip rule show            # all the rule list
-ip rule show | grep ASTRAL  # only for ASRAL
-ip rule show | grep RDS     # only for RDS
-
-2 , dst port 22 forward to RDS , dst port 80 forward  ASTRAL
-iptables -A PREROUTING -t mangle -i eth0 -p tcp --dport 22 -j MARK --set-mark 1
-iptables -A PREROUTING -t mangle -i eth0 -p tcp --dport 80 -j MARK --set-mark 2
-
-ip route add default via 10.1.1.1 dev eth1 table RDS    # the same like in the first example
-ip route add default via 10.8.8.1 dev eth2 table ASTRAL # the same like in the first example
-ip rule add from all fwmark 1 table RDS
-ip rule add from all fwmark 2 table ASTRAL
-</pre>
 
 <p><a target="_blank" rel="noopener" href="http://www.linuxhorizon.ro/iproute2.html" title="refrences">refrences</a></p>
 
@@ -455,7 +434,7 @@ ip rule add from all fwmark 2 table ASTRAL
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/06/27/ubuntu-advanced-routing-network/" data-id="ckhhbad3c003x98myh61dhkoy" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/06/27/ubuntu-advanced-routing-network/" data-id="ckhmph3jd003xh4y2dk1ng23o" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -495,23 +474,8 @@ ip rule add from all fwmark 2 table ASTRAL
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="wireshark-expression-usage"><a href="#wireshark-expression-usage" class="headerlink" title="wireshark expression usage"></a>wireshark expression usage</h3><pre class="brush: bash; title: ; notranslate" title="">ip.addr == 192.168.0.1
-ip.addr == 129.111.0.0/16
-http.host matches "acme\.(org|com|net)"
+        <h3 id="wireshark-expression-usage"><a href="#wireshark-expression-usage" class="headerlink" title="wireshark expression usage"></a>wireshark expression usage</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ip.addr == 192.168.0.1</span><br><span class="line">ip.addr == 129.111.0.0/16</span><br><span class="line">http.host matches <span class="string">&quot;acme\.(org|com|net)&quot;</span></span><br><span class="line"></span><br><span class="line">http.request.uri == <span class="string">&quot;https://www.wireshark.org/&quot;</span></span><br><span class="line">udp contains 81:60:03</span><br><span class="line">sip.To contains <span class="string">&quot;a1762&quot;</span></span><br><span class="line"></span><br><span class="line">tcp.port <span class="keyword">in</span> &#123;80 443 8080&#125;</span><br><span class="line">tcp.port <span class="keyword">in</span> &#123;443 4430..4434&#125;</span><br><span class="line">tcp.port == 80 || tcp.port == 443 || tcp.port == 8080</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http.request.method <span class="keyword">in</span> &#123;<span class="string">&quot;HEAD&quot;</span> <span class="string">&quot;GET&quot;</span>&#125;</span><br><span class="line">ip.addr <span class="keyword">in</span> &#123;10.0.0.5 .. 10.0.0.9 192.168.1.1..192.168.1.9&#125;</span><br><span class="line">frame.time_delta <span class="keyword">in</span> &#123;10 .. 10.5&#125;</span><br></pre></td></tr></table></figure>
 
-http.request.uri == "https://www.wireshark.org/"
-udp contains 81:60:03
-sip.To contains "a1762"
-
-tcp.port in {80 443 8080}
-tcp.port in {443 4430..4434}
-tcp.port == 80 || tcp.port == 443 || tcp.port == 8080
-
-
-http.request.method in {"HEAD" "GET"}
-ip.addr in {10.0.0.5 .. 10.0.0.9 192.168.1.1..192.168.1.9}
-frame.time_delta in {10 .. 10.5}
-</pre>
       
     </div>
 
@@ -521,7 +485,7 @@ frame.time_delta in {10 .. 10.5}
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/06/26/wireshark-expression-usage/" data-id="ckhhbad3c003w98my030pg4bj" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/06/26/wireshark-expression-usage/" data-id="ckhmph3jd003wh4y2g1kpf7xt" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -562,17 +526,8 @@ frame.time_delta in {10 .. 10.5}
     <div class="article-entry" itemprop="articleBody">
       
         <p>make ubuntu startup usb</p>
-<pre class="brush: bash; title: ; notranslate" title="">hdiutil convert -format UDRW ubuntu-18.04.2-live-server-amd64.iso  -o ubuntu-18.04.2-live-server-amd64.img
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">hdiutil convert -format UDRW ubuntu-18.04.2-live-server-amd64.iso  -o ubuntu-18.04.2-live-server-amd64.img</span><br><span class="line"></span><br><span class="line">diskutil list</span><br><span class="line">diskutil unmountDisk /dev/disk3</span><br><span class="line">sudo dd <span class="keyword">if</span>=/Volumes/downloads/ubuntu-18.04.2-live-server-amd64.img of=/dev/disk3 bs=1m</span><br><span class="line"></span><br><span class="line">sudo qemu-system-x86_64 -hda /dev/disk3</span><br><span class="line"></span><br><span class="line">diskutil eject /dev/disk3</span><br><span class="line">sudo dd <span class="keyword">if</span>=/dev/urandom of=/dev/disk3</span><br></pre></td></tr></table></figure>
 
-diskutil list
-diskutil unmountDisk /dev/disk3
-sudo dd if=/Volumes/downloads/ubuntu-18.04.2-live-server-amd64.img of=/dev/disk3 bs=1m
-
-sudo qemu-system-x86_64 -hda /dev/disk3
-
-diskutil eject /dev/disk3
-sudo dd if=/dev/urandom of=/dev/disk3
-</pre>
       
     </div>
 
@@ -582,7 +537,7 @@ sudo dd if=/dev/urandom of=/dev/disk3
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/05/17/make-ubuntu-startup-usb/" data-id="ckhhbad3c003v98mydwvb0fo9" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/05/17/make-ubuntu-startup-usb/" data-id="ckhmph3jc003uh4y24bgza4kz" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -633,7 +588,7 @@ sudo dd if=/dev/urandom of=/dev/disk3
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/05/07/tableview-viewforheaderinsection-heightforheaderinsection-%e4%b8%8d%e8%a6%81%e8%ae%be%e7%bd%ae%e5%b0%8f%e6%95%b0-%e4%bc%9a%e5%af%bc%e8%87%b4-%e5%88%86%e9%9a%94%e7%ba%bf-%e6%98%be%e7%a4%ba%e5%87%ba/" data-id="ckhhbad3b003u98mygjnyemon" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/05/07/tableview-viewforheaderinsection-heightforheaderinsection-%e4%b8%8d%e8%a6%81%e8%ae%be%e7%bd%ae%e5%b0%8f%e6%95%b0-%e4%bc%9a%e5%af%bc%e8%87%b4-%e5%88%86%e9%9a%94%e7%ba%bf-%e6%98%be%e7%a4%ba%e5%87%ba/" data-id="ckhmph3jd003vh4y27gv0h41e" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

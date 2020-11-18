@@ -104,27 +104,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>###python virtualenv for osx</p>
-<pre class="brush: bash; title: ; notranslate" title="">pip_install virtualenv
-pip_install virtualenvwrapper
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">pip_install virtualenv</span><br><span class="line">pip_install virtualenvwrapper</span><br><span class="line"></span><br><span class="line">// <span class="built_in">export</span> WORKON_HOME=`<span class="built_in">pwd</span>`</span><br><span class="line"><span class="built_in">source</span> ~/Library/Python/2.7/bin/virtualenvwrapper.sh</span><br><span class="line"></span><br><span class="line">lsvirtualenv -b</span><br><span class="line"></span><br><span class="line">mkvirtualenv pyzk</span><br><span class="line">workon pyzk</span><br><span class="line"></span><br><span class="line">lssitepackages</span><br><span class="line">cdvirtualenv</span><br><span class="line">cdsitepackages</span><br><span class="line">cdsitepackages pip</span><br><span class="line"></span><br><span class="line">cpvirtualenv env1 env3</span><br><span class="line">rmvirtualenv env2</span><br><span class="line"></span><br><span class="line">deactivate</span><br></pre></td></tr></table></figure>
 
-// export WORKON_HOME=`pwd`
-source ~/Library/Python/2.7/bin/virtualenvwrapper.sh
-
-lsvirtualenv -b
-
-mkvirtualenv pyzk
-workon pyzk
-
-lssitepackages
-cdvirtualenv
-cdsitepackages
-cdsitepackages pip
-
-cpvirtualenv env1 env3
-rmvirtualenv env2
-
-deactivate
-</pre>
       
     </div>
 
@@ -134,7 +115,7 @@ deactivate
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/11/14/python-virtualenv-for-osx/" data-id="ckhhbad31002z98myawnuaxbl" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/11/14/python-virtualenv-for-osx/" data-id="ckhmph3j1002zh4y25uts7oxc" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -175,14 +156,8 @@ deactivate
     <div class="article-entry" itemprop="articleBody">
       
         <p>###github fork update</p>
-<pre class="brush: bash; title: ; notranslate" title="">//github fork update
-git remote -v
-git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
-git fetch upstream
-git checkout master
-git merge upstream/master
-git push origin master
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//github fork update</span><br><span class="line">git remote -v</span><br><span class="line">git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git</span><br><span class="line">git fetch upstream</span><br><span class="line">git checkout master</span><br><span class="line">git merge upstream/master</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -192,7 +167,7 @@ git push origin master
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/11/14/github-fork-update/" data-id="ckhhbad31002y98my5ggh7o1l" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/11/14/github-fork-update/" data-id="ckhmph3j1002yh4y230k13g4a" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -233,39 +208,8 @@ git push origin master
     <div class="article-entry" itemprop="articleBody">
       
         <p>###osx install torch and fast neural style</p>
-<pre class="brush: bash; title: ; notranslate" title="">&lt;br /&gt; lua/5.1/hdf5/ffi.lua:56: ')' expected near '_close' at line 1478
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;br /&amp;gt; lua/5.1/hdf5/ffi.lua:56: <span class="string">&#x27;)&#x27;</span> expected near <span class="string">&#x27;_close&#x27;</span> at line 1478</span><br><span class="line"></span><br><span class="line">Edit ffi.lua line 44,</span><br><span class="line">change</span><br><span class="line"><span class="built_in">local</span> process = io.popen(<span class="string">&quot;gcc -E &quot;</span> .. headerPath) -- TODO pass -I</span><br><span class="line">to</span><br><span class="line"><span class="built_in">local</span> process = io.popen(<span class="string">&quot;gcc -D &#x27;_Nullable=&#x27; -E &quot;</span> .. headerPath) -- TODO pass -I.</span><br><span class="line"></span><br><span class="line">luarocks  install  hdf5</span><br><span class="line">brew install hdf5@1.8</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> LDFLAGS=<span class="string">&quot;-L/usr/local/opt/hdf5@1.8/lib&quot;</span></span><br><span class="line"><span class="built_in">export</span> CPPFLAGS=<span class="string">&quot;-I/usr/local/opt/hdf5@1.8/include&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">hdf5._config = &#123; HDF5_INCLUDE_PATH = <span class="string">&quot;/usr/local/opt/hdf5@1.8/lib&quot;</span>, HDF5_LIBRARIES = <span class="string">&quot;/usr/local/opt/hdf5@1.8/lib/libhdf5.dylib;/usr/local/lib/libsz.dylib;/usr/lib/libz.dylib;/usr/lib/libdl.dylib;/usr/lib/libm.dylib&quot;</span> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// wget http://msvocds.blob.core.windows.net/coco2014/train2014.zip</span><br><span class="line">// wget http://msvocds.blob.core.windows.net/coco2014/val2014.zip</span><br><span class="line">wget http://images.cocodataset.org/zips/train2014.zip</span><br><span class="line">wget http://images.cocodataset.org/zips/val2014.zip</span><br><span class="line"></span><br><span class="line">jar xvf train2014.zip</span><br><span class="line">jar xvf val2014.zip</span><br><span class="line"></span><br><span class="line">python scripts/make_style_dataset.py \</span><br><span class="line">  --train_dir train2014 \</span><br><span class="line">  --val_dir val2014 \</span><br><span class="line">  --output_file data/ms-coco-256.h5</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-Edit ffi.lua line 44,
-change
-local process = io.popen("gcc -E " .. headerPath) -- TODO pass -I
-to
-local process = io.popen("gcc -D '_Nullable=' -E " .. headerPath) -- TODO pass -I.
-
-luarocks  install  hdf5
-brew install hdf5@1.8
-
-
-export LDFLAGS="-L/usr/local/opt/hdf5@1.8/lib"
-export CPPFLAGS="-I/usr/local/opt/hdf5@1.8/include"
-
-
-hdf5._config = { HDF5_INCLUDE_PATH = "/usr/local/opt/hdf5@1.8/lib", HDF5_LIBRARIES = "/usr/local/opt/hdf5@1.8/lib/libhdf5.dylib;/usr/local/lib/libsz.dylib;/usr/lib/libz.dylib;/usr/lib/libdl.dylib;/usr/lib/libm.dylib" }
-
-
-// wget http://msvocds.blob.core.windows.net/coco2014/train2014.zip
-// wget http://msvocds.blob.core.windows.net/coco2014/val2014.zip
-wget http://images.cocodataset.org/zips/train2014.zip
-wget http://images.cocodataset.org/zips/val2014.zip
-
-jar xvf train2014.zip
-jar xvf val2014.zip
-
-python scripts/make_style_dataset.py \
-  --train_dir train2014 \
-  --val_dir val2014 \
-  --output_file data/ms-coco-256.h5
-
-</pre>
       
     </div>
 
@@ -275,7 +219,7 @@ python scripts/make_style_dataset.py \
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/11/02/osx-install-torch-and-fast-neural-style/" data-id="ckhhbad30002x98myed5uf2dw" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/11/02/osx-install-torch-and-fast-neural-style/" data-id="ckhmph3j1002xh4y23xxuhj44" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -315,16 +259,8 @@ python scripts/make_style_dataset.py \
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="iPhone-USB-tethering-working-on-raspberry"><a href="#iPhone-USB-tethering-working-on-raspberry" class="headerlink" title="iPhone USB tethering working on raspberry"></a>iPhone USB tethering working on raspberry</h3><pre class="brush: bash; title: ; notranslate" title="">sudo apt -o Acquire::http::proxy="http://172.24.1.149:8118"  install -y ipheth-utils libimobiledevice-dev libimobiledevice-utils usbmuxd ipheth-utils gvfs
-idevicepair unpair &amp;&amp; idevicepair pair
+        <h3 id="iPhone-USB-tethering-working-on-raspberry"><a href="#iPhone-USB-tethering-working-on-raspberry" class="headerlink" title="iPhone USB tethering working on raspberry"></a>iPhone USB tethering working on raspberry</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt -o Acquire::http::proxy=<span class="string">&quot;http://172.24.1.149:8118&quot;</span>  install -y ipheth-utils libimobiledevice-dev libimobiledevice-utils usbmuxd ipheth-utils gvfs</span><br><span class="line">idevicepair unpair &amp;amp;&amp;amp; idevicepair pair</span><br><span class="line"></span><br><span class="line">ifuse</span><br><span class="line">sudo apt-get install gvfs ipheth-utils</span><br><span class="line">sudo apt-get install libimobiledevice-utils gvfs-backends gvfs-bin gvfs-fuse</span><br><span class="line">sudo apt-get install ifuse</span><br><span class="line"></span><br><span class="line">ifconfig -s</span><br></pre></td></tr></table></figure>
 
-ifuse
-sudo apt-get install gvfs ipheth-utils
-sudo apt-get install libimobiledevice-utils gvfs-backends gvfs-bin gvfs-fuse
-sudo apt-get install ifuse
-
-ifconfig -s
-</pre>
       
     </div>
 
@@ -334,7 +270,7 @@ ifconfig -s
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/10/21/iphone-usb-tethering-working-on-raspberry/" data-id="ckhhbad30002v98mydoyf1uqe" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/10/21/iphone-usb-tethering-working-on-raspberry/" data-id="ckhmph3j0002vh4y20wfa0vk5" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -375,9 +311,8 @@ ifconfig -s
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="raspberry-setlocale-LC-ALL-cannot-change-locale-en-US-UTF-8"><a href="#raspberry-setlocale-LC-ALL-cannot-change-locale-en-US-UTF-8" class="headerlink" title="raspberry setlocale: LC_ALL: cannot change locale (en_US.UTF-8)"></a>raspberry setlocale: LC_ALL: cannot change locale (en_US.UTF-8)</h3><p>Edit /etc/locale.gen and uncomment the line with en_US.UTF-8 e.g. sudo nano /etc/locale.gen<br>uncomment line by deleting leading #</p>
-<pre class="brush: bash; title: ; notranslate" title="">sudo locale-gen en_US.UTF-8
-sudo update-locale en_US.UTF-8
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo locale-gen en_US.UTF-8</span><br><span class="line">sudo update-locale en_US.UTF-8</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -387,7 +322,7 @@ sudo update-locale en_US.UTF-8
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/10/21/raspberry-setlocale-lc_all-cannot-change-locale-en_us-utf-8/" data-id="ckhhbad30002w98my6g4l7tpz" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/10/21/raspberry-setlocale-lc_all-cannot-change-locale-en_us-utf-8/" data-id="ckhmph3j0002wh4y2exfu56mv" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -427,28 +362,8 @@ sudo update-locale en_US.UTF-8
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="ubuntu-install-nginx-and-srs"><a href="#ubuntu-install-nginx-and-srs" class="headerlink" title="ubuntu install nginx and srs"></a>ubuntu install nginx and srs</h3><pre class="brush: bash; title: ; notranslate" title="">//for Ubuntu
-sudo add-apt-repository  -y ppa:ubuntu-toolchain-r/test
-sudo apt-get update -y
-sudo apt-get install -y gcc-5 g++-5
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
+        <h3 id="ubuntu-install-nginx-and-srs"><a href="#ubuntu-install-nginx-and-srs" class="headerlink" title="ubuntu install nginx and srs"></a>ubuntu install nginx and srs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//<span class="keyword">for</span> Ubuntu</span><br><span class="line">sudo add-apt-repository  -y ppa:ubuntu-toolchain-r/<span class="built_in">test</span></span><br><span class="line">sudo apt-get update -y</span><br><span class="line">sudo apt-get install -y gcc-5 g++-5</span><br><span class="line">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/ossrs/srs.git</span><br><span class="line"><span class="built_in">cd</span> srs/trunk</span><br><span class="line">./configure --with-nginx</span><br><span class="line"> make</span><br><span class="line"></span><br><span class="line">./objs/srs -c conf/http.hls.conf</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>((;;)); <span class="keyword">do</span> \</span><br><span class="line">    ffmpeg -re -i   /home/ubuntu/Rogue\ One\ -\ A\ Star\ Wars\ Story\ -\ Trailer\ 2.mp4 \</span><br><span class="line">    -vf  scale=360:-2 -c:v libx264 -acodec copy \</span><br><span class="line">    -f flv -y rtmp://172.104.12.1:1935/live/livestream; \</span><br><span class="line">    sleep 1; \</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-
-git clone https://github.com/ossrs/srs.git
-cd srs/trunk
-./configure --with-nginx
- make
-
-./objs/srs -c conf/http.hls.conf
-
-for((;;)); do \
-    ffmpeg -re -i   /home/ubuntu/Rogue\ One\ -\ A\ Star\ Wars\ Story\ -\ Trailer\ 2.mp4 \
-    -vf  scale=360:-2 -c:v libx264 -acodec copy \
-    -f flv -y rtmp://172.104.12.1:1935/live/livestream; \
-    sleep 1; \
-done
-
-</pre>
       
     </div>
 
@@ -458,7 +373,7 @@ done
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/10/17/ubuntu-install-nginx-and-srs/" data-id="ckhhbad30002u98my7yue31kk" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/10/17/ubuntu-install-nginx-and-srs/" data-id="ckhmph3j0002uh4y2aqs6c4o7" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -498,13 +413,8 @@ done
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="The-CgBI-file-format-thus-named-for-its-extra-header-is-Apple-8217-s-proprietary-extension-to-the-PNG-1-image-format"><a href="#The-CgBI-file-format-thus-named-for-its-extra-header-is-Apple-8217-s-proprietary-extension-to-the-PNG-1-image-format" class="headerlink" title="The CgBI file format, thus named for its extra header, is Apple&#8217;s proprietary extension to the PNG[1] image format."></a>The CgBI file format, thus named for its extra header, is Apple&#8217;s proprietary extension to the PNG[1] image format.</h3><pre class="brush: bash; title: ; notranslate" title="">Encoding
-Apple's modified pngcrush (xcrun -sdk iphoneos pngcrush -iphone)
-pincrush
-Decoding
-Apple's modified pngcrush (xcrun -sdk iphoneos pngcrush -revert-iphone-optimizations)
+        <h3 id="The-CgBI-file-format-thus-named-for-its-extra-header-is-Apple-8217-s-proprietary-extension-to-the-PNG-1-image-format"><a href="#The-CgBI-file-format-thus-named-for-its-extra-header-is-Apple-8217-s-proprietary-extension-to-the-PNG-1-image-format" class="headerlink" title="The CgBI file format, thus named for its extra header, is Apple&#8217;s proprietary extension to the PNG[1] image format."></a>The CgBI file format, thus named for its extra header, is Apple&#8217;s proprietary extension to the PNG[1] image format.</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Encoding</span><br><span class="line">Apple<span class="string">&#x27;s modified pngcrush (xcrun -sdk iphoneos pngcrush -iphone)</span></span><br><span class="line"><span class="string">pincrush</span></span><br><span class="line"><span class="string">Decoding</span></span><br><span class="line"><span class="string">Apple&#x27;</span>s modified pngcrush (xcrun -sdk iphoneos pngcrush -revert-iphone-optimizations)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-</pre>
       
     </div>
 
@@ -514,7 +424,7 @@ Apple's modified pngcrush (xcrun -sdk iphoneos pngcrush -revert-iphone-optimizat
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/10/13/cgbi-file-format/" data-id="ckhhbad2z002t98my6hhh9t83" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/10/13/cgbi-file-format/" data-id="ckhmph3iz002th4y298xi1uce" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -554,9 +464,8 @@ Apple's modified pngcrush (xcrun -sdk iphoneos pngcrush -revert-iphone-optimizat
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="How-to-use-your-iPhone-8217-s-internet-connection-on-your-Ubuntu-machine-via-USB"><a href="#How-to-use-your-iPhone-8217-s-internet-connection-on-your-Ubuntu-machine-via-USB" class="headerlink" title="How to use your iPhone&#8217;s internet connection on your Ubuntu machine via USB"></a>How to use your iPhone&#8217;s internet connection on your Ubuntu machine via USB</h3><pre class="brush: bash; title: ; notranslate" title="">sudo apt install ipheth-utils libimobiledevice-dev libimobiledevice-utils
-idevicepair unpair &amp;&amp; idevicepair pair
-</pre>
+        <h3 id="How-to-use-your-iPhone-8217-s-internet-connection-on-your-Ubuntu-machine-via-USB"><a href="#How-to-use-your-iPhone-8217-s-internet-connection-on-your-Ubuntu-machine-via-USB" class="headerlink" title="How to use your iPhone&#8217;s internet connection on your Ubuntu machine via USB"></a>How to use your iPhone&#8217;s internet connection on your Ubuntu machine via USB</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ipheth-utils libimobiledevice-dev libimobiledevice-utils</span><br><span class="line">idevicepair unpair &amp;amp;&amp;amp; idevicepair pair</span><br></pre></td></tr></table></figure>
+
 
 <p>Then unplug your phone and plug it back in. When you plug it back in, a notification should pop up (on your Ubuntu system) saying it has connected to a wired network. (If the notification does not appear, make sure Personal Hotspot is enabled on your phone.)</p>
 
@@ -569,7 +478,7 @@ idevicepair unpair &amp;&amp; idevicepair pair
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/10/10/how-to-use-your-iphones-internet-connection-on-your-ubuntu-machine-via-usb/" data-id="ckhhbad2z002s98my14id2k6a" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/10/10/how-to-use-your-iphones-internet-connection-on-your-ubuntu-machine-via-usb/" data-id="ckhmph3iz002sh4y23broc3xe" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -609,31 +518,8 @@ idevicepair unpair &amp;&amp; idevicepair pair
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="frida-cycript-install-osx"><a href="#frida-cycript-install-osx" class="headerlink" title="frida-cycript install osx"></a>frida-cycript install osx</h2><pre class="brush: bash; title: ; notranslate" title="">pip3 install meson
- brew install ninja
+        <h2 id="frida-cycript-install-osx"><a href="#frida-cycript-install-osx" class="headerlink" title="frida-cycript install osx"></a>frida-cycript install osx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">pip3 install meson</span><br><span class="line"> brew install ninja</span><br><span class="line"></span><br><span class="line"> dx <span class="built_in">command</span> not found?</span><br><span class="line"> brew tap caskroom/cask</span><br><span class="line"> brew cask install android-sdk</span><br><span class="line"></span><br><span class="line">sdkmanager --update</span><br><span class="line">sdkmanager <span class="string">&quot;platforms;android-25&quot;</span> <span class="string">&quot;build-tools;25.0.2&quot;</span> <span class="string">&quot;extras;google;m2repository&quot;</span> <span class="string">&quot;extras;android;m2repository&quot;</span></span><br><span class="line">sdkmanager --licenses</span><br><span class="line"></span><br><span class="line">link dx to /usr/bin/dx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">node module error?</span><br><span class="line"> sudo port install npm3</span><br><span class="line"></span><br><span class="line"> git <span class="built_in">clone</span> https://github.com/nowsecure/frida-cycript.git</span><br><span class="line"> <span class="built_in">cd</span> frida-cycript</span><br><span class="line"> git submodule init</span><br><span class="line"> git submodule update</span><br><span class="line"></span><br><span class="line"> meson build</span><br><span class="line"> ninja -C build</span><br></pre></td></tr></table></figure>
 
- dx command not found?
- brew tap caskroom/cask
- brew cask install android-sdk
-
-sdkmanager --update
-sdkmanager "platforms;android-25" "build-tools;25.0.2" "extras;google;m2repository" "extras;android;m2repository"
-sdkmanager --licenses
-
-link dx to /usr/bin/dx
-
-
-node module error?
- sudo port install npm3
-
- git clone https://github.com/nowsecure/frida-cycript.git
- cd frida-cycript
- git submodule init
- git submodule update
-
- meson build
- ninja -C build
-</pre>
       
     </div>
 
@@ -643,7 +529,7 @@ node module error?
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/10/09/frida-cycript-install-osx/" data-id="ckhhbad2z002r98myf30n527u" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/10/09/frida-cycript-install-osx/" data-id="ckhmph3iz002rh4y25kgz8o3y" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -683,12 +569,8 @@ node module error?
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="caffe-error"><a href="#caffe-error" class="headerlink" title="caffe error"></a>caffe error</h3><pre class="brush: bash; title: ; notranslate" title="">erro datum_channels &gt; 0 (0 vs. 0) #5114
-create db with A total of 0 images.
+        <h3 id="caffe-error"><a href="#caffe-error" class="headerlink" title="caffe error"></a>caffe error</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">erro datum_channels &amp;gt; 0 (0 vs. 0) <span class="comment">#5114</span></span><br><span class="line">create db with A total of 0 images.</span><br><span class="line"></span><br><span class="line">channel mistch</span><br><span class="line">picture gray or RGB ?</span><br></pre></td></tr></table></figure>
 
-channel mistch
-picture gray or RGB ?
-</pre>
       
     </div>
 
@@ -698,7 +580,7 @@ picture gray or RGB ?
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/09/27/caffe-error/" data-id="ckhhbad2y002p98my1yvh0m86" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/09/27/caffe-error/" data-id="ckhmph3iy002qh4y2feec1pfy" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

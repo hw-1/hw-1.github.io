@@ -103,16 +103,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="How-to-fix-“Bus-error-10”-after-update-to-Xcode-10-2"><a href="#How-to-fix-“Bus-error-10”-after-update-to-Xcode-10-2" class="headerlink" title="How to fix “Bus error 10” after update to Xcode 10.2"></a>How to fix “Bus error 10” after update to Xcode 10.2</h3><pre class="brush: bash; title: ; notranslate" title="">post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            if target.name == 'Cache'
-                config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Onone'
-            end
-        end
-    end
-end
-</pre>
+        <h3 id="How-to-fix-“Bus-error-10”-after-update-to-Xcode-10-2"><a href="#How-to-fix-“Bus-error-10”-after-update-to-Xcode-10-2" class="headerlink" title="How to fix “Bus error 10” after update to Xcode 10.2"></a>How to fix “Bus error 10” after update to Xcode 10.2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">post_install <span class="keyword">do</span> |installer|</span><br><span class="line">    installer.pods_project.targets.each <span class="keyword">do</span> |target|</span><br><span class="line">        target.build_configurations.each <span class="keyword">do</span> |config|</span><br><span class="line">            <span class="keyword">if</span> target.name == <span class="string">&#x27;Cache&#x27;</span></span><br><span class="line">                config.build_settings[<span class="string">&#x27;SWIFT_OPTIMIZATION_LEVEL&#x27;</span>] = <span class="string">&#x27;-Onone&#x27;</span></span><br><span class="line">            end</span><br><span class="line">        end</span><br><span class="line">    end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -122,7 +114,7 @@ end
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/04/28/how-to-fix-bus-error-10-after-update-to-xcode-10-2/" data-id="ckhhbad3b003r98my9utxhebv" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/04/28/how-to-fix-bus-error-10-after-update-to-xcode-10-2/" data-id="ckhmph3jc003th4y26gk22hdh" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -162,17 +154,8 @@ end
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">//MARK: - Properties
-//MARK: - Getting &amp;&amp; Setting
-//MARK: - Life Cycle
-//MARK: - Event Response
-//MARK: - Public Methods
-//MARK: - Response Methods
-//MARK: - UITableViewDataSource &amp;  UITableViewDelegate
-//MARK: - Layout
-//MARK: - Pravite Methods
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//MARK: - Properties</span><br><span class="line">//MARK: - Getting &amp;amp;&amp;amp; Setting</span><br><span class="line">//MARK: - Life Cycle</span><br><span class="line">//MARK: - Event Response</span><br><span class="line">//MARK: - Public Methods</span><br><span class="line">//MARK: - Response Methods</span><br><span class="line">//MARK: - UITableViewDataSource &amp;amp;  UITableViewDelegate</span><br><span class="line">//MARK: - Layout</span><br><span class="line">//MARK: - Pravite Methods</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-</pre>
       
     </div>
 
@@ -182,7 +165,7 @@ end
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/04/13/swift-mark-%e5%b8%b8%e7%94%a8-%e8%af%b4%e6%98%8e/" data-id="ckhhbad3b003s98myagmhg0ls" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/04/13/swift-mark-%e5%b8%b8%e7%94%a8-%e8%af%b4%e6%98%8e/" data-id="ckhmph3jc003sh4y20ntceu7k" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -234,7 +217,7 @@ end
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/04/10/ios-11-uitableview-delete-rows-animation-bug/" data-id="ckhhbad3b003t98my5umx2jus" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/04/10/ios-11-uitableview-delete-rows-animation-bug/" data-id="ckhmph3jb003rh4y2g1aa0onq" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -275,9 +258,8 @@ end
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="bash-bc-command-is-ignoring-scale-option"><a href="#bash-bc-command-is-ignoring-scale-option" class="headerlink" title="bash bc command is ignoring scale option"></a>bash bc command is ignoring scale option</h3><p>if you check man page, you can find that line. it is about expression explanations. subtraction won&#8217;t read scale variable. If you want to get the expected result (1.30), you could:</p>
-<pre class="brush: bash; title: ; notranslate" title="">$  echo 'scale=2; (2.777 - 1.4744)/1' | bc 
-1.30
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$  <span class="built_in">echo</span> <span class="string">&#x27;scale=2; (2.777 - 1.4744)/1&#x27;</span> | bc </span><br><span class="line">1.30</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -287,7 +269,7 @@ end
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/04/09/bash-bc-command-is-ignoring-scale-option/" data-id="ckhhbad3a003q98mya2t36ukp" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/04/09/bash-bc-command-is-ignoring-scale-option/" data-id="ckhmph3jb003ph4y2cq0bffdq" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -327,13 +309,8 @@ end
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="cocoapods-pospec-file-config"><a href="#cocoapods-pospec-file-config" class="headerlink" title="cocoapods pospec file config"></a>cocoapods pospec file config</h3><pre class="brush: bash; title: ; notranslate" title="">s.xcconfig = { 'LIBRARY_SEARCH_PATHS' =&gt; ' "$(PODS_ROOT)/VendorModule/VendorModule/WeChat" "$(PODS_ROOT)/VendorModule/VendorModule/Weibo"'  ,'OTHER_LDFLAGS' =&gt; '-all_load' }
+        <h3 id="cocoapods-pospec-file-config"><a href="#cocoapods-pospec-file-config" class="headerlink" title="cocoapods pospec file config"></a>cocoapods pospec file config</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s.xcconfig = &#123; <span class="string">&#x27;LIBRARY_SEARCH_PATHS&#x27;</span> =&amp;gt; <span class="string">&#x27; &quot;$(PODS_ROOT)/VendorModule/VendorModule/WeChat&quot; &quot;$(PODS_ROOT)/VendorModule/VendorModule/Weibo&quot;&#x27;</span>  ,<span class="string">&#x27;OTHER_LDFLAGS&#x27;</span> =&amp;gt; <span class="string">&#x27;-all_load&#x27;</span> &#125;</span><br><span class="line"></span><br><span class="line">  s.frameworks   = <span class="string">&#x27;Photos&#x27;</span>, <span class="string">&#x27;ImageIO&#x27;</span>, <span class="string">&#x27;SystemConfiguration&#x27;</span>, <span class="string">&#x27;CoreText&#x27;</span>, <span class="string">&#x27;QuartzCore&#x27;</span>, <span class="string">&#x27;Security&#x27;</span>, <span class="string">&#x27;UIKit&#x27;</span>, <span class="string">&#x27;Foundation&#x27;</span>, <span class="string">&#x27;CoreGraphics&#x27;</span>,<span class="string">&#x27;CoreTelephony&#x27;</span></span><br><span class="line">  s.libraries = <span class="string">&#x27;sqlite3&#x27;</span>, <span class="string">&#x27;z&#x27;</span>,<span class="string">&#x27;c++&#x27;</span>,<span class="string">&#x27;WeiboSDK&#x27;</span>,<span class="string">&#x27;WeChatSDK&#x27;</span></span><br><span class="line"></span><br><span class="line">s.static_framework =  <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
-  s.frameworks   = 'Photos', 'ImageIO', 'SystemConfiguration', 'CoreText', 'QuartzCore', 'Security', 'UIKit', 'Foundation', 'CoreGraphics','CoreTelephony'
-  s.libraries = 'sqlite3', 'z','c++','WeiboSDK','WeChatSDK'
-
-s.static_framework =  false
-</pre>
       
     </div>
 
@@ -343,7 +320,7 @@ s.static_framework =  false
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/04/01/cocoapods-pospec-file-config/" data-id="ckhhbad3a003p98my6987btet" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/04/01/cocoapods-pospec-file-config/" data-id="ckhmph3jb003qh4y260khh8sv" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -384,44 +361,12 @@ s.static_framework =  false
     <div class="article-entry" itemprop="articleBody">
       
         <p>Set ulimit -n / open files Permanently in ubuntu</p>
-<pre class="brush: bash; title: ; notranslate" title=""># available limit
-user@ubuntu:~$ ulimit -n
-1024
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># available limit</span></span><br><span class="line">user@ubuntu:~$ <span class="built_in">ulimit</span> -n</span><br><span class="line">1024</span><br><span class="line"></span><br><span class="line"><span class="comment"># To increase the available limit to say 65535</span></span><br><span class="line">user@ubuntu:~$ sudo vim /etc/sysctl.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># add the following line to it</span></span><br><span class="line">fs.file-max = 65535</span><br><span class="line"></span><br><span class="line"><span class="comment"># run this to refresh with new config</span></span><br><span class="line">user@ubuntu:~$ sudo sysctl -p</span><br></pre></td></tr></table></figure>
 
-# To increase the available limit to say 65535
-user@ubuntu:~$ sudo vim /etc/sysctl.conf
-
-# add the following line to it
-fs.file-max = 65535
-
-# run this to refresh with new config
-user@ubuntu:~$ sudo sysctl -p
-</pre>
 
 <p>if you got error “sysctl: permission denied on key ‘fs.file-max’” or not effect , you can skip that step, then you doing steps as below :</p>
-<pre class="brush: bash; title: ; notranslate" title=""># edit the following file
-user@ubuntu:~$ sudo vim /etc/security/limits.conf
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># edit the following file</span></span><br><span class="line">user@ubuntu:~$ sudo vim /etc/security/limits.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># add following lines to it</span></span><br><span class="line">* soft     nproc          65535</span><br><span class="line">* hard     nproc          65535</span><br><span class="line">* soft     nofile         65535</span><br><span class="line">* hard     nofile         65535</span><br><span class="line">root soft     nproc          65535</span><br><span class="line">root hard     nproc          65535</span><br><span class="line">root soft     nofile         65535</span><br><span class="line">root hard     nofile         65535</span><br><span class="line"></span><br><span class="line"><span class="comment"># edit the following file</span></span><br><span class="line">user@ubuntu:~$ sudo vim /etc/pam.d/common-session</span><br><span class="line"></span><br><span class="line"><span class="comment"># add this line to it</span></span><br><span class="line">session required pam_limits.so</span><br><span class="line"></span><br><span class="line"><span class="comment"># logout and login and try the following command</span></span><br><span class="line">user@ubuntu:~$ <span class="built_in">ulimit</span> -n</span><br><span class="line">65535</span><br></pre></td></tr></table></figure>
 
-# add following lines to it
-* soft     nproc          65535
-* hard     nproc          65535
-* soft     nofile         65535
-* hard     nofile         65535
-root soft     nproc          65535
-root hard     nproc          65535
-root soft     nofile         65535
-root hard     nofile         65535
-
-# edit the following file
-user@ubuntu:~$ sudo vim /etc/pam.d/common-session
-
-# add this line to it
-session required pam_limits.so
-
-# logout and login and try the following command
-user@ubuntu:~$ ulimit -n
-65535
-</pre>
       
     </div>
 
@@ -431,7 +376,7 @@ user@ubuntu:~$ ulimit -n
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/03/23/set-ulimit-n-open-files-permanently-in-ubuntu/" data-id="ckhhbad3a003o98my1s65aj5o" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/03/23/set-ulimit-n-open-files-permanently-in-ubuntu/" data-id="ckhmph3ja003nh4y22c4z8qhi" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -515,7 +460,7 @@ user@ubuntu:~$ ulimit -n
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/03/23/ios-app%e5%90%af%e5%8a%a8%e9%80%9f%e5%ba%a6%e4%bc%98%e5%8c%96%e7%9a%84%e4%b8%80%e4%ba%9b%e7%bb%8f%e9%aa%8c/" data-id="ckhhbad39003n98myg4la0mrt" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/03/23/ios-app%e5%90%af%e5%8a%a8%e9%80%9f%e5%ba%a6%e4%bc%98%e5%8c%96%e7%9a%84%e4%b8%80%e4%ba%9b%e7%bb%8f%e9%aa%8c/" data-id="ckhmph3jb003oh4y20ntbe637" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -555,65 +500,8 @@ user@ubuntu:~$ ulimit -n
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">&lt;br /&gt;sudo apt install redsocks
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;br /&amp;gt;sudo apt install redsocks</span><br><span class="line"></span><br><span class="line">/etc/sysctl.conf:</span><br><span class="line">net.ipv4.ip_forward = 1</span><br><span class="line">sudo sysctl -p /etc/sysctl.conf</span><br><span class="line">sudo sysctl -w net.ipv4.ip_forward=1</span><br><span class="line"><span class="comment">#sudo service networking restart</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo iptables -t nat  -L -n</span><br><span class="line"></span><br><span class="line">sudo iptables -F</span><br><span class="line">sudo iptables -X</span><br><span class="line">sudo iptables -t nat -F</span><br><span class="line">sudo iptables -t nat -X</span><br><span class="line">sudo iptables -t mangle -F</span><br><span class="line">sudo iptables -t mangle -X</span><br><span class="line">sudo iptables -P INPUT ACCEPT</span><br><span class="line">sudo iptables -P FORWARD ACCEPT</span><br><span class="line">sudo iptables -P OUTPUT ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># interface forward</span></span><br><span class="line">sudo iptables -A FORWARD -i wlan0 -o lo -m state --state RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line"> sudo iptables -A FORWARD -i lo -o wlan0 -j ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># Allow established connections</span></span><br><span class="line">sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</span><br><span class="line">sudo iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># Masquerade</span></span><br><span class="line">sudo iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo redsocks</span><br><span class="line">sudo vim /etc/redsocks.conf</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">curl --socks5 127.0.0.1:31338  https://viewerport.com/app/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo iptables -t nat -N REDSOCKS</span><br><span class="line">sudo iptables -t nat -A REDSOCKS -d 0.0.0.0/8 -j RETURN</span><br><span class="line">sudo iptables -t nat -A REDSOCKS -d 10.0.0.0/8 -j RETURN</span><br><span class="line">sudo iptables -t nat -A REDSOCKS -d 127.0.0.0/8 -j RETURN</span><br><span class="line">sudo iptables -t nat -A REDSOCKS -d 169.254.0.0/16 -j RETURN</span><br><span class="line">sudo iptables -t nat -A REDSOCKS -d 172.16.0.0/12 -j RETURN</span><br><span class="line">sudo iptables -t nat -A REDSOCKS -d 192.168.0.0/16 -j RETUR</span><br><span class="line">sudo iptables -t nat -A REDSOCKS -d 172.24.0.0/16 -j RETURN</span><br><span class="line">sudo iptables -t nat -A REDSOCKS -d 224.0.0.0/4 -j RETURN</span><br><span class="line">sudo iptables -t nat -A REDSOCKS -d 240.0.0.0/4 -j RETURN</span><br><span class="line">sudo iptables -t nat -A REDSOCKS -p tcp -j REDIRECT --to-ports 31338</span><br><span class="line">sudo iptables -t nat -A PREROUTING --in-interface lo -p tcp -j REDSOCKS</span><br><span class="line">sudo iptables -t nat -A PREROUTING --in-interface wlan0 -p tcp -j REDSOCKS</span><br><span class="line"></span><br><span class="line">sudo iptables-restore &amp;lt; /home/pi/redsocks.ip</span><br><span class="line"></span><br><span class="line">sudo iptables-save</span><br></pre></td></tr></table></figure>
 
-/etc/sysctl.conf:
-net.ipv4.ip_forward = 1
-sudo sysctl -p /etc/sysctl.conf
-sudo sysctl -w net.ipv4.ip_forward=1
-#sudo service networking restart
-
-
-
-sudo iptables -t nat  -L -n
-
-sudo iptables -F
-sudo iptables -X
-sudo iptables -t nat -F
-sudo iptables -t nat -X
-sudo iptables -t mangle -F
-sudo iptables -t mangle -X
-sudo iptables -P INPUT ACCEPT
-sudo iptables -P FORWARD ACCEPT
-sudo iptables -P OUTPUT ACCEPT
-
-# interface forward
-sudo iptables -A FORWARD -i wlan0 -o lo -m state --state RELATED,ESTABLISHED -j ACCEPT
- sudo iptables -A FORWARD -i lo -o wlan0 -j ACCEPT
-
-# Allow established connections
-sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-sudo iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
-
-# Masquerade
-sudo iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
-
-
-sudo redsocks
-sudo vim /etc/redsocks.conf
-
-
-curl --socks5 127.0.0.1:31338  https://viewerport.com/app/
-
-
-sudo iptables -t nat -N REDSOCKS
-sudo iptables -t nat -A REDSOCKS -d 0.0.0.0/8 -j RETURN
-sudo iptables -t nat -A REDSOCKS -d 10.0.0.0/8 -j RETURN
-sudo iptables -t nat -A REDSOCKS -d 127.0.0.0/8 -j RETURN
-sudo iptables -t nat -A REDSOCKS -d 169.254.0.0/16 -j RETURN
-sudo iptables -t nat -A REDSOCKS -d 172.16.0.0/12 -j RETURN
-sudo iptables -t nat -A REDSOCKS -d 192.168.0.0/16 -j RETUR
-sudo iptables -t nat -A REDSOCKS -d 172.24.0.0/16 -j RETURN
-sudo iptables -t nat -A REDSOCKS -d 224.0.0.0/4 -j RETURN
-sudo iptables -t nat -A REDSOCKS -d 240.0.0.0/4 -j RETURN
-sudo iptables -t nat -A REDSOCKS -p tcp -j REDIRECT --to-ports 31338
-sudo iptables -t nat -A PREROUTING --in-interface lo -p tcp -j REDSOCKS
-sudo iptables -t nat -A PREROUTING --in-interface wlan0 -p tcp -j REDSOCKS
-
-sudo iptables-restore &lt; /home/pi/redsocks.ip
-
-sudo iptables-save
-</pre>
       
     </div>
 
@@ -623,7 +511,7 @@ sudo iptables-save
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/03/22/raspberry-redsocks-forward/" data-id="ckhhbad39003m98my3n2y1y2u" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/03/22/raspberry-redsocks-forward/" data-id="ckhmph3ja003mh4y2c8btccln" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -681,7 +569,7 @@ sudo iptables-save
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/03/11/%e5%85%b3%e4%ba%8e%e5%8d%95%e4%be%8b%e6%bb%a5%e7%94%a8%e5%af%bc%e8%87%b4%e7%9a%84crash%e5%88%86%e6%9e%90/" data-id="ckhhbad39003l98my1ijl1v9x" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/03/11/%e5%85%b3%e4%ba%8e%e5%8d%95%e4%be%8b%e6%bb%a5%e7%94%a8%e5%af%bc%e8%87%b4%e7%9a%84crash%e5%88%86%e6%9e%90/" data-id="ckhmph3ja003lh4y28jcc7kl9" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -721,18 +609,8 @@ sudo iptables-save
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="How-to-fix-DPKG-LOCKED-cydo-returned-an-error-code-after-Electra1131"><a href="#How-to-fix-DPKG-LOCKED-cydo-returned-an-error-code-after-Electra1131" class="headerlink" title="How to fix DPKG_LOCKED/cydo returned an error code after Electra1131"></a>How to fix DPKG_LOCKED/cydo returned an error code after Electra1131</h3><pre class="brush: bash; title: ; notranslate" title="">1 unjialbreak
-## on iphone terminate
-wget https://raw.githubusercontent.com/KirovAir/delectra/master/unjailbreak.sh
-chmod a+x unjailbreak.sh
-./unjailbreak.sh 
+        <h3 id="How-to-fix-DPKG-LOCKED-cydo-returned-an-error-code-after-Electra1131"><a href="#How-to-fix-DPKG-LOCKED-cydo-returned-an-error-code-after-Electra1131" class="headerlink" title="How to fix DPKG_LOCKED/cydo returned an error code after Electra1131"></a>How to fix DPKG_LOCKED/cydo returned an error code after Electra1131</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1 unjialbreak</span><br><span class="line"><span class="comment">## on iphone terminate</span></span><br><span class="line">wget https://raw.githubusercontent.com/KirovAir/delectra/master/unjailbreak.sh</span><br><span class="line">chmod a+x unjailbreak.sh</span><br><span class="line">./unjailbreak.sh </span><br><span class="line"></span><br><span class="line">2,rejailbreak use Electra</span><br><span class="line"></span><br><span class="line">3. rm -rf /librarry/dpkg/lock*</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-2,rejailbreak use Electra
-
-3. rm -rf /librarry/dpkg/lock*
-
-
-</pre>
       
     </div>
 
@@ -742,7 +620,7 @@ chmod a+x unjailbreak.sh
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/02/28/how-to-fix-dpkg_locked-cydo-returned-an-error-code-after-electra1131/" data-id="ckhhbad38003k98my8z2c9dg7" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/02/28/how-to-fix-dpkg_locked-cydo-returned-an-error-code-after-electra1131/" data-id="ckhmph3j9003kh4y2bax79946" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

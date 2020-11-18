@@ -103,21 +103,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="osx-10-13-6-install-caffe"><a href="#osx-10-13-6-install-caffe" class="headerlink" title="osx 10.13.6 install caffe"></a>osx 10.13.6 install caffe</h3><pre class="brush: bash; title: ; notranslate" title="">osx caffe install
-sudo port clean all
-sudo port install py27-protobuf @2.6.1_2
-//boost 1.67.0_1
-brew install  boost@1.67 hdf5@1.10
+        <h3 id="osx-10-13-6-install-caffe"><a href="#osx-10-13-6-install-caffe" class="headerlink" title="osx 10.13.6 install caffe"></a>osx 10.13.6 install caffe</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">osx caffe install</span><br><span class="line">sudo port clean all</span><br><span class="line">sudo port install py27-protobuf @2.6.1_2</span><br><span class="line">//boost 1.67.0_1</span><br><span class="line">brew install  boost@1.67 hdf5@1.10</span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/BVLC/caffe.git</span><br><span class="line"><span class="built_in">cd</span> caffe</span><br><span class="line">cp Makefile.config.example Makefile.config</span><br><span class="line"></span><br><span class="line">CPU_ONLY := 1</span><br><span class="line">INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/<span class="built_in">local</span>/include /opt/<span class="built_in">local</span>/include</span><br><span class="line">LIBRARY_DIRS := $(PYTHON_LIB) /usr/<span class="built_in">local</span>/lib /usr/lib  /opt/<span class="built_in">local</span>/lib</span><br><span class="line">OPENCV_VERSION := 3</span><br></pre></td></tr></table></figure>
 
-git clone https://github.com/BVLC/caffe.git
-cd caffe
-cp Makefile.config.example Makefile.config
-
-CPU_ONLY := 1
-INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /opt/local/include
-LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib  /opt/local/lib
-OPENCV_VERSION := 3
-</pre>
       
     </div>
 
@@ -127,7 +114,7 @@ OPENCV_VERSION := 3
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/09/11/osx-10-13-6-install-caffe/" data-id="ckhhbad2y002o98myfuq0abzb" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/09/11/osx-10-13-6-install-caffe/" data-id="ckhmph3iy002ph4y24cjp56z6" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -178,7 +165,7 @@ OPENCV_VERSION := 3
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/08/21/semirestore11-for-ios-11-3-1/" data-id="ckhhbad2y002n98myhjzm4uzw" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/08/21/semirestore11-for-ios-11-3-1/" data-id="ckhmph3iy002oh4y29lyxc4go" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -222,8 +209,8 @@ OPENCV_VERSION := 3
 <p>Unfortunately we cannot automate all of the setup and Bartender 1 will need you to temporarily disable System Integrity Protection to allow it to install its System Item control component, System integrity Protection can then be re-enabled.</p>
 <p>Apple have made the steps to temporarily disable SIP quite difficult, so we now recommend only performing these steps if you really must control Apple Menu Items with Bartender</p>
 <p>1 Restart your Mac, and as soon as the screen turns black hold down command+ R<br>2 Now click on the &#8220;Utilities&#8221; menu, and then &#8220;Terminal&#8221;.<br>3 In the Terminal Window that opens type:</p>
-<pre class="brush: bash; title: ; notranslate" title="">csrutil disable 
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">csrutil <span class="built_in">disable</span> </span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -233,7 +220,7 @@ OPENCV_VERSION := 3
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/08/17/turn-off-macos-system-integrity-protection-sip-check/" data-id="ckhhbad2y002q98myhnbpb595" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/08/17/turn-off-macos-system-integrity-protection-sip-check/" data-id="ckhmph3iy002nh4y29npn5ics" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -274,10 +261,8 @@ OPENCV_VERSION := 3
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="cycript-cycript-Library-not-loaded-2-0-usr-lib-libruby-2-0-0-dylib"><a href="#cycript-cycript-Library-not-loaded-2-0-usr-lib-libruby-2-0-0-dylib" class="headerlink" title="cycript #cycript # Library not loaded: 2.0/usr/lib/libruby.2.0.0.dylib"></a>cycript #cycript # Library not loaded: 2.0/usr/lib/libruby.2.0.0.dylib</h3><p>cycript<br>Library not loaded: /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/libruby.2.0.0.dylib<br>Referenced from: ~/Downloads/cycript_0.9.594/Cycript.lib/cycript-apl<br>Reason: image not found<br>Abort trap: 6</p>
-<pre class="brush: bash; title: ; notranslate" title="">install_name_tool -change /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/libruby.2.0.0.dylib /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.dylib  ~/Downloads/cycript_0.9.594/Cycript.lib/cycript-apl
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">install_name_tool -change /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/libruby.2.0.0.dylib /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.dylib  ~/Downloads/cycript_0.9.594/Cycript.lib/cycript-apl</span><br><span class="line"></span><br><span class="line">install_name_tool -change /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/libruby.2.0.0.dylib /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.dylib ~/Downloads/cycript_0.9.594/Cycript.lib/libcycript.dylib</span><br></pre></td></tr></table></figure>
 
-install_name_tool -change /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/libruby.2.0.0.dylib /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.dylib ~/Downloads/cycript_0.9.594/Cycript.lib/libcycript.dylib
-</pre>
       
     </div>
 
@@ -287,7 +272,7 @@ install_name_tool -change /System/Library/Frameworks/Ruby.framework/Versions/2.0
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/08/08/cycript-library-not-loaded-system-library-frameworks-ruby-framework-versions-2-0-usr-lib-libruby-2-0-0-dylib/" data-id="ckhhbad2x002m98my619s15f2" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/08/08/cycript-library-not-loaded-system-library-frameworks-ruby-framework-versions-2-0-usr-lib-libruby-2-0-0-dylib/" data-id="ckhmph3ix002mh4y269ifekqg" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -328,64 +313,23 @@ install_name_tool -change /System/Library/Frameworks/Ruby.framework/Versions/2.0
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="osx-plist-file-format"><a href="#osx-plist-file-format" class="headerlink" title="osx plist file format"></a>osx plist file format</h3><p>Plist is short for property list. It is just a filetype used by Apple to store data.<br>it has three format<br>format enum:</p>
-<pre class="brush: bash; title: ; notranslate" title="">enum {
-   NSPropertyListOpenStepFormat = kCFPropertyListOpenStepFormat,
-   NSPropertyListXMLFormat_v1_0 = kCFPropertyListXMLFormat_v1_0,
-   NSPropertyListBinaryFormat_v1_0 = kCFPropertyListBinaryFormat_v1_0
-}; NSPropertyListFormat;
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">enum &#123;</span><br><span class="line">   NSPropertyListOpenStepFormat = kCFPropertyListOpenStepFormat,</span><br><span class="line">   NSPropertyListXMLFormat_v1_0 = kCFPropertyListXMLFormat_v1_0,</span><br><span class="line">   NSPropertyListBinaryFormat_v1_0 = kCFPropertyListBinaryFormat_v1_0</span><br><span class="line">&#125;; NSPropertyListFormat;</span><br></pre></td></tr></table></figure>
+
 
 <p>how to convert format</p>
-<h4 id="Converting-a-plist-File-to-XML-from-Binary"><a href="#Converting-a-plist-File-to-XML-from-Binary" class="headerlink" title="Converting a plist File to XML from Binary"></a>Converting a plist File to XML from Binary</h4><pre class="brush: bash; title: ; notranslate" title="">plutil -convert xml1 ExampleBinary.plist
-</pre>
+<h4 id="Converting-a-plist-File-to-XML-from-Binary"><a href="#Converting-a-plist-File-to-XML-from-Binary" class="headerlink" title="Converting a plist File to XML from Binary"></a>Converting a plist File to XML from Binary</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plutil -convert xml1 ExampleBinary.plist</span><br></pre></td></tr></table></figure>
 
-<h4 id="Converting-a-plist-Binary-File-to-XML-Format"><a href="#Converting-a-plist-Binary-File-to-XML-Format" class="headerlink" title="Converting a plist Binary File to XML Format"></a>Converting a plist Binary File to XML Format</h4><pre class="brush: bash; title: ; notranslate" title="">plutil -convert binary1 Example.plist
-</pre>
+
+<h4 id="Converting-a-plist-Binary-File-to-XML-Format"><a href="#Converting-a-plist-Binary-File-to-XML-Format" class="headerlink" title="Converting a plist Binary File to XML Format"></a>Converting a plist Binary File to XML Format</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plutil -convert binary1 Example.plist</span><br></pre></td></tr></table></figure>
+
 
 <p>what is OpenStepFormat?<br>it is like this</p>
-<pre class="brush: bash; title: ; notranslate" title="">{
-Filter ={
-    Bundles =     (
-         test,
-         verb
-    );
-};
-}
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">Filter =&#123;</span><br><span class="line">    Bundles =     (</span><br><span class="line">         <span class="built_in">test</span>,</span><br><span class="line">         verb</span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
 <h4 id="Converting-a-plist-openstep-File-to-XML-Format"><a href="#Converting-a-plist-openstep-File-to-XML-Format" class="headerlink" title="Converting a plist openstep File to XML Format"></a>Converting a plist openstep File to XML Format</h4><p>no tool found<br>but you can use this code</p>
-<pre class="brush: bash; title: ; notranslate" title="">NSError *error;
-    NSData *data = [NSData dataWithContentsOfFile: path
-                           options: 0
-                           error: &amp;error;];
-    if (data == nil) {
-        NSLog (@&quot;error reading %@: %@&quot;, path, error);
-        return nil;
-    }
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">NSError *error;</span><br><span class="line">    NSData *data = [NSData dataWithContentsOfFile: path</span><br><span class="line">                           options: 0</span><br><span class="line">                           error: &amp;amp;error;];</span><br><span class="line">    <span class="keyword">if</span> (data == nil) &#123;</span><br><span class="line">        NSLog (@&amp;quot;error reading %@: %@&amp;quot;, path, error);</span><br><span class="line">        <span class="built_in">return</span> nil;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    NSPropertyListFormat format;</span><br><span class="line">    id plist = [NSPropertyListSerialization        propertyListWithData: data</span><br><span class="line">               options: NSPropertyListImmutable</span><br><span class="line">                     format: &amp;amp;format</span><br><span class="line">             error: &amp;amp;error];</span><br><span class="line"> <span class="keyword">if</span> (plist == nil) &#123;</span><br><span class="line">        NSLog (@&amp;quot;could not deserialize %@: %@&amp;quot;, path, error);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">        <span class="keyword">if</span> (![NSPropertyListSerialization</span><br><span class="line">             propertyList: plist</span><br><span class="line">             isValidForFormat: kCFPropertyListXMLFormat_v1_0]) &#123;</span><br><span class="line">        NSLog (@&amp;quot;can&amp;<span class="comment">#039;t save as XML&amp;quot;);</span></span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">     BOOL writeStatus = [data writeToFile: @&amp;quot;plist.txt&amp;quot;</span><br><span class="line">                             options: NSDataWritingAtomic</span><br><span class="line">                             error: &amp;amp;error;];</span><br><span class="line">    <span class="keyword">if</span> (!writeStatus) &#123;</span><br><span class="line">        NSLog (@&amp;quot;error writing to file: %@&amp;quot;, error);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-    NSPropertyListFormat format;
-    id plist = [NSPropertyListSerialization        propertyListWithData: data
-               options: NSPropertyListImmutable
-                     format: &amp;format
-             error: &amp;error];
- if (plist == nil) {
-        NSLog (@&quot;could not deserialize %@: %@&quot;, path, error);
-
-    }
-        if (![NSPropertyListSerialization
-             propertyList: plist
-             isValidForFormat: kCFPropertyListXMLFormat_v1_0]) {
-        NSLog (@&quot;can&#039;t save as XML&quot;);
-        return;
-    }
-     BOOL writeStatus = [data writeToFile: @&quot;plist.txt&quot;
-                             options: NSDataWritingAtomic
-                             error: &amp;error;];
-    if (!writeStatus) {
-        NSLog (@&quot;error writing to file: %@&quot;, error);
-        return;
-    }
-</pre>
       
     </div>
 
@@ -395,7 +339,7 @@ Filter ={
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/08/03/osx-plist-file-format/" data-id="ckhhbad2x002l98mybd8x38a2" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/08/03/osx-plist-file-format/" data-id="ckhmph3ix002lh4y243yu5y9o" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -435,9 +379,8 @@ Filter ={
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="show-all-hiden-file-in-osx"><a href="#show-all-hiden-file-in-osx" class="headerlink" title="show all hiden file in osx"></a>show all hiden file in osx</h3><pre class="brush: bash; title: ; notranslate" title="">defaults write com.apple.finder AppleShowAllFiles YES
-killall -9 Finder
-</pre>
+        <h3 id="show-all-hiden-file-in-osx"><a href="#show-all-hiden-file-in-osx" class="headerlink" title="show all hiden file in osx"></a>show all hiden file in osx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.finder AppleShowAllFiles YES</span><br><span class="line">killall -9 Finder</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -447,7 +390,7 @@ killall -9 Finder
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/07/30/show-all-hiden-file-in-osx/" data-id="ckhhbad2w002j98my3pxtdr7t" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/07/30/show-all-hiden-file-in-osx/" data-id="ckhmph3ix002kh4y2amnz9q5s" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -498,7 +441,7 @@ killall -9 Finder
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/07/27/hopper-4-0-8-for-osx/" data-id="ckhhbad2w002h98mybsyxajde" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/07/27/hopper-4-0-8-for-osx/" data-id="ckhmph3iw002hh4y25o1y0uak" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -549,7 +492,7 @@ killall -9 Finder
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/07/27/idapro-6-8-for-window/" data-id="ckhhbad2w002i98myg3x8fxpj" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/07/27/idapro-6-8-for-window/" data-id="ckhmph3iw002ih4y2h90m10ix" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -600,7 +543,7 @@ killall -9 Finder
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/07/27/reveal-4-mac%e7%a0%b4%e8%a7%a3%e7%89%88/" data-id="ckhhbad2x002k98myax7e4cec" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/07/27/reveal-4-mac%e7%a0%b4%e8%a7%a3%e7%89%88/" data-id="ckhmph3ix002jh4y2gu6w8sta" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -640,10 +583,8 @@ killall -9 Finder
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Electra-jailbreak-installed-cydia-but-cydia-appeared-8216-Host-Unreachable-8217-for-ios-11-3-1"><a href="#Electra-jailbreak-installed-cydia-but-cydia-appeared-8216-Host-Unreachable-8217-for-ios-11-3-1" class="headerlink" title="Electra jailbreak installed cydia, but cydia appeared &#8216;Host Unreachable&#8217; for ios 11.3.1"></a>Electra jailbreak installed cydia, but cydia appeared &#8216;Host Unreachable&#8217; for ios 11.3.1</h3><pre class="brush: bash; title: ; notranslate" title="">cd /var/preferences﻿
-rm -rf com.apple.networkextension.cache.plist com.apple.networkextension.necp.plist com.apple.networkextension.plist 
-reboot
-</pre>
+        <h3 id="Electra-jailbreak-installed-cydia-but-cydia-appeared-8216-Host-Unreachable-8217-for-ios-11-3-1"><a href="#Electra-jailbreak-installed-cydia-but-cydia-appeared-8216-Host-Unreachable-8217-for-ios-11-3-1" class="headerlink" title="Electra jailbreak installed cydia, but cydia appeared &#8216;Host Unreachable&#8217; for ios 11.3.1"></a>Electra jailbreak installed cydia, but cydia appeared &#8216;Host Unreachable&#8217; for ios 11.3.1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/preferences﻿</span><br><span class="line">rm -rf com.apple.networkextension.cache.plist com.apple.networkextension.necp.plist com.apple.networkextension.plist </span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -653,7 +594,7 @@ reboot
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/07/26/electra-jailbreak-installed-cydia-but-cydia-appeared-host-unreachable/" data-id="ckhhbad2u002d98my2yid17jt" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/07/26/electra-jailbreak-installed-cydia-but-cydia-appeared-host-unreachable/" data-id="ckhmph3iv002dh4y2fbnabf1d" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

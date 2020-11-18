@@ -5,15 +5,15 @@
   
   <title>Printing colorful text in terminal for osx | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Printing colorful text in terminal for osxconsole.log(&#39;\x1b[36m%s\x1b[0m&#39;, info);  &#x2F;&#x2F;cyan console.log(&#39;\x1b[33m%s\x1b[0m: &#39;, path);  &#x2F;&#x2F;yellow  &#x2F;&#x2F;color table1 Reset &#x3D; &quot;\x1b[0m&quot; Bright &#x3D; &quot;\x1b[1m&quot; Dim &#x3D;">
+  <meta name="description" content="Printing colorful text in terminal for osx12345678910111213141516171819202122232425262728293031console.log(&amp;#x27;\x1b[36m%s\x1b[0m&amp;#x27;, info);  &#x2F;&#x2F;cyanconsole.log(&amp;#x27;\x1b[33m%s\x1b[0m: &amp;#x27;, pat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Printing colorful text in terminal for osx">
 <meta property="og:url" content="http://wirelessbox.net/2017/08/24/printing-colorful-text-in-terminal-for-osx/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="Printing colorful text in terminal for osxconsole.log(&#39;\x1b[36m%s\x1b[0m&#39;, info);  &#x2F;&#x2F;cyan console.log(&#39;\x1b[33m%s\x1b[0m: &#39;, path);  &#x2F;&#x2F;yellow  &#x2F;&#x2F;color table1 Reset &#x3D; &quot;\x1b[0m&quot; Bright &#x3D; &quot;\x1b[1m&quot; Dim &#x3D;">
+<meta property="og:description" content="Printing colorful text in terminal for osx12345678910111213141516171819202122232425262728293031console.log(&amp;#x27;\x1b[36m%s\x1b[0m&amp;#x27;, info);  &#x2F;&#x2F;cyanconsole.log(&amp;#x27;\x1b[33m%s\x1b[0m: &amp;#x27;, pat">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-08-24T01:38:26.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.365Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -105,38 +105,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Printing-colorful-text-in-terminal-for-osx"><a href="#Printing-colorful-text-in-terminal-for-osx" class="headerlink" title="Printing colorful text in terminal for osx"></a>Printing colorful text in terminal for osx</h3><pre class="brush: bash; title: ; notranslate" title="">console.log('\x1b[36m%s\x1b[0m', info);  //cyan
-console.log('\x1b[33m%s\x1b[0m: ', path);  //yellow
+        <h3 id="Printing-colorful-text-in-terminal-for-osx"><a href="#Printing-colorful-text-in-terminal-for-osx" class="headerlink" title="Printing colorful text in terminal for osx"></a>Printing colorful text in terminal for osx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">console.log(<span class="string">&#x27;\x1b[36m%s\x1b[0m&#x27;</span>, info);  //cyan</span><br><span class="line">console.log(<span class="string">&#x27;\x1b[33m%s\x1b[0m: &#x27;</span>, path);  //yellow</span><br><span class="line"></span><br><span class="line">//color table1</span><br><span class="line">Reset = <span class="string">&quot;\x1b[0m&quot;</span></span><br><span class="line">Bright = <span class="string">&quot;\x1b[1m&quot;</span></span><br><span class="line">Dim = <span class="string">&quot;\x1b[2m&quot;</span></span><br><span class="line">Underscore = <span class="string">&quot;\x1b[4m&quot;</span></span><br><span class="line">Blink = <span class="string">&quot;\x1b[5m&quot;</span></span><br><span class="line">Reverse = <span class="string">&quot;\x1b[7m&quot;</span></span><br><span class="line">Hidden = <span class="string">&quot;\x1b[8m&quot;</span></span><br><span class="line"></span><br><span class="line">//fgcolor</span><br><span class="line">FgBlack = <span class="string">&quot;\x1b[30m&quot;</span></span><br><span class="line">FgRed = <span class="string">&quot;\x1b[31m&quot;</span></span><br><span class="line">FgGreen = <span class="string">&quot;\x1b[32m&quot;</span></span><br><span class="line">FgYellow = <span class="string">&quot;\x1b[33m&quot;</span></span><br><span class="line">FgBlue = <span class="string">&quot;\x1b[34m&quot;</span></span><br><span class="line">FgMagenta = <span class="string">&quot;\x1b[35m&quot;</span></span><br><span class="line">FgCyan = <span class="string">&quot;\x1b[36m&quot;</span></span><br><span class="line">FgWhite = <span class="string">&quot;\x1b[37m&quot;</span></span><br><span class="line"></span><br><span class="line">//bfcolor</span><br><span class="line">BgBlack = <span class="string">&quot;\x1b[40m&quot;</span></span><br><span class="line">BgRed = <span class="string">&quot;\x1b[41m&quot;</span></span><br><span class="line">BgGreen = <span class="string">&quot;\x1b[42m&quot;</span></span><br><span class="line">BgYellow = <span class="string">&quot;\x1b[43m&quot;</span></span><br><span class="line">BgBlue = <span class="string">&quot;\x1b[44m&quot;</span></span><br><span class="line">BgMagenta = <span class="string">&quot;\x1b[45m&quot;</span></span><br><span class="line">BgCyan = <span class="string">&quot;\x1b[46m&quot;</span></span><br><span class="line">BgWhite = <span class="string">&quot;\x1b[47m&quot;</span></span><br></pre></td></tr></table></figure>
 
-//color table1
-Reset = "\x1b[0m"
-Bright = "\x1b[1m"
-Dim = "\x1b[2m"
-Underscore = "\x1b[4m"
-Blink = "\x1b[5m"
-Reverse = "\x1b[7m"
-Hidden = "\x1b[8m"
-
-//fgcolor
-FgBlack = "\x1b[30m"
-FgRed = "\x1b[31m"
-FgGreen = "\x1b[32m"
-FgYellow = "\x1b[33m"
-FgBlue = "\x1b[34m"
-FgMagenta = "\x1b[35m"
-FgCyan = "\x1b[36m"
-FgWhite = "\x1b[37m"
-
-//bfcolor
-BgBlack = "\x1b[40m"
-BgRed = "\x1b[41m"
-BgGreen = "\x1b[42m"
-BgYellow = "\x1b[43m"
-BgBlue = "\x1b[44m"
-BgMagenta = "\x1b[45m"
-BgCyan = "\x1b[46m"
-BgWhite = "\x1b[47m"
-</pre>
       
     </div>
 
@@ -146,7 +116,7 @@ BgWhite = "\x1b[47m"
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/08/24/printing-colorful-text-in-terminal-for-osx/" data-id="ckhhbad2k001m98my4g0o5m2o" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/08/24/printing-colorful-text-in-terminal-for-osx/" data-id="ckhmph3im001nh4y2csfp8o3w" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

@@ -5,15 +5,15 @@
   
   <title>How to fix “Bus error 10” after update to Xcode 10.2 | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="How to fix “Bus error 10” after update to Xcode 10.2post_install do |installer|     installer.pods_project.targets.each do |target|         target.build_configurations.each do |config|             if">
+  <meta name="description" content="How to fix “Bus error 10” after update to Xcode 10.2123456789post_install do |installer|    installer.pods_project.targets.each do |target|        target.build_configurations.each do |config|">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to fix “Bus error 10” after update to Xcode 10.2">
 <meta property="og:url" content="http://wirelessbox.net/2019/04/28/how-to-fix-bus-error-10-after-update-to-xcode-10-2/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="How to fix “Bus error 10” after update to Xcode 10.2post_install do |installer|     installer.pods_project.targets.each do |target|         target.build_configurations.each do |config|             if">
+<meta property="og:description" content="How to fix “Bus error 10” after update to Xcode 10.2123456789post_install do |installer|    installer.pods_project.targets.each do |target|        target.build_configurations.each do |config|">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-04-28T01:34:54.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.321Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -105,16 +105,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="How-to-fix-“Bus-error-10”-after-update-to-Xcode-10-2"><a href="#How-to-fix-“Bus-error-10”-after-update-to-Xcode-10-2" class="headerlink" title="How to fix “Bus error 10” after update to Xcode 10.2"></a>How to fix “Bus error 10” after update to Xcode 10.2</h3><pre class="brush: bash; title: ; notranslate" title="">post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            if target.name == 'Cache'
-                config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Onone'
-            end
-        end
-    end
-end
-</pre>
+        <h3 id="How-to-fix-“Bus-error-10”-after-update-to-Xcode-10-2"><a href="#How-to-fix-“Bus-error-10”-after-update-to-Xcode-10-2" class="headerlink" title="How to fix “Bus error 10” after update to Xcode 10.2"></a>How to fix “Bus error 10” after update to Xcode 10.2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">post_install <span class="keyword">do</span> |installer|</span><br><span class="line">    installer.pods_project.targets.each <span class="keyword">do</span> |target|</span><br><span class="line">        target.build_configurations.each <span class="keyword">do</span> |config|</span><br><span class="line">            <span class="keyword">if</span> target.name == <span class="string">&#x27;Cache&#x27;</span></span><br><span class="line">                config.build_settings[<span class="string">&#x27;SWIFT_OPTIMIZATION_LEVEL&#x27;</span>] = <span class="string">&#x27;-Onone&#x27;</span></span><br><span class="line">            end</span><br><span class="line">        end</span><br><span class="line">    end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -124,7 +116,7 @@ end
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/04/28/how-to-fix-bus-error-10-after-update-to-xcode-10-2/" data-id="ckhhbad3b003r98my9utxhebv" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/04/28/how-to-fix-bus-error-10-after-update-to-xcode-10-2/" data-id="ckhmph3jc003th4y26gk22hdh" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

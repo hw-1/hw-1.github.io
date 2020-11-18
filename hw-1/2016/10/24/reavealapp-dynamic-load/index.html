@@ -5,15 +5,15 @@
   
   <title>reavealapp dynamic load | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1, Add Symbolic Breakpoint 2, Enter UIApplicationMain into the Symbol field. 3, Click the Add Action button, and ensure that Action is set to Debugger Command. 4, Copy and paste the following text int">
+  <meta name="description" content="123456781, Add Symbolic Breakpoint2, Enter UIApplicationMain into the Symbol field.3, Click the Add Action button, and ensure that Action is set to Debugger Command.4, Copy and paste the following tex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="reavealapp dynamic load">
 <meta property="og:url" content="http://wirelessbox.net/2016/10/24/reavealapp-dynamic-load/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="1, Add Symbolic Breakpoint 2, Enter UIApplicationMain into the Symbol field. 3, Click the Add Action button, and ensure that Action is set to Debugger Command. 4, Copy and paste the following text int">
+<meta property="og:description" content="123456781, Add Symbolic Breakpoint2, Enter UIApplicationMain into the Symbol field.3, Click the Add Action button, and ensure that Action is set to Debugger Command.4, Copy and paste the following tex">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2016-10-23T22:13:50.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.377Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -105,15 +105,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">1, Add Symbolic Breakpoint
-2, Enter UIApplicationMain into the Symbol field.
-3, Click the Add Action button, and ensure that Action is set to Debugger Command.
-4, Copy and paste the following text into the field below:
-expr (Class)NSClassFromString(@"IBARevealLoader") == nil ? (void *)dlopen("/Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/libReveal.dylib", 0x2) : ((void*)0)
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1, Add Symbolic Breakpoint</span><br><span class="line">2, Enter UIApplicationMain into the Symbol field.</span><br><span class="line">3, Click the Add Action button, and ensure that Action is <span class="built_in">set</span> to Debugger Command.</span><br><span class="line">4, Copy and paste the following text into the field below:</span><br><span class="line">expr (Class)NSClassFromString(@<span class="string">&quot;IBARevealLoader&quot;</span>) == nil ? (void *)dlopen(<span class="string">&quot;/Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/libReveal.dylib&quot;</span>, 0x2) : ((void*)0)</span><br><span class="line"></span><br><span class="line">5, Check Automatically <span class="built_in">continue</span> after evaluating actions.</span><br><span class="line">6, Right click the newly created breakpoint and select Move Breakpoint To → User.</span><br></pre></td></tr></table></figure>
 
-5, Check Automatically continue after evaluating actions.
-6, Right click the newly created breakpoint and select Move Breakpoint To → User.
-</pre>
       
     </div>
 
@@ -123,7 +116,7 @@ expr (Class)NSClassFromString(@"IBARevealLoader") == nil ? (void *)dlopen("/Appl
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/10/24/reavealapp-dynamic-load/" data-id="ckhhbad1x000k98my8dsd38nm" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/10/24/reavealapp-dynamic-load/" data-id="ckhmph3i6000nh4y28tbz1xyh" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

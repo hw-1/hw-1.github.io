@@ -5,15 +5,15 @@
   
   <title>Disable or Enable SSH Root Login and Limit SSH Access in Linux | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="sudo vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config &#x2F;&#x2F;disable PermitRootLogin no &#x2F;&#x2F;enable PermitRootLogin yes &#x2F;&#x2F;restart ssh sudo &#x2F;etc&#x2F;init.d&#x2F;sshd restart  &#x2F;&#x2F; cat pub.pem &gt;  ~&#x2F;.ssh&#x2F;authorized_keys chmod o-w ~&#x2F;; chmod 700">
+  <meta name="description" content="123456789101112sudo vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config&#x2F;&#x2F;disablePermitRootLogin no&#x2F;&#x2F;enablePermitRootLogin yes&#x2F;&#x2F;restart sshsudo &#x2F;etc&#x2F;init.d&#x2F;sshd restart&#x2F;&#x2F;cat pub.pem &amp;gt;  ~&#x2F;.ssh&#x2F;authorized_keyschmod o-w ~&#x2F;;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Disable or Enable SSH Root Login and Limit SSH Access in Linux">
 <meta property="og:url" content="http://wirelessbox.net/2016/08/08/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="sudo vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config &#x2F;&#x2F;disable PermitRootLogin no &#x2F;&#x2F;enable PermitRootLogin yes &#x2F;&#x2F;restart ssh sudo &#x2F;etc&#x2F;init.d&#x2F;sshd restart  &#x2F;&#x2F; cat pub.pem &gt;  ~&#x2F;.ssh&#x2F;authorized_keys chmod o-w ~&#x2F;; chmod 700">
+<meta property="og:description" content="123456789101112sudo vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config&#x2F;&#x2F;disablePermitRootLogin no&#x2F;&#x2F;enablePermitRootLogin yes&#x2F;&#x2F;restart sshsudo &#x2F;etc&#x2F;init.d&#x2F;sshd restart&#x2F;&#x2F;cat pub.pem &amp;gt;  ~&#x2F;.ssh&#x2F;authorized_keyschmod o-w ~&#x2F;;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2016-08-08T05:10:34.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.678Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -105,19 +105,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">sudo vim /etc/ssh/sshd_config
-//disable
-PermitRootLogin no
-//enable
-PermitRootLogin yes
-//restart ssh
-sudo /etc/init.d/sshd restart
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/ssh/sshd_config</span><br><span class="line">//<span class="built_in">disable</span></span><br><span class="line">PermitRootLogin no</span><br><span class="line">//<span class="built_in">enable</span></span><br><span class="line">PermitRootLogin yes</span><br><span class="line">//restart ssh</span><br><span class="line">sudo /etc/init.d/sshd restart</span><br><span class="line"></span><br><span class="line">//</span><br><span class="line">cat pub.pem &amp;gt;  ~/.ssh/authorized_keys</span><br><span class="line">chmod o-w ~/; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-//
-cat pub.pem &gt;  ~/.ssh/authorized_keys
-chmod o-w ~/; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys
-
-</pre>
       
     </div>
 
@@ -127,7 +116,7 @@ chmod o-w ~/; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/08/08/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux/" data-id="ckhhbad1t000c98my1xz82m83" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/08/08/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux/" data-id="ckhmph3i0000ch4y2ea1hah8m" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

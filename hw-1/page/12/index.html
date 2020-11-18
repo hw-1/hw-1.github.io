@@ -103,8 +103,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Monitor-the-core-temperature-of-your-Raspberry-Pi"><a href="#Monitor-the-core-temperature-of-your-Raspberry-Pi" class="headerlink" title="Monitor the core temperature of your Raspberry Pi."></a>Monitor the core temperature of your Raspberry Pi.</h3><pre class="brush: bash; title: ; notranslate" title="">alias temp=&quot;/opt/vc/bin/vcgencmd measure_temp&quot;
-</pre>
+        <h3 id="Monitor-the-core-temperature-of-your-Raspberry-Pi"><a href="#Monitor-the-core-temperature-of-your-Raspberry-Pi" class="headerlink" title="Monitor the core temperature of your Raspberry Pi."></a>Monitor the core temperature of your Raspberry Pi.</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> temp=&amp;quot;/opt/vc/bin/vcgencmd measure_temp&amp;quot;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -114,7 +114,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/02/23/monitor-the-core-temperature-of-your-raspberry-pi/" data-id="ckhhbad2r002698mye0yt41vj" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/02/23/monitor-the-core-temperature-of-your-raspberry-pi/" data-id="ckhmph3is0026h4y26yzy1odt" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -154,25 +154,23 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="how-to-get-myip"><a href="#how-to-get-myip" class="headerlink" title="how to get myip?"></a>how to get myip?</h2><h3 id="httpbin"><a href="#httpbin" class="headerlink" title="httpbin"></a>httpbin</h3><pre class="brush: bash; title: ; notranslate" title="">curl http://httpbin.org/ip
-</pre>
+        <h2 id="how-to-get-myip"><a href="#how-to-get-myip" class="headerlink" title="how to get myip?"></a>how to get myip?</h2><h3 id="httpbin"><a href="#httpbin" class="headerlink" title="httpbin"></a>httpbin</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://httpbin.org/ip</span><br></pre></td></tr></table></figure>
 
-<pre class="brush: bash; title: ; notranslate" title="">{
-  &quot;origin&quot;: &quot;218.117.10.26&quot;
-}
-</pre>
 
-<h3 id="icanhazip"><a href="#icanhazip" class="headerlink" title="icanhazip"></a>icanhazip</h3><pre class="brush: bash; title: ; notranslate" title="">curl http://icanhazip.com
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &amp;quot;origin&amp;quot;: &amp;quot;218.117.10.26&amp;quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<pre class="brush: bash; title: ; notranslate" title="">&quot;218.117.10.26&quot;
-</pre>
 
-<h3 id="curl6"><a href="#curl6" class="headerlink" title="curl6"></a>curl6</h3><pre class="brush: bash; title: ; notranslate" title="">curl https://wirelessbox.net/curl6/ip
-</pre>
+<h3 id="icanhazip"><a href="#icanhazip" class="headerlink" title="icanhazip"></a>icanhazip</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://icanhazip.com</span><br></pre></td></tr></table></figure>
 
-<pre class="brush: bash; title: ; notranslate" title="">{&quot;origin&quot;:&quot;218.17.107.26&quot;}
-</pre>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;quot;218.117.10.26&amp;quot;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="curl6"><a href="#curl6" class="headerlink" title="curl6"></a>curl6</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://wirelessbox.net/curl6/ip</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&amp;quot;origin&amp;quot;:&amp;quot;218.17.107.26&amp;quot;&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -182,7 +180,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/02/09/how-to-get-myip/" data-id="ckhhbad2r002498myfc3t88nj" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/02/09/how-to-get-myip/" data-id="ckhmph3ir0023h4y2avbhc76l" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -222,24 +220,11 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="import-kali-repo-publick-key"><a href="#import-kali-repo-publick-key" class="headerlink" title="import kali repo publick key"></a>import kali repo publick key</h3><pre class="brush: bash; title: ; notranslate" title="">sudo apt install dirmngr
-gpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6
-gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -
+        <h3 id="import-kali-repo-publick-key"><a href="#import-kali-repo-publick-key" class="headerlink" title="import kali repo publick key"></a>import kali repo publick key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install dirmngr</span><br><span class="line">gpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6</span><br><span class="line">gpg -a --<span class="built_in">export</span> ED444FF07D8D0BF6 | sudo apt-key add -</span><br><span class="line"></span><br><span class="line">gpg --keyserver hkp://keys.gnupg.net --recv-key 7D8D0BF6</span><br><span class="line">gpg -a --<span class="built_in">export</span> 7D8D0BF6 | sudo apt-key add -</span><br><span class="line"></span><br><span class="line"><span class="comment">#https://docs.kali.org/introduction/download-official-kali-linux-images</span></span><br></pre></td></tr></table></figure>
 
-gpg --keyserver hkp://keys.gnupg.net --recv-key 7D8D0BF6
-gpg -a --export 7D8D0BF6 | sudo apt-key add -
 
-#https://docs.kali.org/introduction/download-official-kali-linux-images
-</pre>
+<h3 id="raspberry-add-kali-repo"><a href="#raspberry-add-kali-repo" class="headerlink" title="raspberry add kali repo"></a>raspberry add kali repo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/apt/sources.list.d/kali.list</span><br><span class="line">deb http://http.kali.org/kali kali-rolling main contrib non-free</span><br><span class="line"><span class="comment"># For source package access, uncomment the following line</span></span><br><span class="line"><span class="comment"># deb-src http://http.kali.org/kali kali-rolling main contrib non-free</span></span><br><span class="line"><span class="comment">#https://www.kali.org/news/kali-linux-metapackages/</span></span><br><span class="line"><span class="comment">#https://docs.kali.org/general-use/kali-linux-sources-list-repositories</span></span><br><span class="line"><span class="comment">#https://www.raspberrypi.org/forums/viewtopic.php?f=41&amp;amp;t=107001</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="raspberry-add-kali-repo"><a href="#raspberry-add-kali-repo" class="headerlink" title="raspberry add kali repo"></a>raspberry add kali repo</h3><pre class="brush: bash; title: ; notranslate" title="">sudo vi /etc/apt/sources.list.d/kali.list
-deb http://http.kali.org/kali kali-rolling main contrib non-free
-# For source package access, uncomment the following line
-# deb-src http://http.kali.org/kali kali-rolling main contrib non-free
-#https://www.kali.org/news/kali-linux-metapackages/
-#https://docs.kali.org/general-use/kali-linux-sources-list-repositories
-#https://www.raspberrypi.org/forums/viewtopic.php?f=41&amp;t=107001
-</pre>
       
     </div>
 
@@ -249,7 +234,7 @@ deb http://http.kali.org/kali kali-rolling main contrib non-free
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/02/08/raspberry-add-kali-repo-import-kali-repo-publick-key/" data-id="ckhhbad2q002398myf6q01s3e" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/02/08/raspberry-add-kali-repo-import-kali-repo-publick-key/" data-id="ckhmph3is0025h4y273fudk6x" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -289,9 +274,8 @@ deb http://http.kali.org/kali kali-rolling main contrib non-free
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Those-symbols-have-no-corresponding-slice-in-any-binary"><a href="#Those-symbols-have-no-corresponding-slice-in-any-binary" class="headerlink" title="Those symbols have no corresponding slice in any binary"></a>Those symbols have no corresponding slice in any binary</h3><pre class="brush: bash; title: ; notranslate" title="">#go into the dSYMs folder and run 
-dwarfdump --uuid *
-</pre>
+        <h3 id="Those-symbols-have-no-corresponding-slice-in-any-binary"><a href="#Those-symbols-have-no-corresponding-slice-in-any-binary" class="headerlink" title="Those symbols have no corresponding slice in any binary"></a>Those symbols have no corresponding slice in any binary</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#go into the dSYMs folder and run </span></span><br><span class="line">dwarfdump --uuid *</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -301,7 +285,7 @@ dwarfdump --uuid *
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/02/05/those-symbols-have-no-corresponding-slice-in-any-binary/" data-id="ckhhbad2q002298mybtnd3ut4" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/02/05/those-symbols-have-no-corresponding-slice-in-any-binary/" data-id="ckhmph3ir0022h4y22i2vbp05" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -341,23 +325,8 @@ dwarfdump --uuid *
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="how-to-enable-ssh-keepalive-socat-keep-alive"><a href="#how-to-enable-ssh-keepalive-socat-keep-alive" class="headerlink" title="how to enable ssh keepalive ,socat keep alive"></a>how to enable ssh keepalive ,socat keep alive</h3><pre class="brush: bash; title: ; notranslate" title=""># ssh enable keepalive
-# via config
-sudo vim /etc/ssh/sshd_config
-...
-ClientAliveInterval 30
-TCPKeepAlive yes
-ClientAliveCountMax 2
-#via command opt
-ssh -o ServerAliveInterval=60 myname@myhost.com
+        <h3 id="how-to-enable-ssh-keepalive-socat-keep-alive"><a href="#how-to-enable-ssh-keepalive-socat-keep-alive" class="headerlink" title="how to enable ssh keepalive ,socat keep alive"></a>how to enable ssh keepalive ,socat keep alive</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ssh enable keepalive</span></span><br><span class="line"><span class="comment"># via config</span></span><br><span class="line">sudo vim /etc/ssh/sshd_config</span><br><span class="line">...</span><br><span class="line">ClientAliveInterval 30</span><br><span class="line">TCPKeepAlive yes</span><br><span class="line">ClientAliveCountMax 2</span><br><span class="line"><span class="comment">#via command opt</span></span><br><span class="line">ssh -o ServerAliveInterval=60 myname@myhost.com</span><br><span class="line"></span><br><span class="line"><span class="comment">#restart sshd</span></span><br><span class="line">sudo service sshd restart</span><br><span class="line"></span><br><span class="line"><span class="comment">#socat TCPKeepAlive</span></span><br><span class="line">socat TCP-LISTEN:8000,reuseaddr,fork,keepalive,keepidle=10,keepintvl=30,keepcnt=2  TCP:127.0.0.1:80</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-#restart sshd
-sudo service sshd restart
-
-#socat TCPKeepAlive
-socat TCP-LISTEN:8000,reuseaddr,fork,keepalive,keepidle=10,keepintvl=30,keepcnt=2  TCP:127.0.0.1:80
-
-</pre>
       
     </div>
 
@@ -367,7 +336,7 @@ socat TCP-LISTEN:8000,reuseaddr,fork,keepalive,keepidle=10,keepintvl=30,keepcnt=
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/01/12/how-to-enable-ssh-keepalive-socat-keep-alive/" data-id="ckhhbad2p001z98mye3zb5lqs" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/01/12/how-to-enable-ssh-keepalive-socat-keep-alive/" data-id="ckhmph3iq001yh4y2b2ii8v94" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -407,28 +376,8 @@ socat TCP-LISTEN:8000,reuseaddr,fork,keepalive,keepidle=10,keepintvl=30,keepcnt=
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="how-to-install-x11-desktop-and-enable-vnc-server-on-raspberry-lite"><a href="#how-to-install-x11-desktop-and-enable-vnc-server-on-raspberry-lite" class="headerlink" title="how to install x11 desktop and enable vnc server on raspberry lite"></a>how to install x11 desktop and enable vnc server on raspberry lite</h3><pre class="brush: bash; title: ; notranslate" title="">&lt;br /&gt;#install X11 Desktop
-sudo apt-get install cups
-sudo apt install xrdp
-sudo apt-get install --no-install-recommends xserver-xorg
-sudo apt-get install --no-install-recommends xinit
-sudo apt-get install raspberrypi-ui-mods
-sudo apt-get install lightdm
-sudo reboot
+        <h3 id="how-to-install-x11-desktop-and-enable-vnc-server-on-raspberry-lite"><a href="#how-to-install-x11-desktop-and-enable-vnc-server-on-raspberry-lite" class="headerlink" title="how to install x11 desktop and enable vnc server on raspberry lite"></a>how to install x11 desktop and enable vnc server on raspberry lite</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;br /&amp;gt;<span class="comment">#install X11 Desktop</span></span><br><span class="line">sudo apt-get install cups</span><br><span class="line">sudo apt install xrdp</span><br><span class="line">sudo apt-get install --no-install-recommends xserver-xorg</span><br><span class="line">sudo apt-get install --no-install-recommends xinit</span><br><span class="line">sudo apt-get install raspberrypi-ui-mods</span><br><span class="line">sudo apt-get install lightdm</span><br><span class="line">sudo reboot</span><br><span class="line"></span><br><span class="line"> <span class="comment">#install VNC</span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install realvnc-vnc-server</span><br><span class="line">sudo apt-get install realvnc-vnc-viewer</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable VNC</span></span><br><span class="line">Alternatively, run the <span class="built_in">command</span> sudo raspi-config, navigate to Interfacing Options &amp;gt; VNC and select Yes.</span><br><span class="line"></span><br><span class="line"><span class="comment">#resize GPU Memory</span></span><br><span class="line">run sudo raspi-config, navigate to Advanced options &amp;gt; Memory Split, and ensure your GPU has at least 128MB.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
- #install VNC
-sudo apt-get update
-sudo apt-get install realvnc-vnc-server
-sudo apt-get install realvnc-vnc-viewer
-
-
-# Enable VNC
-Alternatively, run the command sudo raspi-config, navigate to Interfacing Options &gt; VNC and select Yes.
-
-#resize GPU Memory
-run sudo raspi-config, navigate to Advanced options &gt; Memory Split, and ensure your GPU has at least 128MB.
-
-</pre>
       
     </div>
 
@@ -438,7 +387,7 @@ run sudo raspi-config, navigate to Advanced options &gt; Memory Split, and ensur
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/01/12/how-to-install-x11-desktop-and-enable-vnc-server-on-raspberry-lite/" data-id="ckhhbad2q002198my0ee43jop" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/01/12/how-to-install-x11-desktop-and-enable-vnc-server-on-raspberry-lite/" data-id="ckhmph3iq001zh4y2c1p5eqoo" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -478,9 +427,8 @@ run sudo raspi-config, navigate to Advanced options &gt; Memory Split, and ensur
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="raspberry-enable-ssh-via-command"><a href="#raspberry-enable-ssh-via-command" class="headerlink" title="raspberry enable ssh via command"></a>raspberry enable ssh via command</h3><pre class="brush: bash; title: ; notranslate" title="">sudo systemctl enable ssh
-sudo systemctl start ssh
-</pre>
+        <h3 id="raspberry-enable-ssh-via-command"><a href="#raspberry-enable-ssh-via-command" class="headerlink" title="raspberry enable ssh via command"></a>raspberry enable ssh via command</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> ssh</span><br><span class="line">sudo systemctl start ssh</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -490,7 +438,7 @@ sudo systemctl start ssh
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/01/12/raspberry-enable-ssh-via-command/" data-id="ckhhbad2p002098my9e1remjf" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/01/12/raspberry-enable-ssh-via-command/" data-id="ckhmph3iq0020h4y2d8r79mll" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -530,9 +478,8 @@ sudo systemctl start ssh
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="how-to-compare-two-list-file-use-bash-command-line"><a href="#how-to-compare-two-list-file-use-bash-command-line" class="headerlink" title="how to compare two list file use bash command line"></a>how to compare two list file use bash command line</h3><pre class="brush: bash; title: ; notranslate" title="">#this command  will echo f1.txt  line not contain in f2.txt, import thing : file must sort firt
-comm -23 f1.txt f2.txt
-</pre>
+        <h3 id="how-to-compare-two-list-file-use-bash-command-line"><a href="#how-to-compare-two-list-file-use-bash-command-line" class="headerlink" title="how to compare two list file use bash command line"></a>how to compare two list file use bash command line</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#this command  will echo f1.txt  line not contain in f2.txt, import thing : file must sort firt</span></span><br><span class="line">comm -23 f1.txt f2.txt</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -542,7 +489,7 @@ comm -23 f1.txt f2.txt
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/01/04/how-to-compare-two-list-file-use-bash-command-line/" data-id="ckhhbad2p001y98mygaml6dh1" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/01/04/how-to-compare-two-list-file-use-bash-command-line/" data-id="ckhmph3iq001xh4y25fs661fr" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -582,11 +529,8 @@ comm -23 f1.txt f2.txt
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="npm-ERR-peerinvalid-The-package-114-x65-x61-x63-116-x40-49-x35-x2e-54-x2e-49-does-not-satisfy-its-siblings-8217-peerDependencies-requirements"><a href="#npm-ERR-peerinvalid-The-package-114-x65-x61-x63-116-x40-49-x35-x2e-54-x2e-49-does-not-satisfy-its-siblings-8217-peerDependencies-requirements" class="headerlink" title="npm ERR! peerinvalid The package &#114;&#x65;&#x61;&#x63;&#116;&#x40;&#49;&#x35;&#x2e;&#54;&#x2e;&#49; does not satisfy its siblings&#8217; peerDependencies requirements!"></a>npm ERR! peerinvalid The package <a href="mailto:&#114;&#x65;&#x61;&#x63;&#116;&#x40;&#49;&#x35;&#x2e;&#54;&#x2e;&#49;">&#114;&#x65;&#x61;&#x63;&#116;&#x40;&#49;&#x35;&#x2e;&#54;&#x2e;&#49;</a> does not satisfy its siblings&#8217; peerDependencies requirements!</h3><pre class="brush: bash; title: ; notranslate" title="">Updated npm npm install npm -g
-Cleared cache: npm cache clear
-Removed node_modules rm -rf node_modules
-Reinstalled node_modules, npm install.
-</pre>
+        <h3 id="npm-ERR-peerinvalid-The-package-x72-x65-97-99-116-64-x31-x35-x2e-54-46-49-does-not-satisfy-its-siblings-8217-peerDependencies-requirements"><a href="#npm-ERR-peerinvalid-The-package-x72-x65-97-99-116-64-x31-x35-x2e-54-46-49-does-not-satisfy-its-siblings-8217-peerDependencies-requirements" class="headerlink" title="npm ERR! peerinvalid The package &#x72;&#x65;&#97;&#99;&#116;&#64;&#x31;&#x35;&#x2e;&#54;&#46;&#49; does not satisfy its siblings&#8217; peerDependencies requirements!"></a>npm ERR! peerinvalid The package <a href="mailto:&#x72;&#x65;&#97;&#99;&#116;&#64;&#x31;&#x35;&#x2e;&#54;&#46;&#49;">&#x72;&#x65;&#97;&#99;&#116;&#64;&#x31;&#x35;&#x2e;&#54;&#46;&#49;</a> does not satisfy its siblings&#8217; peerDependencies requirements!</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Updated npm npm install npm -g</span><br><span class="line">Cleared cache: npm cache clear</span><br><span class="line">Removed node_modules rm -rf node_modules</span><br><span class="line">Reinstalled node_modules, npm install.</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -596,7 +540,7 @@ Reinstalled node_modules, npm install.
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/01/02/npm-err-peerinvalid-the-package-react15-6-1-does-not-satisfy-its-siblings-peerdependencies-requirements/" data-id="ckhhbad2o001x98my22umcntb" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/01/02/npm-err-peerinvalid-the-package-react15-6-1-does-not-satisfy-its-siblings-peerdependencies-requirements/" data-id="ckhmph3ir0021h4y256alcxtu" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -636,12 +580,11 @@ Reinstalled node_modules, npm install.
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="OSError-Errno-1-Operation-not-permitted-8216-tmp-pip-l-eBpW-uninstall-System-Library-Frameworks-Python-framework-Versions-2-7-Extras-lib-python-numpy-1-8-0rc1-py2-7-egg-info-8217"><a href="#OSError-Errno-1-Operation-not-permitted-8216-tmp-pip-l-eBpW-uninstall-System-Library-Frameworks-Python-framework-Versions-2-7-Extras-lib-python-numpy-1-8-0rc1-py2-7-egg-info-8217" class="headerlink" title="OSError: [Errno 1] Operation not permitted: &#8216;/tmp/pip-l_eBpW-uninstall/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/numpy-1.8.0rc1-py2.7.egg-info&#8217;"></a>OSError: [Errno 1] Operation not permitted: &#8216;/tmp/pip-l_eBpW-uninstall/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/numpy-1.8.0rc1-py2.7.egg-info&#8217;</h3><pre class="brush: bash; title: ; notranslate" title="">#osx pip install scikit-image  skip update numpy
-sudo pip install  --ignore-installed six scikit-image
-</pre>
+        <h3 id="OSError-Errno-1-Operation-not-permitted-8216-tmp-pip-l-eBpW-uninstall-System-Library-Frameworks-Python-framework-Versions-2-7-Extras-lib-python-numpy-1-8-0rc1-py2-7-egg-info-8217"><a href="#OSError-Errno-1-Operation-not-permitted-8216-tmp-pip-l-eBpW-uninstall-System-Library-Frameworks-Python-framework-Versions-2-7-Extras-lib-python-numpy-1-8-0rc1-py2-7-egg-info-8217" class="headerlink" title="OSError: [Errno 1] Operation not permitted: &#8216;/tmp/pip-l_eBpW-uninstall/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/numpy-1.8.0rc1-py2.7.egg-info&#8217;"></a>OSError: [Errno 1] Operation not permitted: &#8216;/tmp/pip-l_eBpW-uninstall/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/numpy-1.8.0rc1-py2.7.egg-info&#8217;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#osx pip install scikit-image  skip update numpy</span></span><br><span class="line">sudo pip install  --ignore-installed six scikit-image</span><br></pre></td></tr></table></figure>
 
-<h3 id="error-could-not-create-8216-System-Library-Frameworks-Python-framework-Versions-2-7-include-python2-7-greenlet-8217-Operation-not-permitted"><a href="#error-could-not-create-8216-System-Library-Frameworks-Python-framework-Versions-2-7-include-python2-7-greenlet-8217-Operation-not-permitted" class="headerlink" title="error: could not create &#8216;/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7/greenlet&#8217;: Operation not permitted"></a>error: could not create &#8216;/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7/greenlet&#8217;: Operation not permitted</h3><pre class="brush: bash; title: ; notranslate" title="">sudo pip install --user scikit-image
-</pre>
+
+<h3 id="error-could-not-create-8216-System-Library-Frameworks-Python-framework-Versions-2-7-include-python2-7-greenlet-8217-Operation-not-permitted"><a href="#error-could-not-create-8216-System-Library-Frameworks-Python-framework-Versions-2-7-include-python2-7-greenlet-8217-Operation-not-permitted" class="headerlink" title="error: could not create &#8216;/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7/greenlet&#8217;: Operation not permitted"></a>error: could not create &#8216;/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7/greenlet&#8217;: Operation not permitted</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install --user scikit-image</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -651,7 +594,7 @@ sudo pip install  --ignore-installed six scikit-image
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/12/29/oserror-errno-1-operation-not-permitted-tmp-pip-l_ebpw-uninstall-system-library-frameworks-python-framework-versions-2-7-extras-lib-python-numpy-1-8-0rc1-py2-7-egg-info/" data-id="ckhhbad2o001w98my1hbhewut" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/12/29/oserror-errno-1-operation-not-permitted-tmp-pip-l_ebpw-uninstall-system-library-frameworks-python-framework-versions-2-7-extras-lib-python-numpy-1-8-0rc1-py2-7-egg-info/" data-id="ckhmph3ip001wh4y29adlhojz" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

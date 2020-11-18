@@ -5,15 +5,15 @@
   
   <title>wireshark expression usage | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="wireshark expression usageip.addr &#x3D;&#x3D; 192.168.0.1 ip.addr &#x3D;&#x3D; 129.111.0.0&#x2F;16 http.host matches &quot;acme\.(org|com|net)&quot;  http.request.uri &#x3D;&#x3D; &quot;https:&#x2F;&#x2F;www.wireshark.org&#x2F;&quot; udp contains 81:60:03 sip.To contai">
+  <meta name="description" content="wireshark expression usage12345678910111213141516ip.addr &#x3D;&#x3D; 192.168.0.1ip.addr &#x3D;&#x3D; 129.111.0.0&#x2F;16http.host matches &quot;acme\.(org|com|net)&quot;http.request.uri &#x3D;&#x3D; &quot;https:&#x2F;&#x2F;www.wireshark.org&#x2F;&amp;qu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wireshark expression usage">
 <meta property="og:url" content="http://wirelessbox.net/2019/06/26/wireshark-expression-usage/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="wireshark expression usageip.addr &#x3D;&#x3D; 192.168.0.1 ip.addr &#x3D;&#x3D; 129.111.0.0&#x2F;16 http.host matches &quot;acme\.(org|com|net)&quot;  http.request.uri &#x3D;&#x3D; &quot;https:&#x2F;&#x2F;www.wireshark.org&#x2F;&quot; udp contains 81:60:03 sip.To contai">
+<meta property="og:description" content="wireshark expression usage12345678910111213141516ip.addr &#x3D;&#x3D; 192.168.0.1ip.addr &#x3D;&#x3D; 129.111.0.0&#x2F;16http.host matches &quot;acme\.(org|com|net)&quot;http.request.uri &#x3D;&#x3D; &quot;https:&#x2F;&#x2F;www.wireshark.org&#x2F;&amp;qu">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-06-26T00:17:01.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.246Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -105,23 +105,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="wireshark-expression-usage"><a href="#wireshark-expression-usage" class="headerlink" title="wireshark expression usage"></a>wireshark expression usage</h3><pre class="brush: bash; title: ; notranslate" title="">ip.addr == 192.168.0.1
-ip.addr == 129.111.0.0/16
-http.host matches "acme\.(org|com|net)"
+        <h3 id="wireshark-expression-usage"><a href="#wireshark-expression-usage" class="headerlink" title="wireshark expression usage"></a>wireshark expression usage</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ip.addr == 192.168.0.1</span><br><span class="line">ip.addr == 129.111.0.0/16</span><br><span class="line">http.host matches <span class="string">&quot;acme\.(org|com|net)&quot;</span></span><br><span class="line"></span><br><span class="line">http.request.uri == <span class="string">&quot;https://www.wireshark.org/&quot;</span></span><br><span class="line">udp contains 81:60:03</span><br><span class="line">sip.To contains <span class="string">&quot;a1762&quot;</span></span><br><span class="line"></span><br><span class="line">tcp.port <span class="keyword">in</span> &#123;80 443 8080&#125;</span><br><span class="line">tcp.port <span class="keyword">in</span> &#123;443 4430..4434&#125;</span><br><span class="line">tcp.port == 80 || tcp.port == 443 || tcp.port == 8080</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http.request.method <span class="keyword">in</span> &#123;<span class="string">&quot;HEAD&quot;</span> <span class="string">&quot;GET&quot;</span>&#125;</span><br><span class="line">ip.addr <span class="keyword">in</span> &#123;10.0.0.5 .. 10.0.0.9 192.168.1.1..192.168.1.9&#125;</span><br><span class="line">frame.time_delta <span class="keyword">in</span> &#123;10 .. 10.5&#125;</span><br></pre></td></tr></table></figure>
 
-http.request.uri == "https://www.wireshark.org/"
-udp contains 81:60:03
-sip.To contains "a1762"
-
-tcp.port in {80 443 8080}
-tcp.port in {443 4430..4434}
-tcp.port == 80 || tcp.port == 443 || tcp.port == 8080
-
-
-http.request.method in {"HEAD" "GET"}
-ip.addr in {10.0.0.5 .. 10.0.0.9 192.168.1.1..192.168.1.9}
-frame.time_delta in {10 .. 10.5}
-</pre>
       
     </div>
 
@@ -131,7 +116,7 @@ frame.time_delta in {10 .. 10.5}
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/06/26/wireshark-expression-usage/" data-id="ckhhbad3c003w98my030pg4bj" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/06/26/wireshark-expression-usage/" data-id="ckhmph3jd003wh4y2g1kpf7xt" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

@@ -104,11 +104,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="Attempt-to-delete-row-containing-first-responder-that-refused-to-resign"><a href="#Attempt-to-delete-row-containing-first-responder-that-refused-to-resign" class="headerlink" title="Attempt to delete row containing first responder that refused to resign"></a>Attempt to delete row containing first responder that refused to resign</h3><p>I&#8217;ve never seen that message before, but my immediate impulse if I were to see it would be: try delayed performance. Even something as simple as this might be an interesting experiment:</p>
-<pre class="brush: bash; title: ; notranslate" title="">dispatch_async(dispatch_get_main_queue(), ^{
-    [self.tableView deleteRowsAtIndexPaths:@[indexPath] 
-     withRowAnimation:UITableViewRowAnimationAutomatic];
-});
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">    [self.tableView deleteRowsAtIndexPaths:@[indexPath] </span><br><span class="line">     withRowAnimation:UITableViewRowAnimationAutomatic];</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -118,7 +115,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/01/09/attempt-to-delete-row-containing-first-responder-that-refused-to-resign/" data-id="ckhhbad34003998my2zecc6im" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/01/09/attempt-to-delete-row-containing-first-responder-that-refused-to-resign/" data-id="ckhmph3j50039h4y2hr9jh2ah" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -169,7 +166,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/12/27/xcode-disable-networkinfo-signal-strength-query/" data-id="ckhhbad34003898mydxu81zro" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/12/27/xcode-disable-networkinfo-signal-strength-query/" data-id="ckhmph3j50038h4y2ghbt908o" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -220,7 +217,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/12/27/disable-autolayout-constraint-error-messages-in-debug-console-output-in-xcode/" data-id="ckhhbad33003798my7giw3c9f" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/12/27/disable-autolayout-constraint-error-messages-in-debug-console-output-in-xcode/" data-id="ckhmph3j40036h4y208zs9rjt" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -260,13 +257,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Swift-下怎么使用-KVO"><a href="#Swift-下怎么使用-KVO" class="headerlink" title="Swift 下怎么使用 KVO"></a>Swift 下怎么使用 KVO</h3><pre class="brush: bash; title: ; notranslate" title="">person.addObserver(self, forKeyPath: "age", options: .new, context: nil)
+        <h3 id="Swift-下怎么使用-KVO"><a href="#Swift-下怎么使用-KVO" class="headerlink" title="Swift 下怎么使用 KVO"></a>Swift 下怎么使用 KVO</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">person.addObserver(self, forKeyPath: <span class="string">&quot;age&quot;</span>, options: .new, context: nil)</span><br><span class="line"></span><br><span class="line">override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) &#123;</span><br><span class="line">        // 输出改变后的新值</span><br><span class="line">        <span class="built_in">print</span>(change![NSKeyValueChangeKey.newKey]!)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        // 输出改变后的新值
-        print(change![NSKeyValueChangeKey.newKey]!)
-}
-</pre>
       
     </div>
 
@@ -276,7 +268,7 @@ override func observeValue(forKeyPath keyPath: String?, of object: Any?, change:
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/12/25/swift-%e4%b8%8b%e6%80%8e%e4%b9%88%e4%bd%bf%e7%94%a8-kvo/" data-id="ckhhbad33003498mygo2sg4cd" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/12/25/swift-%e4%b8%8b%e6%80%8e%e4%b9%88%e4%bd%bf%e7%94%a8-kvo/" data-id="ckhmph3j30035h4y22a7ze4i5" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -327,7 +319,7 @@ override func observeValue(forKeyPath keyPath: String?, of object: Any?, change:
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/12/25/viminfo-illegal-starting-char-in-line-ii14i33/" data-id="ckhhbad33003698mya1p41w0j" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/12/25/viminfo-illegal-starting-char-in-line-ii14i33/" data-id="ckhmph3j40037h4y2e9htftd9" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -367,9 +359,8 @@ override func observeValue(forKeyPath keyPath: String?, of object: Any?, change:
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="UIGraphicsBeginImageContextWithOptions-8211-returned-Image-has-a-unwanted-border"><a href="#UIGraphicsBeginImageContextWithOptions-8211-returned-Image-has-a-unwanted-border" class="headerlink" title="UIGraphicsBeginImageContextWithOptions &#8211; returned Image has a unwanted border"></a>UIGraphicsBeginImageContextWithOptions &#8211; returned Image has a unwanted border</h3><pre class="brush: bash; title: ; notranslate" title="">func UIGraphicsBeginImageContextWithOptions(_ size: CGSize, _ opaque: Bool, _ scale: CGFloat).
-A Boolean flag indicating whether the bitmap is opaque. If you know the bitmap is fully opaque, specify YES to ignore the alpha channel and optimize the bitmap’s storage. Specifying NO means that the bitmap must include an alpha channel to handle any partially transparent pixels.
-</pre>
+        <h3 id="UIGraphicsBeginImageContextWithOptions-8211-returned-Image-has-a-unwanted-border"><a href="#UIGraphicsBeginImageContextWithOptions-8211-returned-Image-has-a-unwanted-border" class="headerlink" title="UIGraphicsBeginImageContextWithOptions &#8211; returned Image has a unwanted border"></a>UIGraphicsBeginImageContextWithOptions &#8211; returned Image has a unwanted border</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">func UIGraphicsBeginImageContextWithOptions(_ size: CGSize, _ opaque: Bool, _ scale: CGFloat).</span><br><span class="line">A Boolean flag indicating whether the bitmap is opaque. If you know the bitmap is fully opaque, specify YES to ignore the alpha channel and optimize the bitmap’s storage. Specifying NO means that the bitmap must include an alpha channel to handle any partially transparent pixels.</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -379,7 +370,7 @@ A Boolean flag indicating whether the bitmap is opaque. If you know the bitmap i
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/" data-id="ckhhbad33003598myfa257oow" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/" data-id="ckhmph3j30034h4y2bgfd14gk" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -419,8 +410,8 @@ A Boolean flag indicating whether the bitmap is opaque. If you know the bitmap i
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="swift-print-object-address"><a href="#swift-print-object-address" class="headerlink" title="swift print object address"></a>swift print object address</h3><pre class="brush: bash; title: ; notranslate" title="">print("setWebURL \(Unmanaged.passUnretained(self).toOpaque()) \(Unmanaged.passUnretained(base).toOpaque()) \(url)")
-</pre>
+        <h3 id="swift-print-object-address"><a href="#swift-print-object-address" class="headerlink" title="swift print object address"></a>swift print object address</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;setWebURL \(Unmanaged.passUnretained(self).toOpaque()) \(Unmanaged.passUnretained(base).toOpaque()) \(url)&quot;</span>)</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -430,7 +421,7 @@ A Boolean flag indicating whether the bitmap is opaque. If you know the bitmap i
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/12/20/swift-print-object-address/" data-id="ckhhbad32003398mybafd8hke" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/12/20/swift-print-object-address/" data-id="ckhmph3j20033h4y2dy2o231j" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -471,19 +462,8 @@ A Boolean flag indicating whether the bitmap is opaque. If you know the bitmap i
     <div class="article-entry" itemprop="articleBody">
       
         <p>###Xcode View Debug</p>
-<pre class="brush: bash; title: ; notranslate" title="">po [[UIWindow keyWindow] _autolayoutTrace]
-expr -l objc++ -O -- [[UIWindow keyWindow] _autolayoutTrace]
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">po [[UIWindow keyWindow] _autolayoutTrace]</span><br><span class="line">expr -l objc++ -O -- [[UIWindow keyWindow] _autolayoutTrace]</span><br><span class="line"></span><br><span class="line">AMBIGUOUS LAYOUT</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">expr [((UIView *)0x102c48950) bringSubviewToFront:(UIView*)0x102c4e6b0]</span><br><span class="line">expr ((UIView *)0x102c1a070).backgroundColor = [UIColor redColor]</span><br><span class="line">expr ((UIView*)0x102c4e6b0).alpha = 1</span><br><span class="line"></span><br><span class="line">expr -l Swift -- import UIKit</span><br><span class="line">expr -l Swift -- unsafeBitCast(0x7f88a8cc2050, to: UIView.self).backgroundColor = UIColor.red</span><br></pre></td></tr></table></figure>
 
-AMBIGUOUS LAYOUT
-
-
-expr [((UIView *)0x102c48950) bringSubviewToFront:(UIView*)0x102c4e6b0]
-expr ((UIView *)0x102c1a070).backgroundColor = [UIColor redColor]
-expr ((UIView*)0x102c4e6b0).alpha = 1
-
-expr -l Swift -- import UIKit
-expr -l Swift -- unsafeBitCast(0x7f88a8cc2050, to: UIView.self).backgroundColor = UIColor.red
-</pre>
       
     </div>
 
@@ -493,7 +473,7 @@ expr -l Swift -- unsafeBitCast(0x7f88a8cc2050, to: UIView.self).backgroundColor 
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/12/03/xcode-view-debug/" data-id="ckhhbad32003298my93a918da" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/12/03/xcode-view-debug/" data-id="ckhmph3j20031h4y2ex45eqaz" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -534,34 +514,8 @@ expr -l Swift -- unsafeBitCast(0x7f88a8cc2050, to: UIView.self).backgroundColor 
     <div class="article-entry" itemprop="articleBody">
       
         <p>###osx svn server create</p>
-<pre class="brush: bash; title: ; notranslate" title="">mkdir -p  ~/Documents/svn
-svnadmin create ~/Documents/svn/myexample
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p  ~/Documents/svn</span><br><span class="line">svnadmin create ~/Documents/svn/myexample</span><br><span class="line"></span><br><span class="line">sed -i <span class="string">&#x27;&#x27;</span> <span class="string">&#x27;s/#anon-access.*/anon-access = none/g&#x27;</span> ~/Documents/svn/myexample/conf/svnserve.conf</span><br><span class="line">sed -i <span class="string">&#x27;&#x27;</span> <span class="string">&#x27;s/#auth-access.*/auth-access = write/g&#x27;</span> ~/Documents/svn/myexample/conf/svnserve.conf</span><br><span class="line">sed -i <span class="string">&#x27;&#x27;</span> <span class="string">&#x27;s/#password-db.*/password-db = passwd/g&#x27;</span> ~/Documents/svn/myexample/conf/svnserve.conf</span><br><span class="line">sed -i <span class="string">&#x27;&#x27;</span> <span class="string">&#x27;s/#authz-db.*/authz-db = authz/g&#x27;</span> ~/Documents/svn/myexample/conf/svnserve.conf</span><br><span class="line"></span><br><span class="line">cat &amp;lt;&amp;lt;EOF &amp;gt;&amp;gt; ~/Documents/svn/myexample/conf/authz</span><br><span class="line">[/]</span><br><span class="line">harry = rw</span><br><span class="line">jianglincen = rw</span><br><span class="line">sally = rw</span><br><span class="line"></span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">cat &amp;lt;&amp;lt;EOF &amp;gt;&amp;gt; ~/Documents/svn/myexample/conf/passwd</span><br><span class="line">[/]</span><br><span class="line">[users]</span><br><span class="line">harry = harryssecret</span><br><span class="line">sally = sallyssecret</span><br><span class="line"></span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">svnserve -d -r ~/Documents/svn/myexample</span><br><span class="line"></span><br><span class="line">svn import  ~/Downloads/myexampleProj   svn://192.168.1.235/myexample/myexampleProj --username=harry --password=harryssecret -m <span class="string">&quot;myexampleProj&quot;</span></span><br></pre></td></tr></table></figure>
 
-sed -i '' 's/#anon-access.*/anon-access = none/g' ~/Documents/svn/myexample/conf/svnserve.conf
-sed -i '' 's/#auth-access.*/auth-access = write/g' ~/Documents/svn/myexample/conf/svnserve.conf
-sed -i '' 's/#password-db.*/password-db = passwd/g' ~/Documents/svn/myexample/conf/svnserve.conf
-sed -i '' 's/#authz-db.*/authz-db = authz/g' ~/Documents/svn/myexample/conf/svnserve.conf
-
-cat &lt;&lt;EOF &gt;&gt; ~/Documents/svn/myexample/conf/authz
-[/]
-harry = rw
-jianglincen = rw
-sally = rw
-
-EOF
-
-cat &lt;&lt;EOF &gt;&gt; ~/Documents/svn/myexample/conf/passwd
-[/]
-[users]
-harry = harryssecret
-sally = sallyssecret
-
-EOF
-
-svnserve -d -r ~/Documents/svn/myexample
-
-svn import  ~/Downloads/myexampleProj   svn://192.168.1.235/myexample/myexampleProj --username=harry --password=harryssecret -m "myexampleProj"
-</pre>
       
     </div>
 
@@ -571,7 +525,7 @@ svn import  ~/Downloads/myexampleProj   svn://192.168.1.235/myexample/myexampleP
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/11/21/osx-svn-server-create/" data-id="ckhhbad32003198my8ox01g8g" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/11/21/osx-svn-server-create/" data-id="ckhmph3j20030h4y241jz6koy" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -612,17 +566,8 @@ svn import  ~/Downloads/myexampleProj   svn://192.168.1.235/myexample/myexampleP
     <div class="article-entry" itemprop="articleBody">
       
         <p>###jenkins for osx mojave</p>
-<pre class="brush: bash; title: ; notranslate" title="">设置开机自启动：sudo launchctl load -w /Library/LaunchDaemons/org.jenkins-ci.plist
-取消开机自启动：sudo launchctl unload -w /Library/LaunchDaemons/org.jenkins-ci.plist
-手动启动：Java -jar jenkins.war
-后台启动(默认端口)：nohup java -jar jenkins.war &amp;
-后台启动(指定端口)：nohup java -jar jenkins.war -httpPort=88 &amp;
-后台启动(HTTPS)：nohup java -jar jenkins.war -httpsPort=88 &amp;
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">设置开机自启动：sudo launchctl load -w /Library/LaunchDaemons/org.jenkins-ci.plist</span><br><span class="line">取消开机自启动：sudo launchctl unload -w /Library/LaunchDaemons/org.jenkins-ci.plist</span><br><span class="line">手动启动：Java -jar jenkins.war</span><br><span class="line">后台启动(默认端口)：nohup java -jar jenkins.war &amp;amp;</span><br><span class="line">后台启动(指定端口)：nohup java -jar jenkins.war -httpPort=88 &amp;amp;</span><br><span class="line">后台启动(HTTPS)：nohup java -jar jenkins.war -httpsPort=88 &amp;amp;</span><br><span class="line"></span><br><span class="line">jenkins 错误java.lang.OutOfMemoryError: Java heap space</span><br><span class="line">sudo defaults <span class="built_in">read</span> /Library/Preferences/org.jenkins-ci heapSize</span><br><span class="line">sudo defaults write /Library/Preferences/org.jenkins-ci heapSize 1024m</span><br></pre></td></tr></table></figure>
 
-jenkins 错误java.lang.OutOfMemoryError: Java heap space
-sudo defaults read /Library/Preferences/org.jenkins-ci heapSize
-sudo defaults write /Library/Preferences/org.jenkins-ci heapSize 1024m
-</pre>
       
     </div>
 
@@ -632,7 +577,7 @@ sudo defaults write /Library/Preferences/org.jenkins-ci heapSize 1024m
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/11/19/jenkins-for-osx-mojave/" data-id="ckhhbad31003098myhv8jd4zj" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/11/19/jenkins-for-osx-mojave/" data-id="ckhmph3j20032h4y2dhj00879" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

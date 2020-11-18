@@ -5,15 +5,15 @@
   
   <title>ubuntu fix mysqld high memory usage | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###ubuntu fix mysqld high memory usage vim &#x2F;etc&#x2F;mysql&#x2F;mysql.conf.d&#x2F;mysqld.cnf key_buffer_size         &#x3D; 6M max_binlog_size   &#x3D; 6M max_allowed_packet      &#x3D; 6M table_open_cache       &#x3D; 128 max_connecti">
+  <meta name="description" content="###ubuntu fix mysqld high memory usage 12345678910vim &#x2F;etc&#x2F;mysql&#x2F;mysql.conf.d&#x2F;mysqld.cnfkey_buffer_size         &#x3D; 6Mmax_binlog_size   &#x3D; 6Mmax_allowed_packet      &#x3D; 6Mtable_open_cache       &#x3D; 128max_co">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu fix mysqld high memory usage">
 <meta property="og:url" content="http://wirelessbox.net/2020/09/18/ubuntu-fix-mysqld-high-memory-usage/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="###ubuntu fix mysqld high memory usage vim &#x2F;etc&#x2F;mysql&#x2F;mysql.conf.d&#x2F;mysqld.cnf key_buffer_size         &#x3D; 6M max_binlog_size   &#x3D; 6M max_allowed_packet      &#x3D; 6M table_open_cache       &#x3D; 128 max_connecti">
+<meta property="og:description" content="###ubuntu fix mysqld high memory usage 12345678910vim &#x2F;etc&#x2F;mysql&#x2F;mysql.conf.d&#x2F;mysqld.cnfkey_buffer_size         &#x3D; 6Mmax_binlog_size   &#x3D; 6Mmax_allowed_packet      &#x3D; 6Mtable_open_cache       &#x3D; 128max_co">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-17T17:06:56.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.298Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -110,17 +110,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>###ubuntu fix mysqld high memory usage</p>
-<pre class="brush: bash; title: ; notranslate" title="">vim /etc/mysql/mysql.conf.d/mysqld.cnf
-key_buffer_size         = 6M
-max_binlog_size   = 6M
-max_allowed_packet      = 6M
-table_open_cache       = 128
-max_connections        = 15
-table_definition_cache = 100
-temptable_max_ram  = 16M
-performance_schema=OFF
-service mysql restart
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/mysql/mysql.conf.d/mysqld.cnf</span><br><span class="line">key_buffer_size         = 6M</span><br><span class="line">max_binlog_size   = 6M</span><br><span class="line">max_allowed_packet      = 6M</span><br><span class="line">table_open_cache       = 128</span><br><span class="line">max_connections        = 15</span><br><span class="line">table_definition_cache = 100</span><br><span class="line">temptable_max_ram  = 16M</span><br><span class="line">performance_schema=OFF</span><br><span class="line">service mysql restart</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -130,7 +121,7 @@ service mysql restart
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/09/18/ubuntu-fix-mysqld-high-memory-usage/" data-id="ckhhbad3o004x98my4eduf0j8" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/09/18/ubuntu-fix-mysqld-high-memory-usage/" data-id="ckhmph3jo004vh4y22hbk1oz3" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

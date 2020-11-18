@@ -5,15 +5,15 @@
   
   <title>iOS小数点格式化：如果有两位小数不为0则保留两位小数，如果有一位小数不为0则保留一位小数，否则显示整数 | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="iOS小数点格式化：如果有两位小数不为0则保留两位小数，如果有一位小数不为0则保留一位小数，否则显示整数 NSString * priceStr &#x3D; [NSString stringWithFormat:@&quot;%.2lf&quot;,price]; _totalPriceLabel.text &#x3D; [NSString stringWithFormat:@&quot;%@%@&quot;,RMB,@(priceStr.floatVa">
+  <meta name="description" content="iOS小数点格式化：如果有两位小数不为0则保留两位小数，如果有一位小数不为0则保留一位小数，否则显示整数 12NSString * priceStr &#x3D; [NSString stringWithFormat:@&quot;%.2lf&quot;,price];_totalPriceLabel.text &#x3D; [NSString stringWithFormat:@&quot;%@%@&quot;,R">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS小数点格式化：如果有两位小数不为0则保留两位小数，如果有一位小数不为0则保留一位小数，否则显示整数">
 <meta property="og:url" content="http://wirelessbox.net/2019/01/25/ios%e5%b0%8f%e6%95%b0%e7%82%b9%e6%a0%bc%e5%bc%8f%e5%8c%96%ef%bc%9a%e5%a6%82%e6%9e%9c%e6%9c%89%e4%b8%a4%e4%bd%8d%e5%b0%8f%e6%95%b0%e4%b8%8d%e4%b8%ba0%e5%88%99%e4%bf%9d%e7%95%99%e4%b8%a4%e4%bd%8d/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="iOS小数点格式化：如果有两位小数不为0则保留两位小数，如果有一位小数不为0则保留一位小数，否则显示整数 NSString * priceStr &#x3D; [NSString stringWithFormat:@&quot;%.2lf&quot;,price]; _totalPriceLabel.text &#x3D; [NSString stringWithFormat:@&quot;%@%@&quot;,RMB,@(priceStr.floatVa">
+<meta property="og:description" content="iOS小数点格式化：如果有两位小数不为0则保留两位小数，如果有一位小数不为0则保留一位小数，否则显示整数 12NSString * priceStr &#x3D; [NSString stringWithFormat:@&quot;%.2lf&quot;,price];_totalPriceLabel.text &#x3D; [NSString stringWithFormat:@&quot;%@%@&quot;,R">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-01-24T22:26:22.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.128Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,9 +106,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>iOS小数点格式化：如果有两位小数不为0则保留两位小数，如果有一位小数不为0则保留一位小数，否则显示整数</p>
-<pre class="brush: bash; title: ; notranslate" title="">NSString * priceStr = [NSString stringWithFormat:@"%.2lf",price];
-_totalPriceLabel.text = [NSString stringWithFormat:@"%@%@",RMB,@(priceStr.floatValue)];
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NSString * priceStr = [NSString stringWithFormat:@<span class="string">&quot;%.2lf&quot;</span>,price];</span><br><span class="line">_totalPriceLabel.text = [NSString stringWithFormat:@<span class="string">&quot;%@%@&quot;</span>,RMB,@(priceStr.floatValue)];</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -118,7 +117,7 @@ _totalPriceLabel.text = [NSString stringWithFormat:@"%@%@",RMB,@(priceStr.floatV
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/01/25/ios%e5%b0%8f%e6%95%b0%e7%82%b9%e6%a0%bc%e5%bc%8f%e5%8c%96%ef%bc%9a%e5%a6%82%e6%9e%9c%e6%9c%89%e4%b8%a4%e4%bd%8d%e5%b0%8f%e6%95%b0%e4%b8%8d%e4%b8%ba0%e5%88%99%e4%bf%9d%e7%95%99%e4%b8%a4%e4%bd%8d/" data-id="ckhhbad35003c98my39xcg7dk" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/01/25/ios%e5%b0%8f%e6%95%b0%e7%82%b9%e6%a0%bc%e5%bc%8f%e5%8c%96%ef%bc%9a%e5%a6%82%e6%9e%9c%e6%9c%89%e4%b8%a4%e4%bd%8d%e5%b0%8f%e6%95%b0%e4%b8%8d%e4%b8%ba0%e5%88%99%e4%bf%9d%e7%95%99%e4%b8%a4%e4%bd%8d/" data-id="ckhmph3j7003ch4y2a6woatj9" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

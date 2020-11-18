@@ -13,7 +13,7 @@
 <meta property="og:description" content="UnicodeDecodeError: &amp;#8216;ascii&amp;#8217; codec can&amp;#8217;t decode byte 0xe5 in position 0: ordinal not in range(128)AttributeError: &amp;#8216;module&amp;#8217; object has no attribute &amp;#8216;setdefaultencodin">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-15T18:05:00.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.360Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,12 +106,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>UnicodeDecodeError: &#8216;ascii&#8217; codec can&#8217;t decode byte 0xe5 in position 0: ordinal not in range(128)<br>AttributeError: &#8216;module&#8217; object has no attribute &#8216;setdefaultencoding&#8217;</p>
-<pre class="brush: bash; title: ; notranslate" title="">import sys
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line"></span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
-
-</pre>
       
     </div>
 
@@ -121,7 +117,7 @@ sys.setdefaultencoding('utf-8')
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/unicodedecodeerror-ascii-codec-cant-decode-byte-0xe5-in-position-0-ordinal-not-in-range128-attributeerror-module-object-has-no-attribute-setdefaultencoding/" data-id="ckhhbad3m004r98my80h7blmv" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/03/16/unicodedecodeerror-ascii-codec-cant-decode-byte-0xe5-in-position-0-ordinal-not-in-range128-attributeerror-module-object-has-no-attribute-setdefaultencoding/" data-id="ckhmph3jm004ph4y2bj6e6sfz" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

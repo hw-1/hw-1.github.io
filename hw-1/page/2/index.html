@@ -108,17 +108,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>###ubuntu fix mysqld high memory usage</p>
-<pre class="brush: bash; title: ; notranslate" title="">vim /etc/mysql/mysql.conf.d/mysqld.cnf
-key_buffer_size         = 6M
-max_binlog_size   = 6M
-max_allowed_packet      = 6M
-table_open_cache       = 128
-max_connections        = 15
-table_definition_cache = 100
-temptable_max_ram  = 16M
-performance_schema=OFF
-service mysql restart
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/mysql/mysql.conf.d/mysqld.cnf</span><br><span class="line">key_buffer_size         = 6M</span><br><span class="line">max_binlog_size   = 6M</span><br><span class="line">max_allowed_packet      = 6M</span><br><span class="line">table_open_cache       = 128</span><br><span class="line">max_connections        = 15</span><br><span class="line">table_definition_cache = 100</span><br><span class="line">temptable_max_ram  = 16M</span><br><span class="line">performance_schema=OFF</span><br><span class="line">service mysql restart</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -128,7 +119,7 @@ service mysql restart
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/09/18/ubuntu-fix-mysqld-high-memory-usage/" data-id="ckhhbad3o004x98my4eduf0j8" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/09/18/ubuntu-fix-mysqld-high-memory-usage/" data-id="ckhmph3jo004vh4y22hbk1oz3" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -172,11 +163,8 @@ service mysql restart
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="ubuntu-mount-usb"><a href="#ubuntu-mount-usb" class="headerlink" title="ubuntu mount usb"></a>ubuntu mount usb</h3><pre class="brush: bash; title: ; notranslate" title="">sudo fidks -l
-sudo mkdir -p /mnt/usb
-sudo mount /dev/sdb2 /mnt/usb
-sudo umount  /dev/sdb2
-</pre>
+        <h3 id="ubuntu-mount-usb"><a href="#ubuntu-mount-usb" class="headerlink" title="ubuntu mount usb"></a>ubuntu mount usb</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo fidks -l</span><br><span class="line">sudo mkdir -p /mnt/usb</span><br><span class="line">sudo mount /dev/sdb2 /mnt/usb</span><br><span class="line">sudo umount  /dev/sdb2</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -186,7 +174,7 @@ sudo umount  /dev/sdb2
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/08/26/ubuntu-mount-usb/" data-id="ckhhbad3n004w98my6pmj6mkv" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/08/26/ubuntu-mount-usb/" data-id="ckhmph3jp004xh4y28811g8o4" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -226,8 +214,8 @@ sudo umount  /dev/sdb2
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="apt-install-fix-broken-and-overwrite"><a href="#apt-install-fix-broken-and-overwrite" class="headerlink" title="apt install fix broken and overwrite"></a>apt install fix broken and overwrite</h3><pre class="brush: bash; title: ; notranslate" title="">sudo apt-get -o Dpkg::Options::=&quot;--force-overwrite&quot; install --fix-broken
-</pre>
+        <h3 id="apt-install-fix-broken-and-overwrite"><a href="#apt-install-fix-broken-and-overwrite" class="headerlink" title="apt install fix broken and overwrite"></a>apt install fix broken and overwrite</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get -o Dpkg::Options::=&amp;quot;--force-overwrite&amp;quot; install --fix-broken</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -237,7 +225,7 @@ sudo umount  /dev/sdb2
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/08/20/apt-install-fix-broken-and-overwrite/" data-id="ckhhbad3n004u98myflqu1ldb" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/08/20/apt-install-fix-broken-and-overwrite/" data-id="ckhmph3jn004th4y2d3te3no5" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -278,13 +266,12 @@ sudo umount  /dev/sdb2
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="github-加速"><a href="#github-加速" class="headerlink" title="github 加速"></a>github 加速</h3><p>github 镜像 支持 git https</p>
-<pre class="brush: bash; title: ; notranslate" title="">https://github.com.cnpmjs.org
-https://hub.fastgit.org
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://github.com.cnpmjs.org</span><br><span class="line">https://hub.fastgit.org</span><br></pre></td></tr></table></figure>
+
 
 <p>github 镜像 支持 git ssh</p>
-<pre class="brush: bash; title: ; notranslate" title="">https://github.zhlh6.cn/
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.zhlh6.cn/</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -294,7 +281,7 @@ https://hub.fastgit.org
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/08/20/github-%e5%8a%a0%e9%80%9f/" data-id="ckhhbad3n004v98myd6to1y6t" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/08/20/github-%e5%8a%a0%e9%80%9f/" data-id="ckhmph3jo004wh4y20vyn21nk" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -336,9 +323,8 @@ https://hub.fastgit.org
       
         <h3 id="tensorboard-1-14-0-has-requirement-setuptools-gt-41-0-0-but-you-8217-ll-have-setuptools-39-1-0"><a href="#tensorboard-1-14-0-has-requirement-setuptools-gt-41-0-0-but-you-8217-ll-have-setuptools-39-1-0" class="headerlink" title="tensorboard 1.14.0 has requirement setuptools&gt;=41.0.0, but you&#8217;ll have setuptools 39.1.0"></a>tensorboard 1.14.0 has requirement setuptools&gt;=41.0.0, but you&#8217;ll have setuptools 39.1.0</h3><p>tensorboard 1.14.0 has requirement setuptools&gt;=41.0.0, but you&#8217;ll have setuptools 39.1.0 which is incompatible.</p>
 <p>解决方法：</p>
-<pre class="brush: bash; title: ; notranslate" title="">pip uninstall setuptools
-pip install --ignore-installed setuptools==41.0.0
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall setuptools</span><br><span class="line">pip install --ignore-installed setuptools==41.0.0</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -348,7 +334,7 @@ pip install --ignore-installed setuptools==41.0.0
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/08/19/tensorboard-1-14-0-has-requirement-setuptools41-0-0-but-youll-have-setuptools-39-1-0/" data-id="ckhhbad3m004t98mydbgi642k" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/08/19/tensorboard-1-14-0-has-requirement-setuptools41-0-0-but-youll-have-setuptools-39-1-0/" data-id="ckhmph3jo004uh4y27jmc870s" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -389,8 +375,8 @@ pip install --ignore-installed setuptools==41.0.0
     <div class="article-entry" itemprop="articleBody">
       
         <p>pip install repo use tuna</p>
-<pre class="brush: bash; title: ; notranslate" title="">pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -400,7 +386,7 @@ pip install --ignore-installed setuptools==41.0.0
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/pip-install-repo-use-tuna/" data-id="ckhhbad3l004p98mygem928af" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/03/16/pip-install-repo-use-tuna/" data-id="ckhmph3jl004oh4y24nci5gyq" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -441,18 +427,8 @@ pip install --ignore-installed setuptools==41.0.0
     <div class="article-entry" itemprop="articleBody">
       
         <p>usbmux log &amp; port forward</p>
-<pre class="brush: bash; title: ; notranslate" title="">usbmux log
-sudo mv /var/run/usbmuxd /var/run/usbmux_real
-// -x
-sudo socat -t100  -x  -v UNIX-LISTEN:/var/run/usbmuxd,mode=777,reuseaddr,fork UNIX-CONNECT:/var/run/usbmux_real
-sudo mv /var/run/usbmux_real /var/run/usbmuxd
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">usbmux <span class="built_in">log</span></span><br><span class="line">sudo mv /var/run/usbmuxd /var/run/usbmux_real</span><br><span class="line">// -x</span><br><span class="line">sudo socat -t100  -x  -v UNIX-LISTEN:/var/run/usbmuxd,mode=777,reuseaddr,fork UNIX-CONNECT:/var/run/usbmux_real</span><br><span class="line">sudo mv /var/run/usbmux_real /var/run/usbmuxd</span><br><span class="line"></span><br><span class="line">usbmux forward</span><br><span class="line">sudo  mv /var/run/usbmuxd /var/run/usbmux_real</span><br><span class="line">sudo socat UNIX-LISTEN:/var/run/usbmuxd,mode=777,reuseaddr,fork TCP:XXX.XXX.XXX.XXX:8555</span><br><span class="line"></span><br><span class="line">socat TCP-LISTEN:8555,reuseaddr,fork UNIX-CONNECT:/var/run/usbmuxd</span><br></pre></td></tr></table></figure>
 
-usbmux forward
-sudo  mv /var/run/usbmuxd /var/run/usbmux_real
-sudo socat UNIX-LISTEN:/var/run/usbmuxd,mode=777,reuseaddr,fork TCP:XXX.XXX.XXX.XXX:8555
-
-socat TCP-LISTEN:8555,reuseaddr,fork UNIX-CONNECT:/var/run/usbmuxd
-</pre>
       
     </div>
 
@@ -462,7 +438,7 @@ socat TCP-LISTEN:8555,reuseaddr,fork UNIX-CONNECT:/var/run/usbmuxd
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/usbmux-log-port-forward/" data-id="ckhhbad3m004q98myetua3xyq" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/03/16/usbmux-log-port-forward/" data-id="ckhmph3jn004rh4y26imu7bjo" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -503,10 +479,8 @@ socat TCP-LISTEN:8555,reuseaddr,fork UNIX-CONNECT:/var/run/usbmuxd
     <div class="article-entry" itemprop="articleBody">
       
         <p>ssh port forward</p>
-<pre class="brush: bash; title: ; notranslate" title="">/usr/bin/ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -q  -i $IFPOD_HOME/etc/ln1.pem   root@17.8.27.17 -p 22 -N -g -L  3333:localhost:2222
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -q  -i <span class="variable">$IFPOD_HOME</span>/etc/ln1.pem   root@17.8.27.17 -p 22 -N -g -L  3333:localhost:2222</span><br><span class="line"></span><br><span class="line">ssh -D 9000  -N wd1@127.0.0.1 -p 3333</span><br></pre></td></tr></table></figure>
 
-ssh -D 9000  -N wd1@127.0.0.1 -p 3333
-</pre>
       
     </div>
 
@@ -516,7 +490,7 @@ ssh -D 9000  -N wd1@127.0.0.1 -p 3333
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/ssh-port-forward/" data-id="ckhhbad3l004o98my9tl65q47" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/03/16/ssh-port-forward/" data-id="ckhmph3jm004qh4y2fm689qsx" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -557,18 +531,8 @@ ssh -D 9000  -N wd1@127.0.0.1 -p 3333
     <div class="article-entry" itemprop="articleBody">
       
         <p>itunes account auth</p>
-<pre class="brush: bash; title: ; notranslate" title="">/private/var/mobile/Media/AirFair/sync/afsync.rq
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/private/var/mobile/Media/AirFair/sync/afsync.rq</span><br><span class="line"></span><br><span class="line">key=GetValue string=FairPlayCertificate --&amp;gt; cert</span><br><span class="line">generate grappaID  grappaData</span><br><span class="line">Grappa(grappaData) --&amp;gt; afsync.rq</span><br><span class="line">cert  rq --&amp;gt;  rsbuffer</span><br><span class="line">rsbuffer GrappaID --&amp;gt;  sigBuffer (afsync.rs)</span><br><span class="line"></span><br><span class="line">/private/var/mobile/Media/AirFair/sync</span><br><span class="line">/AirFair/sync/afsync.rq</span><br><span class="line">/AirFair/sync/afsync.rs</span><br></pre></td></tr></table></figure>
 
-key=GetValue string=FairPlayCertificate --&gt; cert
-generate grappaID  grappaData
-Grappa(grappaData) --&gt; afsync.rq
-cert  rq --&gt;  rsbuffer
-rsbuffer GrappaID --&gt;  sigBuffer (afsync.rs)
-
-/private/var/mobile/Media/AirFair/sync
-/AirFair/sync/afsync.rq
-/AirFair/sync/afsync.rs
-</pre>
       
     </div>
 
@@ -578,7 +542,7 @@ rsbuffer GrappaID --&gt;  sigBuffer (afsync.rs)
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/itunes-account-auth/" data-id="ckhhbad3k004l98my86c5gwrt" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/03/16/itunes-account-auth/" data-id="ckhmph3jk004kh4y2347r1lfd" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -619,12 +583,8 @@ rsbuffer GrappaID --&gt;  sigBuffer (afsync.rs)
     <div class="article-entry" itemprop="articleBody">
       
         <p>lldb command line</p>
-<pre class="brush: bash; title: ; notranslate" title="">im list
-br set -a &quot;0x0000000107156000+0x000000000034a676&quot;
-//0x0000000107156000 baseaddress
-//0x000000000034a676 offset
-po (__bridge_transfer  NSDictionary*)0x00007000011ecc90;
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">im list</span><br><span class="line">br <span class="built_in">set</span> -a &amp;quot;0x0000000107156000+0x000000000034a676&amp;quot;</span><br><span class="line">//0x0000000107156000 baseaddress</span><br><span class="line">//0x000000000034a676 offset</span><br><span class="line">po (__bridge_transfer  NSDictionary*)0x00007000011ecc90;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -634,7 +594,7 @@ po (__bridge_transfer  NSDictionary*)0x00007000011ecc90;
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/lldb-command-line/" data-id="ckhhbad3k004m98myctqy3ti7" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/03/16/lldb-command-line/" data-id="ckhmph3jl004mh4y26v0laqc8" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

@@ -5,15 +5,15 @@
   
   <title>raspperberry tor transport | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##vim &#x2F;etc&#x2F;tor&#x2F;torrc Log notice file &#x2F;var&#x2F;log&#x2F;tor&#x2F;notices.log VirtualAddrNetwork 10.192.0.0&#x2F;10 AutomapHostsSuffixes .onion,.exit AutomapHostsOnResolve 1 TransPort 9040 TransListenAddress 192.168.42.1">
+  <meta name="description" content="##vim &#x2F;etc&#x2F;tor&#x2F;torrc 12345678Log notice file &#x2F;var&#x2F;log&#x2F;tor&#x2F;notices.logVirtualAddrNetwork 10.192.0.0&#x2F;10AutomapHostsSuffixes .onion,.exitAutomapHostsOnResolve 1TransPort 9040TransListenAddress 192.168.42">
 <meta property="og:type" content="article">
 <meta property="og:title" content="raspperberry tor transport">
 <meta property="og:url" content="http://wirelessbox.net/2017/08/08/raspperberry-tor-transport/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="##vim &#x2F;etc&#x2F;tor&#x2F;torrc Log notice file &#x2F;var&#x2F;log&#x2F;tor&#x2F;notices.log VirtualAddrNetwork 10.192.0.0&#x2F;10 AutomapHostsSuffixes .onion,.exit AutomapHostsOnResolve 1 TransPort 9040 TransListenAddress 192.168.42.1">
+<meta property="og:description" content="##vim &#x2F;etc&#x2F;tor&#x2F;torrc 12345678Log notice file &#x2F;var&#x2F;log&#x2F;tor&#x2F;notices.logVirtualAddrNetwork 10.192.0.0&#x2F;10AutomapHostsSuffixes .onion,.exitAutomapHostsOnResolve 1TransPort 9040TransListenAddress 192.168.42">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-08-08T00:31:33.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.261Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,20 +106,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>##vim /etc/tor/torrc</p>
-<pre class="brush: bash; title: ; notranslate" title="">Log notice file /var/log/tor/notices.log
-VirtualAddrNetwork 10.192.0.0/10
-AutomapHostsSuffixes .onion,.exit
-AutomapHostsOnResolve 1
-TransPort 9040
-TransListenAddress 192.168.42.1
-DNSPort 53
-DNSListenAddress 192.168.42.1
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Log notice file /var/<span class="built_in">log</span>/tor/notices.log</span><br><span class="line">VirtualAddrNetwork 10.192.0.0/10</span><br><span class="line">AutomapHostsSuffixes .onion,.<span class="built_in">exit</span></span><br><span class="line">AutomapHostsOnResolve 1</span><br><span class="line">TransPort 9040</span><br><span class="line">TransListenAddress 192.168.42.1</span><br><span class="line">DNSPort 53</span><br><span class="line">DNSListenAddress 192.168.42.1</span><br></pre></td></tr></table></figure>
+
 
 <p>##dns tcp trans</p>
-<pre class="brush: bash; title: ; notranslate" title="">sudo iptables -t nat -A PREROUTING -i wlan0 -p udp --dport 53 -j REDIRECT --to-ports 53
-sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 9040
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo iptables -t nat -A PREROUTING -i wlan0 -p udp --dport 53 -j REDIRECT --to-ports 53</span><br><span class="line">sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 9040</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -129,7 +121,7 @@ sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/08/08/raspperberry-tor-transport/" data-id="ckhhbad2j001j98myhz8x6osq" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/08/08/raspperberry-tor-transport/" data-id="ckhmph3ik001jh4y21yej6ni3" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

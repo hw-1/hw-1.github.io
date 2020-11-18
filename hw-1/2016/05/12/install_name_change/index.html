@@ -5,15 +5,15 @@
   
   <title>install_name_change | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Using otool -D lib.dylib returns the path that is presented by that library to the compiler. To change it you can use install_name_change with the argument -id.  install_name_tool -id “@executable_pat">
+  <meta name="description" content="1234567Using otool -D lib.dylib returns the path that is presented by that library to the compiler. To change it you can use install_name_change with the argument -id.install_name_tool -id “@executabl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="install_name_change">
 <meta property="og:url" content="http://wirelessbox.net/2016/05/12/install_name_change/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="Using otool -D lib.dylib returns the path that is presented by that library to the compiler. To change it you can use install_name_change with the argument -id.  install_name_tool -id “@executable_pat">
+<meta property="og:description" content="1234567Using otool -D lib.dylib returns the path that is presented by that library to the compiler. To change it you can use install_name_change with the argument -id.install_name_tool -id “@executabl">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2016-05-11T22:06:16.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.117Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -105,14 +105,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">Using otool -D lib.dylib returns the path that is presented by that library to the compiler. To change it you can use install_name_change with the argument -id.
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Using otool -D lib.dylib returns the path that is presented by that library to the compiler. To change it you can use install_name_change with the argument -id.</span><br><span class="line"></span><br><span class="line">install_name_tool -id “@executable_path/../Plugins/lib.dylib” lib.dylib</span><br><span class="line"></span><br><span class="line">This alters the relative path of lib.dylib to the plugins folder of your bundle. Next you need to change each path <span class="keyword">in</span> the main executable. You can find out the dependencies and their expected path of the executable using otool -L. For each dependency that needs changing use install_name_tool again with the argument -change.</span><br><span class="line"></span><br><span class="line">install_name_tool -change “/usr/lib/lib.dylib” “@executable_path/../Plugins/lib.dylib” applicationname</span><br></pre></td></tr></table></figure>
 
-install_name_tool -id “@executable_path/../Plugins/lib.dylib” lib.dylib
-
-This alters the relative path of lib.dylib to the plugins folder of your bundle. Next you need to change each path in the main executable. You can find out the dependencies and their expected path of the executable using otool -L. For each dependency that needs changing use install_name_tool again with the argument -change.
-
-install_name_tool -change “/usr/lib/lib.dylib” “@executable_path/../Plugins/lib.dylib” applicationname
-</pre>
       
     </div>
 
@@ -122,7 +116,7 @@ install_name_tool -change “/usr/lib/lib.dylib” “@executable_path/../Plugin
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/05/12/install_name_change/" data-id="ckhhbad1s000a98my43jsax7o" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/05/12/install_name_change/" data-id="ckhmph3hz000ah4y24znafux7" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

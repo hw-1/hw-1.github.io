@@ -5,15 +5,15 @@
   
   <title>ssh port forward | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ssh port forward &#x2F;usr&#x2F;bin&#x2F;ssh -o ServerAliveInterval&#x3D;60 -o ServerAliveCountMax&#x3D;3 -o UserKnownHostsFile&#x3D;&#x2F;dev&#x2F;null -o StrictHostKeyChecking&#x3D;no -q  -i $IFPOD_HOME&#x2F;etc&#x2F;ln1.pem   root@17.8.27.17 -p 22 -N -">
+  <meta name="description" content="ssh port forward 123&#x2F;usr&#x2F;bin&#x2F;ssh -o ServerAliveInterval&#x3D;60 -o ServerAliveCountMax&#x3D;3 -o UserKnownHostsFile&#x3D;&#x2F;dev&#x2F;null -o StrictHostKeyChecking&#x3D;no -q  -i $IFPOD_HOME&#x2F;etc&#x2F;ln1.pem   root@17.8.27.17 -p 22 -">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ssh port forward">
 <meta property="og:url" content="http://wirelessbox.net/2020/03/16/ssh-port-forward/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="ssh port forward &#x2F;usr&#x2F;bin&#x2F;ssh -o ServerAliveInterval&#x3D;60 -o ServerAliveCountMax&#x3D;3 -o UserKnownHostsFile&#x3D;&#x2F;dev&#x2F;null -o StrictHostKeyChecking&#x3D;no -q  -i $IFPOD_HOME&#x2F;etc&#x2F;ln1.pem   root@17.8.27.17 -p 22 -N -">
+<meta property="og:description" content="ssh port forward 123&#x2F;usr&#x2F;bin&#x2F;ssh -o ServerAliveInterval&#x3D;60 -o ServerAliveCountMax&#x3D;3 -o UserKnownHostsFile&#x3D;&#x2F;dev&#x2F;null -o StrictHostKeyChecking&#x3D;no -q  -i $IFPOD_HOME&#x2F;etc&#x2F;ln1.pem   root@17.8.27.17 -p 22 -">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-15T18:43:55.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.639Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,10 +106,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>ssh port forward</p>
-<pre class="brush: bash; title: ; notranslate" title="">/usr/bin/ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -q  -i $IFPOD_HOME/etc/ln1.pem   root@17.8.27.17 -p 22 -N -g -L  3333:localhost:2222
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -q  -i <span class="variable">$IFPOD_HOME</span>/etc/ln1.pem   root@17.8.27.17 -p 22 -N -g -L  3333:localhost:2222</span><br><span class="line"></span><br><span class="line">ssh -D 9000  -N wd1@127.0.0.1 -p 3333</span><br></pre></td></tr></table></figure>
 
-ssh -D 9000  -N wd1@127.0.0.1 -p 3333
-</pre>
       
     </div>
 
@@ -119,7 +117,7 @@ ssh -D 9000  -N wd1@127.0.0.1 -p 3333
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/ssh-port-forward/" data-id="ckhhbad3l004o98my9tl65q47" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/03/16/ssh-port-forward/" data-id="ckhmph3jm004qh4y2fm689qsx" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

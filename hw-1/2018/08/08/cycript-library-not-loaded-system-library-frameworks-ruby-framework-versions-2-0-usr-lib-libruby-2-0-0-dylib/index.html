@@ -13,7 +13,7 @@
 <meta property="og:description" content="cycript #cycript # Library not loaded: 2.0&#x2F;usr&#x2F;lib&#x2F;libruby.2.0.0.dylibcycriptLibrary not loaded: &#x2F;System&#x2F;Library&#x2F;Frameworks&#x2F;Ruby.framework&#x2F;Versions&#x2F;2.0&#x2F;usr&#x2F;lib&#x2F;libruby.2.0.0.dylibReferenced from: ~&#x2F;Do">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-08-08T04:09:47.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.278Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,10 +106,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="cycript-cycript-Library-not-loaded-2-0-usr-lib-libruby-2-0-0-dylib"><a href="#cycript-cycript-Library-not-loaded-2-0-usr-lib-libruby-2-0-0-dylib" class="headerlink" title="cycript #cycript # Library not loaded: 2.0/usr/lib/libruby.2.0.0.dylib"></a>cycript #cycript # Library not loaded: 2.0/usr/lib/libruby.2.0.0.dylib</h3><p>cycript<br>Library not loaded: /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/libruby.2.0.0.dylib<br>Referenced from: ~/Downloads/cycript_0.9.594/Cycript.lib/cycript-apl<br>Reason: image not found<br>Abort trap: 6</p>
-<pre class="brush: bash; title: ; notranslate" title="">install_name_tool -change /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/libruby.2.0.0.dylib /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.dylib  ~/Downloads/cycript_0.9.594/Cycript.lib/cycript-apl
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">install_name_tool -change /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/libruby.2.0.0.dylib /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.dylib  ~/Downloads/cycript_0.9.594/Cycript.lib/cycript-apl</span><br><span class="line"></span><br><span class="line">install_name_tool -change /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/libruby.2.0.0.dylib /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.dylib ~/Downloads/cycript_0.9.594/Cycript.lib/libcycript.dylib</span><br></pre></td></tr></table></figure>
 
-install_name_tool -change /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/libruby.2.0.0.dylib /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.dylib ~/Downloads/cycript_0.9.594/Cycript.lib/libcycript.dylib
-</pre>
       
     </div>
 
@@ -119,7 +117,7 @@ install_name_tool -change /System/Library/Frameworks/Ruby.framework/Versions/2.0
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/08/08/cycript-library-not-loaded-system-library-frameworks-ruby-framework-versions-2-0-usr-lib-libruby-2-0-0-dylib/" data-id="ckhhbad2x002m98my619s15f2" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/08/08/cycript-library-not-loaded-system-library-frameworks-ruby-framework-versions-2-0-usr-lib-libruby-2-0-0-dylib/" data-id="ckhmph3ix002mh4y269ifekqg" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

@@ -5,15 +5,15 @@
   
   <title>build http protal git server for xampp on osx | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="build http protal git server for xampp on osx1,intsall xampp 2,add &amp;#039;git.conf&amp;#039; to httpd.conf &#x2F;&#x2F;git.conf &lt;VirtualHost *:80&gt;     SetEnv GIT_PROJECT_ROOT &#x2F;home&#x2F;leo&#x2F;git&#x2F;   #git目录     SetEnv">
+  <meta name="description" content="build http protal git server for xampp on osx1234567891011121314151617181920212223242526271,intsall xampp2,add &amp;#039;git.conf&amp;#039; to httpd.conf&#x2F;&#x2F;git.conf&amp;lt;VirtualHost *:80&amp;gt;    S">
 <meta property="og:type" content="article">
 <meta property="og:title" content="build http protal git server for xampp on osx">
 <meta property="og:url" content="http://wirelessbox.net/2017/05/27/build-http-protal-git-server-for-xampp-on-osx/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="build http protal git server for xampp on osx1,intsall xampp 2,add &amp;#039;git.conf&amp;#039; to httpd.conf &#x2F;&#x2F;git.conf &lt;VirtualHost *:80&gt;     SetEnv GIT_PROJECT_ROOT &#x2F;home&#x2F;leo&#x2F;git&#x2F;   #git目录     SetEnv">
+<meta property="og:description" content="build http protal git server for xampp on osx1234567891011121314151617181920212223242526271,intsall xampp2,add &amp;#039;git.conf&amp;#039; to httpd.conf&#x2F;&#x2F;git.conf&amp;lt;VirtualHost *:80&amp;gt;    S">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-05-27T04:39:42.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.473Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -105,34 +105,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="build-http-protal-git-server-for-xampp-on-osx"><a href="#build-http-protal-git-server-for-xampp-on-osx" class="headerlink" title="build http protal git server for xampp on osx"></a>build http protal git server for xampp on osx</h1><pre class="brush: bash; title: ; notranslate" title="">1,intsall xampp
-2,add &#039;git.conf&#039; to httpd.conf
-//git.conf
-&lt;VirtualHost *:80&gt;
-    SetEnv GIT_PROJECT_ROOT /home/leo/git/   #git目录
-    SetEnv GIT_HTTP_EXPORT_ALL
-    ScriptAlias / /usr/libexec/git-core/git-http-backend/ #将/上的请求转发给git
-    &lt;Location &quot;/&quot;&gt;
-        DAV on           #开启dav扩展
-        Order allow,deny
-        Allow from all
-        AuthType Basic   #开启密码验证
-        AuthName &quot;Git&quot;
-        AuthUserFile /path/to/apache/conf/vhost/git.passwd
-        Require valid-user
-    &lt;/Location&gt;
-&lt;/VirtualHost&gt;
-3,create user and password for http access
-/path/to/apache/bin/htpasswd -c git.passwd leo
-4,create a simple git repo
-    mkdir -p /home/leo/git/leo_git_test
-    cd /home/leo/git/leo_git_test
-    git init --bare
-    git update-server-info
-5,restart apache in xampp
-6, test git
- git clone http://local/path/leo_git_test
-</pre>
+        <h1 id="build-http-protal-git-server-for-xampp-on-osx"><a href="#build-http-protal-git-server-for-xampp-on-osx" class="headerlink" title="build http protal git server for xampp on osx"></a>build http protal git server for xampp on osx</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">1,intsall xampp</span><br><span class="line">2,add &amp;<span class="comment">#039;git.conf&amp;#039; to httpd.conf</span></span><br><span class="line">//git.conf</span><br><span class="line">&amp;lt;VirtualHost *:80&amp;gt;</span><br><span class="line">    SetEnv GIT_PROJECT_ROOT /home/leo/git/   <span class="comment">#git目录</span></span><br><span class="line">    SetEnv GIT_HTTP_EXPORT_ALL</span><br><span class="line">    ScriptAlias / /usr/libexec/git-core/git-http-backend/ <span class="comment">#将/上的请求转发给git</span></span><br><span class="line">    &amp;lt;Location &amp;quot;/&amp;quot;&amp;gt;</span><br><span class="line">        DAV on           <span class="comment">#开启dav扩展</span></span><br><span class="line">        Order allow,deny</span><br><span class="line">        Allow from all</span><br><span class="line">        AuthType Basic   <span class="comment">#开启密码验证</span></span><br><span class="line">        AuthName &amp;quot;Git&amp;quot;</span><br><span class="line">        AuthUserFile /path/to/apache/conf/vhost/git.passwd</span><br><span class="line">        Require valid-user</span><br><span class="line">    &amp;lt;/Location&amp;gt;</span><br><span class="line">&amp;lt;/VirtualHost&amp;gt;</span><br><span class="line">3,create user and password <span class="keyword">for</span> http access</span><br><span class="line">/path/to/apache/bin/htpasswd -c git.passwd leo</span><br><span class="line">4,create a simple git repo</span><br><span class="line">    mkdir -p /home/leo/git/leo_git_test</span><br><span class="line">    <span class="built_in">cd</span> /home/leo/git/leo_git_test</span><br><span class="line">    git init --bare</span><br><span class="line">    git update-server-info</span><br><span class="line">5,restart apache <span class="keyword">in</span> xampp</span><br><span class="line">6, <span class="built_in">test</span> git</span><br><span class="line"> git <span class="built_in">clone</span> http://<span class="built_in">local</span>/path/leo_git_test</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -142,7 +116,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/05/27/build-http-protal-git-server-for-xampp-on-osx/" data-id="ckhhbad2g001d98mydcudbpgh" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/05/27/build-http-protal-git-server-for-xampp-on-osx/" data-id="ckhmph3ii001eh4y23s6iders" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

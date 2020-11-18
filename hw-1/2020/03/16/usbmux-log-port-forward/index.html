@@ -5,15 +5,15 @@
   
   <title>usbmux log &amp;#038; port forward | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="usbmux log &amp; port forward usbmux log sudo mv &#x2F;var&#x2F;run&#x2F;usbmuxd &#x2F;var&#x2F;run&#x2F;usbmux_real &#x2F;&#x2F; -x sudo socat -t100  -x  -v UNIX-LISTEN:&#x2F;var&#x2F;run&#x2F;usbmuxd,mode&#x3D;777,reuseaddr,fork UNIX-CONNECT:&#x2F;var&#x2F;run&#x2F;usbmux_">
+  <meta name="description" content="usbmux log &amp; port forward 1234567891011usbmux logsudo mv &#x2F;var&#x2F;run&#x2F;usbmuxd &#x2F;var&#x2F;run&#x2F;usbmux_real&#x2F;&#x2F; -xsudo socat -t100  -x  -v UNIX-LISTEN:&#x2F;var&#x2F;run&#x2F;usbmuxd,mode&#x3D;777,reuseaddr,fork UNIX-CONNECT:&#x2F;var&#x2F;r">
 <meta property="og:type" content="article">
 <meta property="og:title" content="usbmux log &amp;#038; port forward">
 <meta property="og:url" content="http://wirelessbox.net/2020/03/16/usbmux-log-port-forward/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="usbmux log &amp; port forward usbmux log sudo mv &#x2F;var&#x2F;run&#x2F;usbmuxd &#x2F;var&#x2F;run&#x2F;usbmux_real &#x2F;&#x2F; -x sudo socat -t100  -x  -v UNIX-LISTEN:&#x2F;var&#x2F;run&#x2F;usbmuxd,mode&#x3D;777,reuseaddr,fork UNIX-CONNECT:&#x2F;var&#x2F;run&#x2F;usbmux_">
+<meta property="og:description" content="usbmux log &amp; port forward 1234567891011usbmux logsudo mv &#x2F;var&#x2F;run&#x2F;usbmuxd &#x2F;var&#x2F;run&#x2F;usbmux_real&#x2F;&#x2F; -xsudo socat -t100  -x  -v UNIX-LISTEN:&#x2F;var&#x2F;run&#x2F;usbmuxd,mode&#x3D;777,reuseaddr,fork UNIX-CONNECT:&#x2F;var&#x2F;r">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-15T18:45:10.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.425Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,18 +106,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>usbmux log &amp; port forward</p>
-<pre class="brush: bash; title: ; notranslate" title="">usbmux log
-sudo mv /var/run/usbmuxd /var/run/usbmux_real
-// -x
-sudo socat -t100  -x  -v UNIX-LISTEN:/var/run/usbmuxd,mode=777,reuseaddr,fork UNIX-CONNECT:/var/run/usbmux_real
-sudo mv /var/run/usbmux_real /var/run/usbmuxd
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">usbmux <span class="built_in">log</span></span><br><span class="line">sudo mv /var/run/usbmuxd /var/run/usbmux_real</span><br><span class="line">// -x</span><br><span class="line">sudo socat -t100  -x  -v UNIX-LISTEN:/var/run/usbmuxd,mode=777,reuseaddr,fork UNIX-CONNECT:/var/run/usbmux_real</span><br><span class="line">sudo mv /var/run/usbmux_real /var/run/usbmuxd</span><br><span class="line"></span><br><span class="line">usbmux forward</span><br><span class="line">sudo  mv /var/run/usbmuxd /var/run/usbmux_real</span><br><span class="line">sudo socat UNIX-LISTEN:/var/run/usbmuxd,mode=777,reuseaddr,fork TCP:XXX.XXX.XXX.XXX:8555</span><br><span class="line"></span><br><span class="line">socat TCP-LISTEN:8555,reuseaddr,fork UNIX-CONNECT:/var/run/usbmuxd</span><br></pre></td></tr></table></figure>
 
-usbmux forward
-sudo  mv /var/run/usbmuxd /var/run/usbmux_real
-sudo socat UNIX-LISTEN:/var/run/usbmuxd,mode=777,reuseaddr,fork TCP:XXX.XXX.XXX.XXX:8555
-
-socat TCP-LISTEN:8555,reuseaddr,fork UNIX-CONNECT:/var/run/usbmuxd
-</pre>
       
     </div>
 
@@ -127,7 +117,7 @@ socat TCP-LISTEN:8555,reuseaddr,fork UNIX-CONNECT:/var/run/usbmuxd
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/usbmux-log-port-forward/" data-id="ckhhbad3m004q98myetua3xyq" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/03/16/usbmux-log-port-forward/" data-id="ckhmph3jn004rh4y26imu7bjo" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

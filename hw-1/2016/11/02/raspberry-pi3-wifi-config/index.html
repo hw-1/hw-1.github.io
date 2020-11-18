@@ -5,15 +5,15 @@
   
   <title>raspberry pi3  wifi  config | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###change ssh default keys rm &#x2F;etc&#x2F;ssh&#x2F;ssh_host_*   ###dpkg-reconfigure openssh-server service ssh restart   ###config wifi vim &#x2F;etc&#x2F;network&#x2F;interfaces auto wlan0 iface wlan0 inet dhcp wpa-ssid “your">
+  <meta name="description" content="###change ssh default keys 1rm &#x2F;etc&#x2F;ssh&#x2F;ssh_host_*   ###dpkg-reconfigure openssh-server 1service ssh restart   ###config wifi 1234567vim &#x2F;etc&#x2F;network&#x2F;interfacesauto wlan0iface wlan0 inet dhcpwpa-ssid">
 <meta property="og:type" content="article">
 <meta property="og:title" content="raspberry pi3  wifi  config">
 <meta property="og:url" content="http://wirelessbox.net/2016/11/02/raspberry-pi3-wifi-config/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="###change ssh default keys rm &#x2F;etc&#x2F;ssh&#x2F;ssh_host_*   ###dpkg-reconfigure openssh-server service ssh restart   ###config wifi vim &#x2F;etc&#x2F;network&#x2F;interfaces auto wlan0 iface wlan0 inet dhcp wpa-ssid “your">
+<meta property="og:description" content="###change ssh default keys 1rm &#x2F;etc&#x2F;ssh&#x2F;ssh_host_*   ###dpkg-reconfigure openssh-server 1service ssh restart   ###config wifi 1234567vim &#x2F;etc&#x2F;network&#x2F;interfacesauto wlan0iface wlan0 inet dhcpwpa-ssid">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2016-11-02T03:12:05.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.634Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,27 +106,20 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>###change ssh default keys</p>
-<pre class="brush: bash; title: ; notranslate" title="">rm /etc/ssh/ssh_host_*
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm /etc/ssh/ssh_host_*</span><br></pre></td></tr></table></figure>
+
 
 <p>###dpkg-reconfigure openssh-server</p>
-<pre class="brush: bash; title: ; notranslate" title="">service ssh restart
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
+
 
 <p>###config wifi</p>
-<pre class="brush: bash; title: ; notranslate" title="">vim /etc/network/interfaces
-auto wlan0
-iface wlan0 inet dhcp
-wpa-ssid “your network name”
-wpa-psk “the network password”
-//restart
-service networking restart
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/network/interfaces</span><br><span class="line">auto wlan0</span><br><span class="line">iface wlan0 inet dhcp</span><br><span class="line">wpa-ssid “your network name”</span><br><span class="line">wpa-psk “the network password”</span><br><span class="line">//restart</span><br><span class="line">service networking restart</span><br></pre></td></tr></table></figure>
+
 
 <p>###list pci</p>
-<pre class="brush: bash; title: ; notranslate" title="">apt install pciutils
-lspci
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install pciutils</span><br><span class="line">lspci</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -136,7 +129,7 @@ lspci
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/11/02/raspberry-pi3-wifi-config/" data-id="ckhhbad1z000m98myfozef3u7" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/11/02/raspberry-pi3-wifi-config/" data-id="ckhmph3i3000jh4y22j3366z0" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

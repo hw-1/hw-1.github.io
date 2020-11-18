@@ -5,15 +5,15 @@
   
   <title>Set  ulimit -n / open files Permanently  in ubuntu | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Set ulimit -n &#x2F; open files Permanently in ubuntu # available limit user@ubuntu:~$ ulimit -n 1024  # To increase the available limit to say 65535 user@ubuntu:~$ sudo vim &#x2F;etc&#x2F;sysctl.conf  # add the fol">
+  <meta name="description" content="Set ulimit -n &#x2F; open files Permanently in ubuntu 123456789101112# available limituser@ubuntu:~$ ulimit -n1024# To increase the available limit to say 65535user@ubuntu:~$ sudo vim &#x2F;etc&#x2F;sysctl.conf# add">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Set  ulimit -n &#x2F; open files Permanently  in ubuntu">
 <meta property="og:url" content="http://wirelessbox.net/2019/03/23/set-ulimit-n-open-files-permanently-in-ubuntu/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="Set ulimit -n &#x2F; open files Permanently in ubuntu # available limit user@ubuntu:~$ ulimit -n 1024  # To increase the available limit to say 65535 user@ubuntu:~$ sudo vim &#x2F;etc&#x2F;sysctl.conf  # add the fol">
+<meta property="og:description" content="Set ulimit -n &#x2F; open files Permanently in ubuntu 123456789101112# available limituser@ubuntu:~$ ulimit -n1024# To increase the available limit to say 65535user@ubuntu:~$ sudo vim &#x2F;etc&#x2F;sysctl.conf# add">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-03-22T18:43:40.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.428Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,44 +106,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Set ulimit -n / open files Permanently in ubuntu</p>
-<pre class="brush: bash; title: ; notranslate" title=""># available limit
-user@ubuntu:~$ ulimit -n
-1024
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># available limit</span></span><br><span class="line">user@ubuntu:~$ <span class="built_in">ulimit</span> -n</span><br><span class="line">1024</span><br><span class="line"></span><br><span class="line"><span class="comment"># To increase the available limit to say 65535</span></span><br><span class="line">user@ubuntu:~$ sudo vim /etc/sysctl.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># add the following line to it</span></span><br><span class="line">fs.file-max = 65535</span><br><span class="line"></span><br><span class="line"><span class="comment"># run this to refresh with new config</span></span><br><span class="line">user@ubuntu:~$ sudo sysctl -p</span><br></pre></td></tr></table></figure>
 
-# To increase the available limit to say 65535
-user@ubuntu:~$ sudo vim /etc/sysctl.conf
-
-# add the following line to it
-fs.file-max = 65535
-
-# run this to refresh with new config
-user@ubuntu:~$ sudo sysctl -p
-</pre>
 
 <p>if you got error “sysctl: permission denied on key ‘fs.file-max’” or not effect , you can skip that step, then you doing steps as below :</p>
-<pre class="brush: bash; title: ; notranslate" title=""># edit the following file
-user@ubuntu:~$ sudo vim /etc/security/limits.conf
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># edit the following file</span></span><br><span class="line">user@ubuntu:~$ sudo vim /etc/security/limits.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># add following lines to it</span></span><br><span class="line">* soft     nproc          65535</span><br><span class="line">* hard     nproc          65535</span><br><span class="line">* soft     nofile         65535</span><br><span class="line">* hard     nofile         65535</span><br><span class="line">root soft     nproc          65535</span><br><span class="line">root hard     nproc          65535</span><br><span class="line">root soft     nofile         65535</span><br><span class="line">root hard     nofile         65535</span><br><span class="line"></span><br><span class="line"><span class="comment"># edit the following file</span></span><br><span class="line">user@ubuntu:~$ sudo vim /etc/pam.d/common-session</span><br><span class="line"></span><br><span class="line"><span class="comment"># add this line to it</span></span><br><span class="line">session required pam_limits.so</span><br><span class="line"></span><br><span class="line"><span class="comment"># logout and login and try the following command</span></span><br><span class="line">user@ubuntu:~$ <span class="built_in">ulimit</span> -n</span><br><span class="line">65535</span><br></pre></td></tr></table></figure>
 
-# add following lines to it
-* soft     nproc          65535
-* hard     nproc          65535
-* soft     nofile         65535
-* hard     nofile         65535
-root soft     nproc          65535
-root hard     nproc          65535
-root soft     nofile         65535
-root hard     nofile         65535
-
-# edit the following file
-user@ubuntu:~$ sudo vim /etc/pam.d/common-session
-
-# add this line to it
-session required pam_limits.so
-
-# logout and login and try the following command
-user@ubuntu:~$ ulimit -n
-65535
-</pre>
       
     </div>
 
@@ -153,7 +121,7 @@ user@ubuntu:~$ ulimit -n
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/03/23/set-ulimit-n-open-files-permanently-in-ubuntu/" data-id="ckhhbad3a003o98my1s65aj5o" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/03/23/set-ulimit-n-open-files-permanently-in-ubuntu/" data-id="ckhmph3ja003nh4y22c4z8qhi" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

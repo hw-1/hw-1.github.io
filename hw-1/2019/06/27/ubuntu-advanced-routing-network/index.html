@@ -5,15 +5,15 @@
   
   <title>ubuntu Advanced Routing network | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ubuntu Advanced Routing network1. forward 10.11.11.0&#x2F;24  10.12.12.0&#x2F;24 to  RDS  ip route add default via 10.1.1.1 dev eth1 table RDS ip rule add from 10.11.11.0&#x2F;24 table RDS ip rule add from 10.12.12.">
+  <meta name="description" content="ubuntu Advanced Routing network1234567891011121314151617181. forward 10.11.11.0&#x2F;24  10.12.12.0&#x2F;24 to  RDSip route add default via 10.1.1.1 dev eth1 table RDSip rule add from 10.11.11.0&#x2F;24 table RDSip">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu Advanced Routing network">
 <meta property="og:url" content="http://wirelessbox.net/2019/06/27/ubuntu-advanced-routing-network/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="ubuntu Advanced Routing network1. forward 10.11.11.0&#x2F;24  10.12.12.0&#x2F;24 to  RDS  ip route add default via 10.1.1.1 dev eth1 table RDS ip rule add from 10.11.11.0&#x2F;24 table RDS ip rule add from 10.12.12.">
+<meta property="og:description" content="ubuntu Advanced Routing network1234567891011121314151617181. forward 10.11.11.0&#x2F;24  10.12.12.0&#x2F;24 to  RDSip route add default via 10.1.1.1 dev eth1 table RDSip rule add from 10.11.11.0&#x2F;24 table RDSip">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-06-27T03:10:36.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.574Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -105,25 +105,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="ubuntu-Advanced-Routing-network"><a href="#ubuntu-Advanced-Routing-network" class="headerlink" title="ubuntu Advanced Routing network"></a>ubuntu Advanced Routing network</h3><pre class="brush: bash; title: ; notranslate" title="">1. forward 10.11.11.0/24  10.12.12.0/24 to  RDS
+        <h3 id="ubuntu-Advanced-Routing-network"><a href="#ubuntu-Advanced-Routing-network" class="headerlink" title="ubuntu Advanced Routing network"></a>ubuntu Advanced Routing network</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1. forward 10.11.11.0/24  10.12.12.0/24 to  RDS</span><br><span class="line"></span><br><span class="line">ip route add default via 10.1.1.1 dev eth1 table RDS</span><br><span class="line">ip rule add from 10.11.11.0/24 table RDS</span><br><span class="line">ip rule add from 10.12.12.0/24 table RDS</span><br><span class="line"></span><br><span class="line">ip rule show            <span class="comment"># all the rule list</span></span><br><span class="line">ip rule show | grep ASTRAL  <span class="comment"># only for ASRAL</span></span><br><span class="line">ip rule show | grep RDS     <span class="comment"># only for RDS</span></span><br><span class="line"></span><br><span class="line">2 , dst port 22 forward to RDS , dst port 80 forward  ASTRAL</span><br><span class="line">iptables -A PREROUTING -t mangle -i eth0 -p tcp --dport 22 -j MARK --set-mark 1</span><br><span class="line">iptables -A PREROUTING -t mangle -i eth0 -p tcp --dport 80 -j MARK --set-mark 2</span><br><span class="line"></span><br><span class="line">ip route add default via 10.1.1.1 dev eth1 table RDS    <span class="comment"># the same like in the first example</span></span><br><span class="line">ip route add default via 10.8.8.1 dev eth2 table ASTRAL <span class="comment"># the same like in the first example</span></span><br><span class="line">ip rule add from all fwmark 1 table RDS</span><br><span class="line">ip rule add from all fwmark 2 table ASTRAL</span><br></pre></td></tr></table></figure>
 
-ip route add default via 10.1.1.1 dev eth1 table RDS
-ip rule add from 10.11.11.0/24 table RDS
-ip rule add from 10.12.12.0/24 table RDS
-
-ip rule show            # all the rule list
-ip rule show | grep ASTRAL  # only for ASRAL
-ip rule show | grep RDS     # only for RDS
-
-2 , dst port 22 forward to RDS , dst port 80 forward  ASTRAL
-iptables -A PREROUTING -t mangle -i eth0 -p tcp --dport 22 -j MARK --set-mark 1
-iptables -A PREROUTING -t mangle -i eth0 -p tcp --dport 80 -j MARK --set-mark 2
-
-ip route add default via 10.1.1.1 dev eth1 table RDS    # the same like in the first example
-ip route add default via 10.8.8.1 dev eth2 table ASTRAL # the same like in the first example
-ip rule add from all fwmark 1 table RDS
-ip rule add from all fwmark 2 table ASTRAL
-</pre>
 
 <p><a target="_blank" rel="noopener" href="http://www.linuxhorizon.ro/iproute2.html" title="refrences">refrences</a></p>
 
@@ -136,7 +119,7 @@ ip rule add from all fwmark 2 table ASTRAL
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/06/27/ubuntu-advanced-routing-network/" data-id="ckhhbad3c003x98myh61dhkoy" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/06/27/ubuntu-advanced-routing-network/" data-id="ckhmph3jd003xh4y2dk1ng23o" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

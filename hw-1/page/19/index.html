@@ -104,13 +104,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>###分离：</p>
-<pre class="brush: bash; title: ; notranslate" title="">lipo -thin armv7 xxxx.dylib -output xxxx_v7.a
-lipo -thin arm64  xxxx.dylib -output xxxx_64.a
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lipo -thin armv7 xxxx.dylib -output xxxx_v7.a</span><br><span class="line">lipo -thin arm64  xxxx.dylib -output xxxx_64.a</span><br></pre></td></tr></table></figure>
+
 
 <p>###合并</p>
-<pre class="brush: bash; title: ; notranslate" title="">lipo -create ./xxxx_v7.dylib ./xxxx_64.dylib -output ./xxxx.a
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lipo -create ./xxxx_v7.dylib ./xxxx_64.dylib -output ./xxxx.a</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -120,7 +119,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/03/08/lipo-%e5%88%86%e7%a6%bb%e5%90%88%e5%b9%b6-armv7%e3%80%81arm64%e6%9e%b6%e6%9e%84/" data-id="ckhhbad1p000498mycjct22en" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/03/08/lipo-%e5%88%86%e7%a6%bb%e5%90%88%e5%b9%b6-armv7%e3%80%81arm64%e6%9e%b6%e6%9e%84/" data-id="ckhmph3h70004h4y2ca6f52po" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -172,7 +171,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/03/08/manually-decrypting-ios-apps/" data-id="ckhhbad1q000598my6npg2nry" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/03/08/manually-decrypting-ios-apps/" data-id="ckhmph3h80005h4y292ds1os8" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -214,8 +213,8 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
       
         <p>###1 Injector<br>source code <a target="_blank" rel="noopener" href="https://github.com/nadavrub/Injector">https://github.com/nadavrub/Injector</a><br>run the following to Inject the framework or dylib into the application executable:<br>Injector binary &#8220;@executable_path/hook1.dylib&#8221;<br>this tool is very usefull for clutch decrypted app</p>
 <p>###2 yololib<br>source code <a target="_blank" rel="noopener" href="https://github.com/KJCracks/yololib">https://github.com/KJCracks/yololib</a><br>usage</p>
-<pre class="brush: bash; title: ; notranslate" title="">yololib  binary  "@executable_path/hook1.dylib"
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yololib  binary  <span class="string">&quot;@executable_path/hook1.dylib&quot;</span></span><br></pre></td></tr></table></figure>
+
 
 <p>###3 radare2<br>source code <a target="_blank" rel="noopener" href="https://github.com/radare/radare2">https://github.com/radare/radare2</a><br>it is very power tool ,but not simply to use,<br>there is a tut for this tool use<br><a target="_blank" rel="noopener" href="http://coscolla.net/injecting-code-to-a-ipa/">http://coscolla.net/injecting-code-to-a-ipa/</a></p>
 
@@ -228,7 +227,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/03/08/patched-ipa-for-unjailed-iphone-inject-dylib-or-framework-to-execute-ii/" data-id="ckhhbad1q000698myftvg0qgp" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/03/08/patched-ipa-for-unjailed-iphone-inject-dylib-or-framework-to-execute-ii/" data-id="ckhmph3h80006h4y2cn1jf6u3" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -280,7 +279,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/03/02/%e3%80%8cproxypy%e3%80%8d%e5%85%8d%e8%b2%bb%e7%b7%9a%e4%b8%8a%e4%bb%a3%e7%90%86%e4%bc%ba%e6%9c%8d%e5%99%a8web-proxy/" data-id="ckhhbad1l000198mygsvfhe5f" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/03/02/%e3%80%8cproxypy%e3%80%8d%e5%85%8d%e8%b2%bb%e7%b7%9a%e4%b8%8a%e4%bb%a3%e7%90%86%e4%bc%ba%e6%9c%8d%e5%99%a8web-proxy/" data-id="ckhmph3h70003h4y2f3iy00n4" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -320,8 +319,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">sudo apt-get install php5-curl</pre>
-
+        <p><code>bash sudo apt-get install php5-curl</code></p>
 <p>&nbsp;</p>
 
       
@@ -333,7 +331,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/03/02/call-to-undefined-function-curl_init/" data-id="ckhhbad1o000398my41ax2ob7" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/03/02/call-to-undefined-function-curl_init/" data-id="ckhmph3h50001h4y28pj20578" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -388,7 +386,7 @@ lipo -thin arm64  xxxx.dylib -output xxxx_64.a
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/03/01/hello-world/" data-id="ckhhbad1i000098mybhpb2fiw" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/03/01/hello-world/" data-id="ckhmph3h20000h4y28gxlawm1" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

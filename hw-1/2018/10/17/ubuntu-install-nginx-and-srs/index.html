@@ -5,15 +5,15 @@
   
   <title>ubuntu install nginx and srs | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ubuntu install nginx and srs&#x2F;&#x2F;for Ubuntu sudo add-apt-repository  -y ppa:ubuntu-toolchain-r&#x2F;test sudo apt-get update -y sudo apt-get install -y gcc-5 g++-5 sudo update-alternatives --install &#x2F;usr&#x2F;bin&#x2F;">
+  <meta name="description" content="ubuntu install nginx and srs123456789101112131415161718192021&#x2F;&#x2F;for Ubuntusudo add-apt-repository  -y ppa:ubuntu-toolchain-r&#x2F;testsudo apt-get update -ysudo apt-get install -y gcc-5 g++-5sudo update-alt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu install nginx and srs">
 <meta property="og:url" content="http://wirelessbox.net/2018/10/17/ubuntu-install-nginx-and-srs/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="ubuntu install nginx and srs&#x2F;&#x2F;for Ubuntu sudo add-apt-repository  -y ppa:ubuntu-toolchain-r&#x2F;test sudo apt-get update -y sudo apt-get install -y gcc-5 g++-5 sudo update-alternatives --install &#x2F;usr&#x2F;bin&#x2F;">
+<meta property="og:description" content="ubuntu install nginx and srs123456789101112131415161718192021&#x2F;&#x2F;for Ubuntusudo add-apt-repository  -y ppa:ubuntu-toolchain-r&#x2F;testsudo apt-get update -ysudo apt-get install -y gcc-5 g++-5sudo update-alt">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-10-16T17:58:50.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.156Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -105,28 +105,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="ubuntu-install-nginx-and-srs"><a href="#ubuntu-install-nginx-and-srs" class="headerlink" title="ubuntu install nginx and srs"></a>ubuntu install nginx and srs</h3><pre class="brush: bash; title: ; notranslate" title="">//for Ubuntu
-sudo add-apt-repository  -y ppa:ubuntu-toolchain-r/test
-sudo apt-get update -y
-sudo apt-get install -y gcc-5 g++-5
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
+        <h3 id="ubuntu-install-nginx-and-srs"><a href="#ubuntu-install-nginx-and-srs" class="headerlink" title="ubuntu install nginx and srs"></a>ubuntu install nginx and srs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//<span class="keyword">for</span> Ubuntu</span><br><span class="line">sudo add-apt-repository  -y ppa:ubuntu-toolchain-r/<span class="built_in">test</span></span><br><span class="line">sudo apt-get update -y</span><br><span class="line">sudo apt-get install -y gcc-5 g++-5</span><br><span class="line">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/ossrs/srs.git</span><br><span class="line"><span class="built_in">cd</span> srs/trunk</span><br><span class="line">./configure --with-nginx</span><br><span class="line"> make</span><br><span class="line"></span><br><span class="line">./objs/srs -c conf/http.hls.conf</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>((;;)); <span class="keyword">do</span> \</span><br><span class="line">    ffmpeg -re -i   /home/ubuntu/Rogue\ One\ -\ A\ Star\ Wars\ Story\ -\ Trailer\ 2.mp4 \</span><br><span class="line">    -vf  scale=360:-2 -c:v libx264 -acodec copy \</span><br><span class="line">    -f flv -y rtmp://172.104.12.1:1935/live/livestream; \</span><br><span class="line">    sleep 1; \</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-
-git clone https://github.com/ossrs/srs.git
-cd srs/trunk
-./configure --with-nginx
- make
-
-./objs/srs -c conf/http.hls.conf
-
-for((;;)); do \
-    ffmpeg -re -i   /home/ubuntu/Rogue\ One\ -\ A\ Star\ Wars\ Story\ -\ Trailer\ 2.mp4 \
-    -vf  scale=360:-2 -c:v libx264 -acodec copy \
-    -f flv -y rtmp://172.104.12.1:1935/live/livestream; \
-    sleep 1; \
-done
-
-</pre>
       
     </div>
 
@@ -136,7 +116,7 @@ done
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/10/17/ubuntu-install-nginx-and-srs/" data-id="ckhhbad30002u98my7yue31kk" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/10/17/ubuntu-install-nginx-and-srs/" data-id="ckhmph3j0002uh4y2aqs6c4o7" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

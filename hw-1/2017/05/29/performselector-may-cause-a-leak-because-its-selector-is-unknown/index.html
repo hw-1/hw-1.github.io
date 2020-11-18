@@ -5,15 +5,15 @@
   
   <title>performSelector may cause a leak because its selector is unknown | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#performSelector may cause a leak because its selector is unknown#How to get rid of the &amp;#8216;undeclared selector&amp;#8217; warning &#x2F;&#x2F;performSelector may cause a leak because its selector is unknown &#x2F;&#x2F;#">
+  <meta name="description" content="#performSelector may cause a leak because its selector is unknown#How to get rid of the &amp;#8216;undeclared selector&amp;#8217; warning 12345678910&#x2F;&#x2F;performSelector may cause a leak because its selector is">
 <meta property="og:type" content="article">
 <meta property="og:title" content="performSelector may cause a leak because its selector is unknown">
 <meta property="og:url" content="http://wirelessbox.net/2017/05/29/performselector-may-cause-a-leak-because-its-selector-is-unknown/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="#performSelector may cause a leak because its selector is unknown#How to get rid of the &amp;#8216;undeclared selector&amp;#8217; warning &#x2F;&#x2F;performSelector may cause a leak because its selector is unknown &#x2F;&#x2F;#">
+<meta property="og:description" content="#performSelector may cause a leak because its selector is unknown#How to get rid of the &amp;#8216;undeclared selector&amp;#8217; warning 12345678910&#x2F;&#x2F;performSelector may cause a leak because its selector is">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-05-28T20:04:56.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.560Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,17 +106,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>#performSelector may cause a leak because its selector is unknown<br>#How to get rid of the &#8216;undeclared selector&#8217; warning</p>
-<pre class="brush: bash; title: ; notranslate" title="">//performSelector may cause a leak because its selector is unknown
-//#pragma clang diagnostic push
-//#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-//... your code here ...
-//#pragma clang diagnostic pop
-//How to get rid of the 'undeclared selector' warning
-//#pragma clang diagnostic push
-//#pragma clang diagnostic ignored "-Wundeclared-selector"
-//... your code here ...
-//#pragma clang diagnostic pop
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//performSelector may cause a leak because its selector is unknown</span><br><span class="line">//<span class="comment">#pragma clang diagnostic push</span></span><br><span class="line">//<span class="comment">#pragma clang diagnostic ignored &quot;-Warc-performSelector-leaks&quot;</span></span><br><span class="line">//... your code here ...</span><br><span class="line">//<span class="comment">#pragma clang diagnostic pop</span></span><br><span class="line">//How to get rid of the <span class="string">&#x27;undeclared selector&#x27;</span> warning</span><br><span class="line">//<span class="comment">#pragma clang diagnostic push</span></span><br><span class="line">//<span class="comment">#pragma clang diagnostic ignored &quot;-Wundeclared-selector&quot;</span></span><br><span class="line">//... your code here ...</span><br><span class="line">//<span class="comment">#pragma clang diagnostic pop</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -126,7 +117,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/05/29/performselector-may-cause-a-leak-because-its-selector-is-unknown/" data-id="ckhhbad2i001h98my4kd0dx9v" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/05/29/performselector-may-cause-a-leak-because-its-selector-is-unknown/" data-id="ckhmph3ij001gh4y26ifi2ups" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

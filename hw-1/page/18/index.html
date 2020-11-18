@@ -103,10 +103,11 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">Using patch files 
+        <pre><code class="bash">Using patch files 
 1.create patch file
-diff -uN  file1 file2 &gt; patchfile
-patch -p0 &lt;  patchfile</pre>
+diff -uN  file1 file2 &amp;gt; patchfile
+patch -p0 &amp;lt;  patchfile```</code></pre>
+
       
     </div>
 
@@ -116,7 +117,7 @@ patch -p0 &lt;  patchfile</pre>
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/09/30/using-patch-files/" data-id="ckhhbad1v000g98my37p4fhas" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/09/30/using-patch-files/" data-id="ckhmph3i2000gh4y27cs12sep" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -157,10 +158,11 @@ patch -p0 &lt;  patchfile</pre>
     <div class="article-entry" itemprop="articleBody">
       
         <p>Xcode not set up properly. You may need to confirm the license agreement by running /usr/bin/xcodebuild</p>
-<pre class="brush: bash; title: ; notranslate" title="">sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+<pre><code class="bash">sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
 sudo xcodebuild -license
 cd /Applications/Xcode.app/Contents/Developer/usr/bin/
-sudo ln -s xcodebuild xcrun</pre>
+sudo ln -s xcodebuild xcrun```</code></pre>
+
       
     </div>
 
@@ -170,7 +172,7 @@ sudo ln -s xcodebuild xcrun</pre>
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/09/30/xcode-not-set-up-properly-you-may-need-to-confirm-the-license-agreement-by-running-usrbinxcodebuild/" data-id="ckhhbad1w000h98my6djl9e49" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/09/30/xcode-not-set-up-properly-you-may-need-to-confirm-the-license-agreement-by-running-usrbinxcodebuild/" data-id="ckhmph3i2000hh4y28wwbgyzv" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -222,7 +224,7 @@ sudo ln -s xcodebuild xcrun</pre>
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/08/26/ipa-%e4%bd%bf%e7%94%a8%e8%87%aa%e5%b7%b1%e7%9a%84apple%e5%b8%90%e5%8f%b7%e7%ad%be%e5%90%8d%e5%ae%89%e8%a3%85-%ef%bc%8d%ef%bc%8d-cydia-impactor/" data-id="ckhhbad1v000f98mygbxb09fx" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/08/26/ipa-%e4%bd%bf%e7%94%a8%e8%87%aa%e5%b7%b1%e7%9a%84apple%e5%b8%90%e5%8f%b7%e7%ad%be%e5%90%8d%e5%ae%89%e8%a3%85-%ef%bc%8d%ef%bc%8d-cydia-impactor/" data-id="ckhmph3i1000fh4y2g474bque" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -262,9 +264,8 @@ sudo ln -s xcodebuild xcrun</pre>
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">apt-get update
-apt-get install top tcpdump network-cmds adv-cmds coreutils cycript diskdev-cmds diffutils  file file-cmds findutils iphone-python  ruby rubygems vim wget 
-</pre>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install top tcpdump network-cmds adv-cmds coreutils cycript diskdev-cmds diffutils  file file-cmds findutils iphone-python  ruby rubygems vim wget </span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -274,7 +275,7 @@ apt-get install top tcpdump network-cmds adv-cmds coreutils cycript diskdev-cmds
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/08/24/idevice-istall-tool/" data-id="ckhhbad1u000e98my6tkje9h2" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/08/24/idevice-istall-tool/" data-id="ckhmph3i1000eh4y28a3o6qot" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -314,19 +315,8 @@ apt-get install top tcpdump network-cmds adv-cmds coreutils cycript diskdev-cmds
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">sudo vim /etc/ssh/sshd_config
-//disable
-PermitRootLogin no
-//enable
-PermitRootLogin yes
-//restart ssh
-sudo /etc/init.d/sshd restart
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/ssh/sshd_config</span><br><span class="line">//<span class="built_in">disable</span></span><br><span class="line">PermitRootLogin no</span><br><span class="line">//<span class="built_in">enable</span></span><br><span class="line">PermitRootLogin yes</span><br><span class="line">//restart ssh</span><br><span class="line">sudo /etc/init.d/sshd restart</span><br><span class="line"></span><br><span class="line">//</span><br><span class="line">cat pub.pem &amp;gt;  ~/.ssh/authorized_keys</span><br><span class="line">chmod o-w ~/; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-//
-cat pub.pem &gt;  ~/.ssh/authorized_keys
-chmod o-w ~/; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys
-
-</pre>
       
     </div>
 
@@ -336,7 +326,7 @@ chmod o-w ~/; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/08/08/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux/" data-id="ckhhbad1t000c98my1xz82m83" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/08/08/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux/" data-id="ckhmph3i0000ch4y2ea1hah8m" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -376,57 +366,8 @@ chmod o-w ~/; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">ubuntu install squid3
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">ubuntu install squid3</span><br><span class="line"></span><br><span class="line">sudo apt-get install python-setuptools</span><br><span class="line"></span><br><span class="line">sudo apt-get install build-essential autoconf libtool pkg-config python-opengl python-imaging python-pyrex python-pyside.qtopengl idle-python2.7 qt4-dev-tools qt4-designer libqtgui4 libqtcore4 libqt4-xml libqt4-test libqt4-script libqt4-network libqt4-dbus python-qt4 python-qt4-gl libgle3 python-dev</span><br><span class="line"></span><br><span class="line">sudo apt install squid3 imagemagick</span><br><span class="line"></span><br><span class="line">sudo easy_install twisted</span><br><span class="line"></span><br><span class="line">sudo apt install openssl php</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo mkdir -p /var/www/tmp</span><br><span class="line">sudo chown -R proxy:proxy  /var/www/tmp</span><br><span class="line">sudo twistd web  --path=/var/www --port=8080</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo perl -MCPAN -e<span class="string">&#x27;install &quot;LWP::Simple&quot;&#x27;</span></span><br><span class="line"></span><br><span class="line">sudo iptables -L --line-number -t nat</span><br><span class="line">sudo iptables -t nat  -A PREROUTING -s 172.26.0.0/255.255.255.0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 172.26.1.1</span><br><span class="line">sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j REDIRECT --to-port 3128</span><br><span class="line">sudo iptables -t nat -D PREROUTING 2</span><br><span class="line"></span><br><span class="line">//DEBUG</span><br><span class="line"></span><br><span class="line">sudo vim /etc/squid3/squid.conf</span><br><span class="line">sudo squid -k reconfigure</span><br><span class="line">netstat -na|grep 3128</span><br><span class="line">sudo /etc/init.d/squid3 restart</span><br><span class="line"></span><br><span class="line">sudo chown -R root:root flip.pl</span><br><span class="line"></span><br><span class="line">sudo tail -F /tmp/flipImages_debug.log</span><br><span class="line">sudo tail -F /var/<span class="built_in">log</span>/squid3/access.log</span><br><span class="line">sudo tail -F /var/<span class="built_in">log</span>/squid3/cache.log</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">OSX</span><br><span class="line">sudo sysctl -w net.inet.ip.forwarding=1</span><br><span class="line">sudo pfctl -f pf.conf</span><br><span class="line">sudo pfctl -e</span><br><span class="line">sudo /sbin/pfctl -s state</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Ubuntu</span><br><span class="line">sudo sysctl -w net.ipv4.ip_forward=1</span><br><span class="line">sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3128</span><br><span class="line">sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 3128</span><br></pre></td></tr></table></figure>
 
-sudo apt-get install python-setuptools
-
-sudo apt-get install build-essential autoconf libtool pkg-config python-opengl python-imaging python-pyrex python-pyside.qtopengl idle-python2.7 qt4-dev-tools qt4-designer libqtgui4 libqtcore4 libqt4-xml libqt4-test libqt4-script libqt4-network libqt4-dbus python-qt4 python-qt4-gl libgle3 python-dev
-
-sudo apt install squid3 imagemagick
-
-sudo easy_install twisted
-
-sudo apt install openssl php
-
-
-sudo mkdir -p /var/www/tmp
-sudo chown -R proxy:proxy  /var/www/tmp
-sudo twistd web  --path=/var/www --port=8080
-
-
-sudo perl -MCPAN -e'install "LWP::Simple"'
-
-sudo iptables -L --line-number -t nat
-sudo iptables -t nat  -A PREROUTING -s 172.26.0.0/255.255.255.0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 172.26.1.1
-sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j REDIRECT --to-port 3128
-sudo iptables -t nat -D PREROUTING 2
-
-//DEBUG
-
-sudo vim /etc/squid3/squid.conf
-sudo squid -k reconfigure
-netstat -na|grep 3128
-sudo /etc/init.d/squid3 restart
-
-sudo chown -R root:root flip.pl
-
-sudo tail -F /tmp/flipImages_debug.log
-sudo tail -F /var/log/squid3/access.log
-sudo tail -F /var/log/squid3/cache.log
-
-
-OSX
-sudo sysctl -w net.inet.ip.forwarding=1
-sudo pfctl -f pf.conf
-sudo pfctl -e
-sudo /sbin/pfctl -s state
-
-
-Ubuntu
-sudo sysctl -w net.ipv4.ip_forward=1
-sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3128
-sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 3128
-</pre>
       
     </div>
 
@@ -436,7 +377,7 @@ sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j REDIRECT --to-p
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/08/08/ubuntu-install-squid3/" data-id="ckhhbad1u000d98my1l3yayac" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/08/08/ubuntu-install-squid3/" data-id="ckhmph3i0000dh4y2c7fw2swq" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -476,13 +417,8 @@ sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j REDIRECT --to-p
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">1 sudo raspi-config
-choose zh-cn.utf-8
-2 install font
-sudo apt-get -y install ttf-wqy-zenhei
-3 install  pinyin
-sudo apt-get -y install scim-pinyin
-</pre>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1 sudo raspi-config</span><br><span class="line">choose zh-cn.utf-8</span><br><span class="line">2 install font</span><br><span class="line">sudo apt-get -y install ttf-wqy-zenhei</span><br><span class="line">3 install  pinyin</span><br><span class="line">sudo apt-get -y install scim-pinyin</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -492,7 +428,7 @@ sudo apt-get -y install scim-pinyin
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/07/11/raspberry-support-zh-cn/" data-id="ckhhbad1t000b98my4aeg4qu3" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/07/11/raspberry-support-zh-cn/" data-id="ckhmph3hz000bh4y22h5o7cpt" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -532,14 +468,8 @@ sudo apt-get -y install scim-pinyin
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">Using otool -D lib.dylib returns the path that is presented by that library to the compiler. To change it you can use install_name_change with the argument -id.
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Using otool -D lib.dylib returns the path that is presented by that library to the compiler. To change it you can use install_name_change with the argument -id.</span><br><span class="line"></span><br><span class="line">install_name_tool -id “@executable_path/../Plugins/lib.dylib” lib.dylib</span><br><span class="line"></span><br><span class="line">This alters the relative path of lib.dylib to the plugins folder of your bundle. Next you need to change each path <span class="keyword">in</span> the main executable. You can find out the dependencies and their expected path of the executable using otool -L. For each dependency that needs changing use install_name_tool again with the argument -change.</span><br><span class="line"></span><br><span class="line">install_name_tool -change “/usr/lib/lib.dylib” “@executable_path/../Plugins/lib.dylib” applicationname</span><br></pre></td></tr></table></figure>
 
-install_name_tool -id “@executable_path/../Plugins/lib.dylib” lib.dylib
-
-This alters the relative path of lib.dylib to the plugins folder of your bundle. Next you need to change each path in the main executable. You can find out the dependencies and their expected path of the executable using otool -L. For each dependency that needs changing use install_name_tool again with the argument -change.
-
-install_name_tool -change “/usr/lib/lib.dylib” “@executable_path/../Plugins/lib.dylib” applicationname
-</pre>
       
     </div>
 
@@ -549,7 +479,7 @@ install_name_tool -change “/usr/lib/lib.dylib” “@executable_path/../Plugin
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/05/12/install_name_change/" data-id="ckhhbad1s000a98my43jsax7o" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/05/12/install_name_change/" data-id="ckhmph3hz000ah4y24znafux7" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -592,36 +522,18 @@ install_name_tool -change “/usr/lib/lib.dylib” “@executable_path/../Plugin
         <p>怎么在没越狱的iPhone手机上安装插件，怎么在没越狱的iPhone手机上安装（WeChat）微信抢红包插件，手机没越狱也能抢红包了，App dylib inject</p>
 <p>需要准备：<br>没越狱的iPhone手机一部<br>越狱的iPhone手机一部（用于解密App）<br>苹果开发证书一个</p>
 <p>1,使用dumpdecrypted得到解密后的WeChat</p>
-<pre class="brush: bash; title: ; notranslate" title="">#get WeChat path
-ps aux|grep WeChat
-#dumpdecrypted
-DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib  WeChat_path
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#get WeChat path</span></span><br><span class="line">ps aux|grep WeChat</span><br><span class="line"><span class="comment">#dumpdecrypted</span></span><br><span class="line">DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib  WeChat_path</span><br></pre></td></tr></table></figure>
+
 
 <p>可得到解密后的可执行文件,最后解密后的App打包成Ｗechat-6.3.13.ipa</p>
 <p>2,编译抢红包插件wctw.dylib<br>使用<a target="_blank" rel="noopener" href="https://github.com/BishopFox/theos-jailed.git">theos-jailed</a>创建 tweak wctw<br>借用一下<a target="_blank" rel="noopener" href="https://github.com/buginux/WeChatRedEnvelop.git">WeChatRedEnvelop</a>里面的代码<br>把代码整合到新建的工程里面<br>编译后就可得到 wctw.dylib CydiaSubstrate</p>
 <p>3,Inject wctw.dylib<br>解压Ｗechat-6.3.13.ipa 得到 WeChat.app<br>复制wctw.dylib CydiaSubstrate 到 WeChat.app</p>
-<pre class="brush: bash; title: ; notranslate" title="">cd WeChat.app
-yololib WeChat wctw.dylib</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> WeChat.app</span><br><span class="line">yololib WeChat wctw.dylib```</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4,签名打包  </span><br><span class="line">用keychain 找到你的开发证书的名字</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">codesign -f -s <span class="string">&quot;iPhone Developer: XXXX (XXXX)&quot;</span>  <span class="string">&quot;WeChat.app/CydiaSubstrate&quot;</span></span><br><span class="line">codesign -f -s <span class="string">&quot;iPhone Developer: XXXX (XXXX)&quot;</span>  <span class="string">&quot;WeChat.app/wctw.dylib&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#--entitlements Entitlements.plist</span></span><br><span class="line">codesign -f -s <span class="string">&quot;iPhone Developer: XXXX (XXXX)&quot;</span>  --entitlements Entitlements.plist  <span class="string">&quot;WeChat.app&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#create ipa</span></span><br><span class="line">xcrun -sdk iphoneos PackageApplication -v <span class="string">&quot;WeChat.app&quot;</span>  -o  <span class="string">&quot;pathtosave/WeChat.ipa&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>4,签名打包<br>用keychain 找到你的开发证书的名字</p>
-<pre class="brush: bash; title: ; notranslate" title="">codesign -f -s "iPhone Developer: XXXX (XXXX)"  "WeChat.app/CydiaSubstrate"
-codesign -f -s "iPhone Developer: XXXX (XXXX)"  "WeChat.app/wctw.dylib"
-
-#--entitlements Entitlements.plist
-codesign -f -s "iPhone Developer: XXXX (XXXX)"  --entitlements Entitlements.plist  "WeChat.app"
-
-#create ipa
-xcrun -sdk iphoneos PackageApplication -v "WeChat.app"  -o  "pathtosave/WeChat.ipa"
-</pre>
 
 <p>5,使用Xcode安装<br>窗口－》设备－》选中要安装的手机－》已经安装的应用<br>点击下面的加号 选择刚才生成WeChat.ipa<br>几分钟就可以安装成功啦</p>
 <p>可能遇到的问题：<br>1,安装时提示“已经有一个相同的ID，不能替换”，因为已经是可以替换，后来苹果改不能替换了<br>2,打包成功了，安装时提示“证书不匹配”，要先你的开发证书中＊号描述文件安装到你手机中<br>3,成功安装到手机中，可是一点开就挂了，可能是dylib 的版本不匹配选成的，yololib 默认是按1.0.0加的，theos 生成的是0.0.0 在make 文件中加上版本设置就可以了</p>
-<pre class="brush: bash; title: ; notranslate" title="">LOCAL_INSTALL_PATH = /usr/lib
-#指定版本
-_THEOS_TARGET_LDFLAGS += -current_version 1.0.0
-_THEOS_TARGET_LDFLAGS += -compatibility_version 1.0.0</pre>
-
+<p><code>bash LOCAL_INSTALL_PATH = /usr/lib #指定版本 _THEOS_TARGET_LDFLAGS += -current_version 1.0.0 _THEOS_TARGET_LDFLAGS += -compatibility_version 1.0.0</code></p>
 <p>4,安装时提示有一个plugin签名不对，删除WeChat.app 目录下Plugins 文件来<br>文章中提到的工具和源码下载<br><a target="_blank" rel="noopener" href="https://github.com/hw-1/wctw.git">https://github.com/hw-1/wctw.git</a></p>
 
       
@@ -633,7 +545,7 @@ _THEOS_TARGET_LDFLAGS += -compatibility_version 1.0.0</pre>
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/03/21/%e6%80%8e%e4%b9%88%e5%9c%a8%e6%b2%a1%e8%b6%8a%e7%8b%b1%e7%9a%84iphone%e6%89%8b%e6%9c%ba%e4%b8%8a%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6%ef%bc%8c%e6%80%8e%e4%b9%88%e5%9c%a8%e6%b2%a1%e8%b6%8a%e7%8b%b1/" data-id="ckhhbad1r000798mya9q9gswk" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/03/21/%e6%80%8e%e4%b9%88%e5%9c%a8%e6%b2%a1%e8%b6%8a%e7%8b%b1%e7%9a%84iphone%e6%89%8b%e6%9c%ba%e4%b8%8a%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6%ef%bc%8c%e6%80%8e%e4%b9%88%e5%9c%a8%e6%b2%a1%e8%b6%8a%e7%8b%b1/" data-id="ckhmph3hy0009h4y2g4thhivf" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -674,7 +586,8 @@ _THEOS_TARGET_LDFLAGS += -compatibility_version 1.0.0</pre>
     <div class="article-entry" itemprop="articleBody">
       
         <p>BEGIN RSA PRIVATE KEY is PKCS#1 and is just an RSA key.<br>BEGIN PRIVATE KEY is PKCS#8 and indicates that the key type is included in the key data itself.</p>
-<pre class="brush: bash; title: ; notranslate" title="">openssl pkcs8 -topk8 -inform pem -in servername.key -outform pem -nocrypt -out servername.key.1</pre>
+<pre><code class="bash">openssl pkcs8 -topk8 -inform pem -in servername.key -outform pem -nocrypt -out servername.key.1```</code></pre>
+
       
     </div>
 
@@ -684,7 +597,7 @@ _THEOS_TARGET_LDFLAGS += -compatibility_version 1.0.0</pre>
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/03/19/convert-pkcs1-to-pkcs8/" data-id="ckhhbad1r000998mye6t143le" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/03/19/convert-pkcs1-to-pkcs8/" data-id="ckhmph3h90007h4y2ak42e0cj" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

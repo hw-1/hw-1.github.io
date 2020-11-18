@@ -105,8 +105,8 @@
       
         <h2 id="This-copy-of-the-Install-OS-X-Yosemite-application-can’t-be-verified-It-may-have-been-corrupted-or-tampered-with-during-downloading"><a href="#This-copy-of-the-Install-OS-X-Yosemite-application-can’t-be-verified-It-may-have-been-corrupted-or-tampered-with-during-downloading" class="headerlink" title="This copy of the Install OS X Yosemite application can’t be verified. It may have been corrupted or tampered with during downloading"></a>This copy of the Install OS X Yosemite application can’t be verified. It may have been corrupted or tampered with during downloading</h2><p>installation file for Yosemite has had its digital certificate expire. Which means after a certain date it will no longer work. To work around this issue you open the Date &amp; Time preferences pane, uncheck the box for &#8220;Set date &amp; time automatically&#8221; &amp; set the date back to just after the time Yosemite was initially released (October 16, 2014) then run the installer.</p>
 <p>In the installation menu, choose Utilities / Terminal and type</p>
-<pre class="brush: bash; title: ; notranslate" title="">date    1020170014 
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date    1020170014 </span><br></pre></td></tr></table></figure>
+
 
 <p>then quit Terminal and the installer works.</p>
 
@@ -119,7 +119,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/11/23/this-copy-of-the-install-os-x-yosemite-application-cant-be-verified-it-may-have-been-corrupted-or-tampered-with-during-downloading/" data-id="ckhhbad2o001v98mybwfp72e0" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/11/23/this-copy-of-the-install-os-x-yosemite-application-cant-be-verified-it-may-have-been-corrupted-or-tampered-with-during-downloading/" data-id="ckhmph3ip001vh4y27yt9huyt" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -159,32 +159,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="install-webdav-on-raspberry-pi"><a href="#install-webdav-on-raspberry-pi" class="headerlink" title="install webdav on raspberry pi"></a>install webdav on raspberry pi</h2><pre class="brush: bash; title: ; notranslate" title="">sudo apt-get  install  -y apache2 vim
-sudo a2enmod dav
-sudo a2enmod dav_fs
-sudo mkdir -p /var/www/webdav
+        <h2 id="install-webdav-on-raspberry-pi"><a href="#install-webdav-on-raspberry-pi" class="headerlink" title="install webdav on raspberry pi"></a>install webdav on raspberry pi</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get  install  -y apache2 vim</span><br><span class="line">sudo a2enmod dav</span><br><span class="line">sudo a2enmod dav_fs</span><br><span class="line">sudo mkdir -p /var/www/webdav</span><br><span class="line"></span><br><span class="line">sudo vim /etc/apache2/sites-available/000-default.conf</span><br><span class="line"></span><br><span class="line">Alias /webdav  /var/www/webdav</span><br><span class="line"></span><br><span class="line">&amp;lt;Location /webdav&amp;gt;</span><br><span class="line"> Options Indexes</span><br><span class="line"> DAV On</span><br><span class="line"> AuthType Basic</span><br><span class="line"> AuthName &amp;quot;webdav&amp;quot;</span><br><span class="line"> AuthUserFile /etc/apache2/webdav.password</span><br><span class="line"> Require valid-user</span><br><span class="line"> &amp;lt;/Location&amp;gt;</span><br><span class="line"></span><br><span class="line"> sudo htpasswd -c /etc/apache2/webdav.password pi</span><br><span class="line"> sudo chown root:www-data /etc/apache2/webdav.password</span><br><span class="line"> sudo chmod 640 /etc/apache2/webdav.password</span><br><span class="line"></span><br><span class="line"> sudo chown -R www-data:www-data  /var/www/webdav</span><br><span class="line"></span><br><span class="line">sudo systemctl restart apache2</span><br></pre></td></tr></table></figure>
 
-sudo vim /etc/apache2/sites-available/000-default.conf
-
-Alias /webdav  /var/www/webdav
-
-&lt;Location /webdav&gt;
- Options Indexes
- DAV On
- AuthType Basic
- AuthName &quot;webdav&quot;
- AuthUserFile /etc/apache2/webdav.password
- Require valid-user
- &lt;/Location&gt;
-
- sudo htpasswd -c /etc/apache2/webdav.password pi
- sudo chown root:www-data /etc/apache2/webdav.password
- sudo chmod 640 /etc/apache2/webdav.password
-
- sudo chown -R www-data:www-data  /var/www/webdav
-
-sudo systemctl restart apache2
-</pre>
       
     </div>
 
@@ -194,7 +170,7 @@ sudo systemctl restart apache2
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/11/16/install-webdav-on-raspberry-pi/" data-id="ckhhbad2n001u98my349t31m1" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/11/16/install-webdav-on-raspberry-pi/" data-id="ckhmph3io001uh4y23qes8wph" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -234,13 +210,8 @@ sudo systemctl restart apache2
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="arp-scan-usage"><a href="#arp-scan-usage" class="headerlink" title="arp-scan usage"></a>arp-scan usage</h3><pre class="brush: bash; title: ; notranslate" title="">#scan
-arp-scan --interface=eth1 -l
-#update oui
-get-oui -v
-#update iab
-get-iab -v
-</pre>
+        <h3 id="arp-scan-usage"><a href="#arp-scan-usage" class="headerlink" title="arp-scan usage"></a>arp-scan usage</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#scan</span></span><br><span class="line">arp-scan --interface=eth1 -l</span><br><span class="line"><span class="comment">#update oui</span></span><br><span class="line">get-oui -v</span><br><span class="line"><span class="comment">#update iab</span></span><br><span class="line">get-iab -v</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -250,7 +221,7 @@ get-iab -v
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/10/12/arp-scan-usage/" data-id="ckhhbad2n001t98myfam13daq" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/10/12/arp-scan-usage/" data-id="ckhmph3io001th4y2fpgn5bs2" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -301,7 +272,7 @@ get-iab -v
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/09/22/build-ios-device-fails-due-no-crt_extern/" data-id="ckhhbad2m001r98my5427emhw" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/09/22/build-ios-device-fails-due-no-crt_extern/" data-id="ckhmph3in001rh4y2hcbtftfv" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -342,30 +313,12 @@ get-iab -v
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="How-do-you-use-posix-spawn-to-replace-the-deprecated-8216-system-8217-to-launch-opendiff-in-Objective-C"><a href="#How-do-you-use-posix-spawn-to-replace-the-deprecated-8216-system-8217-to-launch-opendiff-in-Objective-C" class="headerlink" title="How do you use posix_spawn to replace the deprecated &#8216;system&#8217; to launch opendiff in Objective-C?"></a>How do you use posix_spawn to replace the deprecated &#8216;system&#8217; to launch opendiff in Objective-C?</h3><p>Using posix_spawn(), to answer your question:</p>
-<pre class="brush: bash; title: ; notranslate" title="">#include &lt;spawn.h&gt;
-extern char **environ;
-pid_t pid;
-char *argv[] = {
-    "/Applications/Xcode.app/Contents/Developer/usr/bin/opendiff",
-    "/Users/LukeSkywalker/Documents/doc1.rtf",
-    "/Users/LukeSkywalker/Documents/doc2.rtf",
-    NULL
-};
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &amp;lt;spawn.h&amp;gt;</span></span><br><span class="line">extern char **environ;</span><br><span class="line">pid_t pid;</span><br><span class="line">char *argv[] = &#123;</span><br><span class="line">    <span class="string">&quot;/Applications/Xcode.app/Contents/Developer/usr/bin/opendiff&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/Users/LukeSkywalker/Documents/doc1.rtf&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/Users/LukeSkywalker/Documents/doc2.rtf&quot;</span>,</span><br><span class="line">    NULL</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">posix_spawn(&amp;amp;pid, argv[0], NULL, NULL, argv, environ);</span><br><span class="line">waitpid(pid, NULL, 0);</span><br></pre></td></tr></table></figure>
 
-posix_spawn(&amp;pid, argv[0], NULL, NULL, argv, environ);
-waitpid(pid, NULL, 0);
-</pre>
 
 <p>Or, you could use NSTask:</p>
-<pre class="brush: bash; title: ; notranslate" title="">NSTask *task = [[NSTask alloc] init];
-task.launchPath = @"/Applications/Xcode.app/Contents/Developer/usr/bin/opendiff";
-task.arguments = [NSArray arrayWithObjects:
-                  @"/Users/LukeSkywalker/Documents/doc1.rtf",
-                  @"/Users/LukeSkywalker/Documents/doc2.rtf",
-                  nil];
-[task launch];
-[task waitUntilExit];
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NSTask *task = [[NSTask alloc] init];</span><br><span class="line">task.launchPath = @<span class="string">&quot;/Applications/Xcode.app/Contents/Developer/usr/bin/opendiff&quot;</span>;</span><br><span class="line">task.arguments = [NSArray arrayWithObjects:</span><br><span class="line">                  @<span class="string">&quot;/Users/LukeSkywalker/Documents/doc1.rtf&quot;</span>,</span><br><span class="line">                  @<span class="string">&quot;/Users/LukeSkywalker/Documents/doc2.rtf&quot;</span>,</span><br><span class="line">                  nil];</span><br><span class="line">[task launch];</span><br><span class="line">[task waitUntilExit];</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -375,7 +328,7 @@ task.arguments = [NSArray arrayWithObjects:
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/09/22/use-posix_spawn-replace-deprecated-system-launch-opendiff-objective-c/" data-id="ckhhbad2n001s98my6e8vcbd8" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/09/22/use-posix_spawn-replace-deprecated-system-launch-opendiff-objective-c/" data-id="ckhmph3io001sh4y2eh1cb7xl" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -415,9 +368,8 @@ task.arguments = [NSArray arrayWithObjects:
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="apt-get-action-via-http-proxy"><a href="#apt-get-action-via-http-proxy" class="headerlink" title="apt-get action via http proxy"></a>apt-get action via http proxy</h3><pre class="brush: bash; title: ; notranslate" title="">sudo apt-get -o Acquire::http::proxy="http://127.0.0.1:8118" update
-sudo apt-get -o Acquire::socks::proxy="socks://127.0.0.1:7070" update
-</pre>
+        <h3 id="apt-get-action-via-http-proxy"><a href="#apt-get-action-via-http-proxy" class="headerlink" title="apt-get action via http proxy"></a>apt-get action via http proxy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get -o Acquire::http::proxy=<span class="string">&quot;http://127.0.0.1:8118&quot;</span> update</span><br><span class="line">sudo apt-get -o Acquire::socks::proxy=<span class="string">&quot;socks://127.0.0.1:7070&quot;</span> update</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -427,7 +379,7 @@ sudo apt-get -o Acquire::socks::proxy="socks://127.0.0.1:7070" update
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/09/15/apt-get-action-via-http-proxy/" data-id="ckhhbad2m001q98mycp39chhn" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/09/15/apt-get-action-via-http-proxy/" data-id="ckhmph3in001qh4y2ey0327t3" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -468,12 +420,8 @@ sudo apt-get -o Acquire::socks::proxy="socks://127.0.0.1:7070" update
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="Code-Signing-Error-XXX-does-not-support-provisioning-profiles-XXX-does-not-support-provisioning-profiles-but-provisioning-profile-NO-SIGNING-has-been-manually-specified-Set-the-provisioning-profile-value-to-8220-Automatic-8221-in-the-build-settings-editor"><a href="#Code-Signing-Error-XXX-does-not-support-provisioning-profiles-XXX-does-not-support-provisioning-profiles-but-provisioning-profile-NO-SIGNING-has-been-manually-specified-Set-the-provisioning-profile-value-to-8220-Automatic-8221-in-the-build-settings-editor" class="headerlink" title="Code Signing Error: XXX does not support provisioning profiles. XXX does not support provisioning profiles, but provisioning profile NO_SIGNING/ has been manually specified. Set the provisioning profile value to &#8220;Automatic&#8221; in the build settings editor."></a>Code Signing Error: XXX does not support provisioning profiles. XXX does not support provisioning profiles, but provisioning profile NO_SIGNING/ has been manually specified. Set the provisioning profile value to &#8220;Automatic&#8221; in the build settings editor.</h3><p>add this code bottom of Podfile to solve this issuse</p>
-<pre class="brush: bash; title: ; notranslate" title="">post_install do |installer|
-    installer.pods_project.build_configurations.each do |config|
-        config.build_settings['PROVISIONING_PROFILE_SPECIFIER'] = ''
-    end
-end
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">post_install <span class="keyword">do</span> |installer|</span><br><span class="line">    installer.pods_project.build_configurations.each <span class="keyword">do</span> |config|</span><br><span class="line">        config.build_settings[<span class="string">&#x27;PROVISIONING_PROFILE_SPECIFIER&#x27;</span>] = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -483,7 +431,7 @@ end
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/09/14/code-signing-error-xxx-not-support-provisioning-profiles-xxx-not-support-provisioning-profiles-provisioning-profile-no_signing-manually-specified-set-provisioning-profi/" data-id="ckhhbad2l001p98my325fg39d" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/09/14/code-signing-error-xxx-not-support-provisioning-profiles-xxx-not-support-provisioning-profiles-provisioning-profile-no_signing-manually-specified-set-provisioning-profi/" data-id="ckhmph3in001ph4y2a2piewks" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -567,7 +515,7 @@ end
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/09/04/xcode%e5%bf%ab%e6%8d%b7%e9%94%ae/" data-id="ckhhbad2l001o98my8fthdthp" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/09/04/xcode%e5%bf%ab%e6%8d%b7%e9%94%ae/" data-id="ckhmph3im001oh4y23x3keg2d" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -607,38 +555,8 @@ end
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Printing-colorful-text-in-terminal-for-osx"><a href="#Printing-colorful-text-in-terminal-for-osx" class="headerlink" title="Printing colorful text in terminal for osx"></a>Printing colorful text in terminal for osx</h3><pre class="brush: bash; title: ; notranslate" title="">console.log('\x1b[36m%s\x1b[0m', info);  //cyan
-console.log('\x1b[33m%s\x1b[0m: ', path);  //yellow
+        <h3 id="Printing-colorful-text-in-terminal-for-osx"><a href="#Printing-colorful-text-in-terminal-for-osx" class="headerlink" title="Printing colorful text in terminal for osx"></a>Printing colorful text in terminal for osx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">console.log(<span class="string">&#x27;\x1b[36m%s\x1b[0m&#x27;</span>, info);  //cyan</span><br><span class="line">console.log(<span class="string">&#x27;\x1b[33m%s\x1b[0m: &#x27;</span>, path);  //yellow</span><br><span class="line"></span><br><span class="line">//color table1</span><br><span class="line">Reset = <span class="string">&quot;\x1b[0m&quot;</span></span><br><span class="line">Bright = <span class="string">&quot;\x1b[1m&quot;</span></span><br><span class="line">Dim = <span class="string">&quot;\x1b[2m&quot;</span></span><br><span class="line">Underscore = <span class="string">&quot;\x1b[4m&quot;</span></span><br><span class="line">Blink = <span class="string">&quot;\x1b[5m&quot;</span></span><br><span class="line">Reverse = <span class="string">&quot;\x1b[7m&quot;</span></span><br><span class="line">Hidden = <span class="string">&quot;\x1b[8m&quot;</span></span><br><span class="line"></span><br><span class="line">//fgcolor</span><br><span class="line">FgBlack = <span class="string">&quot;\x1b[30m&quot;</span></span><br><span class="line">FgRed = <span class="string">&quot;\x1b[31m&quot;</span></span><br><span class="line">FgGreen = <span class="string">&quot;\x1b[32m&quot;</span></span><br><span class="line">FgYellow = <span class="string">&quot;\x1b[33m&quot;</span></span><br><span class="line">FgBlue = <span class="string">&quot;\x1b[34m&quot;</span></span><br><span class="line">FgMagenta = <span class="string">&quot;\x1b[35m&quot;</span></span><br><span class="line">FgCyan = <span class="string">&quot;\x1b[36m&quot;</span></span><br><span class="line">FgWhite = <span class="string">&quot;\x1b[37m&quot;</span></span><br><span class="line"></span><br><span class="line">//bfcolor</span><br><span class="line">BgBlack = <span class="string">&quot;\x1b[40m&quot;</span></span><br><span class="line">BgRed = <span class="string">&quot;\x1b[41m&quot;</span></span><br><span class="line">BgGreen = <span class="string">&quot;\x1b[42m&quot;</span></span><br><span class="line">BgYellow = <span class="string">&quot;\x1b[43m&quot;</span></span><br><span class="line">BgBlue = <span class="string">&quot;\x1b[44m&quot;</span></span><br><span class="line">BgMagenta = <span class="string">&quot;\x1b[45m&quot;</span></span><br><span class="line">BgCyan = <span class="string">&quot;\x1b[46m&quot;</span></span><br><span class="line">BgWhite = <span class="string">&quot;\x1b[47m&quot;</span></span><br></pre></td></tr></table></figure>
 
-//color table1
-Reset = "\x1b[0m"
-Bright = "\x1b[1m"
-Dim = "\x1b[2m"
-Underscore = "\x1b[4m"
-Blink = "\x1b[5m"
-Reverse = "\x1b[7m"
-Hidden = "\x1b[8m"
-
-//fgcolor
-FgBlack = "\x1b[30m"
-FgRed = "\x1b[31m"
-FgGreen = "\x1b[32m"
-FgYellow = "\x1b[33m"
-FgBlue = "\x1b[34m"
-FgMagenta = "\x1b[35m"
-FgCyan = "\x1b[36m"
-FgWhite = "\x1b[37m"
-
-//bfcolor
-BgBlack = "\x1b[40m"
-BgRed = "\x1b[41m"
-BgGreen = "\x1b[42m"
-BgYellow = "\x1b[43m"
-BgBlue = "\x1b[44m"
-BgMagenta = "\x1b[45m"
-BgCyan = "\x1b[46m"
-BgWhite = "\x1b[47m"
-</pre>
       
     </div>
 
@@ -648,7 +566,7 @@ BgWhite = "\x1b[47m"
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/08/24/printing-colorful-text-in-terminal-for-osx/" data-id="ckhhbad2k001m98my4g0o5m2o" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/08/24/printing-colorful-text-in-terminal-for-osx/" data-id="ckhmph3im001nh4y2csfp8o3w" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -688,10 +606,8 @@ BgWhite = "\x1b[47m"
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="decompress-raw-zlib-data"><a href="#decompress-raw-zlib-data" class="headerlink" title="decompress raw zlib data"></a>decompress raw zlib data</h1><pre class="brush: bash; title: ; notranslate" title="">printf "\x1f\x8b\x08\x00\x00\x00\x00\x00" |cat - zlib.raw |gzip -dc
+        <h1 id="decompress-raw-zlib-data"><a href="#decompress-raw-zlib-data" class="headerlink" title="decompress raw zlib data"></a>decompress raw zlib data</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span> <span class="string">&quot;\x1f\x8b\x08\x00\x00\x00\x00\x00&quot;</span> |cat - zlib.raw |gzip -dc</span><br><span class="line"></span><br><span class="line">openssl zlib -d &amp;lt; /tmp/data</span><br></pre></td></tr></table></figure>
 
-openssl zlib -d &lt; /tmp/data
-</pre>
       
     </div>
 
@@ -701,7 +617,7 @@ openssl zlib -d &lt; /tmp/data
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/08/24/how-to-uncompress-zlib-data-in-unix/" data-id="ckhhbad2l001n98myaint6sth" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/08/24/how-to-uncompress-zlib-data-in-unix/" data-id="ckhmph3im001mh4y290cp1a1e" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

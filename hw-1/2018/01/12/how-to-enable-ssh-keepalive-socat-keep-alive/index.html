@@ -5,15 +5,15 @@
   
   <title>how to enable ssh keepalive ,socat keep alive | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="how to enable ssh keepalive ,socat keep alive# ssh enable keepalive # via config sudo vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config ... ClientAliveInterval 30 TCPKeepAlive yes ClientAliveCountMax 2 #via command opt ssh -o">
+  <meta name="description" content="how to enable ssh keepalive ,socat keep alive12345678910111213141516# ssh enable keepalive# via configsudo vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config...ClientAliveInterval 30TCPKeepAlive yesClientAliveCountMax 2#via co">
 <meta property="og:type" content="article">
 <meta property="og:title" content="how to enable ssh keepalive ,socat keep alive">
 <meta property="og:url" content="http://wirelessbox.net/2018/01/12/how-to-enable-ssh-keepalive-socat-keep-alive/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="how to enable ssh keepalive ,socat keep alive# ssh enable keepalive # via config sudo vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config ... ClientAliveInterval 30 TCPKeepAlive yes ClientAliveCountMax 2 #via command opt ssh -o">
+<meta property="og:description" content="how to enable ssh keepalive ,socat keep alive12345678910111213141516# ssh enable keepalive# via configsudo vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config...ClientAliveInterval 30TCPKeepAlive yesClientAliveCountMax 2#via co">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-01-11T19:55:55.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.510Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -105,23 +105,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="how-to-enable-ssh-keepalive-socat-keep-alive"><a href="#how-to-enable-ssh-keepalive-socat-keep-alive" class="headerlink" title="how to enable ssh keepalive ,socat keep alive"></a>how to enable ssh keepalive ,socat keep alive</h3><pre class="brush: bash; title: ; notranslate" title=""># ssh enable keepalive
-# via config
-sudo vim /etc/ssh/sshd_config
-...
-ClientAliveInterval 30
-TCPKeepAlive yes
-ClientAliveCountMax 2
-#via command opt
-ssh -o ServerAliveInterval=60 myname@myhost.com
+        <h3 id="how-to-enable-ssh-keepalive-socat-keep-alive"><a href="#how-to-enable-ssh-keepalive-socat-keep-alive" class="headerlink" title="how to enable ssh keepalive ,socat keep alive"></a>how to enable ssh keepalive ,socat keep alive</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ssh enable keepalive</span></span><br><span class="line"><span class="comment"># via config</span></span><br><span class="line">sudo vim /etc/ssh/sshd_config</span><br><span class="line">...</span><br><span class="line">ClientAliveInterval 30</span><br><span class="line">TCPKeepAlive yes</span><br><span class="line">ClientAliveCountMax 2</span><br><span class="line"><span class="comment">#via command opt</span></span><br><span class="line">ssh -o ServerAliveInterval=60 myname@myhost.com</span><br><span class="line"></span><br><span class="line"><span class="comment">#restart sshd</span></span><br><span class="line">sudo service sshd restart</span><br><span class="line"></span><br><span class="line"><span class="comment">#socat TCPKeepAlive</span></span><br><span class="line">socat TCP-LISTEN:8000,reuseaddr,fork,keepalive,keepidle=10,keepintvl=30,keepcnt=2  TCP:127.0.0.1:80</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-#restart sshd
-sudo service sshd restart
-
-#socat TCPKeepAlive
-socat TCP-LISTEN:8000,reuseaddr,fork,keepalive,keepidle=10,keepintvl=30,keepcnt=2  TCP:127.0.0.1:80
-
-</pre>
       
     </div>
 
@@ -131,7 +116,7 @@ socat TCP-LISTEN:8000,reuseaddr,fork,keepalive,keepidle=10,keepintvl=30,keepcnt=
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/01/12/how-to-enable-ssh-keepalive-socat-keep-alive/" data-id="ckhhbad2p001z98mye3zb5lqs" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/01/12/how-to-enable-ssh-keepalive-socat-keep-alive/" data-id="ckhmph3iq001yh4y2b2ii8v94" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

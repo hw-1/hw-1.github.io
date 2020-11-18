@@ -5,15 +5,15 @@
   
   <title>osx plist file format | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="osx plist file formatPlist is short for property list. It is just a filetype used by Apple to store data.it has three formatformat enum: enum {    NSPropertyListOpenStepFormat &#x3D; kCFPropertyListOpenSte">
+  <meta name="description" content="osx plist file formatPlist is short for property list. It is just a filetype used by Apple to store data.it has three formatformat enum: 12345enum &amp;#123;   NSPropertyListOpenStepFormat &#x3D; kCFPropertyLi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="osx plist file format">
 <meta property="og:url" content="http://wirelessbox.net/2018/08/03/osx-plist-file-format/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="osx plist file formatPlist is short for property list. It is just a filetype used by Apple to store data.it has three formatformat enum: enum {    NSPropertyListOpenStepFormat &#x3D; kCFPropertyListOpenSte">
+<meta property="og:description" content="osx plist file formatPlist is short for property list. It is just a filetype used by Apple to store data.it has three formatformat enum: 12345enum &amp;#123;   NSPropertyListOpenStepFormat &#x3D; kCFPropertyLi">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-08-02T23:55:12.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.199Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,64 +106,23 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="osx-plist-file-format"><a href="#osx-plist-file-format" class="headerlink" title="osx plist file format"></a>osx plist file format</h3><p>Plist is short for property list. It is just a filetype used by Apple to store data.<br>it has three format<br>format enum:</p>
-<pre class="brush: bash; title: ; notranslate" title="">enum {
-   NSPropertyListOpenStepFormat = kCFPropertyListOpenStepFormat,
-   NSPropertyListXMLFormat_v1_0 = kCFPropertyListXMLFormat_v1_0,
-   NSPropertyListBinaryFormat_v1_0 = kCFPropertyListBinaryFormat_v1_0
-}; NSPropertyListFormat;
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">enum &#123;</span><br><span class="line">   NSPropertyListOpenStepFormat = kCFPropertyListOpenStepFormat,</span><br><span class="line">   NSPropertyListXMLFormat_v1_0 = kCFPropertyListXMLFormat_v1_0,</span><br><span class="line">   NSPropertyListBinaryFormat_v1_0 = kCFPropertyListBinaryFormat_v1_0</span><br><span class="line">&#125;; NSPropertyListFormat;</span><br></pre></td></tr></table></figure>
+
 
 <p>how to convert format</p>
-<h4 id="Converting-a-plist-File-to-XML-from-Binary"><a href="#Converting-a-plist-File-to-XML-from-Binary" class="headerlink" title="Converting a plist File to XML from Binary"></a>Converting a plist File to XML from Binary</h4><pre class="brush: bash; title: ; notranslate" title="">plutil -convert xml1 ExampleBinary.plist
-</pre>
+<h4 id="Converting-a-plist-File-to-XML-from-Binary"><a href="#Converting-a-plist-File-to-XML-from-Binary" class="headerlink" title="Converting a plist File to XML from Binary"></a>Converting a plist File to XML from Binary</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plutil -convert xml1 ExampleBinary.plist</span><br></pre></td></tr></table></figure>
 
-<h4 id="Converting-a-plist-Binary-File-to-XML-Format"><a href="#Converting-a-plist-Binary-File-to-XML-Format" class="headerlink" title="Converting a plist Binary File to XML Format"></a>Converting a plist Binary File to XML Format</h4><pre class="brush: bash; title: ; notranslate" title="">plutil -convert binary1 Example.plist
-</pre>
+
+<h4 id="Converting-a-plist-Binary-File-to-XML-Format"><a href="#Converting-a-plist-Binary-File-to-XML-Format" class="headerlink" title="Converting a plist Binary File to XML Format"></a>Converting a plist Binary File to XML Format</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plutil -convert binary1 Example.plist</span><br></pre></td></tr></table></figure>
+
 
 <p>what is OpenStepFormat?<br>it is like this</p>
-<pre class="brush: bash; title: ; notranslate" title="">{
-Filter ={
-    Bundles =     (
-         test,
-         verb
-    );
-};
-}
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">Filter =&#123;</span><br><span class="line">    Bundles =     (</span><br><span class="line">         <span class="built_in">test</span>,</span><br><span class="line">         verb</span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
 <h4 id="Converting-a-plist-openstep-File-to-XML-Format"><a href="#Converting-a-plist-openstep-File-to-XML-Format" class="headerlink" title="Converting a plist openstep File to XML Format"></a>Converting a plist openstep File to XML Format</h4><p>no tool found<br>but you can use this code</p>
-<pre class="brush: bash; title: ; notranslate" title="">NSError *error;
-    NSData *data = [NSData dataWithContentsOfFile: path
-                           options: 0
-                           error: &amp;error;];
-    if (data == nil) {
-        NSLog (@&quot;error reading %@: %@&quot;, path, error);
-        return nil;
-    }
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">NSError *error;</span><br><span class="line">    NSData *data = [NSData dataWithContentsOfFile: path</span><br><span class="line">                           options: 0</span><br><span class="line">                           error: &amp;amp;error;];</span><br><span class="line">    <span class="keyword">if</span> (data == nil) &#123;</span><br><span class="line">        NSLog (@&amp;quot;error reading %@: %@&amp;quot;, path, error);</span><br><span class="line">        <span class="built_in">return</span> nil;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    NSPropertyListFormat format;</span><br><span class="line">    id plist = [NSPropertyListSerialization        propertyListWithData: data</span><br><span class="line">               options: NSPropertyListImmutable</span><br><span class="line">                     format: &amp;amp;format</span><br><span class="line">             error: &amp;amp;error];</span><br><span class="line"> <span class="keyword">if</span> (plist == nil) &#123;</span><br><span class="line">        NSLog (@&amp;quot;could not deserialize %@: %@&amp;quot;, path, error);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">        <span class="keyword">if</span> (![NSPropertyListSerialization</span><br><span class="line">             propertyList: plist</span><br><span class="line">             isValidForFormat: kCFPropertyListXMLFormat_v1_0]) &#123;</span><br><span class="line">        NSLog (@&amp;quot;can&amp;<span class="comment">#039;t save as XML&amp;quot;);</span></span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">     BOOL writeStatus = [data writeToFile: @&amp;quot;plist.txt&amp;quot;</span><br><span class="line">                             options: NSDataWritingAtomic</span><br><span class="line">                             error: &amp;amp;error;];</span><br><span class="line">    <span class="keyword">if</span> (!writeStatus) &#123;</span><br><span class="line">        NSLog (@&amp;quot;error writing to file: %@&amp;quot;, error);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-    NSPropertyListFormat format;
-    id plist = [NSPropertyListSerialization        propertyListWithData: data
-               options: NSPropertyListImmutable
-                     format: &amp;format
-             error: &amp;error];
- if (plist == nil) {
-        NSLog (@&quot;could not deserialize %@: %@&quot;, path, error);
-
-    }
-        if (![NSPropertyListSerialization
-             propertyList: plist
-             isValidForFormat: kCFPropertyListXMLFormat_v1_0]) {
-        NSLog (@&quot;can&#039;t save as XML&quot;);
-        return;
-    }
-     BOOL writeStatus = [data writeToFile: @&quot;plist.txt&quot;
-                             options: NSDataWritingAtomic
-                             error: &amp;error;];
-    if (!writeStatus) {
-        NSLog (@&quot;error writing to file: %@&quot;, error);
-        return;
-    }
-</pre>
       
     </div>
 
@@ -173,7 +132,7 @@ Filter ={
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/08/03/osx-plist-file-format/" data-id="ckhhbad2x002l98mybd8x38a2" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/08/03/osx-plist-file-format/" data-id="ckhmph3ix002lh4y243yu5y9o" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

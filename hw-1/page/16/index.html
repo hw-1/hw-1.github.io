@@ -103,10 +103,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Raspberry-Pi-ADSL拨号上网"><a href="#Raspberry-Pi-ADSL拨号上网" class="headerlink" title="Raspberry Pi ADSL拨号上网"></a>Raspberry Pi ADSL拨号上网</h3><pre class="brush: bash; title: ; notranslate" title="">sudo apt-get -y install pppoeconf
-//设置帐号密码，其它的默认
-sudo pppoeconf
-</pre>
+        <h3 id="Raspberry-Pi-ADSL拨号上网"><a href="#Raspberry-Pi-ADSL拨号上网" class="headerlink" title="Raspberry Pi ADSL拨号上网"></a>Raspberry Pi ADSL拨号上网</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get -y install pppoeconf</span><br><span class="line">//设置帐号密码，其它的默认</span><br><span class="line">sudo pppoeconf</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -116,7 +114,7 @@ sudo pppoeconf
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/03/01/raspberry-pi-adsl-%e6%8b%a8%e5%8f%b7%e4%b8%8a%e7%bd%91/" data-id="ckhhbad28001298mybxe3d7q1" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/03/01/raspberry-pi-adsl-%e6%8b%a8%e5%8f%b7%e4%b8%8a%e7%bd%91/" data-id="ckhmph3ie0013h4y2dlim2ncx" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -156,9 +154,8 @@ sudo pppoeconf
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Installing-Ice-Weasel-Firefox-Browser-on-the-Raspberry-Pi"><a href="#Installing-Ice-Weasel-Firefox-Browser-on-the-Raspberry-Pi" class="headerlink" title="Installing Ice Weasel (Firefox) Browser on the Raspberry Pi"></a>Installing Ice Weasel (Firefox) Browser on the Raspberry Pi</h3><pre class="brush: bash; title: ; notranslate" title="">sudo apt-get update
-sudo apt-get install iceweasel
-</pre>
+        <h3 id="Installing-Ice-Weasel-Firefox-Browser-on-the-Raspberry-Pi"><a href="#Installing-Ice-Weasel-Firefox-Browser-on-the-Raspberry-Pi" class="headerlink" title="Installing Ice Weasel (Firefox) Browser on the Raspberry Pi"></a>Installing Ice Weasel (Firefox) Browser on the Raspberry Pi</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install iceweasel</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -168,7 +165,7 @@ sudo apt-get install iceweasel
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/03/01/installing-ice-weasel-firefox-browser-on-the-raspberry-pi/" data-id="ckhhbad27001198my6eiwfxjy" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/03/01/installing-ice-weasel-firefox-browser-on-the-raspberry-pi/" data-id="ckhmph3id0011h4y2926a604i" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -209,25 +206,16 @@ sudo apt-get install iceweasel
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Installing-the-pg-PostgreSQL-gem-on-Mac-OS-X"><a href="#Installing-the-pg-PostgreSQL-gem-on-Mac-OS-X" class="headerlink" title="Installing the pg PostgreSQL gem on Mac OS X"></a>Installing the pg PostgreSQL gem on Mac OS X</h2><p>I&#8217;ve recently switched from using MySQL to PostgreSQL for my Ruby projects. You can connect to a PostgreSQL database from Ruby using the pg gem, but if the pg_config program isn&#8217;t in your path you&#8217;ll run into problems during installation.</p>
-<pre class="brush: bash; title: ; notranslate" title="">$ sudo gem install pg
-Building native extensions.  This could take a while...
-ERROR:  Error installing pg:
-    ERROR: Failed to build gem native extension.
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby extconf.rb install pg
-extconf.rb:1: command not found: pg_config --version
-ERROR: can't find pg_config.
-HINT: Make sure pg_config is in your PATH
-...
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gem install pg</span><br><span class="line">Building native extensions.  This could take a <span class="keyword">while</span>...</span><br><span class="line">ERROR:  Error installing pg:</span><br><span class="line">    ERROR: Failed to build gem native extension.</span><br><span class="line">/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby extconf.rb install pg</span><br><span class="line">extconf.rb:1: <span class="built_in">command</span> not found: pg_config --version</span><br><span class="line">ERROR: can<span class="string">&#x27;t find pg_config.</span></span><br><span class="line"><span class="string">HINT: Make sure pg_config is in your PATH</span></span><br><span class="line"><span class="string">...</span></span><br></pre></td></tr></table></figure>
+
 
 <p>A few minutes later I realised I&#8217;d installed my copy of PostgreSQL using the one click installer, which puts the database server in the /Library/PostgreSQL directory. This sorted it:</p>
-<pre class="brush: bash; title: ; notranslate" title="">$ PATH=$PATH:/Library/PostgreSQL/8.3/bin sudo gem install pg
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ PATH=<span class="variable">$PATH</span>:/Library/PostgreSQL/8.3/bin sudo gem install pg</span><br></pre></td></tr></table></figure>
+
 
 <p>on mojave with postgress.app</p>
-<pre class="brush: bash; title: ; notranslate" title="">gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Versions/11/bin/pg_config
-export PATH=/Applications/Postgres.app/Contents/Versions/11/bin:$PATH ;bundle install
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Versions/11/bin/pg_config</span><br><span class="line"><span class="built_in">export</span> PATH=/Applications/Postgres.app/Contents/Versions/11/bin:<span class="variable">$PATH</span> ;bundle install</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -237,7 +225,7 @@ export PATH=/Applications/Postgres.app/Contents/Versions/11/bin:$PATH ;bundle in
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/02/15/installing-the-pg-postgresql-gem-on-mac-os-x/" data-id="ckhhbad26000z98myb2i36wun" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/02/15/installing-the-pg-postgresql-gem-on-mac-os-x/" data-id="ckhmph3ic000zh4y2a4304l7c" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -277,10 +265,8 @@ export PATH=/Applications/Postgres.app/Contents/Versions/11/bin:$PATH ;bundle in
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="install-pwntools-for-macOS"><a href="#install-pwntools-for-macOS" class="headerlink" title="install pwntools for macOS"></a>install pwntools for macOS</h1><pre class="brush: bash; title: ; notranslate" title="">sudo pip install capstone
-sudo CFGLAGS="-I/opt/local/include "  LDFLAGS="-L/opt/local/lib" pip install cryptography
-sudo easy_install pwntools
-</pre>
+        <h1 id="install-pwntools-for-macOS"><a href="#install-pwntools-for-macOS" class="headerlink" title="install pwntools for macOS"></a>install pwntools for macOS</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install capstone</span><br><span class="line">sudo CFGLAGS=<span class="string">&quot;-I/opt/local/include &quot;</span>  LDFLAGS=<span class="string">&quot;-L/opt/local/lib&quot;</span> pip install cryptography</span><br><span class="line">sudo easy_install pwntools</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -290,7 +276,7 @@ sudo easy_install pwntools
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/02/08/install-pwntools-for-macos/" data-id="ckhhbad26000y98myeevv258z" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/02/08/install-pwntools-for-macos/" data-id="ckhmph3ib000yh4y20h4va0w8" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -342,7 +328,7 @@ sudo easy_install pwntools
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/02/07/ricoh-aficio-mp-c5501-windows-xp-driver/" data-id="ckhhbad25000x98my4ebofyb4" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/02/07/ricoh-aficio-mp-c5501-windows-xp-driver/" data-id="ckhmph3ib000xh4y283gwfix9" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -393,7 +379,7 @@ sudo easy_install pwntools
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/02/06/burpsuite-pro-v1-7-12%e7%a0%b4%e8%a7%a3%e7%89%88/" data-id="ckhhbad25000w98my7mal13wf" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/02/06/burpsuite-pro-v1-7-12%e7%a0%b4%e8%a7%a3%e7%89%88/" data-id="ckhmph3ia000vh4y2gglbbecx" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -434,15 +420,8 @@ sudo easy_install pwntools
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="turn-off-the-built-in-apache-on-OSX"><a href="#turn-off-the-built-in-apache-on-OSX" class="headerlink" title="turn off the built in apache on OSX"></a>turn off the built in apache on OSX</h3><p>when you install macos server<br>then httpd server will auto run at system boot<br>then 80 and 443 port will used, you can&#8217;t run othen http server<br>how to turn off or start apple httpd server command bellow</p>
-<pre class="brush: bash; title: ; notranslate" title="">//start
-sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
-sudo launchctl load -w /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/com.apple.serviceproxy.plist
-sudo launchctl load -w /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/com.apple.server.httpd.plist
-//stop
-sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist
-sudo launchctl unload -w /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/com.apple.serviceproxy.plist
-sudo launchctl unload -w /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/com.apple.server.httpd.plist
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//start</span><br><span class="line">sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist</span><br><span class="line">sudo launchctl load -w /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/com.apple.serviceproxy.plist</span><br><span class="line">sudo launchctl load -w /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/com.apple.server.httpd.plist</span><br><span class="line">//stop</span><br><span class="line">sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist</span><br><span class="line">sudo launchctl unload -w /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/com.apple.serviceproxy.plist</span><br><span class="line">sudo launchctl unload -w /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/com.apple.server.httpd.plist</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -452,7 +431,7 @@ sudo launchctl unload -w /Applications/Server.app/Contents/ServerRoot/System/Lib
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/02/04/turn-off-the-built-in-apache-on-osx/" data-id="ckhhbad25000v98my5yvh3ami" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/02/04/turn-off-the-built-in-apache-on-osx/" data-id="ckhmph3ia000wh4y20fkieoms" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -492,11 +471,11 @@ sudo launchctl unload -w /Applications/Server.app/Contents/ServerRoot/System/Lib
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="how-to-install-php-pdo-sqlie3"><a href="#how-to-install-php-pdo-sqlie3" class="headerlink" title="how to install php pdo sqlie3"></a>how to install php pdo sqlie3</h2><h4 id="search-php-sqlite-plugins-for-php"><a href="#search-php-sqlite-plugins-for-php" class="headerlink" title="search php sqlite plugins for php"></a>search php sqlite plugins for php</h4><pre class="brush: bash; title: ; notranslate" title="">apt-cache search php | grep sqlite
-</pre>
+        <h2 id="how-to-install-php-pdo-sqlie3"><a href="#how-to-install-php-pdo-sqlie3" class="headerlink" title="how to install php pdo sqlie3"></a>how to install php pdo sqlie3</h2><h4 id="search-php-sqlite-plugins-for-php"><a href="#search-php-sqlite-plugins-for-php" class="headerlink" title="search php sqlite plugins for php"></a>search php sqlite plugins for php</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-cache search php | grep sqlite</span><br></pre></td></tr></table></figure>
 
-<h4 id="install-pdo-sqlite3"><a href="#install-pdo-sqlite3" class="headerlink" title="install pdo sqlite3"></a>install pdo sqlite3</h4><pre class="brush: bash; title: ; notranslate" title="">apt install php7.0-sqlite3
-</pre>
+
+<h4 id="install-pdo-sqlite3"><a href="#install-pdo-sqlite3" class="headerlink" title="install pdo sqlite3"></a>install pdo sqlite3</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install php7.0-sqlite3</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -506,7 +485,7 @@ sudo launchctl unload -w /Applications/Server.app/Contents/ServerRoot/System/Lib
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/01/08/how-to-install-php-pdo-sqlie3/" data-id="ckhhbad24000t98my02w7goh0" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/01/08/how-to-install-php-pdo-sqlie3/" data-id="ckhmph3i9000uh4y235lp5f84" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -546,22 +525,14 @@ sudo launchctl unload -w /Applications/Server.app/Contents/ServerRoot/System/Lib
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="execute-pipe-file-on-bash"><a href="#execute-pipe-file-on-bash" class="headerlink" title="execute pipe file on bash"></a>execute pipe file on bash</h2><h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><pre class="brush: bash; title: ; notranslate" title="">python &lt;&lt; EOF
-print "hello python"
-EOF
-</pre>
+        <h2 id="execute-pipe-file-on-bash"><a href="#execute-pipe-file-on-bash" class="headerlink" title="execute pipe file on bash"></a>execute pipe file on bash</h2><h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python &amp;lt;&amp;lt; EOF</span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;hello python&quot;</span></span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
 
-<h3 id="php"><a href="#php" class="headerlink" title="php"></a>php</h3><pre class="brush: bash; title: ; notranslate" title="">php &lt;&lt; EOF
-&lt;?php
-phpinfo();
-?&gt;
-EOF
-</pre>
 
-<h3 id="ruby"><a href="#ruby" class="headerlink" title="ruby"></a>ruby</h3><pre class="brush: bash; title: ; notranslate" title="">ruby &lt;&lt; EOF
-print "hello ruby\n";
-EOF
-</pre>
+<h3 id="php"><a href="#php" class="headerlink" title="php"></a>php</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">php &amp;lt;&amp;lt; EOF</span><br><span class="line">&amp;lt;?php</span><br><span class="line">phpinfo();</span><br><span class="line">?&amp;gt;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="ruby"><a href="#ruby" class="headerlink" title="ruby"></a>ruby</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ruby &amp;lt;&amp;lt; EOF</span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;hello ruby\n&quot;</span>;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -571,7 +542,7 @@ EOF
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/12/28/execute-pipe-file-on-bash/" data-id="ckhhbad24000u98myet2ch4rl" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/12/28/execute-pipe-file-on-bash/" data-id="ckhmph3i8000th4y2bref4bn0" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -611,74 +582,52 @@ EOF
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="aria2-install"><a href="#aria2-install" class="headerlink" title="aria2 install"></a>aria2 install</h1><h3 id="osx"><a href="#osx" class="headerlink" title="osx"></a>osx</h3><pre class="brush: bash; title: ; notranslate" title="">sudo port install aria2
-</pre>
+        <h1 id="aria2-install"><a href="#aria2-install" class="headerlink" title="aria2 install"></a>aria2 install</h1><h3 id="osx"><a href="#osx" class="headerlink" title="osx"></a>osx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo port install aria2</span><br></pre></td></tr></table></figure>
 
-<h3 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h3><pre class="brush: bash; title: ; notranslate" title="">sudo apt install aria2
-</pre>
+
+<h3 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install aria2</span><br></pre></td></tr></table></figure>
+
 
 <h3 id="Aria2-basic-download"><a href="#Aria2-basic-download" class="headerlink" title="Aria2 basic download"></a>Aria2 basic download</h3><p>Same as it is with wget aria2 also offers one argument command line download. Lets try download such us:</p>
-<pre class="brush: bash; title: ; notranslate" title="">$ aria2c ftp://local1/linux-distro.iso
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c ftp://local1/linux-distro.iso</span><br></pre></td></tr></table></figure>
+
 
 <p>If disconnected, you may resume download with the same command. Aria2 keeps a log file of the download progress and will reopen it when download resume is required.</p>
 <h3 id="Download-from-more-sources"><a href="#Download-from-more-sources" class="headerlink" title="Download from more sources"></a>Download from more sources</h3><p>To speed up your download you can supply aria2 with more than one source of the same file:</p>
-<pre class="brush: bash; title: ; notranslate" title="">$ aria2c ftp://local1/linux-distro.iso http://local2/linux-distro.iso
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c ftp://local1/linux-distro.iso http://local2/linux-distro.iso</span><br></pre></td></tr></table></figure>
+
 
 <p>In this case aria2 will recognize that the file to be downloaded is same and will split the file into two parts as well as split the download to fetch from two sources and thus utilizing your download bandwidth to the maximum. In case you have provided two different files aria2 will download them both.</p>
 <h3 id="Torrent-download"><a href="#Torrent-download" class="headerlink" title="Torrent download"></a>Torrent download</h3><p>Downloading data using torrents is simple as downloading data via http or ftp. If you alredy have a torrent file which you want to use to fetch your data, simply suppy it to aria2 as a command line argument:</p>
-<pre class="brush: bash; title: ; notranslate" title="">$ aria2c linux-dist.torrent
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c linux-dist.torrent</span><br></pre></td></tr></table></figure>
+
 
 <p>With aria2 you do not even have to bother to download torrent file itself, instead simply supply torrent URL:</p>
-<pre class="brush: bash; title: ; notranslate" title="">$ aria2c http://local/linux-dist.torrent
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c http://<span class="built_in">local</span>/linux-dist.torrent</span><br></pre></td></tr></table></figure>
+
 
 <p>In this case aria2 will download the torrent file to your download directory and then start downloading data. If you do not wish aria2 to download a torrent file simplyt use &#8211;follow-torrent=mem option :</p>
-<pre class="brush: bash; title: ; notranslate" title="">$ aria2c --follow-torrent=mem http://local/linux-dist.torrent
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c --follow-torrent=mem http://<span class="built_in">local</span>/linux-dist.torrent</span><br></pre></td></tr></table></figure>
+
 
 <p>In this case the actual torrent file will be stored into a memory only, and discarded when download is finished.</p>
 <h3 id="Download-using-metalink"><a href="#Download-using-metalink" class="headerlink" title="Download using metalink"></a>Download using metalink</h3><p>Metalink is a file which contains all possible sources for data to be downloaded. Which means that instead supplying aria2 with a multiple sources we need to supply just a single metalink URL or metalink file. For example, you can download Ubuntu TLS Linux ISO using metalink:</p>
-<pre class="brush: bash; title: ; notranslate" title="">aria2c http://releases.ubuntu.com/releases/10.04/ubuntu-10.04-desktop-i386.metalink
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aria2c http://releases.ubuntu.com/releases/10.04/ubuntu-10.04-desktop-i386.metalink</span><br></pre></td></tr></table></figure>
+
 
 <h3 id="Download-via-torrent-magnet"><a href="#Download-via-torrent-magnet" class="headerlink" title="Download via torrent magnet"></a>Download via torrent magnet</h3><p>As you may have already guessed the syntax to download via torrent magnets is the same as it was in previous examples. All what needs to be done is to supply aria2 with a magnet link:</p>
-<pre class="brush: bash; title: ; notranslate" title="">aria2c magnet:?xt=urn:btih:1e99d95f1764644a86a8e99bfd80c ...
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aria2c magnet:?xt=urn:btih:1e99d95f1764644a86a8e99bfd80c ...</span><br></pre></td></tr></table></figure>
+
 
 <h3 id="Configuring-aria2"><a href="#Configuring-aria2" class="headerlink" title="Configuring aria2"></a>Configuring aria2</h3><p>If you find yourself using same aria2 options all over again, to save your time you may create a configuration file and list all aria2 options you wish to supply on the command line. To do that open or create aria2 configuration file ~/.aria2/aria2.conf andadd:</p>
-<pre class="brush: bash; title: ; notranslate" title="">enable-xml-rpc
-follow-torrent=mem
-seed-ratio=2
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enable-xml-rpc</span><br><span class="line">follow-torrent=mem</span><br><span class="line">seed-ratio=2</span><br></pre></td></tr></table></figure>
 
-<h3 id="Control-Daemon-with-aria2rpc"><a href="#Control-Daemon-with-aria2rpc" class="headerlink" title="Control Daemon with aria2rpc"></a>Control Daemon with aria2rpc</h3><pre class="brush: bash; title: ; notranslate" title="">$ cat /usr/share/doc/aria2/xmlrpc/aria2rpc.gz | gzip -d &gt; aria2rpc
-$ chmod +x aria2rpc
-$ aria2rpc addUri [URI] [options]
-[task-id]
-$ aria2rpc remove [task-id]
-$ aria2rpc --help
-</pre>
 
-<h3 id="rpc-command-example"><a href="#rpc-command-example" class="headerlink" title="rpc command example"></a>rpc command example</h3><pre class="brush: bash; title: ; notranslate" title="">aria2rpc  --secret password getGlobalStat
+<h3 id="Control-Daemon-with-aria2rpc"><a href="#Control-Daemon-with-aria2rpc" class="headerlink" title="Control Daemon with aria2rpc"></a>Control Daemon with aria2rpc</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ cat /usr/share/doc/aria2/xmlrpc/aria2rpc.gz | gzip -d &amp;gt; aria2rpc</span><br><span class="line">$ chmod +x aria2rpc</span><br><span class="line">$ aria2rpc addUri [URI] [options]</span><br><span class="line">[task-id]</span><br><span class="line">$ aria2rpc remove [task-id]</span><br><span class="line">$ aria2rpc --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
 
- aria2rpc  --secret password  tellActive
- aria2rpc  --secret password tellStopped 0 10
 
-aria2rpc --secret password addUri [URI] [options]
+<h3 id="rpc-command-example"><a href="#rpc-command-example" class="headerlink" title="rpc command example"></a>rpc command example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">aria2rpc  --secret password getGlobalStat</span><br><span class="line"></span><br><span class="line"> aria2rpc  --secret password  tellActive</span><br><span class="line"> aria2rpc  --secret password tellStopped 0 10</span><br><span class="line"></span><br><span class="line">aria2rpc --secret password addUri [URI] [options]</span><br><span class="line"></span><br><span class="line">aria2rpc --secret password addTorrent /path/to/torrent_file URI... [options]</span><br><span class="line"></span><br><span class="line">aria2rpc --secret password remove [task-id]</span><br><span class="line"></span><br><span class="line">aria2rpc  --secret password addUri  https://example.com/1.torrent</span><br><span class="line"></span><br><span class="line">aria2rpc  --secret password forceRemove 454dd0ab6e000ee8</span><br><span class="line"></span><br><span class="line">aria2rpc  --secret password tellStatus 9729697c4027bc4e</span><br></pre></td></tr></table></figure>
 
-aria2rpc --secret password addTorrent /path/to/torrent_file URI... [options]
-
-aria2rpc --secret password remove [task-id]
-
-aria2rpc  --secret password addUri  https://example.com/1.torrent
-
-aria2rpc  --secret password forceRemove 454dd0ab6e000ee8
-
-aria2rpc  --secret password tellStatus 9729697c4027bc4e
-</pre>
       
     </div>
 
@@ -688,7 +637,7 @@ aria2rpc  --secret password tellStatus 9729697c4027bc4e
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/12/28/aria2-install/" data-id="ckhhbad23000s98my6iaa6mwf" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/12/28/aria2-install/" data-id="ckhmph3i8000sh4y22sia1j38" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

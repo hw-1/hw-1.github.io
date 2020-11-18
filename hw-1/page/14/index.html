@@ -115,7 +115,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/08/15/what-is-the-differences-between-begin-rsa-private-key-and-begin-private-key/" data-id="ckhhbad2k001l98my27j8cwjk" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/08/15/what-is-the-differences-between-begin-rsa-private-key-and-begin-private-key/" data-id="ckhmph3il001lh4y25kigc15x" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -155,7 +155,7 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>问题描述：<br>第三方邮件客户端如心蓝邮件批量管理助手使用IMAP收网易邮件提示：NO Select Unsafe Login. Please contact <a href="mailto:&#107;&#x65;&#102;&#x75;&#64;&#x31;&#56;&#x38;&#x2e;&#x63;&#111;&#x6d;">&#107;&#x65;&#102;&#x75;&#64;&#x31;&#56;&#x38;&#x2e;&#x63;&#111;&#x6d;</a> for help，同时网页登录邮箱查看会收到一封标题为“网易邮箱提醒：一次被阻止的收信行为”的邮件，大致意思就是告诉你第三方邮件客户端不安全，推荐使用网页出品的客户端。而其它邮件如新浪搜狐QQ邮箱则不会有该问题。</p>
+        <p>问题描述：<br>第三方邮件客户端如心蓝邮件批量管理助手使用IMAP收网易邮件提示：NO Select Unsafe Login. Please contact <a href="mailto:&#x6b;&#x65;&#102;&#117;&#x40;&#49;&#56;&#x38;&#46;&#99;&#x6f;&#x6d;">&#x6b;&#x65;&#102;&#117;&#x40;&#49;&#56;&#x38;&#46;&#99;&#x6f;&#x6d;</a> for help，同时网页登录邮箱查看会收到一封标题为“网易邮箱提醒：一次被阻止的收信行为”的邮件，大致意思就是告诉你第三方邮件客户端不安全，推荐使用网页出品的客户端。而其它邮件如新浪搜狐QQ邮箱则不会有该问题。</p>
 <p>解决办法：<br>网民的力量是强大的，据说从2014.12.20开始，网易提供了偷偷提供了一个入口设置解决这个问题，链接地址：<a target="_blank" rel="noopener" href="http://config.mail.163.com/settings/imap/index.jsp?uid=xxxxxx@163.com">http://config.mail.163.com/settings/imap/index.jsp?uid=xxxxxx@163.com</a></p>
 <p>首先需要先登录网页邮箱，如果是126则自己替换链接中的163。按页面提示，通过手机短信验证之后，出现如下提示: 您可以继续使用当前客户端收发邮件了，请特别注意个人的电子信息安全哦。感谢您对网易邮箱的支持！就可以正常使用第三方邮件客户端的IMAP功能来收件了</p>
 
@@ -168,7 +168,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/08/09/%e6%94%b6%e9%82%ae%e4%bb%b6no-select-unsafe-login-please-contact-kefu%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95/" data-id="ckhhbad2k001k98my3bun4opi" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/08/09/%e6%94%b6%e9%82%ae%e4%bb%b6no-select-unsafe-login-please-contact-kefu%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95/" data-id="ckhmph3il001kh4y2h2sw3rvh" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -209,20 +209,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>##vim /etc/tor/torrc</p>
-<pre class="brush: bash; title: ; notranslate" title="">Log notice file /var/log/tor/notices.log
-VirtualAddrNetwork 10.192.0.0/10
-AutomapHostsSuffixes .onion,.exit
-AutomapHostsOnResolve 1
-TransPort 9040
-TransListenAddress 192.168.42.1
-DNSPort 53
-DNSListenAddress 192.168.42.1
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Log notice file /var/<span class="built_in">log</span>/tor/notices.log</span><br><span class="line">VirtualAddrNetwork 10.192.0.0/10</span><br><span class="line">AutomapHostsSuffixes .onion,.<span class="built_in">exit</span></span><br><span class="line">AutomapHostsOnResolve 1</span><br><span class="line">TransPort 9040</span><br><span class="line">TransListenAddress 192.168.42.1</span><br><span class="line">DNSPort 53</span><br><span class="line">DNSListenAddress 192.168.42.1</span><br></pre></td></tr></table></figure>
+
 
 <p>##dns tcp trans</p>
-<pre class="brush: bash; title: ; notranslate" title="">sudo iptables -t nat -A PREROUTING -i wlan0 -p udp --dport 53 -j REDIRECT --to-ports 53
-sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 9040
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo iptables -t nat -A PREROUTING -i wlan0 -p udp --dport 53 -j REDIRECT --to-ports 53</span><br><span class="line">sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 9040</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -232,7 +224,7 @@ sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/08/08/raspperberry-tor-transport/" data-id="ckhhbad2j001j98myhz8x6osq" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/08/08/raspperberry-tor-transport/" data-id="ckhmph3ik001jh4y21yej6ni3" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -272,8 +264,8 @@ sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Using-on-OS-X-8216-Symbol-not-found-cg-jpeg-resync-to-restart"><a href="#Using-on-OS-X-8216-Symbol-not-found-cg-jpeg-resync-to-restart" class="headerlink" title="Using on OS X: &#8216;Symbol not found: __cg_jpeg_resync_to_restart"></a>Using on OS X: &#8216;Symbol not found: __cg_jpeg_resync_to_restart</h3><pre class="brush: bash; title: ; notranslate" title="">DYLD_LIBRARY_PATH=/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/ cargo run
-</pre>
+        <h3 id="Using-on-OS-X-8216-Symbol-not-found-cg-jpeg-resync-to-restart"><a href="#Using-on-OS-X-8216-Symbol-not-found-cg-jpeg-resync-to-restart" class="headerlink" title="Using on OS X: &#8216;Symbol not found: __cg_jpeg_resync_to_restart"></a>Using on OS X: &#8216;Symbol not found: __cg_jpeg_resync_to_restart</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DYLD_LIBRARY_PATH=/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/ cargo run</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -283,7 +275,7 @@ sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/06/02/using-on-os-x-symbol-not-found-__cg_jpeg_resync_to_restart/" data-id="ckhhbad2i001i98myf81k4bf1" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/06/02/using-on-os-x-symbol-not-found-__cg_jpeg_resync_to_restart/" data-id="ckhmph3ik001ih4y23zvlgw7i" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -324,17 +316,8 @@ sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 
     <div class="article-entry" itemprop="articleBody">
       
         <p>#performSelector may cause a leak because its selector is unknown<br>#How to get rid of the &#8216;undeclared selector&#8217; warning</p>
-<pre class="brush: bash; title: ; notranslate" title="">//performSelector may cause a leak because its selector is unknown
-//#pragma clang diagnostic push
-//#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-//... your code here ...
-//#pragma clang diagnostic pop
-//How to get rid of the 'undeclared selector' warning
-//#pragma clang diagnostic push
-//#pragma clang diagnostic ignored "-Wundeclared-selector"
-//... your code here ...
-//#pragma clang diagnostic pop
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//performSelector may cause a leak because its selector is unknown</span><br><span class="line">//<span class="comment">#pragma clang diagnostic push</span></span><br><span class="line">//<span class="comment">#pragma clang diagnostic ignored &quot;-Warc-performSelector-leaks&quot;</span></span><br><span class="line">//... your code here ...</span><br><span class="line">//<span class="comment">#pragma clang diagnostic pop</span></span><br><span class="line">//How to get rid of the <span class="string">&#x27;undeclared selector&#x27;</span> warning</span><br><span class="line">//<span class="comment">#pragma clang diagnostic push</span></span><br><span class="line">//<span class="comment">#pragma clang diagnostic ignored &quot;-Wundeclared-selector&quot;</span></span><br><span class="line">//... your code here ...</span><br><span class="line">//<span class="comment">#pragma clang diagnostic pop</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -344,7 +327,7 @@ sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/05/29/performselector-may-cause-a-leak-because-its-selector-is-unknown/" data-id="ckhhbad2i001h98my4kd0dx9v" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/05/29/performselector-may-cause-a-leak-because-its-selector-is-unknown/" data-id="ckhmph3ij001gh4y26ifi2ups" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -384,34 +367,8 @@ sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="build-http-protal-git-server-for-xampp-on-osx"><a href="#build-http-protal-git-server-for-xampp-on-osx" class="headerlink" title="build http protal git server for xampp on osx"></a>build http protal git server for xampp on osx</h1><pre class="brush: bash; title: ; notranslate" title="">1,intsall xampp
-2,add &#039;git.conf&#039; to httpd.conf
-//git.conf
-&lt;VirtualHost *:80&gt;
-    SetEnv GIT_PROJECT_ROOT /home/leo/git/   #git目录
-    SetEnv GIT_HTTP_EXPORT_ALL
-    ScriptAlias / /usr/libexec/git-core/git-http-backend/ #将/上的请求转发给git
-    &lt;Location &quot;/&quot;&gt;
-        DAV on           #开启dav扩展
-        Order allow,deny
-        Allow from all
-        AuthType Basic   #开启密码验证
-        AuthName &quot;Git&quot;
-        AuthUserFile /path/to/apache/conf/vhost/git.passwd
-        Require valid-user
-    &lt;/Location&gt;
-&lt;/VirtualHost&gt;
-3,create user and password for http access
-/path/to/apache/bin/htpasswd -c git.passwd leo
-4,create a simple git repo
-    mkdir -p /home/leo/git/leo_git_test
-    cd /home/leo/git/leo_git_test
-    git init --bare
-    git update-server-info
-5,restart apache in xampp
-6, test git
- git clone http://local/path/leo_git_test
-</pre>
+        <h1 id="build-http-protal-git-server-for-xampp-on-osx"><a href="#build-http-protal-git-server-for-xampp-on-osx" class="headerlink" title="build http protal git server for xampp on osx"></a>build http protal git server for xampp on osx</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">1,intsall xampp</span><br><span class="line">2,add &amp;<span class="comment">#039;git.conf&amp;#039; to httpd.conf</span></span><br><span class="line">//git.conf</span><br><span class="line">&amp;lt;VirtualHost *:80&amp;gt;</span><br><span class="line">    SetEnv GIT_PROJECT_ROOT /home/leo/git/   <span class="comment">#git目录</span></span><br><span class="line">    SetEnv GIT_HTTP_EXPORT_ALL</span><br><span class="line">    ScriptAlias / /usr/libexec/git-core/git-http-backend/ <span class="comment">#将/上的请求转发给git</span></span><br><span class="line">    &amp;lt;Location &amp;quot;/&amp;quot;&amp;gt;</span><br><span class="line">        DAV on           <span class="comment">#开启dav扩展</span></span><br><span class="line">        Order allow,deny</span><br><span class="line">        Allow from all</span><br><span class="line">        AuthType Basic   <span class="comment">#开启密码验证</span></span><br><span class="line">        AuthName &amp;quot;Git&amp;quot;</span><br><span class="line">        AuthUserFile /path/to/apache/conf/vhost/git.passwd</span><br><span class="line">        Require valid-user</span><br><span class="line">    &amp;lt;/Location&amp;gt;</span><br><span class="line">&amp;lt;/VirtualHost&amp;gt;</span><br><span class="line">3,create user and password <span class="keyword">for</span> http access</span><br><span class="line">/path/to/apache/bin/htpasswd -c git.passwd leo</span><br><span class="line">4,create a simple git repo</span><br><span class="line">    mkdir -p /home/leo/git/leo_git_test</span><br><span class="line">    <span class="built_in">cd</span> /home/leo/git/leo_git_test</span><br><span class="line">    git init --bare</span><br><span class="line">    git update-server-info</span><br><span class="line">5,restart apache <span class="keyword">in</span> xampp</span><br><span class="line">6, <span class="built_in">test</span> git</span><br><span class="line"> git <span class="built_in">clone</span> http://<span class="built_in">local</span>/path/leo_git_test</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -421,7 +378,7 @@ sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/05/27/build-http-protal-git-server-for-xampp-on-osx/" data-id="ckhhbad2g001d98mydcudbpgh" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/05/27/build-http-protal-git-server-for-xampp-on-osx/" data-id="ckhmph3ii001eh4y23s6iders" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -472,7 +429,7 @@ sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/05/27/%e5%ae%8c%e7%be%8e%e8%a7%a3%e6%b1%bacydia%e8%b7%b3%e5%87%bacould-not-open-file-varlibdpkgstatus%e7%b4%85%e5%ad%97%e9%8c%af%e8%aa%a4/" data-id="ckhhbad2h001e98my1lkrce4r" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/05/27/%e5%ae%8c%e7%be%8e%e8%a7%a3%e6%b1%bacydia%e8%b7%b3%e5%87%bacould-not-open-file-varlibdpkgstatus%e7%b4%85%e5%ad%97%e9%8c%af%e8%aa%a4/" data-id="ckhmph3ij001fh4y2hg982oav" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -512,9 +469,8 @@ sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="osx-install-awscli"><a href="#osx-install-awscli" class="headerlink" title="osx install awscli"></a>osx install awscli</h1><pre class="brush: bash; title: ; notranslate" title="">sudo easy_install pip
-sudo pip install awscli --ignore-installed six
-</pre>
+        <h1 id="osx-install-awscli"><a href="#osx-install-awscli" class="headerlink" title="osx install awscli"></a>osx install awscli</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo easy_install pip</span><br><span class="line">sudo pip install awscli --ignore-installed six</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -524,7 +480,7 @@ sudo pip install awscli --ignore-installed six
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/05/25/osx-install-awscli/" data-id="ckhhbad2h001f98my7zrc5sms" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/05/25/osx-install-awscli/" data-id="ckhmph3ii001dh4y26ssy6tfe" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -565,11 +521,8 @@ sudo pip install awscli --ignore-installed six
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Validation-Error-Invalid-Bundle-The-bundle-at-…-contains-disallowed-file-8216-Frameworks-8217"><a href="#Validation-Error-Invalid-Bundle-The-bundle-at-…-contains-disallowed-file-8216-Frameworks-8217" class="headerlink" title="Validation Error: Invalid Bundle. The bundle at … contains disallowed file &#8216;Frameworks&#8217;"></a>Validation Error: Invalid Bundle. The bundle at … contains disallowed file &#8216;Frameworks&#8217;</h1><p>Ask</p>
-<pre class="brush: bash; title: ; notranslate" title="">cd "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/"
-if [[ -d "Frameworks" ]]; then 
-    rm -fr Frameworks
-fi
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="variable">$&#123;CONFIGURATION_BUILD_DIR&#125;</span>/<span class="variable">$&#123;UNLOCALIZED_RESOURCES_FOLDER_PATH&#125;</span>/&quot;</span></span><br><span class="line"><span class="keyword">if</span> [[ -d <span class="string">&quot;Frameworks&quot;</span> ]]; <span class="keyword">then</span> </span><br><span class="line">    rm -fr Frameworks</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -579,7 +532,7 @@ fi
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/05/18/validation-error-invalid-bundle-the-bundle-at-contains-disallowed-file-frameworks-ask/" data-id="ckhhbad2i001g98my9krlga6y" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/05/18/validation-error-invalid-bundle-the-bundle-at-contains-disallowed-file-frameworks-ask/" data-id="ckhmph3ii001ch4y22wcde0ws" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -619,26 +572,8 @@ fi
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="dumpdecrypted-dylib"><a href="#dumpdecrypted-dylib" class="headerlink" title="dumpdecrypted.dylib"></a>dumpdecrypted.dylib</h3><pre class="brush: bash; title: ; notranslate" title="">iPod:~ root# DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib /var/mobile/Applications/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Scan.app/Scan
-mach-o decryption dumper
-//
-DISCLAIMER: This tool is only meant for security research purposes, not for application crackers.
-//
-[+] Found encrypted data at address 00002000 of length 1826816 bytes - type 1.
-[+] Opening /private/var/mobile/Applications/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Scan.app/Scan for reading.
-[+] Reading header
-[+] Detecting header type
-[+] Executable is a FAT image - searching for right architecture
-[+] Correct arch is at offset 2408224 in the file
-[+] Opening Scan.decrypted for writing.
-[-] Failed opening. Most probably a sandbox issue. Trying something different.
-[+] Opening /private/var/mobile/Applications/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/tmp/Scan.decrypted for writing.
-[+] Copying the not encrypted start of the file
-[+] Dumping the decrypted data into the file
-[+] Copying the not encrypted remainder of the file
-[+] Closing original file
-[+] Closing dump file
-</pre>
+        <h3 id="dumpdecrypted-dylib"><a href="#dumpdecrypted-dylib" class="headerlink" title="dumpdecrypted.dylib"></a>dumpdecrypted.dylib</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">iPod:~ root<span class="comment"># DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib /var/mobile/Applications/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Scan.app/Scan</span></span><br><span class="line">mach-o decryption dumper</span><br><span class="line">//</span><br><span class="line">DISCLAIMER: This tool is only meant <span class="keyword">for</span> security research purposes, not <span class="keyword">for</span> application crackers.</span><br><span class="line">//</span><br><span class="line">[+] Found encrypted data at address 00002000 of length 1826816 bytes - <span class="built_in">type</span> 1.</span><br><span class="line">[+] Opening /private/var/mobile/Applications/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Scan.app/Scan <span class="keyword">for</span> reading.</span><br><span class="line">[+] Reading header</span><br><span class="line">[+] Detecting header <span class="built_in">type</span></span><br><span class="line">[+] Executable is a FAT image - searching <span class="keyword">for</span> right architecture</span><br><span class="line">[+] Correct arch is at offset 2408224 <span class="keyword">in</span> the file</span><br><span class="line">[+] Opening Scan.decrypted <span class="keyword">for</span> writing.</span><br><span class="line">[-] Failed opening. Most probably a sandbox issue. Trying something different.</span><br><span class="line">[+] Opening /private/var/mobile/Applications/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/tmp/Scan.decrypted <span class="keyword">for</span> writing.</span><br><span class="line">[+] Copying the not encrypted start of the file</span><br><span class="line">[+] Dumping the decrypted data into the file</span><br><span class="line">[+] Copying the not encrypted remainder of the file</span><br><span class="line">[+] Closing original file</span><br><span class="line">[+] Closing dump file</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -648,7 +583,7 @@ DISCLAIMER: This tool is only meant for security research purposes, not for appl
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/05/16/dumpdecrypted-dylib/" data-id="ckhhbad2f001c98mydl7yeaxt" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/05/16/dumpdecrypted-dylib/" data-id="ckhmph3ih001bh4y24n9d9a1m" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

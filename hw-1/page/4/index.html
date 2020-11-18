@@ -104,41 +104,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>swift Localizable strings</p>
-<pre class="brush: bash; title: ; notranslate" title="">#fastlane 
-AppleLocale
-FASTLANE_SNAPSHOT
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#fastlane </span></span><br><span class="line">AppleLocale</span><br><span class="line">FASTLANE_SNAPSHOT</span><br><span class="line"></span><br><span class="line"><span class="comment">#get current language code</span></span><br><span class="line">Locale.current.languageCode</span><br><span class="line"></span><br><span class="line"><span class="comment">#swift</span></span><br><span class="line">NSLocalizedString(&amp;quot;Enter the file pssword&amp;quot;, comment: &amp;quot;&amp;quot;)</span><br><span class="line"><span class="comment">#objc</span></span><br><span class="line">NSLocalizedString(@&amp;quot;Close&amp;quot;, nil)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">extension String &#123;</span><br><span class="line">    var localized: String &#123;</span><br><span class="line">        <span class="built_in">return</span> NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: &amp;quot;&amp;quot;, comment: &amp;quot;&amp;quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tempfile=$(mktemp -t 1234)</span><br><span class="line">find . \( -name &amp;quot;*.swift&amp;quot; ! -path &amp;quot;./Carthage/*&amp;quot; ! -path &amp;quot;./Pods/*&amp;quot;  ! -name String+ext.swift \)| <span class="keyword">while</span> <span class="built_in">read</span> var</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">   genstrings &amp;quot;<span class="variable">$var</span>&amp;quot;</span><br><span class="line">   [ -e Localizable.strings ] &amp;amp;&amp;amp; cat Localizable.strings &amp;gt;&amp;gt;  <span class="variable">$tempfile</span> &amp;amp;&amp;amp; rm -rf Localizable.strings</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">cp <span class="variable">$tempfile</span> Localizable.strings</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Use your XCode &amp;quot;Find and Replace&amp;quot; option based on the regular expression. As <span class="keyword">for</span> the given example (<span class="keyword">if</span> you have no comments) the regular expression will be:</span><br><span class="line"></span><br><span class="line">NSLocalizedString\((.*)\, comment:\ \&amp;quot;(.*)\&amp;quot;\)</span><br><span class="line">and replace it with</span><br><span class="line"><span class="variable">$1</span>.localized</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-#get current language code
-Locale.current.languageCode
-
-#swift
-NSLocalizedString(&quot;Enter the file pssword&quot;, comment: &quot;&quot;)
-#objc
-NSLocalizedString(@&quot;Close&quot;, nil)
-
-
-extension String {
-    var localized: String {
-        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: &quot;&quot;, comment: &quot;&quot;)
-    }
-}
-
-tempfile=$(mktemp -t 1234)
-find . \( -name &quot;*.swift&quot; ! -path &quot;./Carthage/*&quot; ! -path &quot;./Pods/*&quot;  ! -name String+ext.swift \)| while read var
-do
-   genstrings &quot;$var&quot;
-   [ -e Localizable.strings ] &amp;&amp; cat Localizable.strings &gt;&gt;  $tempfile &amp;&amp; rm -rf Localizable.strings
-done
-cp $tempfile Localizable.strings
-
-
-Use your XCode &quot;Find and Replace&quot; option based on the regular expression. As for the given example (if you have no comments) the regular expression will be:
-
-NSLocalizedString\((.*)\, comment:\ \&quot;(.*)\&quot;\)
-and replace it with
-$1.localized
-
-</pre>
       
     </div>
 
@@ -148,7 +115,7 @@ $1.localized
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/12/19/swift-localizable-strings/" data-id="ckhhbad3i004d98my60gi1vh9" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/12/19/swift-localizable-strings/" data-id="ckhmph3ji004ch4y2c1tm4oob" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -201,7 +168,7 @@ $1.localized
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/12/17/swift-build-time-optimizations/" data-id="ckhhbad3h004c98my5yokbfwl" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/12/17/swift-build-time-optimizations/" data-id="ckhmph3ji004eh4y2d8n59f2h" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -242,48 +209,8 @@ $1.localized
     <div class="article-entry" itemprop="articleBody">
       
         <p>codesign error : Unable to obtain valid process handle , Trust evaluate failure</p>
-<pre class="brush: bash; title: ; notranslate" title="">Dec 14 10:34:39 iPhone1000 assertiond[62] &lt;Notice&gt;: Submitted job with label: UIKitApplication:com.yeelion.kwplayer[0xa651][62]
-Dec 14 10:34:39 iPhone1000 sharingd[57] &lt;Notice&gt;: SystemUI changed: 0x10 -&gt; 0x0
-Dec 14 10:34:39 iPhone1000 dasd(DuetActivitySchedulerDaemon)[137] &lt;Notice&gt;: Trigger: &lt;private&gt; is now [&lt;private&gt;]
-Dec 14 10:34:39 iPhone1000 dasd(DuetActivitySchedulerDaemon)[137] &lt;Notice&gt;: Foreground app changed\M-b\M^@\M^T-&lt;private&gt;
-Dec 14 10:34:39 iPhone1000 kernel(IOTextEncryptionFamily)[0] &lt;Notice&gt;: AppleFairplayTextCrypterSession::fairplayOpen() failed, error -42022
-Dec 14 10:34:39 iPhone1000 assertiond(BaseBoard)[62] &lt;Error&gt;: Unable to get short BSD proc info for 487: No such process
-Dec 14 10:34:39 iPhone1000 assertiond(BaseBoard)[62] &lt;Error&gt;: Unable to get proc info for 487: No such process
-Dec 14 10:34:39 iPhone1000 assertiond[62] &lt;Error&gt;: Process handle (com.yeelion.kwplayer, &lt;BSProcessHandle: 0x10312e040; com.yeelion.kwplayer:487; valid: NO&gt;) is invalid. Returning error {
-    BKSProcessExitReason = 0;
-    BKSProcessJobLabel = &quot;UIKitApplication:com.yeelion.kwplayer[0xa651][62]&quot;;
-    NSLocalizedFailureReason = &quot;Unable to obtain valid process handle&quot;;
-}
-Dec 14 10:34:39 iPhone1000 assertiond[62] &lt;Notice&gt;: Deleted job with label: UIKitApplication:com.yeelion.kwplayer[0xa651][62]
-Dec 14 10:34:39 iPhone1000 SpringBoard(AssertionServices)[52] &lt;Error&gt;: [com.yeelion.kwplayer] Bootstrap failed with error: &lt;NSError: 0x281ef6430; domain: BKSProcessErrorDomain; code: 1 (bootstrap-failed); reason: &quot;Unable to obtain valid process handle&quot;&gt;
-Dec 14 10:34:39 iPhone1000 SpringBoard(FrontBoard)[52] &lt;Error&gt;: Bootstrapping failed for &lt;FBApplicationProcess: 0x1494dc500; com.yeelion.kwplayer; pid: -1&gt; with error: Error Domain=BKSProcessErrorDomain Code=1 &quot;Unable to bootstrap process with bundleID com.yeelion.kwplayer&quot; UserInfo={NSLocalizedFailureReason=Unable to obtain valid process handle, BKSProcessExitReason=0, BSErrorCodeDescription=bootstrap-failed, BKSProcessJobLabel=UIKitApplication:com.yeelion.kwplayer[0xa651][62], NSLocalizedDescription=Unable to bootstrap process with bundleID com.yeelion.kwplayer}
-Dec 14 10:34:39 iPhone1000 SpringBoard(FrontBoard)[52] &lt;Notice&gt;: Adding: &lt;FBApplicationProcess: 0x1494dc500; com.yeelion.kwplayer; pid: -1&gt;
-Dec 14 10:34:39 iPhone1000 SpringBoard(FrontBoard)[52] &lt;Notice&gt;: &lt;FBApplicationProcess: 0x1494dc500; com.yeelion.kwplayer; pid: -1&gt; exited.
-Dec 14 10:34:39 iPhone1000 SpringBoard(FrontBoard)[52] &lt;Notice&gt;: Removing: &lt;FBApplicationProcess: 0x1494dc500; com.yeelion.kwplayer; pid: -1&gt;
-Dec 14 10:34:39 iPhone1000 SpringBoard[52] &lt;Notice&gt;: Application process state changed for com.yeelion.kwplayer: &lt;SBApplicationProcessState: 0x2811b7cc0; pid: -1; taskState: Not Running; visibility: Unknown&gt;
-Dec 14 10:34:39 iPhone1000 SpringBoard[52] &lt;Notice&gt;: Process exited: &lt;FBApplicationProcess: 0x1494dc500; com.yeelion.kwplayer; pid: -1&gt; -&gt; &lt;FBApplicationProcessExitContext: 0x281e94de0; exitReason: (none); terminationReason: (none)&gt; {
-    stateAtExit = &lt;FBProcessState: 0x2810991c0; pid: -1; taskState: Unknown; visibility: Unknown&gt;;
-}
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">Dec 14 10:34:39 iPhone1000 assertiond[62] &amp;lt;Notice&amp;gt;: Submitted job with label: UIKitApplication:com.yeelion.kwplayer[0xa651][62]</span><br><span class="line">Dec 14 10:34:39 iPhone1000 sharingd[57] &amp;lt;Notice&amp;gt;: SystemUI changed: 0x10 -&amp;gt; 0x0</span><br><span class="line">Dec 14 10:34:39 iPhone1000 dasd(DuetActivitySchedulerDaemon)[137] &amp;lt;Notice&amp;gt;: Trigger: &amp;lt;private&amp;gt; is now [&amp;lt;private&amp;gt;]</span><br><span class="line">Dec 14 10:34:39 iPhone1000 dasd(DuetActivitySchedulerDaemon)[137] &amp;lt;Notice&amp;gt;: Foreground app changed\M-b\M^@\M^T-&amp;lt;private&amp;gt;</span><br><span class="line">Dec 14 10:34:39 iPhone1000 kernel(IOTextEncryptionFamily)[0] &amp;lt;Notice&amp;gt;: AppleFairplayTextCrypterSession::fairplayOpen() failed, error -42022</span><br><span class="line">Dec 14 10:34:39 iPhone1000 assertiond(BaseBoard)[62] &amp;lt;Error&amp;gt;: Unable to get short BSD proc info <span class="keyword">for</span> 487: No such process</span><br><span class="line">Dec 14 10:34:39 iPhone1000 assertiond(BaseBoard)[62] &amp;lt;Error&amp;gt;: Unable to get proc info <span class="keyword">for</span> 487: No such process</span><br><span class="line">Dec 14 10:34:39 iPhone1000 assertiond[62] &amp;lt;Error&amp;gt;: Process handle (com.yeelion.kwplayer, &amp;lt;BSProcessHandle: 0x10312e040; com.yeelion.kwplayer:487; valid: NO&amp;gt;) is invalid. Returning error &#123;</span><br><span class="line">    BKSProcessExitReason = 0;</span><br><span class="line">    BKSProcessJobLabel = &amp;quot;UIKitApplication:com.yeelion.kwplayer[0xa651][62]&amp;quot;;</span><br><span class="line">    NSLocalizedFailureReason = &amp;quot;Unable to obtain valid process handle&amp;quot;;</span><br><span class="line">&#125;</span><br><span class="line">Dec 14 10:34:39 iPhone1000 assertiond[62] &amp;lt;Notice&amp;gt;: Deleted job with label: UIKitApplication:com.yeelion.kwplayer[0xa651][62]</span><br><span class="line">Dec 14 10:34:39 iPhone1000 SpringBoard(AssertionServices)[52] &amp;lt;Error&amp;gt;: [com.yeelion.kwplayer] Bootstrap failed with error: &amp;lt;NSError: 0x281ef6430; domain: BKSProcessErrorDomain; code: 1 (bootstrap-failed); reason: &amp;quot;Unable to obtain valid process handle&amp;quot;&amp;gt;</span><br><span class="line">Dec 14 10:34:39 iPhone1000 SpringBoard(FrontBoard)[52] &amp;lt;Error&amp;gt;: Bootstrapping failed <span class="keyword">for</span> &amp;lt;FBApplicationProcess: 0x1494dc500; com.yeelion.kwplayer; pid: -1&amp;gt; with error: Error Domain=BKSProcessErrorDomain Code=1 &amp;quot;Unable to bootstrap process with bundleID com.yeelion.kwplayer&amp;quot; UserInfo=&#123;NSLocalizedFailureReason=Unable to obtain valid process handle, BKSProcessExitReason=0, BSErrorCodeDescription=bootstrap-failed, BKSProcessJobLabel=UIKitApplication:com.yeelion.kwplayer[0xa651][62], NSLocalizedDescription=Unable to bootstrap process with bundleID com.yeelion.kwplayer&#125;</span><br><span class="line">Dec 14 10:34:39 iPhone1000 SpringBoard(FrontBoard)[52] &amp;lt;Notice&amp;gt;: Adding: &amp;lt;FBApplicationProcess: 0x1494dc500; com.yeelion.kwplayer; pid: -1&amp;gt;</span><br><span class="line">Dec 14 10:34:39 iPhone1000 SpringBoard(FrontBoard)[52] &amp;lt;Notice&amp;gt;: &amp;lt;FBApplicationProcess: 0x1494dc500; com.yeelion.kwplayer; pid: -1&amp;gt; exited.</span><br><span class="line">Dec 14 10:34:39 iPhone1000 SpringBoard(FrontBoard)[52] &amp;lt;Notice&amp;gt;: Removing: &amp;lt;FBApplicationProcess: 0x1494dc500; com.yeelion.kwplayer; pid: -1&amp;gt;</span><br><span class="line">Dec 14 10:34:39 iPhone1000 SpringBoard[52] &amp;lt;Notice&amp;gt;: Application process state changed <span class="keyword">for</span> com.yeelion.kwplayer: &amp;lt;SBApplicationProcessState: 0x2811b7cc0; pid: -1; taskState: Not Running; visibility: Unknown&amp;gt;</span><br><span class="line">Dec 14 10:34:39 iPhone1000 SpringBoard[52] &amp;lt;Notice&amp;gt;: Process exited: &amp;lt;FBApplicationProcess: 0x1494dc500; com.yeelion.kwplayer; pid: -1&amp;gt; -&amp;gt; &amp;lt;FBApplicationProcessExitContext: 0x281e94de0; exitReason: (none); terminationReason: (none)&amp;gt; &#123;</span><br><span class="line">    stateAtExit = &amp;lt;FBProcessState: 0x2810991c0; pid: -1; taskState: Unknown; visibility: Unknown&amp;gt;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">SpringBoard(Security)[52] &amp;lt;Notice&amp;gt;: Trust evaluate failure: [leaf IssuerCommonName LeafMarkerOid SubjectCommonName]</span><br><span class="line"></span><br><span class="line">SBDeviceApplicationSceneEntity</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Ad-hoc distribution is notoriously tricky. If you<span class="string">&#x27;ve missed one thing, the whole chain fails. Here&#x27;</span>s what I can think of, off the top of my head, based on the fact that it works <span class="keyword">for</span> at least one of your users:</span><br><span class="line"></span><br><span class="line">1,Are you certain that the mobile ad-hoc provisioning certificate contains the UDID <span class="keyword">for</span> the users who are seeing it fail?</span><br><span class="line">2,Do those users have an old certificate on their device? (i.e. did you delete the existing certificate before installing a new one? Settings-&amp;gt;General-&amp;gt;Profiles)</span><br><span class="line">3,Are you certain the code-signed .app bundle contains the UDIDs <span class="keyword">for</span> those users, inside the file named embedded.mobileprovisioning? (Under the ProvisionedDevices key)</span><br><span class="line">4,Is the mobile provisioning certificate expired?</span><br><span class="line">5,Is your developer code-sign certificate expired?</span><br><span class="line">6,Was the application package renamed by the user before installation?</span><br><span class="line">7,Did you try doing a clean before doing the distribution build?</span><br><span class="line">8,Is your app is unencyypted before resign?</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-
-
-SpringBoard(Security)[52] &lt;Notice&gt;: Trust evaluate failure: [leaf IssuerCommonName LeafMarkerOid SubjectCommonName]
-
-SBDeviceApplicationSceneEntity
-
-
-Ad-hoc distribution is notoriously tricky. If you've missed one thing, the whole chain fails. Here's what I can think of, off the top of my head, based on the fact that it works for at least one of your users:
-
-1,Are you certain that the mobile ad-hoc provisioning certificate contains the UDID for the users who are seeing it fail?
-2,Do those users have an old certificate on their device? (i.e. did you delete the existing certificate before installing a new one? Settings-&gt;General-&gt;Profiles)
-3,Are you certain the code-signed .app bundle contains the UDIDs for those users, inside the file named embedded.mobileprovisioning? (Under the ProvisionedDevices key)
-4,Is the mobile provisioning certificate expired?
-5,Is your developer code-sign certificate expired?
-6,Was the application package renamed by the user before installation?
-7,Did you try doing a clean before doing the distribution build?
-8,Is your app is unencyypted before resign?
-
-</pre>
       
     </div>
 
@@ -293,7 +220,7 @@ Ad-hoc distribution is notoriously tricky. If you've missed one thing, the whole
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/12/17/codesign-error-unable-to-obtain-valid-process-handle-trust-evaluate-failure/" data-id="ckhhbad3h004b98mydwt4e7ez" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/12/17/codesign-error-unable-to-obtain-valid-process-handle-trust-evaluate-failure/" data-id="ckhmph3jh004bh4y26o71a5tb" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -334,14 +261,8 @@ Ad-hoc distribution is notoriously tricky. If you've missed one thing, the whole
     <div class="article-entry" itemprop="articleBody">
       
         <p>Chrome.app use http proxy</p>
-<pre class="brush: bash; title: ; notranslate" title="">/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome  --enable-user-scripts --args --proxy-server=127.0.0.1:8118 
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome  --enable-user-scripts --args --proxy-server=127.0.0.1:8118 </span><br><span class="line"></span><br><span class="line">COMMAND_STRING=&amp;quot;/opt/<span class="built_in">local</span>/bin/daemon --<span class="built_in">command</span>=\&amp;quot;/bin/bash <span class="variable">$&#123;REPOROOT&#125;</span>/chromeLoader/chromeLoader.sh\&amp;quot;&amp;quot;</span><br><span class="line"><span class="comment"># setup chromeLoader</span></span><br><span class="line">/usr/libexec/PlistBuddy -c &amp;quot;<span class="built_in">set</span>  :actions:0:action:ActionParameters:COMMAND_STRING  \&amp;quot;<span class="variable">$&#123;COMMAND_STRING&#125;</span>\&amp;quot;&amp;quot; <span class="variable">$&#123;REPOROOT&#125;</span>/chromeLoader/ChromeLoader.app/Contents/document.wflow</span><br><span class="line">sudo cp -r <span class="variable">$&#123;REPOROOT&#125;</span>/chromeLoader/ChromeLoader.app /Applications</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-COMMAND_STRING=&quot;/opt/local/bin/daemon --command=\&quot;/bin/bash ${REPOROOT}/chromeLoader/chromeLoader.sh\&quot;&quot;
-# setup chromeLoader
-/usr/libexec/PlistBuddy -c &quot;set  :actions:0:action:ActionParameters:COMMAND_STRING  \&quot;${COMMAND_STRING}\&quot;&quot; ${REPOROOT}/chromeLoader/ChromeLoader.app/Contents/document.wflow
-sudo cp -r ${REPOROOT}/chromeLoader/ChromeLoader.app /Applications
-
-</pre>
       
     </div>
 
@@ -351,7 +272,7 @@ sudo cp -r ${REPOROOT}/chromeLoader/ChromeLoader.app /Applications
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/12/11/gogole-chrome-app-use-http-proxy/" data-id="ckhhbad3g004798my5mtvffuq" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/12/11/gogole-chrome-app-use-http-proxy/" data-id="ckhmph3jg0048h4y2ffkk1c8y" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -392,13 +313,8 @@ sudo cp -r ${REPOROOT}/chromeLoader/ChromeLoader.app /Applications
     <div class="article-entry" itemprop="articleBody">
       
         <p>debugserver 使用</p>
-<pre class="brush: bash; title: ; notranslate" title="">/Library/Developer/CommandLineTools/Library/PrivateFrameworks/LLDB.framework/Versions/A/Resources/debugserver
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/Library/Developer/CommandLineTools/Library/PrivateFrameworks/LLDB.framework/Versions/A/Resources/debugserver</span><br><span class="line"></span><br><span class="line">debugserver  -x backboard  ::ffff:192.168.1.111:6666 /var/containers/Bundle/Application/B7770CE1-9339-4FBA-81FF-671900CE537E/netdisk_iPhone.app/netdisk_iPhone</span><br><span class="line"></span><br><span class="line">lldb</span><br><span class="line">process connect connect://192.168.1.108:6666</span><br></pre></td></tr></table></figure>
 
-debugserver  -x backboard  ::ffff:192.168.1.111:6666 /var/containers/Bundle/Application/B7770CE1-9339-4FBA-81FF-671900CE537E/netdisk_iPhone.app/netdisk_iPhone
-
-lldb
-process connect connect://192.168.1.108:6666
-</pre>
       
     </div>
 
@@ -408,7 +324,7 @@ process connect connect://192.168.1.108:6666
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/12/11/debugserver-%e4%bd%bf%e7%94%a8/" data-id="ckhhbad3f004698mydj3o1xd0" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/12/11/debugserver-%e4%bd%bf%e7%94%a8/" data-id="ckhmph3jg0046h4y2e4aw6qo4" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -449,13 +365,8 @@ process connect connect://192.168.1.108:6666
     <div class="article-entry" itemprop="articleBody">
       
         <p>mac osx diskutil operate</p>
-<pre class="brush: bash; title: ; notranslate" title="">sudo mkdir /Volumes/fat
-sudo mount -w -t msdos /dev/disk3s2 /Volumes/fat
-sudo diskutil unmount /Volumes/fat
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /Volumes/fat</span><br><span class="line">sudo mount -w -t msdos /dev/disk3s2 /Volumes/fat</span><br><span class="line">sudo diskutil unmount /Volumes/fat</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> -n  &amp;quot;password&amp;quot; | hdiutil attach  -stdinpass /Volumes/disk1s1.dmg</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-echo -n  &quot;password&quot; | hdiutil attach  -stdinpass /Volumes/disk1s1.dmg
-
-</pre>
       
     </div>
 
@@ -465,7 +376,7 @@ echo -n  &quot;password&quot; | hdiutil attach  -stdinpass /Volumes/disk1s1.dmg
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/12/11/mac-osx-diskutil-operate/" data-id="ckhhbad3g004898my6bjpasir" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/12/11/mac-osx-diskutil-operate/" data-id="ckhmph3jg0047h4y2cg5j7pud" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -506,16 +417,8 @@ echo -n  &quot;password&quot; | hdiutil attach  -stdinpass /Volumes/disk1s1.dmg
     <div class="article-entry" itemprop="articleBody">
       
         <p>mysql common add remove dump import operate</p>
-<pre class="brush: bash; title: ; notranslate" title="">echo &quot;drop table test;&quot; |mysql   --login-path=local -D   'test'
- mysql   --login-path=local -D 'test' &lt; test.sql
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> &amp;quot;drop table <span class="built_in">test</span>;&amp;quot; |mysql   --login-path=<span class="built_in">local</span> -D   <span class="string">&#x27;test&#x27;</span></span><br><span class="line"> mysql   --login-path=<span class="built_in">local</span> -D <span class="string">&#x27;test&#x27;</span> &amp;lt; test.sql</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> &amp;quot;select User , Host from mysql.user;&amp;quot;|mysql --login-path=<span class="built_in">local</span></span><br><span class="line"><span class="built_in">echo</span> &amp;quot;drop database <span class="keyword">if</span> exists \`<span class="built_in">test</span>\`;drop user <span class="keyword">if</span> exists \`<span class="built_in">test</span>\`@localhost;&amp;quot;|mysql --login-path=<span class="built_in">local</span></span><br><span class="line"><span class="built_in">echo</span> &amp;quot;drop database <span class="keyword">if</span> exists \`<span class="built_in">test</span>\`;create database \`<span class="built_in">test</span>\`;&amp;quot;| mysql --login-path=<span class="built_in">local</span></span><br><span class="line"><span class="built_in">echo</span> &amp;quot;drop user <span class="keyword">if</span> exists \`<span class="built_in">test</span>\`@localhost;grant usage on *.* to \`<span class="built_in">test</span>\`@localhost identified by <span class="string">&#x27;123456&#x27;</span>;&amp;quot;| mysql --login-path=<span class="built_in">local</span></span><br><span class="line"><span class="built_in">echo</span> &amp;quot;grant all privileges on \`<span class="built_in">test</span>\`.* to \`<span class="built_in">test</span>\`@localhost ;&amp;quot;| mysql --login-path=<span class="built_in">local</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-echo &quot;select User , Host from mysql.user;&quot;|mysql --login-path=local
-echo &quot;drop database if exists \`test\`;drop user if exists \`test\`@localhost;&quot;|mysql --login-path=local
-echo &quot;drop database if exists \`test\`;create database \`test\`;&quot;| mysql --login-path=local
-echo &quot;drop user if exists \`test\`@localhost;grant usage on *.* to \`test\`@localhost identified by '123456';&quot;| mysql --login-path=local
-echo &quot;grant all privileges on \`test\`.* to \`test\`@localhost ;&quot;| mysql --login-path=local
-
-</pre>
       
     </div>
 
@@ -525,7 +428,7 @@ echo &quot;grant all privileges on \`test\`.* to \`test\`@localhost ;&quot;| mys
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/12/11/mysql-common-add-remove-dump-import-operate/" data-id="ckhhbad3h004a98my14a8d2mb" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/12/11/mysql-common-add-remove-dump-import-operate/" data-id="ckhmph3jh0049h4y27diw1cw8" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -566,21 +469,8 @@ echo &quot;grant all privileges on \`test\`.* to \`test\`@localhost ;&quot;| mys
     <div class="article-entry" itemprop="articleBody">
       
         <p>Property List File operate</p>
-<pre class="brush: bash; title: ; notranslate" title=""># add remove modify
-/usr/libexec/PlistBuddy -c &quot;clear dict&quot; -c &quot;add :CFBundleURLTypes array&quot; -c &quot;add :CFBundleURLTypes:0 dict&quot; -c &quot;add :CFBundleURLTypes:0:CFBundleURLName string 'urlname-1'&quot; -c &quot;add :CFBundleURLTypes:0:CFBundleURLSchemes array&quot; -c &quot;add :CFBundleURLTypes:0:CFBundleURLSchemes:0 string urlscheme-1&quot;  Info.plist
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add remove modify</span></span><br><span class="line">/usr/libexec/PlistBuddy -c &amp;quot;clear dict&amp;quot; -c &amp;quot;add :CFBundleURLTypes array&amp;quot; -c &amp;quot;add :CFBundleURLTypes:0 dict&amp;quot; -c &amp;quot;add :CFBundleURLTypes:0:CFBundleURLName string <span class="string">&#x27;urlname-1&#x27;</span>&amp;quot; -c &amp;quot;add :CFBundleURLTypes:0:CFBundleURLSchemes array&amp;quot; -c &amp;quot;add :CFBundleURLTypes:0:CFBundleURLSchemes:0 string urlscheme-1&amp;quot;  Info.plist</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plutil -remove yj   ./yiji.plist</span><br><span class="line">plutil -insert yj -xml &amp;quot;&amp;lt;dict/&amp;gt;&amp;quot; ./yiji.plist</span><br><span class="line">plutil -remove jx   ./yiji.plist</span><br><span class="line">plutil -insert jx -xml &amp;quot;&amp;lt;dict/&amp;gt;&amp;quot; ./yiji.plist</span><br><span class="line"> plutil -insert  &amp;quot;yj.jx<span class="variable">$&#123;jx&#125;</span>_gz<span class="variable">$&#123;gz&#125;</span>&amp;quot;  -string &amp;quot;<span class="variable">$&#123;yi&#125;</span>,<span class="variable">$&#123;ji&#125;</span>&amp;quot;   ./yiji.plist</span><br><span class="line"></span><br><span class="line"><span class="comment">#to json</span></span><br><span class="line">plutil -convert json input.plist -r -o output.json</span><br><span class="line">plutil -convert json input.json -o output.plist</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-
-plutil -remove yj   ./yiji.plist
-plutil -insert yj -xml &quot;&lt;dict/&gt;&quot; ./yiji.plist
-plutil -remove jx   ./yiji.plist
-plutil -insert jx -xml &quot;&lt;dict/&gt;&quot; ./yiji.plist
- plutil -insert  &quot;yj.jx${jx}_gz${gz}&quot;  -string &quot;${yi},${ji}&quot;   ./yiji.plist
-
-#to json
-plutil -convert json input.plist -r -o output.json
-plutil -convert json input.json -o output.plist
-
-</pre>
       
     </div>
 
@@ -590,7 +480,7 @@ plutil -convert json input.json -o output.plist
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/12/11/property-list-file-operate/" data-id="ckhhbad3g004998my62fr48dr" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/12/11/property-list-file-operate/" data-id="ckhmph3jh004ah4y25qyj996r" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -631,13 +521,12 @@ plutil -convert json input.json -o output.plist
     <div class="article-entry" itemprop="articleBody">
       
         <p>This copy of the Install macOS Mojave.app application is damaged, and can‘t be used to install macOS.<br>1,find out the install APP file date</p>
-<pre class="brush: bash; title: ; notranslate" title="">ls -l  &quot;Install macOS Mojave.app&quot;
-drwxr-xr-x  11 t  staff  374 Sep 21  2018 Contents
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls -l  &amp;quot;Install macOS Mojave.app&amp;quot;</span><br><span class="line">drwxr-xr-x  11 t  staff  374 Sep 21  2018 Contents</span><br></pre></td></tr></table></figure>
+
 
 <p>2,set system date</p>
-<pre class="brush: bash; title: ; notranslate" title="">date 0921000018
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date 0921000018</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -647,7 +536,7 @@ drwxr-xr-x  11 t  staff  374 Sep 21  2018 Contents
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/12/04/this-copy-of-the-install-macos-mojave-app-application-is-damaged-and-cant-be-used-to-install-macos/" data-id="ckhhbad3f004598my07x16qcd" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/12/04/this-copy-of-the-install-macos-mojave-app-application-is-damaged-and-cant-be-used-to-install-macos/" data-id="ckhmph3jg0045h4y24mb81kv7" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -697,7 +586,7 @@ drwxr-xr-x  11 t  staff  374 Sep 21  2018 Contents
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/11/23/png-of-colorsync-profile-srgb-iec61966-2-1-%e5%9b%be%e7%89%87%e5%8f%98%e5%bd%a2/" data-id="ckhhbad3f004498myag9y1skq" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/11/23/png-of-colorsync-profile-srgb-iec61966-2-1-%e5%9b%be%e7%89%87%e5%8f%98%e5%bd%a2/" data-id="ckhmph3jf0044h4y20bkfht7q" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

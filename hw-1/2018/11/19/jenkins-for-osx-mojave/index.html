@@ -5,15 +5,15 @@
   
   <title>jenkins for osx mojave | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###jenkins for osx mojave 设置开机自启动：sudo launchctl load -w &#x2F;Library&#x2F;LaunchDaemons&#x2F;org.jenkins-ci.plist 取消开机自启动：sudo launchctl unload -w &#x2F;Library&#x2F;LaunchDaemons&#x2F;org.jenkins-ci.plist 手动启动：Java -jar jenkins">
+  <meta name="description" content="###jenkins for osx mojave 12345678910设置开机自启动：sudo launchctl load -w &#x2F;Library&#x2F;LaunchDaemons&#x2F;org.jenkins-ci.plist取消开机自启动：sudo launchctl unload -w &#x2F;Library&#x2F;LaunchDaemons&#x2F;org.jenkins-ci.plist手动启动：Java -ja">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jenkins for osx mojave">
 <meta property="og:url" content="http://wirelessbox.net/2018/11/19/jenkins-for-osx-mojave/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="###jenkins for osx mojave 设置开机自启动：sudo launchctl load -w &#x2F;Library&#x2F;LaunchDaemons&#x2F;org.jenkins-ci.plist 取消开机自启动：sudo launchctl unload -w &#x2F;Library&#x2F;LaunchDaemons&#x2F;org.jenkins-ci.plist 手动启动：Java -jar jenkins">
+<meta property="og:description" content="###jenkins for osx mojave 12345678910设置开机自启动：sudo launchctl load -w &#x2F;Library&#x2F;LaunchDaemons&#x2F;org.jenkins-ci.plist取消开机自启动：sudo launchctl unload -w &#x2F;Library&#x2F;LaunchDaemons&#x2F;org.jenkins-ci.plist手动启动：Java -ja">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-11-18T17:25:47.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.382Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,17 +106,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>###jenkins for osx mojave</p>
-<pre class="brush: bash; title: ; notranslate" title="">设置开机自启动：sudo launchctl load -w /Library/LaunchDaemons/org.jenkins-ci.plist
-取消开机自启动：sudo launchctl unload -w /Library/LaunchDaemons/org.jenkins-ci.plist
-手动启动：Java -jar jenkins.war
-后台启动(默认端口)：nohup java -jar jenkins.war &amp;
-后台启动(指定端口)：nohup java -jar jenkins.war -httpPort=88 &amp;
-后台启动(HTTPS)：nohup java -jar jenkins.war -httpsPort=88 &amp;
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">设置开机自启动：sudo launchctl load -w /Library/LaunchDaemons/org.jenkins-ci.plist</span><br><span class="line">取消开机自启动：sudo launchctl unload -w /Library/LaunchDaemons/org.jenkins-ci.plist</span><br><span class="line">手动启动：Java -jar jenkins.war</span><br><span class="line">后台启动(默认端口)：nohup java -jar jenkins.war &amp;amp;</span><br><span class="line">后台启动(指定端口)：nohup java -jar jenkins.war -httpPort=88 &amp;amp;</span><br><span class="line">后台启动(HTTPS)：nohup java -jar jenkins.war -httpsPort=88 &amp;amp;</span><br><span class="line"></span><br><span class="line">jenkins 错误java.lang.OutOfMemoryError: Java heap space</span><br><span class="line">sudo defaults <span class="built_in">read</span> /Library/Preferences/org.jenkins-ci heapSize</span><br><span class="line">sudo defaults write /Library/Preferences/org.jenkins-ci heapSize 1024m</span><br></pre></td></tr></table></figure>
 
-jenkins 错误java.lang.OutOfMemoryError: Java heap space
-sudo defaults read /Library/Preferences/org.jenkins-ci heapSize
-sudo defaults write /Library/Preferences/org.jenkins-ci heapSize 1024m
-</pre>
       
     </div>
 
@@ -126,7 +117,7 @@ sudo defaults write /Library/Preferences/org.jenkins-ci heapSize 1024m
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/11/19/jenkins-for-osx-mojave/" data-id="ckhhbad31003098myhv8jd4zj" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/11/19/jenkins-for-osx-mojave/" data-id="ckhmph3j20032h4y2dhj00879" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

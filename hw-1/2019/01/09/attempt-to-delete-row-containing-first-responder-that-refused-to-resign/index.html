@@ -13,7 +13,7 @@
 <meta property="og:description" content="Attempt to delete row containing first responder that refused to resignI&amp;#8217;ve never seen that message before, but my immediate impulse if I were to see it would be: try delayed performance. Even s">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-01-08T19:29:40.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.357Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,11 +106,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="Attempt-to-delete-row-containing-first-responder-that-refused-to-resign"><a href="#Attempt-to-delete-row-containing-first-responder-that-refused-to-resign" class="headerlink" title="Attempt to delete row containing first responder that refused to resign"></a>Attempt to delete row containing first responder that refused to resign</h3><p>I&#8217;ve never seen that message before, but my immediate impulse if I were to see it would be: try delayed performance. Even something as simple as this might be an interesting experiment:</p>
-<pre class="brush: bash; title: ; notranslate" title="">dispatch_async(dispatch_get_main_queue(), ^{
-    [self.tableView deleteRowsAtIndexPaths:@[indexPath] 
-     withRowAnimation:UITableViewRowAnimationAutomatic];
-});
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">    [self.tableView deleteRowsAtIndexPaths:@[indexPath] </span><br><span class="line">     withRowAnimation:UITableViewRowAnimationAutomatic];</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -120,7 +117,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/01/09/attempt-to-delete-row-containing-first-responder-that-refused-to-resign/" data-id="ckhhbad34003998my2zecc6im" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/01/09/attempt-to-delete-row-containing-first-responder-that-refused-to-resign/" data-id="ckhmph3j50039h4y2hr9jh2ah" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

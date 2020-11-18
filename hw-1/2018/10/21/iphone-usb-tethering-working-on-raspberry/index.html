@@ -5,15 +5,15 @@
   
   <title>iPhone USB tethering working on raspberry | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="iPhone USB tethering working on raspberrysudo apt -o Acquire::http::proxy&#x3D;&quot;http:&#x2F;&#x2F;172.24.1.149:8118&quot;  install -y ipheth-utils libimobiledevice-dev libimobiledevice-utils usbmuxd ipheth-utils gvfs idev">
+  <meta name="description" content="iPhone USB tethering working on raspberry123456789sudo apt -o Acquire::http::proxy&#x3D;&quot;http:&#x2F;&#x2F;172.24.1.149:8118&quot;  install -y ipheth-utils libimobiledevice-dev libimobiledevice-utils usbmuxd iph">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iPhone USB tethering working on raspberry">
 <meta property="og:url" content="http://wirelessbox.net/2018/10/21/iphone-usb-tethering-working-on-raspberry/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="iPhone USB tethering working on raspberrysudo apt -o Acquire::http::proxy&#x3D;&quot;http:&#x2F;&#x2F;172.24.1.149:8118&quot;  install -y ipheth-utils libimobiledevice-dev libimobiledevice-utils usbmuxd ipheth-utils gvfs idev">
+<meta property="og:description" content="iPhone USB tethering working on raspberry123456789sudo apt -o Acquire::http::proxy&#x3D;&quot;http:&#x2F;&#x2F;172.24.1.149:8118&quot;  install -y ipheth-utils libimobiledevice-dev libimobiledevice-utils usbmuxd iph">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-10-21T07:03:14.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.145Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -105,16 +105,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="iPhone-USB-tethering-working-on-raspberry"><a href="#iPhone-USB-tethering-working-on-raspberry" class="headerlink" title="iPhone USB tethering working on raspberry"></a>iPhone USB tethering working on raspberry</h3><pre class="brush: bash; title: ; notranslate" title="">sudo apt -o Acquire::http::proxy="http://172.24.1.149:8118"  install -y ipheth-utils libimobiledevice-dev libimobiledevice-utils usbmuxd ipheth-utils gvfs
-idevicepair unpair &amp;&amp; idevicepair pair
+        <h3 id="iPhone-USB-tethering-working-on-raspberry"><a href="#iPhone-USB-tethering-working-on-raspberry" class="headerlink" title="iPhone USB tethering working on raspberry"></a>iPhone USB tethering working on raspberry</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt -o Acquire::http::proxy=<span class="string">&quot;http://172.24.1.149:8118&quot;</span>  install -y ipheth-utils libimobiledevice-dev libimobiledevice-utils usbmuxd ipheth-utils gvfs</span><br><span class="line">idevicepair unpair &amp;amp;&amp;amp; idevicepair pair</span><br><span class="line"></span><br><span class="line">ifuse</span><br><span class="line">sudo apt-get install gvfs ipheth-utils</span><br><span class="line">sudo apt-get install libimobiledevice-utils gvfs-backends gvfs-bin gvfs-fuse</span><br><span class="line">sudo apt-get install ifuse</span><br><span class="line"></span><br><span class="line">ifconfig -s</span><br></pre></td></tr></table></figure>
 
-ifuse
-sudo apt-get install gvfs ipheth-utils
-sudo apt-get install libimobiledevice-utils gvfs-backends gvfs-bin gvfs-fuse
-sudo apt-get install ifuse
-
-ifconfig -s
-</pre>
       
     </div>
 
@@ -124,7 +116,7 @@ ifconfig -s
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/10/21/iphone-usb-tethering-working-on-raspberry/" data-id="ckhhbad30002v98mydoyf1uqe" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/10/21/iphone-usb-tethering-working-on-raspberry/" data-id="ckhmph3j0002vh4y20wfa0vk5" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

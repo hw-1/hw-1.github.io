@@ -5,15 +5,15 @@
   
   <title>How do you use posix_spawn to replace the deprecated &amp;#8216;system&amp;#8217; to launch opendiff in Objective-C? | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="How do you use posix_spawn to replace the deprecated &amp;#8216;system&amp;#8217; to launch opendiff in Objective-C?Using posix_spawn(), to answer your question: #include &lt;spawn.h&gt; extern char **environ">
+  <meta name="description" content="How do you use posix_spawn to replace the deprecated &amp;#8216;system&amp;#8217; to launch opendiff in Objective-C?Using posix_spawn(), to answer your question: 123456789101112#include &amp;lt;spawn.h&amp;gt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How do you use posix_spawn to replace the deprecated &amp;#8216;system&amp;#8217; to launch opendiff in Objective-C?">
 <meta property="og:url" content="http://wirelessbox.net/2017/09/22/use-posix_spawn-replace-deprecated-system-launch-opendiff-objective-c/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="How do you use posix_spawn to replace the deprecated &amp;#8216;system&amp;#8217; to launch opendiff in Objective-C?Using posix_spawn(), to answer your question: #include &lt;spawn.h&gt; extern char **environ">
+<meta property="og:description" content="How do you use posix_spawn to replace the deprecated &amp;#8216;system&amp;#8217; to launch opendiff in Objective-C?Using posix_spawn(), to answer your question: 123456789101112#include &amp;lt;spawn.h&amp;gt">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-09-21T22:22:32.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.218Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,30 +106,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="How-do-you-use-posix-spawn-to-replace-the-deprecated-8216-system-8217-to-launch-opendiff-in-Objective-C"><a href="#How-do-you-use-posix-spawn-to-replace-the-deprecated-8216-system-8217-to-launch-opendiff-in-Objective-C" class="headerlink" title="How do you use posix_spawn to replace the deprecated &#8216;system&#8217; to launch opendiff in Objective-C?"></a>How do you use posix_spawn to replace the deprecated &#8216;system&#8217; to launch opendiff in Objective-C?</h3><p>Using posix_spawn(), to answer your question:</p>
-<pre class="brush: bash; title: ; notranslate" title="">#include &lt;spawn.h&gt;
-extern char **environ;
-pid_t pid;
-char *argv[] = {
-    "/Applications/Xcode.app/Contents/Developer/usr/bin/opendiff",
-    "/Users/LukeSkywalker/Documents/doc1.rtf",
-    "/Users/LukeSkywalker/Documents/doc2.rtf",
-    NULL
-};
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &amp;lt;spawn.h&amp;gt;</span></span><br><span class="line">extern char **environ;</span><br><span class="line">pid_t pid;</span><br><span class="line">char *argv[] = &#123;</span><br><span class="line">    <span class="string">&quot;/Applications/Xcode.app/Contents/Developer/usr/bin/opendiff&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/Users/LukeSkywalker/Documents/doc1.rtf&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/Users/LukeSkywalker/Documents/doc2.rtf&quot;</span>,</span><br><span class="line">    NULL</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">posix_spawn(&amp;amp;pid, argv[0], NULL, NULL, argv, environ);</span><br><span class="line">waitpid(pid, NULL, 0);</span><br></pre></td></tr></table></figure>
 
-posix_spawn(&amp;pid, argv[0], NULL, NULL, argv, environ);
-waitpid(pid, NULL, 0);
-</pre>
 
 <p>Or, you could use NSTask:</p>
-<pre class="brush: bash; title: ; notranslate" title="">NSTask *task = [[NSTask alloc] init];
-task.launchPath = @"/Applications/Xcode.app/Contents/Developer/usr/bin/opendiff";
-task.arguments = [NSArray arrayWithObjects:
-                  @"/Users/LukeSkywalker/Documents/doc1.rtf",
-                  @"/Users/LukeSkywalker/Documents/doc2.rtf",
-                  nil];
-[task launch];
-[task waitUntilExit];
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NSTask *task = [[NSTask alloc] init];</span><br><span class="line">task.launchPath = @<span class="string">&quot;/Applications/Xcode.app/Contents/Developer/usr/bin/opendiff&quot;</span>;</span><br><span class="line">task.arguments = [NSArray arrayWithObjects:</span><br><span class="line">                  @<span class="string">&quot;/Users/LukeSkywalker/Documents/doc1.rtf&quot;</span>,</span><br><span class="line">                  @<span class="string">&quot;/Users/LukeSkywalker/Documents/doc2.rtf&quot;</span>,</span><br><span class="line">                  nil];</span><br><span class="line">[task launch];</span><br><span class="line">[task waitUntilExit];</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -139,7 +121,7 @@ task.arguments = [NSArray arrayWithObjects:
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/09/22/use-posix_spawn-replace-deprecated-system-launch-opendiff-objective-c/" data-id="ckhhbad2n001s98my6e8vcbd8" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/09/22/use-posix_spawn-replace-deprecated-system-launch-opendiff-objective-c/" data-id="ckhmph3io001sh4y2eh1cb7xl" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

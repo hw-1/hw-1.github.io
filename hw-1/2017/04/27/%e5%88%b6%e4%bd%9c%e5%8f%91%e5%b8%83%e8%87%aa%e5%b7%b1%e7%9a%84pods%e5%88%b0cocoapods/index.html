@@ -5,15 +5,15 @@
   
   <title>制作发布自己的pods到CocoaPods | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="制作发布自己的pods到CocoaPods准备先升级下CocoaPods版本,0.33以上就行了。 pod --version看一下版本。   然后注册一下trunkpod trunk register your email &#39;your name&#39;   your email就是填的邮箱了，your name就写你的名字。 完了话会收到一份邮件，验证一下。然后就可以使用 pod trunk me">
+  <meta name="description" content="制作发布自己的pods到CocoaPods准备先升级下CocoaPods版本,0.33以上就行了。 1pod --version看一下版本。   然后注册一下trunk1pod trunk register your email &amp;#x27;your name&amp;#x27;   your email就是填的邮箱了，your name就写你的名字。 完了话会收到一份邮件，验证一下。然后就可以使用 1p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="制作发布自己的pods到CocoaPods">
 <meta property="og:url" content="http://wirelessbox.net/2017/04/27/%e5%88%b6%e4%bd%9c%e5%8f%91%e5%b8%83%e8%87%aa%e5%b7%b1%e7%9a%84pods%e5%88%b0cocoapods/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="制作发布自己的pods到CocoaPods准备先升级下CocoaPods版本,0.33以上就行了。 pod --version看一下版本。   然后注册一下trunkpod trunk register your email &#39;your name&#39;   your email就是填的邮箱了，your name就写你的名字。 完了话会收到一份邮件，验证一下。然后就可以使用 pod trunk me">
+<meta property="og:description" content="制作发布自己的pods到CocoaPods准备先升级下CocoaPods版本,0.33以上就行了。 1pod --version看一下版本。   然后注册一下trunk1pod trunk register your email &amp;#x27;your name&amp;#x27;   your email就是填的邮箱了，your name就写你的名字。 完了话会收到一份邮件，验证一下。然后就可以使用 1p">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-04-26T17:14:15.000Z">
-<meta property="article:modified_time" content="2020-11-14T06:30:12.000Z">
+<meta property="article:modified_time" content="2020-11-18T01:05:10.269Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -106,28 +106,28 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="制作发布自己的pods到CocoaPods"><a href="#制作发布自己的pods到CocoaPods" class="headerlink" title="制作发布自己的pods到CocoaPods"></a>制作发布自己的pods到CocoaPods</h1><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>先升级下CocoaPods版本,0.33以上就行了。</p>
-<pre class="brush: bash; title: ; notranslate" title="">pod --version看一下版本。
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod --version看一下版本。</span><br></pre></td></tr></table></figure>
 
-<h3 id="然后注册一下trunk"><a href="#然后注册一下trunk" class="headerlink" title="然后注册一下trunk"></a>然后注册一下trunk</h3><pre class="brush: bash; title: ; notranslate" title="">pod trunk register your email 'your name'
-</pre>
+
+<h3 id="然后注册一下trunk"><a href="#然后注册一下trunk" class="headerlink" title="然后注册一下trunk"></a>然后注册一下trunk</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod trunk register your email <span class="string">&#x27;your name&#x27;</span></span><br></pre></td></tr></table></figure>
+
 
 <p>your email就是填的邮箱了，your name就写你的名字。</p>
 <h3 id="完了话会收到一份邮件，验证一下。"><a href="#完了话会收到一份邮件，验证一下。" class="headerlink" title="完了话会收到一份邮件，验证一下。"></a>完了话会收到一份邮件，验证一下。</h3><p>然后就可以使用</p>
-<pre class="brush: bash; title: ; notranslate" title="">pod trunk me    
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod trunk me    </span><br></pre></td></tr></table></figure>
+
 
 <p>来查看一下你自己的注册信息了。</p>
 <p>如果你已经制作完了pod并创建修改完了podspec，就直接往下看了，如果没有就在网上搜一下。<br>提交</p>
 <p>都弄完了我们就可以push啦。</p>
-<h3 id="当然了我们先验证下podspec文件喽"><a href="#当然了我们先验证下podspec文件喽" class="headerlink" title="当然了我们先验证下podspec文件喽"></a>当然了我们先验证下podspec文件喽</h3><pre class="brush: bash; title: ; notranslate" title="">pod spec lint your.podspec
-</pre>
+<h3 id="当然了我们先验证下podspec文件喽"><a href="#当然了我们先验证下podspec文件喽" class="headerlink" title="当然了我们先验证下podspec文件喽"></a>当然了我们先验证下podspec文件喽</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod spec lint your.podspec</span><br></pre></td></tr></table></figure>
 
-<h3 id="这步要是有问题就看看报错修改喽。没问题就继续"><a href="#这步要是有问题就看看报错修改喽。没问题就继续" class="headerlink" title="这步要是有问题就看看报错修改喽。没问题就继续"></a>这步要是有问题就看看报错修改喽。没问题就继续</h3><pre class="brush: bash; title: ; notranslate" title="">pod trunk push your.podspec
-</pre>
 
-<h3 id="成功之后呢，我们看一下有没有"><a href="#成功之后呢，我们看一下有没有" class="headerlink" title="成功之后呢，我们看一下有没有"></a>成功之后呢，我们看一下有没有</h3><pre class="brush: bash; title: ; notranslate" title="">pod search yourpod
-</pre>
+<h3 id="这步要是有问题就看看报错修改喽。没问题就继续"><a href="#这步要是有问题就看看报错修改喽。没问题就继续" class="headerlink" title="这步要是有问题就看看报错修改喽。没问题就继续"></a>这步要是有问题就看看报错修改喽。没问题就继续</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod trunk push your.podspec</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="成功之后呢，我们看一下有没有"><a href="#成功之后呢，我们看一下有没有" class="headerlink" title="成功之后呢，我们看一下有没有"></a>成功之后呢，我们看一下有没有</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod search yourpod</span><br></pre></td></tr></table></figure>
+
 
 <p>就是搜下你提交的pod的名字。 我们也可以在本地~/.cocoapods的路径下看一下有没有yourpod.podspec.json这个文件。</p>
 
@@ -140,7 +140,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2017/04/27/%e5%88%b6%e4%bd%9c%e5%8f%91%e5%b8%83%e8%87%aa%e5%b7%b1%e7%9a%84pods%e5%88%b0cocoapods/" data-id="ckhhbad2e001998my7r7mgt1q" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2017/04/27/%e5%88%b6%e4%bd%9c%e5%8f%91%e5%b8%83%e8%87%aa%e5%b7%b1%e7%9a%84pods%e5%88%b0cocoapods/" data-id="ckhmph3ig0019h4y2axta3gsb" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

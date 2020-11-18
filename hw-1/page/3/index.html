@@ -104,10 +104,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>lldb swift command line</p>
-<pre class="brush: bash; title: ; notranslate" title="">expr -l Swift -- import UIKit
-expr -l Swift -- let $label = unsafeBitCast(0x7fec3a53d720, to: UILabel.self)
-expr -l Swift -- print($label.attributedText)
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">expr -l Swift -- import UIKit</span><br><span class="line">expr -l Swift -- <span class="built_in">let</span> <span class="variable">$label</span> = unsafeBitCast(0x7fec3a53d720, to: UILabel.self)</span><br><span class="line">expr -l Swift -- <span class="built_in">print</span>(<span class="variable">$label</span>.attributedText)</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -117,7 +115,7 @@ expr -l Swift -- print($label.attributedText)
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/lldb-swift-command-line/" data-id="ckhhbad3k004n98mygdpi1yzv" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/03/16/lldb-swift-command-line/" data-id="ckhmph3jl004nh4y2ag3jcasl" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -158,10 +156,8 @@ expr -l Swift -- print($label.attributedText)
     <div class="article-entry" itemprop="articleBody">
       
         <p>codesign command line</p>
-<pre class="brush: bash; title: ; notranslate" title="">codesign -s MyIdentity foo.app
-codesign --remove-signature appName
-codesign -dv --verbose=4  appName
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">codesign -s MyIdentity foo.app</span><br><span class="line">codesign --remove-signature appName</span><br><span class="line">codesign -dv --verbose=4  appName</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -171,7 +167,7 @@ codesign -dv --verbose=4  appName
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/codesign-command-line/" data-id="ckhhbad3k004k98my63a47nmk" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/03/16/codesign-command-line/" data-id="ckhmph3jk004lh4y28eucc6q0" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -212,12 +208,8 @@ codesign -dv --verbose=4  appName
     <div class="article-entry" itemprop="articleBody">
       
         <p>UnicodeDecodeError: &#8216;ascii&#8217; codec can&#8217;t decode byte 0xe5 in position 0: ordinal not in range(128)<br>AttributeError: &#8216;module&#8217; object has no attribute &#8216;setdefaultencoding&#8217;</p>
-<pre class="brush: bash; title: ; notranslate" title="">import sys
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line"></span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
-
-</pre>
       
     </div>
 
@@ -227,7 +219,7 @@ sys.setdefaultencoding('utf-8')
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/unicodedecodeerror-ascii-codec-cant-decode-byte-0xe5-in-position-0-ordinal-not-in-range128-attributeerror-module-object-has-no-attribute-setdefaultencoding/" data-id="ckhhbad3m004r98my80h7blmv" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/03/16/unicodedecodeerror-ascii-codec-cant-decode-byte-0xe5-in-position-0-ordinal-not-in-range128-attributeerror-module-object-has-no-attribute-setdefaultencoding/" data-id="ckhmph3jm004ph4y2bj6e6sfz" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -268,8 +260,8 @@ sys.setdefaultencoding('utf-8')
     <div class="article-entry" itemprop="articleBody">
       
         <p>/usr/lib/libauto.dylib: mach-o, but not built for iOS simulator</p>
-<pre class="brush: bash; title: ; notranslate" title="">sudo mkdir '/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 9.3.simruntime/Contents/Resources/RuntimeRoot/usr/lib/swift'
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir <span class="string">&#x27;/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 9.3.simruntime/Contents/Resources/RuntimeRoot/usr/lib/swift&#x27;</span></span><br></pre></td></tr></table></figure>
+
 
 <p><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/xcode/_release/_notes/xcode/_10/_2/_1/_release_notes">https://developer.apple.com/documentation/xcode\_release\_notes/xcode\_10\_2\_1\_release_notes</a></p>
 
@@ -282,7 +274,7 @@ sys.setdefaultencoding('utf-8')
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/03/16/usr-lib-libauto-dylib-mach-o-but-not-built-for-ios-simulator/" data-id="ckhhbad3m004s98myevf5eo7o" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/03/16/usr-lib-libauto-dylib-mach-o-but-not-built-for-ios-simulator/" data-id="ckhmph3jn004sh4y2drj8h0ta" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -322,18 +314,8 @@ sys.setdefaultencoding('utf-8')
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">itunes auth 
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">itunes auth </span><br><span class="line"></span><br><span class="line">key=GetValue string=FairPlayCertificate --&amp;gt; cert</span><br><span class="line">generate grappaID  grappaData</span><br><span class="line">Grappa(grappaData) --&amp;gt; afsync.rq</span><br><span class="line">cert  rq --&amp;gt;  rsbuffer</span><br><span class="line">rsbuffer GrappaID --&amp;gt;  sigBuffer (afsync.rs)</span><br><span class="line"></span><br><span class="line">/AirFair/sync/afsync.rq</span><br><span class="line">/AirFair/sync/afsync.rs</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-key=GetValue string=FairPlayCertificate --&gt; cert
-generate grappaID  grappaData
-Grappa(grappaData) --&gt; afsync.rq
-cert  rq --&gt;  rsbuffer
-rsbuffer GrappaID --&gt;  sigBuffer (afsync.rs)
-
-/AirFair/sync/afsync.rq
-/AirFair/sync/afsync.rs
-
-</pre>
       
     </div>
 
@@ -343,7 +325,7 @@ rsbuffer GrappaID --&gt;  sigBuffer (afsync.rs)
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/02/23/itunes-auth/" data-id="ckhhbad3j004h98myee76gr01" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/02/23/itunes-auth/" data-id="ckhmph3jj004hh4y2gvwj9ots" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -383,12 +365,8 @@ rsbuffer GrappaID --&gt;  sigBuffer (afsync.rs)
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">brew update
-brew uninstall --ignore-dependencies libimobiledevice
-brew uninstall --ignore-dependencies usbmuxd
-brew install --HEAD usbmuxd
-brew install --HEAD libimobiledevice
-</pre>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew uninstall --ignore-dependencies libimobiledevice</span><br><span class="line">brew uninstall --ignore-dependencies usbmuxd</span><br><span class="line">brew install --HEAD usbmuxd</span><br><span class="line">brew install --HEAD libimobiledevice</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -398,7 +376,7 @@ brew install --HEAD libimobiledevice
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/02/23/libimobiledevice-install/" data-id="ckhhbad3j004i98mybwwrh9l7" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/02/23/libimobiledevice-install/" data-id="ckhmph3jj004ih4y2h9r41ns0" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -438,15 +416,8 @@ brew install --HEAD libimobiledevice
 
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="brush: bash; title: ; notranslate" title="">./autogen.sh: line 6: libtoolize: command not found
-./autogen.sh: line 8: aclocal: command not found
-./autogen.sh: line 9: autoheader: command not found
-./autogen.sh: line 10: automake: command not found
-./autogen.sh: line 11: autoconf: command not found
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">./autogen.sh: line 6: libtoolize: <span class="built_in">command</span> not found</span><br><span class="line">./autogen.sh: line 8: aclocal: <span class="built_in">command</span> not found</span><br><span class="line">./autogen.sh: line 9: autoheader: <span class="built_in">command</span> not found</span><br><span class="line">./autogen.sh: line 10: automake: <span class="built_in">command</span> not found</span><br><span class="line">./autogen.sh: line 11: autoconf: <span class="built_in">command</span> not found</span><br><span class="line"></span><br><span class="line">brew install libtool</span><br><span class="line">brew install automake</span><br></pre></td></tr></table></figure>
 
-brew install libtool
-brew install automake
-</pre>
       
     </div>
 
@@ -456,7 +427,7 @@ brew install automake
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/02/23/libtoolize-command-not-found/" data-id="ckhhbad3j004j98mydvcghzji" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/02/23/libtoolize-command-not-found/" data-id="ckhmph3jk004jh4y26dzreynf" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -497,10 +468,8 @@ brew install automake
     <div class="article-entry" itemprop="articleBody">
       
         <p>raspberry locale: Cannot set LC_CTYPE to default locale: No such file or directory</p>
-<pre class="brush: bash; title: ; notranslate" title="">Edit /etc/locale.gen and uncomment the line with en_US.UTF-8
-sudo locale-gen en_US.UTF-8
-sudo update-locale en_US.UTF-8
-</pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Edit /etc/locale.gen and uncomment the line with en_US.UTF-8</span><br><span class="line">sudo locale-gen en_US.UTF-8</span><br><span class="line">sudo update-locale en_US.UTF-8</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -510,7 +479,7 @@ sudo update-locale en_US.UTF-8
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/01/17/raspberry-locale-cannot-set-lc_ctype-to-default-locale-no-such-file-or-directory/" data-id="ckhhbad3i004g98my6r5pdd3n" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/01/17/raspberry-locale-cannot-set-lc_ctype-to-default-locale-no-such-file-or-directory/" data-id="ckhmph3jj004gh4y241k9ay98" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -551,12 +520,8 @@ sudo update-locale en_US.UTF-8
     <div class="article-entry" itemprop="articleBody">
       
         <p>usbmux debug</p>
-<pre class="brush: bash; title: ; notranslate" title="">sudo mv /var/run/usbmuxd /var/run/usbmux_real
-sudo socat -t100  -x  -v UNIX-LISTEN:/var/run/usbmuxd,mode=777,reuseaddr,fork UNIX-CONNECT:/var/run/usbmux_real
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /var/run/usbmuxd /var/run/usbmux_real</span><br><span class="line">sudo socat -t100  -x  -v UNIX-LISTEN:/var/run/usbmuxd,mode=777,reuseaddr,fork UNIX-CONNECT:/var/run/usbmux_real</span><br><span class="line"></span><br><span class="line">sudo mv /var/run/usbmux_real /var/run/usbmuxd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-sudo mv /var/run/usbmux_real /var/run/usbmuxd
-
-</pre>
       
     </div>
 
@@ -566,7 +531,7 @@ sudo mv /var/run/usbmux_real /var/run/usbmuxd
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2020/01/06/usbmux-debug/" data-id="ckhhbad3i004f98my6prtbp8h" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/01/06/usbmux-debug/" data-id="ckhmph3ji004fh4y2hi3s4xrm" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -607,45 +572,8 @@ sudo mv /var/run/usbmux_real /var/run/usbmuxd
     <div class="article-entry" itemprop="articleBody">
       
         <p>pyenv</p>
-<pre class="brush: bash; title: ; notranslate" title="">pyenv
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">pyenv</span><br><span class="line"></span><br><span class="line">prepare</span><br><span class="line">sudo apt-get install -y git</span><br><span class="line">sudo apt-get install -y build-essential libbz2-dev libssl-dev libreadline-dev \</span><br><span class="line">                        libffi-dev libsqlite3-dev tk-dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># optional scientific package headers (for Numpy, Matplotlib, SciPy, etc.)</span></span><br><span class="line">sudo apt-get install -y libpng-dev libfreetype6-dev</span><br><span class="line"></span><br><span class="line">install</span><br><span class="line">curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash</span><br><span class="line"></span><br><span class="line">env</span><br><span class="line"><span class="built_in">export</span> PATH=&amp;quot;~/.pyenv/bin:<span class="variable">$PATH</span>&amp;quot;</span><br><span class="line"><span class="built_in">eval</span> &amp;quot;$(pyenv init -)&amp;quot;</span><br><span class="line"><span class="built_in">eval</span> &amp;quot;$(pyenv virtualenv-init -)&amp;quot;</span><br><span class="line"></span><br><span class="line">create env</span><br><span class="line">pyenv install 3.7.0</span><br><span class="line">pyenv virtualenv 3.7.0 general</span><br><span class="line">pyenv  activate  general</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#virtualenv</span></span><br><span class="line">install</span><br><span class="line">sudo apt-get install python3 python3-pip virtualenvwrapper</span><br><span class="line">pip install --upgrade virtualenv</span><br><span class="line"></span><br><span class="line">env</span><br><span class="line">virtualenv -p python3 env</span><br><span class="line"><span class="built_in">source</span> ./env/bin/activate</span><br><span class="line">deactivate</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#pip use tsinghua</span></span><br><span class="line">pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-prepare
-sudo apt-get install -y git
-sudo apt-get install -y build-essential libbz2-dev libssl-dev libreadline-dev \
-                        libffi-dev libsqlite3-dev tk-dev
-
-# optional scientific package headers (for Numpy, Matplotlib, SciPy, etc.)
-sudo apt-get install -y libpng-dev libfreetype6-dev
-
-install
-curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-
-env
-export PATH=&quot;~/.pyenv/bin:$PATH&quot;
-eval &quot;$(pyenv init -)&quot;
-eval &quot;$(pyenv virtualenv-init -)&quot;
-
-create env
-pyenv install 3.7.0
-pyenv virtualenv 3.7.0 general
-pyenv  activate  general
-
-
-#virtualenv
-install
-sudo apt-get install python3 python3-pip virtualenvwrapper
-pip install --upgrade virtualenv
-
-env
-virtualenv -p python3 env
-source ./env/bin/activate
-deactivate
-
-
-#pip use tsinghua
-pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
-
-</pre>
       
     </div>
 
@@ -655,7 +583,7 @@ pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/12/23/pyenv/" data-id="ckhhbad3i004e98my97il41bm" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/12/23/pyenv/" data-id="ckhmph3ji004dh4y299htc63n" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
