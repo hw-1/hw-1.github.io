@@ -77,6 +77,57 @@
         <div class="col-sm-8 blog-main">
           
   
+    <article id="post-2019-01-17-phassete6a186e69eb6e9878ce99da2e79a84phimagemanagere88eb7e58f96e58e9fe59bbee58685e5ad98e8bf87e9ab98e5b4a9e6ba83" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hw-1/2019/01/17/phasset%E6%A1%86%E6%9E%B6%E9%87%8C%E9%9D%A2%E7%9A%84phimagemanager%E8%8E%B7%E5%8F%96%E5%8E%9F%E5%9B%BE%E5%86%85%E5%AD%98%E8%BF%87%E9%AB%98%E5%B4%A9%E6%BA%83/">PHAsset框架里面的PHImageManager获取原图内存过高崩溃</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/hw-1/2019/01/17/phasset%E6%A1%86%E6%9E%B6%E9%87%8C%E9%9D%A2%E7%9A%84phimagemanager%E8%8E%B7%E5%8F%96%E5%8E%9F%E5%9B%BE%E5%86%85%E5%AD%98%E8%BF%87%E9%AB%98%E5%B4%A9%E6%BA%83/" class="article-date"><time datetime="2019-01-16T17:51:25.000Z" itemprop="datePublished">2019-01-17</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在iOS开发中我们有时候需要从Photos框架中获取的phasset转化为uiimage,PHAsset框架给我们提供了两个方法一个是PHImageManager的requestImageForAsset这个方法是通过Phasset直接获取到uiimage对象,可能很多人会使用这个方法,但是这有一个巨坑,就是你转化完之后,获得了uiimage对象,但是当你的图片很大的时候,那么极有可能会导致app崩溃<br>还有一个方法是PHImageManager的requestImageDataForAsset方法,这个方法是吧Phasset转化为nsdata对象,我们拿到nsdata对象可以转化为uiimage对象,这样的话可以解决内存暴涨的问题.<br>原因是因为requestImageForAsset会对图片进行渲染,所以导致内存暴涨不下,而requestImageDataForAsset则是直接返回二进制数据,所以内存不会出现暴涨的现象.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://wirelessbox.net/2019/01/17/phasset%e6%a1%86%e6%9e%b6%e9%87%8c%e9%9d%a2%e7%9a%84phimagemanager%e8%8e%b7%e5%8f%96%e5%8e%9f%e5%9b%be%e5%86%85%e5%ad%98%e8%bf%87%e9%ab%98%e5%b4%a9%e6%ba%83/" data-id="ckho4ouqc003a8wy27u1h7dyr" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2019-01-09-attempt-to-delete-row-containing-first-responder-that-refused-to-resign" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
@@ -115,7 +166,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2019/01/09/attempt-to-delete-row-containing-first-responder-that-refused-to-resign/" data-id="ckhmpl0x00039tcy238vfhbio" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2019/01/09/attempt-to-delete-row-containing-first-responder-that-refused-to-resign/" data-id="ckho4ouqc00398wy22dj05jum" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -166,7 +217,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/12/27/xcode-disable-networkinfo-signal-strength-query/" data-id="ckhmpl0wz0038tcy291sq4x52" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/12/27/xcode-disable-networkinfo-signal-strength-query/" data-id="ckho4ouqb00388wy27hbmd35b" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -217,7 +268,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/12/27/disable-autolayout-constraint-error-messages-in-debug-console-output-in-xcode/" data-id="ckhmpl0wz0037tcy2egjufe5w" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/12/27/disable-autolayout-constraint-error-messages-in-debug-console-output-in-xcode/" data-id="ckho4ouqb00378wy2arsl359w" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -268,7 +319,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/12/25/swift-%e4%b8%8b%e6%80%8e%e4%b9%88%e4%bd%bf%e7%94%a8-kvo/" data-id="ckhmpl0wy0035tcy2d65lgz1l" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/12/25/swift-%e4%b8%8b%e6%80%8e%e4%b9%88%e4%bd%bf%e7%94%a8-kvo/" data-id="ckho4ouqa00358wy2adv15ij4" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -319,7 +370,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/12/25/viminfo-illegal-starting-char-in-line-ii14i33/" data-id="ckhmpl0wz0036tcy20n1l3p3b" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/12/25/viminfo-illegal-starting-char-in-line-ii14i33/" data-id="ckho4ouqb00368wy25xe8fuzz" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -370,7 +421,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/" data-id="ckhmpl0wy0034tcy21e540421" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/" data-id="ckho4ouqa00348wy29bjmbmmz" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -421,7 +472,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/12/20/swift-print-object-address/" data-id="ckhmpl0wy0033tcy294ik1cfv" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/12/20/swift-print-object-address/" data-id="ckho4ouqa00338wy27x8b6cwo" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -473,7 +524,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/12/03/xcode-view-debug/" data-id="ckhmpl0wy0032tcy27rd3biix" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/12/03/xcode-view-debug/" data-id="ckho4ouq900328wy23msx87bx" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -525,59 +576,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/11/21/osx-svn-server-create/" data-id="ckhmpl0wx0031tcy2dwtedqqx" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2018-11-19-jenkins-for-osx-mojave" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/hw-1/2018/11/19/jenkins-for-osx-mojave/">jenkins for osx mojave</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/hw-1/2018/11/19/jenkins-for-osx-mojave/" class="article-date"><time datetime="2018-11-18T17:25:47.000Z" itemprop="datePublished">2018-11-19</time></a>
-</div>
-
-    <div class="article-author">hw-1</div>
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>###jenkins for osx mojave</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">设置开机自启动：sudo launchctl load -w /Library/LaunchDaemons/org.jenkins-ci.plist</span><br><span class="line">取消开机自启动：sudo launchctl unload -w /Library/LaunchDaemons/org.jenkins-ci.plist</span><br><span class="line">手动启动：Java -jar jenkins.war</span><br><span class="line">后台启动(默认端口)：nohup java -jar jenkins.war &amp;amp;</span><br><span class="line">后台启动(指定端口)：nohup java -jar jenkins.war -httpPort=88 &amp;amp;</span><br><span class="line">后台启动(HTTPS)：nohup java -jar jenkins.war -httpsPort=88 &amp;amp;</span><br><span class="line"></span><br><span class="line">jenkins 错误java.lang.OutOfMemoryError: Java heap space</span><br><span class="line">sudo defaults <span class="built_in">read</span> /Library/Preferences/org.jenkins-ci heapSize</span><br><span class="line">sudo defaults write /Library/Preferences/org.jenkins-ci heapSize 1024m</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2018/11/19/jenkins-for-osx-mojave/" data-id="ckhmpl0wx0030tcy2hxtib5qs" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2018/11/21/osx-svn-server-create/" data-id="ckho4ouq900318wy2ecrvcphp" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -618,14 +617,26 @@
 
 
   
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list" itemprop="keywords"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/tags/youtube-dl/" rel="tag">youtube-dl</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
 
 
   
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/hw-1/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
+    </p>
+  </div>
+
 
   
   <div class="sidebar-module">
     <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/11/">November 2020</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/10/">October 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/09/">September 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/08/">August 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/03/">March 2020</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/02/">February 2020</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/01/">January 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/12/">December 2019</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/11/">November 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/08/">August 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/06/">June 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/11/">November 2020</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/10/">October 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/09/">September 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/08/">August 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/03/">March 2020</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/02/">February 2020</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2020/01/">January 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/12/">December 2019</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/11/">November 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/08/">August 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/06/">June 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hw-1/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
   </div>
 
 
@@ -634,6 +645,10 @@
   <div class="sidebar-module">
     <h4>Recents</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/hw-1/2020/11/19/Youtube-Error-429-Too-many-requests-Ways-to-slow-down-crawling/">Youtube Error 429 Too many requests. Ways to slow down crawling?</a>
+        </li>
       
         <li>
           <a href="/hw-1/2020/11/11/%E6%B2%BB%E6%84%88%E7%B3%BB%E8%AF%BE%E7%A8%8B-%E4%B8%83%E5%A4%A7%E4%BD%93%E7%B3%BB%E5%85%AB%E5%A4%A7%E5%85%85%E8%8A%82%E5%AE%8C%E6%95%B4%E7%89%88/">治愈系课程-七大体系八大充节完整版 &amp;#8211; 免费下载</a>
@@ -649,10 +664,6 @@
       
         <li>
           <a href="/hw-1/2020/11/05/privacy-data-collection-and-storage-reject/">Privacy &amp;#8211; Data Collection and Storage Reject</a>
-        </li>
-      
-        <li>
-          <a href="/hw-1/2020/11/03/sourcetree-set-git-repo-username-password/">sourceTree set git repo username password</a>
         </li>
       
     </ul>
