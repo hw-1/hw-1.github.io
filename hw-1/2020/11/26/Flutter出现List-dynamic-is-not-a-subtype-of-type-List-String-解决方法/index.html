@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Disable or Enable SSH Root Login and Limit SSH Access in Linux | hw-1</title>
+  <title>Flutter出现List&lt;dynamic&gt; is not a subtype of type List&lt;String&gt;解决方法 | hw-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123456789101112sudo vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config&#x2F;&#x2F;disablePermitRootLogin no&#x2F;&#x2F;enablePermitRootLogin yes&#x2F;&#x2F;restart sshsudo &#x2F;etc&#x2F;init.d&#x2F;sshd restart&#x2F;&#x2F;cat pub.pem &amp;gt;  ~&#x2F;.ssh&#x2F;authorized_keyschmod o-w ~&#x2F;;">
+  <meta name="description" content="Flutter出现List is not a subtype of type List解决方法type ‘List‘ is not a subtype of type ‘List‘需要在解析’List‘字段时加上cast() 123List&lt;String&gt; newURl &#x3D; urls.map((e)&amp;#123;   return e.url;&amp;#125;).toList().cast&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Disable or Enable SSH Root Login and Limit SSH Access in Linux">
-<meta property="og:url" content="http://wirelessbox.net/2016/08/08/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux/index.html">
+<meta property="og:title" content="Flutter出现List&lt;dynamic&gt; is not a subtype of type List&lt;String&gt;解决方法">
+<meta property="og:url" content="http://wirelessbox.net/2020/11/26/Flutter%E5%87%BA%E7%8E%B0List-dynamic-is-not-a-subtype-of-type-List-String-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="hw-1">
-<meta property="og:description" content="123456789101112sudo vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config&#x2F;&#x2F;disablePermitRootLogin no&#x2F;&#x2F;enablePermitRootLogin yes&#x2F;&#x2F;restart sshsudo &#x2F;etc&#x2F;init.d&#x2F;sshd restart&#x2F;&#x2F;cat pub.pem &amp;gt;  ~&#x2F;.ssh&#x2F;authorized_keyschmod o-w ~&#x2F;;">
+<meta property="og:description" content="Flutter出现List is not a subtype of type List解决方法type ‘List‘ is not a subtype of type ‘List‘需要在解析’List‘字段时加上cast() 123List&lt;String&gt; newURl &#x3D; urls.map((e)&amp;#123;   return e.url;&amp;#125;).toList().cast&amp;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2016-08-08T05:10:34.000Z">
-<meta property="article:modified_time" content="2020-11-18T01:05:10.678Z">
+<meta property="article:published_time" content="2020-11-26T06:32:51.000Z">
+<meta property="article:modified_time" content="2020-11-26T06:34:06.446Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/hw-1/atom.xml" title="hw-1" type="application/atom+xml">
@@ -79,13 +79,13 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          <article id="post-2016-08-08-disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="post-Flutter出现List-dynamic-is-not-a-subtype-of-type-List-String-解决方法" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 class="article-title" itemprop="name">
-      Disable or Enable SSH Root Login and Limit SSH Access in Linux
+      Flutter出现List&lt;dynamic&gt; is not a subtype of type List&lt;String&gt;解决方法
     </h1>
   
 
@@ -94,10 +94,10 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/hw-1/2016/08/08/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux/" class="article-date"><time datetime="2016-08-08T05:10:34.000Z" itemprop="datePublished">2016-08-08</time></a>
+  <a href="/hw-1/2020/11/26/Flutter%E5%87%BA%E7%8E%B0List-dynamic-is-not-a-subtype-of-type-List-String-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="article-date"><time datetime="2020-11-26T06:32:51.000Z" itemprop="datePublished">2020-11-26</time></a>
 </div>
 
-    <div class="article-author">hw-1</div>
+    
     
 
   </div>
@@ -105,7 +105,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/ssh/sshd_config</span><br><span class="line">//<span class="built_in">disable</span></span><br><span class="line">PermitRootLogin no</span><br><span class="line">//<span class="built_in">enable</span></span><br><span class="line">PermitRootLogin yes</span><br><span class="line">//restart ssh</span><br><span class="line">sudo /etc/init.d/sshd restart</span><br><span class="line"></span><br><span class="line">//</span><br><span class="line">cat pub.pem &amp;gt;  ~/.ssh/authorized_keys</span><br><span class="line">chmod o-w ~/; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h3 id="Flutter出现List-is-not-a-subtype-of-type-List解决方法"><a href="#Flutter出现List-is-not-a-subtype-of-type-List解决方法" class="headerlink" title="Flutter出现List is not a subtype of type List解决方法"></a>Flutter出现List<dynamic> is not a subtype of type List<String>解决方法</h3><p>type ‘List<dynamic>‘ is not a subtype of type ‘List<String>‘<br>需要在解析’List<dynamic>‘字段时加上cast<String>()</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; newURl = urls.map((e)&#123;</span><br><span class="line">   <span class="built_in">return</span> e.url;</span><br><span class="line">&#125;).toList().cast&lt;String&gt;();</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -116,7 +117,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wirelessbox.net/2016/08/08/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux/" data-id="ckho4oup4000c8wy2e3rb90m4" class="article-share-link">
+      <a data-url="http://wirelessbox.net/2020/11/26/Flutter%E5%87%BA%E7%8E%B0List-dynamic-is-not-a-subtype-of-type-List-String-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" data-id="ckhygoqpi000074t2d2xi6zo7" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -129,19 +130,12 @@
 <ul id="article-nav" class="nav nav-pills nav-justified">
   
   <li role="presentation">
-    <a href="/hw-1/2016/08/08/ubuntu-install-squid3/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hw-1/2020/11/25/flutter-gradle-task-assembledebug-failed/" id="article-nav-older" class="article-nav-link-wrap">
       <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">ubuntu install squid3</span>
+      <span class="article-nav-link-title">flutter-gradle-task-assembledebug-failed</span>
     </a>
   </li>
   
-  
-  <li role="presentation">
-    <a href="/hw-1/2016/08/24/idevice-istall-tool/" id="article-nav-newer" class="article-nav-link-wrap">
-      <span class="article-nav-link-title">iDevice istall tool</span>
-      <i class="fa fa-chevron-right pull-right"></i>
-    </a>
-  </li>
   
 </ul>
 
