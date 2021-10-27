@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hw-1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="hw-1">
+<meta property="og:url" content="http://example.com/page/11/index.html">
+<meta property="og:site_name" content="hw-1">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="hw-1" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+<link rel="stylesheet" href="/hw-1/css/bootstrap.min.css">
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">hw-1</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          
+  
+    <article id="post-2019-01-17-phassete6a186e69eb6e9878ce99da2e79a84phimagemanagere88eb7e58f96e58e9fe59bbee58685e5ad98e8bf87e9ab98e5b4a9e6ba83" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/17/phasset%E6%A1%86%E6%9E%B6%E9%87%8C%E9%9D%A2%E7%9A%84phimagemanager%E8%8E%B7%E5%8F%96%E5%8E%9F%E5%9B%BE%E5%86%85%E5%AD%98%E8%BF%87%E9%AB%98%E5%B4%A9%E6%BA%83/">PHAsset框架里面的PHImageManager获取原图内存过高崩溃</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/01/17/phasset%E6%A1%86%E6%9E%B6%E9%87%8C%E9%9D%A2%E7%9A%84phimagemanager%E8%8E%B7%E5%8F%96%E5%8E%9F%E5%9B%BE%E5%86%85%E5%AD%98%E8%BF%87%E9%AB%98%E5%B4%A9%E6%BA%83/" class="article-date"><time datetime="2019-01-16T17:51:25.000Z" itemprop="datePublished">2019-01-17</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在iOS开发中我们有时候需要从Photos框架中获取的phasset转化为uiimage,PHAsset框架给我们提供了两个方法一个是PHImageManager的requestImageForAsset这个方法是通过Phasset直接获取到uiimage对象,可能很多人会使用这个方法,但是这有一个巨坑,就是你转化完之后,获得了uiimage对象,但是当你的图片很大的时候,那么极有可能会导致app崩溃<br>还有一个方法是PHImageManager的requestImageDataForAsset方法,这个方法是吧Phasset转化为nsdata对象,我们拿到nsdata对象可以转化为uiimage对象,这样的话可以解决内存暴涨的问题.<br>原因是因为requestImageForAsset会对图片进行渲染,所以导致内存暴涨不下,而requestImageDataForAsset则是直接返回二进制数据,所以内存不会出现暴涨的现象.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/01/17/phasset%e6%a1%86%e6%9e%b6%e9%87%8c%e9%9d%a2%e7%9a%84phimagemanager%e8%8e%b7%e5%8f%96%e5%8e%9f%e5%9b%be%e5%86%85%e5%ad%98%e8%bf%87%e9%ab%98%e5%b4%a9%e6%ba%83/" data-id="ckho4ouqc003a8wy27u1h7dyr" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2019-01-09-attempt-to-delete-row-containing-first-responder-that-refused-to-resign" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/09/attempt-to-delete-row-containing-first-responder-that-refused-to-resign/">Attempt to delete row containing first responder that refused to resign</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/01/09/attempt-to-delete-row-containing-first-responder-that-refused-to-resign/" class="article-date"><time datetime="2019-01-08T19:29:40.000Z" itemprop="datePublished">2019-01-09</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Attempt-to-delete-row-containing-first-responder-that-refused-to-resign"><a href="#Attempt-to-delete-row-containing-first-responder-that-refused-to-resign" class="headerlink" title="Attempt to delete row containing first responder that refused to resign"></a>Attempt to delete row containing first responder that refused to resign</h3><p>I&#8217;ve never seen that message before, but my immediate impulse if I were to see it would be: try delayed performance. Even something as simple as this might be an interesting experiment:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">    [self.tableView deleteRowsAtIndexPaths:@[indexPath] </span><br><span class="line">     withRowAnimation:UITableViewRowAnimationAutomatic];</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/01/09/attempt-to-delete-row-containing-first-responder-that-refused-to-resign/" data-id="ckho4ouqc00398wy22dj05jum" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2018-12-27-xcode-disable-networkinfo-signal-strength-query" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/27/xcode-disable-networkinfo-signal-strength-query/">xcode  disable [NetworkInfo] Signal strength query</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2018/12/27/xcode-disable-networkinfo-signal-strength-query/" class="article-date"><time datetime="2018-12-26T16:44:43.000Z" itemprop="datePublished">2018-12-27</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="xcode-disable-NetworkInfo-Signal-strength-query"><a href="#xcode-disable-NetworkInfo-Signal-strength-query" class="headerlink" title="xcode disable [NetworkInfo] Signal strength query"></a>xcode disable [NetworkInfo] Signal strength query</h3><p>Try this:<br>Xcode menu open: Product &gt; Scheme &gt; Edit Scheme<br>Environment Variables set OS_ACTIVITY_MODE = disable</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/12/27/xcode-disable-networkinfo-signal-strength-query/" data-id="ckho4ouqb00388wy27hbmd35b" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2018-12-27-disable-autolayout-constraint-error-messages-in-debug-console-output-in-xcode" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/27/disable-autolayout-constraint-error-messages-in-debug-console-output-in-xcode/">Disable autolayout constraint error messages in debug console output in Xcode</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2018/12/27/disable-autolayout-constraint-error-messages-in-debug-console-output-in-xcode/" class="article-date"><time datetime="2018-12-26T16:44:07.000Z" itemprop="datePublished">2018-12-27</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Disable-autolayout-constraint-error-messages-in-debug-console-output-in-Xcode"><a href="#Disable-autolayout-constraint-error-messages-in-debug-console-output-in-Xcode" class="headerlink" title="Disable autolayout constraint error messages in debug console output in Xcode"></a>Disable autolayout constraint error messages in debug console output in Xcode</h3><p>Create a Symbolic Breakpoint for the Symbol UIViewAlertForUnsatisfiableConstraints in the Module UIKitCore.<br>As breakpoint action add the debugger command &#8220;thread return&#8221;<br>Add a second debugger command: &#8220;c&#8221;<br>Disable &#8220;Automatically continue after evaluating actions&#8221;</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/12/27/disable-autolayout-constraint-error-messages-in-debug-console-output-in-xcode/" data-id="ckho4ouqb00378wy2arsl359w" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2018-12-25-swift-e4b88be6808ee4b988e4bdbfe794a8-kvo" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/25/swift-%E4%B8%8B%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8-kvo/">Swift 下怎么使用 KVO</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2018/12/25/swift-%E4%B8%8B%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8-kvo/" class="article-date"><time datetime="2018-12-24T17:03:46.000Z" itemprop="datePublished">2018-12-25</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Swift-下怎么使用-KVO"><a href="#Swift-下怎么使用-KVO" class="headerlink" title="Swift 下怎么使用 KVO"></a>Swift 下怎么使用 KVO</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">person.addObserver(self, forKeyPath: <span class="string">&quot;age&quot;</span>, options: .new, context: nil)</span><br><span class="line"></span><br><span class="line">override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) &#123;</span><br><span class="line">        // 输出改变后的新值</span><br><span class="line">        <span class="built_in">print</span>(change![NSKeyValueChangeKey.newKey]!)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/12/25/swift-%e4%b8%8b%e6%80%8e%e4%b9%88%e4%bd%bf%e7%94%a8-kvo/" data-id="ckho4ouqa00358wy2adv15ij4" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2018-12-25-viminfo-illegal-starting-char-in-line-ii14i33" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/25/viminfo-illegal-starting-char-in-line-ii14i33/">viminfo: Illegal starting char in line: ^I+^I14^I33</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2018/12/25/viminfo-illegal-starting-char-in-line-ii14i33/" class="article-date"><time datetime="2018-12-24T17:01:42.000Z" itemprop="datePublished">2018-12-25</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="viminfo-Illegal-starting-char-in-line-I-I14-I33"><a href="#viminfo-Illegal-starting-char-in-line-I-I14-I33" class="headerlink" title="viminfo: Illegal starting char in line: ^I+^I14^I33"></a>viminfo: Illegal starting char in line: ^I+^I14^I33</h3><p>im 时出现如下问题：<br>E575: viminfo: Illegal starting char in line: ^I+^I14^I33<br>解决方法： 删除主目录下的.viminfo文件</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/12/25/viminfo-illegal-starting-char-in-line-ii14i33/" data-id="ckho4ouqb00368wy25xe8fuzz" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2018-12-24-uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/">UIGraphicsBeginImageContextWithOptions &amp;#8211; returned Image has a unwanted border</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/" class="article-date"><time datetime="2018-12-24T05:05:14.000Z" itemprop="datePublished">2018-12-24</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="UIGraphicsBeginImageContextWithOptions-8211-returned-Image-has-a-unwanted-border"><a href="#UIGraphicsBeginImageContextWithOptions-8211-returned-Image-has-a-unwanted-border" class="headerlink" title="UIGraphicsBeginImageContextWithOptions &#8211; returned Image has a unwanted border"></a>UIGraphicsBeginImageContextWithOptions &#8211; returned Image has a unwanted border</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">func UIGraphicsBeginImageContextWithOptions(_ size: CGSize, _ opaque: Bool, _ scale: CGFloat).</span><br><span class="line">A Boolean flag indicating whether the bitmap is opaque. If you know the bitmap is fully opaque, specify YES to ignore the alpha channel and optimize the bitmap’s storage. Specifying NO means that the bitmap must include an alpha channel to handle any partially transparent pixels.</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/" data-id="ckho4ouqa00348wy29bjmbmmz" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2018-12-20-swift-print-object-address" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/20/swift-print-object-address/">swift print object address</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2018/12/20/swift-print-object-address/" class="article-date"><time datetime="2018-12-20T04:33:19.000Z" itemprop="datePublished">2018-12-20</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="swift-print-object-address"><a href="#swift-print-object-address" class="headerlink" title="swift print object address"></a>swift print object address</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;setWebURL \(Unmanaged.passUnretained(self).toOpaque()) \(Unmanaged.passUnretained(base).toOpaque()) \(url)&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/12/20/swift-print-object-address/" data-id="ckho4ouqa00338wy27x8b6cwo" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2018-12-03-xcode-view-debug" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/03/xcode-view-debug/">Xcode View Debug</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2018/12/03/xcode-view-debug/" class="article-date"><time datetime="2018-12-03T04:02:01.000Z" itemprop="datePublished">2018-12-03</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###Xcode View Debug</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">po [[UIWindow keyWindow] _autolayoutTrace]</span><br><span class="line">expr -l objc++ -O -- [[UIWindow keyWindow] _autolayoutTrace]</span><br><span class="line"></span><br><span class="line">AMBIGUOUS LAYOUT</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">expr [((UIView *)0x102c48950) bringSubviewToFront:(UIView*)0x102c4e6b0]</span><br><span class="line">expr ((UIView *)0x102c1a070).backgroundColor = [UIColor redColor]</span><br><span class="line">expr ((UIView*)0x102c4e6b0).alpha = 1</span><br><span class="line"></span><br><span class="line">expr -l Swift -- import UIKit</span><br><span class="line">expr -l Swift -- unsafeBitCast(0x7f88a8cc2050, to: UIView.self).backgroundColor = UIColor.red</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/12/03/xcode-view-debug/" data-id="ckho4ouq900328wy23msx87bx" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2018-11-21-osx-svn-server-create" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/21/osx-svn-server-create/">osx svn server create</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2018/11/21/osx-svn-server-create/" class="article-date"><time datetime="2018-11-20T23:56:47.000Z" itemprop="datePublished">2018-11-21</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###osx svn server create</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p  ~/Documents/svn</span><br><span class="line">svnadmin create ~/Documents/svn/myexample</span><br><span class="line"></span><br><span class="line">sed -i <span class="string">&#x27;&#x27;</span> <span class="string">&#x27;s/#anon-access.*/anon-access = none/g&#x27;</span> ~/Documents/svn/myexample/conf/svnserve.conf</span><br><span class="line">sed -i <span class="string">&#x27;&#x27;</span> <span class="string">&#x27;s/#auth-access.*/auth-access = write/g&#x27;</span> ~/Documents/svn/myexample/conf/svnserve.conf</span><br><span class="line">sed -i <span class="string">&#x27;&#x27;</span> <span class="string">&#x27;s/#password-db.*/password-db = passwd/g&#x27;</span> ~/Documents/svn/myexample/conf/svnserve.conf</span><br><span class="line">sed -i <span class="string">&#x27;&#x27;</span> <span class="string">&#x27;s/#authz-db.*/authz-db = authz/g&#x27;</span> ~/Documents/svn/myexample/conf/svnserve.conf</span><br><span class="line"></span><br><span class="line">cat &amp;lt;&amp;lt;EOF &amp;gt;&amp;gt; ~/Documents/svn/myexample/conf/authz</span><br><span class="line">[/]</span><br><span class="line">harry = rw</span><br><span class="line">jianglincen = rw</span><br><span class="line">sally = rw</span><br><span class="line"></span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">cat &amp;lt;&amp;lt;EOF &amp;gt;&amp;gt; ~/Documents/svn/myexample/conf/passwd</span><br><span class="line">[/]</span><br><span class="line">[users]</span><br><span class="line">harry = harryssecret</span><br><span class="line">sally = sallyssecret</span><br><span class="line"></span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">svnserve -d -r ~/Documents/svn/myexample</span><br><span class="line"></span><br><span class="line">svn import  ~/Downloads/myexampleProj   svn://192.168.1.235/myexample/myexampleProj --username=harry --password=harryssecret -m <span class="string">&quot;myexampleProj&quot;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/11/21/osx-svn-server-create/" data-id="ckho4ouq900318wy2ecrvcphp" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <div id="page-nav">
+    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/page/10/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/">1</a></li><li class="disabled"><span class="page-space">&hellip;</span></li><li><a class="page-number" href="/page/9/">9</a></li><li><a class="page-number" href="/page/10/">10</a></li><li class="active"><span class="page-number">11</span></li><li><a class="page-number" href="/page/12/">12</a></li><li><a class="page-number" href="/page/13/">13</a></li><li class="disabled"><span class="page-space">&hellip;</span></li><li><a class="page-number" href="/page/22/">22</a></li><li><a class="page-next" rel="next" href="/page/12/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
+  </div>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Uncategorized/">Uncategorized</a><span class="sidebar-module-list-count">13</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list" itemprop="keywords"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/youtube-dl/" rel="tag">youtube-dl</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/10/">October 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/09/">September 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/08/">August 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/07/">July 2021</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/06/">June 2021</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/05/">May 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/03/">March 2021</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/01/">January 2021</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/11/">November 2020</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/10/">October 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/09/">September 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/08/">August 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/03/">March 2020</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/02/">February 2020</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/01/">January 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/12/">December 2019</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/11/">November 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/08/">August 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/06/">June 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2021/10/27/osx-install-fuse-ext2/">osx install fuse-ext2</a>
+        </li>
+      
+        <li>
+          <a href="/2021/09/04/parser-rl-142-7-error-implicit-declaration-of-function-thin-http-parser-has-error-is-invalid-in-C99-Werror-Wimplicit-function-declaration/">parser.rl:142:7: error: implicit declaration of function &#39;thin_http_parser_has_error&#39; is invalid in C99 [-Werror,-Wimplicit-function-declaration]</a>
+        </li>
+      
+        <li>
+          <a href="/2021/08/27/imap-login-Error-Failed-to-initialize-SSL-server-context-Can-t-load-SSL-certificate-There-is-no-valid-PEM-certificate/">imap-login: Error: Failed to initialize SSL server context: Can&#39;t load SSL certificate: There is no valid PEM certificate</a>
+        </li>
+      
+        <li>
+          <a href="/2021/07/31/CryptoSwift-exported-true-has-no-effect-in-specialize-attribute/">CryptoSwift &#39;exported: true&#39; has no effect in &#39;_specialize&#39; attribute</a>
+        </li>
+      
+        <li>
+          <a href="/2021/07/29/flutter-Target-debug-unpack-ios-failed-Exception-Binary/">flutter - Target debug_unpack_ios failed: Exception: Binary</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2021 hw-1<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="/hw-1/js/bootstrap.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+</body>
+</html>
