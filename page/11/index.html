@@ -77,6 +77,128 @@
         <div class="col-sm-8 blog-main">
           
   
+    <article id="post-2019-02-12-iose4ba8be4bbb6e79a84e58886e58f91e69cbae588b6e5928ce5938de5ba94e88085e993beswift" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/12/ios%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6%E5%92%8C%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BEswift/">iOS事件的分发机制和响应者链(Swift)</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/02/12/ios%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6%E5%92%8C%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BEswift/" class="article-date"><time datetime="2019-02-11T20:57:39.000Z" itemprop="datePublished">2019-02-12</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="iOS事件的分发机制和响应者链-Swift"><a href="#iOS事件的分发机制和响应者链-Swift" class="headerlink" title="iOS事件的分发机制和响应者链(Swift)"></a>iOS事件的分发机制和响应者链(Swift)</h3><p>事件沿着具体的路径进行传递，一直到发现对象能够处理该事件，首先，UIApplication单例对象会将该事件将被传递给window对象，window对象会使用hitTest:withEvent:方法来递归的寻找操作初始点所在的view，该视图就称之为hit-test view，寻找hit-test view过程称为hit-testing.</p>
+<p>分发机制(Hit-Testing)<br>   iOS使用hit-testing来找到触摸点所在的视图。hit-testing将会检测是否触摸事件在相关视图的显示区域之内。如果在，将递归检测当前视图的所有子视图。视图层级中最底层的view如果包含触摸点将成为hit-test view.在iOS确认了hit-test view之后，将传递触摸世界给对应的视图进行处理。</p>
+<p>hitTest:withEvent:方法的处理流程如下：调用当前view的pointInside:withEvent:方法来判定触摸点是否在当前view内部，如果返回false，则hitTest:withEvent:返回nil；如果返回true，则向当前view内的subViews发送hitTest:withEvent:消息，所有subView的遍历顺序是从数组的末尾向前遍历，直到有subView返回非空对象或遍历完成。如果有subView返回非空对象，hitTest方法会返回这个对象，如果每个subView返回都是nil，则返回自己。</p>
+<p>许多类型的事件都依赖于响应者链进行事件的传递。响应者链关联着一系列的响应者对象，由第一个响应者对象开始一直到application对象结束，如果第一个响应者不能够处理事件，事件将会被传递到响应者链中的下一个响应者对象。</p>
+<p>一个响应者对象是能够处理和响应事件的对象，UIResponder类是所有响应者对象的基类，它不仅仅定义了事件处理的接口而且还有共有的响应者行为。UIApplication, UIViewController, UIView等类的实例都是响应者对象，这意味着所有的视图(all views)和大多数的关键视图控制器对象都是响应者。但是要注意核心动画中的层(layer)不是响应者</p>
+<p>传递链：由系统向离用户最近的view传递。UIKit –&gt; active app’s event queue –&gt; window –&gt; root view –&gt;……–&gt;lowest view</p>
+<p>响应链：由离用户最近的view向系统传递。initial view –&gt; super view –&gt; …..–&gt; view controller –&gt; window –&gt; Application</p>
+<p>开发中覆盖hitTest:withEvent:的一些用途：</p>
+<p>1：增加视图的触摸区域</p>
+<p>     比如：按钮本身大小为20_20，但是太小不便操作，我们可以通过自定义UIButton，重写hitTest方法，增加点击区域：下面是添加了一个20_20的按钮，然后通过操作hitTest方法，实现100*100区域内可点击,即在每个方向增加40，具体实现代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class MyButton: UIButton &#123;</span><br><span class="line">    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -&amp;gt; UIView? &#123;</span><br><span class="line">        <span class="keyword">if</span> !self.userInteractionEnabled || self.hidden || self.alpha == 0 &#123;</span><br><span class="line">            <span class="built_in">return</span> nil</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> CGRectContainsPoint(CGRectInset(self.bounds, -40, -40), point)&#123;</span><br><span class="line">            <span class="keyword">for</span> subview <span class="keyword">in</span> self.subviews.<span class="function"><span class="title">reverse</span></span>() &#123;</span><br><span class="line">                <span class="built_in">let</span> convertPoint = subview.convertPoint(point, fromView:self)</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">let</span> sview = subview.hitTest(convertPoint, withEvent: event) &#123;</span><br><span class="line">                    <span class="built_in">return</span> sview</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">return</span> self</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> nil</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>2：实现传递事件到点击视图之下的视图</p>
+<p>有的时候对于一个视图忽略触摸事件并传递给下面的视图是很重要的。例如，假设一个透明的视图覆盖在应用内所有视图的最上面。覆盖层有子视图应该相应触摸事件的一些控件和按钮。但是触摸覆盖层的其他区域应该传递给覆盖层下面的视图。为了完成这个行为，覆盖层需要覆盖hitTest:withEvent:方法来返回包含触摸点的子视图中的一个，然后其他情况返回nil，包括覆盖层包含触摸点的情况：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class SHView: UIView &#123;</span><br><span class="line">    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -&amp;gt; UIView? &#123;</span><br><span class="line">        var hitTestView = super.hitTest(point, withEvent:event)</span><br><span class="line">        <span class="keyword">if</span> hitTestView == self&#123;</span><br><span class="line">           hitTestView = nil</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> hitTestView;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>3:超出父视图区域部分响应事件</p>
+<p>首先看一下页面效果：当前页面上有3个控件，紫色视图是红色视图的子视图，红色视图是灰色视图的子视图。最上面是一个按钮，方便我们进行测试：现在我们要实现点击红色视图之外的紫色区域能够响应事件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">class TestView: UIView &#123;</span><br><span class="line">    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -&amp;gt; UIView? &#123;</span><br><span class="line">        super.hitTest(point, withEvent: event)</span><br><span class="line">        <span class="built_in">return</span> overlapHitTest(point, withEvent: event)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">extension UIView&#123;</span><br><span class="line">    func overlapHitTest(point: CGPoint, withEvent event: UIEvent?) -&amp;gt; UIView? &#123;</span><br><span class="line">        // We should not send touch events <span class="keyword">for</span> hidden or transparent views, or views with userInteractionEnabled <span class="built_in">set</span> to NO;</span><br><span class="line">        <span class="keyword">if</span> !self.userInteractionEnabled || self.hidden || self.alpha == 0 &#123;</span><br><span class="line">            <span class="built_in">return</span> nil</span><br><span class="line">        &#125;</span><br><span class="line">        // If touch is inside self, self will be considered as potential result.</span><br><span class="line">        var hitView: UIView? = self</span><br><span class="line">        <span class="keyword">if</span> !self.pointInside(point, withEvent: event) &#123;</span><br><span class="line">            <span class="keyword">if</span> self.clipsToBounds &#123;</span><br><span class="line">                <span class="built_in">return</span> nil</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                hitView = nil</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        // Check recursively all subviews <span class="keyword">for</span> hit. If any, <span class="built_in">return</span> it.</span><br><span class="line">        <span class="keyword">for</span> subview <span class="keyword">in</span> self.subviews.<span class="function"><span class="title">reverse</span></span>() &#123;</span><br><span class="line">            <span class="built_in">let</span> insideSubview = self.convertPoint(point, toView: subview)</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">let</span> sview = subview.overlapHitTest(insideSubview, withEvent: event) &#123;</span><br><span class="line">                <span class="built_in">return</span> sview</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        // Else <span class="built_in">return</span> self or nil depending on result from step 2.</span><br><span class="line">        <span class="built_in">return</span> hitView</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/02/12/ios%e4%ba%8b%e4%bb%b6%e7%9a%84%e5%88%86%e5%8f%91%e6%9c%ba%e5%88%b6%e5%92%8c%e5%93%8d%e5%ba%94%e8%80%85%e9%93%beswift/" data-id="ckho4ouqe003f8wy2b0b7gswe" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2019-01-25-jenkinse5bf98e8aeb0e7aea1e79086e59198e8b4a6e58fb7e799bbe5bd95e5af86e7a081e5a682e4bd95e4bfaee694b9e7aea1e79086e59198e8b4a6e58fb7" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/25/jenkins%E5%BF%98%E8%AE%B0%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E5%8F%B7/">jenkins忘记管理员账号登录密码如何修改管理员账号</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/01/25/jenkins%E5%BF%98%E8%AE%B0%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E5%8F%B7/" class="article-date"><time datetime="2019-01-24T22:31:19.000Z" itemprop="datePublished">2019-01-25</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="jenkins忘记管理员账号登录密码如何修改管理员账号"><a href="#jenkins忘记管理员账号登录密码如何修改管理员账号" class="headerlink" title="jenkins忘记管理员账号登录密码如何修改管理员账号"></a>jenkins忘记管理员账号登录密码如何修改管理员账号</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">（1）用命令打开：</span><br><span class="line">sudo vi /Users/Shared/Jenkins/Home/users/admin/config.xml </span><br><span class="line">（2）找到&amp;lt;passwordHash&amp;gt;节点</span><br><span class="line">将节点内的&amp;lt;passwordHash&amp;gt;<span class="comment">#jbcrypt:$2a$10$lbyWNEX8qFyS47ddBYHgHOOIdnsijELWhprkGA0aZQRfapnzGeVl6&amp;lt;/passwordHash&amp;gt;的值改为：</span></span><br><span class="line"><span class="comment">#jbcrypt:$2a$10$DdaWzN64JgUtLdvxWIflcuQu2fgrrMSAMabF5TSrGK5nXitqK9ZMS  （该字符串默认密码为6个1）</span></span><br><span class="line">注意前后不要输入空格。按Esc键-&amp;gt;：-&amp;gt;wq保存。</span><br><span class="line">3/重启Jenkins：jenkins restart</span><br><span class="line">4／打开localhost:8080,输入管理员账号，密码为6个1，点击【登录】登录成功</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/01/25/jenkins%e5%bf%98%e8%ae%b0%e7%ae%a1%e7%90%86%e5%91%98%e8%b4%a6%e5%8f%b7%e7%99%bb%e5%bd%95%e5%af%86%e7%a0%81%e5%a6%82%e4%bd%95%e4%bf%ae%e6%94%b9%e7%ae%a1%e7%90%86%e5%91%98%e8%b4%a6%e5%8f%b7/" data-id="ckho4ouqd003d8wy2gkaw8epj" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2019-01-25-ios-e695b0e7bb84e99b86e59088e6938de4bd9cefbc88e4baa4e99b86efbc8ce5b9b6e99b86efbc8ce5b7aee99b86efbc8ce5ad90e99b86efbc89" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
@@ -488,112 +610,10 @@
 
 
   
-    <article id="post-2018-12-25-viminfo-illegal-starting-char-in-line-ii14i33" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/25/viminfo-illegal-starting-char-in-line-ii14i33/">viminfo: Illegal starting char in line: ^I+^I14^I33</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2018/12/25/viminfo-illegal-starting-char-in-line-ii14i33/" class="article-date"><time datetime="2018-12-24T17:01:42.000Z" itemprop="datePublished">2018-12-25</time></a>
-</div>
-
-    <div class="article-author">hw-1</div>
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="viminfo-Illegal-starting-char-in-line-I-I14-I33"><a href="#viminfo-Illegal-starting-char-in-line-I-I14-I33" class="headerlink" title="viminfo: Illegal starting char in line: ^I+^I14^I33"></a>viminfo: Illegal starting char in line: ^I+^I14^I33</h3><p>im 时出现如下问题：<br>E575: viminfo: Illegal starting char in line: ^I+^I14^I33<br>解决方法： 删除主目录下的.viminfo文件</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://example.com/2018/12/25/viminfo-illegal-starting-char-in-line-ii14i33/" data-id="ckho4ouqb00368wy25xe8fuzz" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2018-12-24-uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/">UIGraphicsBeginImageContextWithOptions &amp;#8211; returned Image has a unwanted border</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/" class="article-date"><time datetime="2018-12-24T05:05:14.000Z" itemprop="datePublished">2018-12-24</time></a>
-</div>
-
-    <div class="article-author">hw-1</div>
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="UIGraphicsBeginImageContextWithOptions-8211-returned-Image-has-a-unwanted-border"><a href="#UIGraphicsBeginImageContextWithOptions-8211-returned-Image-has-a-unwanted-border" class="headerlink" title="UIGraphicsBeginImageContextWithOptions &#8211; returned Image has a unwanted border"></a>UIGraphicsBeginImageContextWithOptions &#8211; returned Image has a unwanted border</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">func UIGraphicsBeginImageContextWithOptions(_ size: CGSize, _ opaque: Bool, _ scale: CGFloat).</span><br><span class="line">A Boolean flag indicating whether the bitmap is opaque. If you know the bitmap is fully opaque, specify YES to ignore the alpha channel and optimize the bitmap’s storage. Specifying NO means that the bitmap must include an alpha channel to handle any partially transparent pixels.</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://example.com/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/" data-id="ckho4ouqa00348wy29bjmbmmz" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <div id="page-nav">
-    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/page/10/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/">1</a></li><li class="disabled"><span class="page-space">&hellip;</span></li><li><a class="page-number" href="/page/9/">9</a></li><li><a class="page-number" href="/page/10/">10</a></li><li class="active"><span class="page-number">11</span></li><li><a class="page-number" href="/page/12/">12</a></li><li><a class="page-number" href="/page/13/">13</a></li><li class="disabled"><span class="page-space">&hellip;</span></li><li><a class="page-number" href="/page/22/">22</a></li><li><a class="page-next" rel="next" href="/page/12/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
+    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/page/10/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/">1</a></li><li class="disabled"><span class="page-space">&hellip;</span></li><li><a class="page-number" href="/page/9/">9</a></li><li><a class="page-number" href="/page/10/">10</a></li><li class="active"><span class="page-number">11</span></li><li><a class="page-number" href="/page/12/">12</a></li><li><a class="page-number" href="/page/13/">13</a></li><li class="disabled"><span class="page-space">&hellip;</span></li><li><a class="page-number" href="/page/23/">23</a></li><li><a class="page-next" rel="next" href="/page/12/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
   </div>
 
 
@@ -636,7 +656,7 @@
   
   <div class="sidebar-module">
     <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/12/">December 2021</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/10/">October 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/09/">September 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/08/">August 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/07/">July 2021</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/06/">June 2021</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/05/">May 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/03/">March 2021</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/01/">January 2021</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/11/">November 2020</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/10/">October 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/09/">September 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/08/">August 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/03/">March 2020</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/02/">February 2020</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/01/">January 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/12/">December 2019</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/11/">November 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/08/">August 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/06/">June 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2022/02/">February 2022</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/12/">December 2021</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/10/">October 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/09/">September 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/08/">August 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/07/">July 2021</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/06/">June 2021</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/05/">May 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/03/">March 2021</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/01/">January 2021</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/11/">November 2020</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/10/">October 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/09/">September 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/08/">August 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/03/">March 2020</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/02/">February 2020</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/01/">January 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/12/">December 2019</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/11/">November 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/08/">August 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/06/">June 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
   </div>
 
 
@@ -645,6 +665,14 @@
   <div class="sidebar-module">
     <h4>Recents</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2022/02/14/pub-flutter-io-cn-platform-3-0-2-lib-src-interface-local-platform-dart-46-19-Error-Member-not-found-packageRoot/">/pub.flutter-io.cn/platform-3.0.2/lib/src/interface/local_platform.dart:46:19: Error: Member not found: &#39;packageRoot&#39;.</a>
+        </li>
+      
+        <li>
+          <a href="/2022/02/14/Failed-to-ping-owner-of-lock-for-file-hash-cache-fileHashes/">Failed to ping owner of lock for file hash cache fileHashes</a>
+        </li>
       
         <li>
           <a href="/2021/12/08/Format-a-USB-connected-drive-on-the-Raspberry-Pi-in-Raspbian/">Format a USB-connected drive on the Raspberry Pi in Raspbian</a>
@@ -658,14 +686,6 @@
           <a href="/2021/12/06/swiftpm-%E5%A6%82%E4%BD%95%E8%AE%A9swift-package-manager%E8%B5%B0%E4%BB%A3%E7%90%86/">swiftpm 如何让swift package manager走代理</a>
         </li>
       
-        <li>
-          <a href="/2021/10/27/osx-install-fuse-ext2/">osx install fuse-ext2</a>
-        </li>
-      
-        <li>
-          <a href="/2021/09/04/parser-rl-142-7-error-implicit-declaration-of-function-thin-http-parser-has-error-is-invalid-in-C99-Werror-Wimplicit-function-declaration/">parser.rl:142:7: error: implicit declaration of function &#39;thin_http_parser_has_error&#39; is invalid in C99 [-Werror,-Wimplicit-function-declaration]</a>
-        </li>
-      
     </ul>
   </div>
 
@@ -677,7 +697,7 @@
   <footer class="blog-footer">
   <div class="container">
     <div id="footer-info" class="inner">
-      &copy; 2021 hw-1<br>
+      &copy; 2022 hw-1<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
