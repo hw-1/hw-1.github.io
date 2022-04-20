@@ -77,6 +77,174 @@
         <div class="col-sm-8 blog-main">
           
   
+    <article id="post-2016-07-11-raspberry-support-zh-cn" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/11/raspberry-support-zh-cn/">raspberry support zh-cn</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/07/11/raspberry-support-zh-cn/" class="article-date"><time datetime="2016-07-10T22:19:20.000Z" itemprop="datePublished">2016-07-11</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1 sudo raspi-config</span><br><span class="line">choose zh-cn.utf-8</span><br><span class="line">2 install font</span><br><span class="line">sudo apt-get -y install ttf-wqy-zenhei</span><br><span class="line">3 install  pinyin</span><br><span class="line">sudo apt-get -y install scim-pinyin</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://example.com/2016/07/11/raspberry-support-zh-cn/" data-id="ckho4oup3000b8wy27r6w93ry" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2016-05-12-install_name_change" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/12/install_name_change/">install_name_change</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/05/12/install_name_change/" class="article-date"><time datetime="2016-05-11T22:06:16.000Z" itemprop="datePublished">2016-05-12</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Using otool -D lib.dylib returns the path that is presented by that library to the compiler. To change it you can use install_name_change with the argument -id.</span><br><span class="line"></span><br><span class="line">install_name_tool -id “@executable_path/../Plugins/lib.dylib” lib.dylib</span><br><span class="line"></span><br><span class="line">This alters the relative path of lib.dylib to the plugins folder of your bundle. Next you need to change each path <span class="keyword">in</span> the main executable. You can find out the dependencies and their expected path of the executable using otool -L. For each dependency that needs changing use install_name_tool again with the argument -change.</span><br><span class="line"></span><br><span class="line">install_name_tool -change “/usr/lib/lib.dylib” “@executable_path/../Plugins/lib.dylib” applicationname</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://example.com/2016/05/12/install_name_change/" data-id="ckho4oup200098wy22xdn63f3" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2016-03-21-e6808ee4b988e59ca8e6b2a1e8b68ae78bb1e79a84iphonee6898be69cbae4b88ae5ae89e8a385e68f92e4bbb6efbc8ce6808ee4b988e59ca8e6b2a1e8b68ae78bb1" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/21/%E6%80%8E%E4%B9%88%E5%9C%A8%E6%B2%A1%E8%B6%8A%E7%8B%B1%E7%9A%84iphone%E6%89%8B%E6%9C%BA%E4%B8%8A%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%EF%BC%8C%E6%80%8E%E4%B9%88%E5%9C%A8%E6%B2%A1%E8%B6%8A%E7%8B%B1/">怎么在没越狱的iPhone手机上安装插件，怎么在没越狱的iPhone手机上安装（WeChat）微信抢红包插件，手机没越狱也能抢红包了，App dylib inject</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/03/21/%E6%80%8E%E4%B9%88%E5%9C%A8%E6%B2%A1%E8%B6%8A%E7%8B%B1%E7%9A%84iphone%E6%89%8B%E6%9C%BA%E4%B8%8A%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%EF%BC%8C%E6%80%8E%E4%B9%88%E5%9C%A8%E6%B2%A1%E8%B6%8A%E7%8B%B1/" class="article-date"><time datetime="2016-03-20T16:20:44.000Z" itemprop="datePublished">2016-03-21</time></a>
+</div>
+
+    <div class="article-author">hw-1</div>
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>怎么在没越狱的iPhone手机上安装插件，怎么在没越狱的iPhone手机上安装（WeChat）微信抢红包插件，手机没越狱也能抢红包了，App dylib inject</p>
+<p>需要准备：<br>没越狱的iPhone手机一部<br>越狱的iPhone手机一部（用于解密App）<br>苹果开发证书一个</p>
+<p>1,使用dumpdecrypted得到解密后的WeChat</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#get WeChat path</span></span><br><span class="line">ps aux|grep WeChat</span><br><span class="line"><span class="comment">#dumpdecrypted</span></span><br><span class="line">DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib  WeChat_path</span><br></pre></td></tr></table></figure>
+
+
+<p>可得到解密后的可执行文件,最后解密后的App打包成Ｗechat-6.3.13.ipa</p>
+<p>2,编译抢红包插件wctw.dylib<br>使用<a target="_blank" rel="noopener" href="https://github.com/BishopFox/theos-jailed.git">theos-jailed</a>创建 tweak wctw<br>借用一下<a target="_blank" rel="noopener" href="https://github.com/buginux/WeChatRedEnvelop.git">WeChatRedEnvelop</a>里面的代码<br>把代码整合到新建的工程里面<br>编译后就可得到 wctw.dylib CydiaSubstrate</p>
+<p>3,Inject wctw.dylib<br>解压Ｗechat-6.3.13.ipa 得到 WeChat.app<br>复制wctw.dylib CydiaSubstrate 到 WeChat.app</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> WeChat.app</span><br><span class="line">yololib WeChat wctw.dylib```</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4,签名打包  </span><br><span class="line">用keychain 找到你的开发证书的名字</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">codesign -f -s <span class="string">&quot;iPhone Developer: XXXX (XXXX)&quot;</span>  <span class="string">&quot;WeChat.app/CydiaSubstrate&quot;</span></span><br><span class="line">codesign -f -s <span class="string">&quot;iPhone Developer: XXXX (XXXX)&quot;</span>  <span class="string">&quot;WeChat.app/wctw.dylib&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#--entitlements Entitlements.plist</span></span><br><span class="line">codesign -f -s <span class="string">&quot;iPhone Developer: XXXX (XXXX)&quot;</span>  --entitlements Entitlements.plist  <span class="string">&quot;WeChat.app&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#create ipa</span></span><br><span class="line">xcrun -sdk iphoneos PackageApplication -v <span class="string">&quot;WeChat.app&quot;</span>  -o  <span class="string">&quot;pathtosave/WeChat.ipa&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>5,使用Xcode安装<br>窗口－》设备－》选中要安装的手机－》已经安装的应用<br>点击下面的加号 选择刚才生成WeChat.ipa<br>几分钟就可以安装成功啦</p>
+<p>可能遇到的问题：<br>1,安装时提示“已经有一个相同的ID，不能替换”，因为已经是可以替换，后来苹果改不能替换了<br>2,打包成功了，安装时提示“证书不匹配”，要先你的开发证书中＊号描述文件安装到你手机中<br>3,成功安装到手机中，可是一点开就挂了，可能是dylib 的版本不匹配选成的，yololib 默认是按1.0.0加的，theos 生成的是0.0.0 在make 文件中加上版本设置就可以了</p>
+<p><code>bash LOCAL_INSTALL_PATH = /usr/lib #指定版本 _THEOS_TARGET_LDFLAGS += -current_version 1.0.0 _THEOS_TARGET_LDFLAGS += -compatibility_version 1.0.0</code></p>
+<p>4,安装时提示有一个plugin签名不对，删除WeChat.app 目录下Plugins 文件来<br>文章中提到的工具和源码下载<br><a target="_blank" rel="noopener" href="https://github.com/hw-1/wctw.git">https://github.com/hw-1/wctw.git</a></p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://example.com/2016/03/21/%e6%80%8e%e4%b9%88%e5%9c%a8%e6%b2%a1%e8%b6%8a%e7%8b%b1%e7%9a%84iphone%e6%89%8b%e6%9c%ba%e4%b8%8a%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6%ef%bc%8c%e6%80%8e%e4%b9%88%e5%9c%a8%e6%b2%a1%e8%b6%8a%e7%8b%b1/" data-id="ckho4oup2000a8wy23ei14pgw" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2016-03-19-convert-pkcs1-to-pkcs8" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
@@ -498,7 +666,7 @@
   
   <div class="sidebar-module">
     <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2022/02/">February 2022</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/12/">December 2021</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/10/">October 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/09/">September 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/08/">August 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/07/">July 2021</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/06/">June 2021</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/05/">May 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/03/">March 2021</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/01/">January 2021</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/11/">November 2020</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/10/">October 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/09/">September 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/08/">August 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/03/">March 2020</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/02/">February 2020</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/01/">January 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/12/">December 2019</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/11/">November 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/08/">August 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/06/">June 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2022/04/">April 2022</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2022/02/">February 2022</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/12/">December 2021</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/10/">October 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/09/">September 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/08/">August 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/07/">July 2021</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/06/">June 2021</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/05/">May 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/03/">March 2021</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/01/">January 2021</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/11/">November 2020</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/10/">October 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/09/">September 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/08/">August 2020</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/03/">March 2020</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/02/">February 2020</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/01/">January 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/12/">December 2019</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/11/">November 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/08/">August 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/06/">June 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/04/">April 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/12/">December 2016</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/11/">November 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/10/">October 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/09/">September 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/07/">July 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">8</span></li></ul>
   </div>
 
 
@@ -509,23 +677,23 @@
     <ul class="sidebar-module-list">
       
         <li>
+          <a href="/2022/04/20/configure-ac-146-error-possibly-undefined-macro-AC-CHECK-HEADERS/">configure.ac:146: error: possibly undefined macro: AC_CHECK_HEADERS</a>
+        </li>
+      
+        <li>
+          <a href="/2022/04/20/getpeername-Invalid-argument/">getpeername: Invalid argument</a>
+        </li>
+      
+        <li>
+          <a href="/2022/04/20/Xcode-13-3-Build-Failed-because-of-Cycle-in-Dependencies-between-targets-libsignal-protocol-swift/">Xcode 13.3 Build Failed because of Cycle in Dependencies between targets libsignal-protocol-swift</a>
+        </li>
+      
+        <li>
           <a href="/2022/02/23/%E8%AF%81%E4%BB%B6%E7%85%A7%E7%89%87%E6%8E%92%E7%89%88%E5%9C%A8%E7%BA%BF%E7%94%9F%E6%88%90%E5%99%A8/">证件照片排版在线生成器</a>
         </li>
       
         <li>
           <a href="/2022/02/15/The-current-Gradle-version-5-6-2-is-not-compatible-with-the-Kotlin-Gradle-plugin-Please-use-Gradle-6-1-1-or-newer-or-the-previous-version-of-the-Kotlin-plugin/">The current Gradle version 5.6.2 is not compatible with the Kotlin Gradle plugin. Please use Gradle 6.1.1 or newer, or the previous version of the Kotlin plugin.</a>
-        </li>
-      
-        <li>
-          <a href="/2022/02/15/Module-was-compiled-with-an-incompatible-version-of-Kotlin-The-binary-version-of-its-metadata-is-1-5-1-expected-version-is-1-1-15/">Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 1.5.1, expected version is 1.1.15.</a>
-        </li>
-      
-        <li>
-          <a href="/2022/02/15/Reason-os-kern-invalid-argument/">Reason: (os/kern) invalid argument</a>
-        </li>
-      
-        <li>
-          <a href="/2022/02/15/There-are-no-architectures-to-compile-for-because-all-architectures-in-VALID-ARCHS-arm64-are-also-in-EXCLUDED-ARCHS-i386-arm64/">There are no architectures to compile for because all architectures in VALID_ARCHS (arm64) are also in EXCLUDED_ARCHS (i386, arm64).</a>
         </li>
       
     </ul>
