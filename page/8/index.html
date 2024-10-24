@@ -69,6 +69,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2020-09-18-ubuntu-fix-mysqld-high-memory-usage" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/09/18/ubuntu-fix-mysqld-high-memory-usage/" class="article-date">
+  <time class="dt-published" datetime="2020-09-17T17:06:56.000Z" itemprop="datePublished">2020-09-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/09/18/ubuntu-fix-mysqld-high-memory-usage/">ubuntu fix mysqld high memory usage</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>###ubuntu fix mysqld high memory usage</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/mysql/mysql.conf.d/mysqld.cnf</span><br><span class="line">key_buffer_size         = 6M</span><br><span class="line">max_binlog_size   = 6M</span><br><span class="line">max_allowed_packet      = 6M</span><br><span class="line">table_open_cache       = 128</span><br><span class="line">max_connections        = 15</span><br><span class="line">table_definition_cache = 100</span><br><span class="line">temptable_max_ram  = 16M</span><br><span class="line">performance_schema=OFF</span><br><span class="line">service mysql restart</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/09/18/ubuntu-fix-mysqld-high-memory-usage/" data-id="cm2fv7u1b004x2zkt0ief701z" data-title="ubuntu fix mysqld high memory usage" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2020-08-26-ubuntu-mount-usb" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2020/08/26/ubuntu-mount-usb/" class="article-date">
@@ -436,46 +480,6 @@
 
 
   
-    <article id="post-2020-03-16-lldb-swift-command-line" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/03/16/lldb-swift-command-line/" class="article-date">
-  <time class="dt-published" datetime="2020-03-15T18:07:29.000Z" itemprop="datePublished">2020-03-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/03/16/lldb-swift-command-line/">lldb swift command line</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>lldb swift command line</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">expr</span> -l Swift -- import UIKit</span><br><span class="line"><span class="built_in">expr</span> -l Swift -- <span class="built_in">let</span> <span class="variable">$label</span> = unsafeBitCast(0x7fec3a53d720, to: UILabel.self)</span><br><span class="line"><span class="built_in">expr</span> -l Swift -- <span class="built_in">print</span>(<span class="variable">$label</span>.attributedText)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/03/16/lldb-swift-command-line/" data-id="cm2fv7u1a004o2zkt1iaebh4t" data-title="lldb swift command line" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -533,6 +537,10 @@
       <ul>
         
           <li>
+            <a href="/2024/10/24/NaiveProxy-ios-%E7%AB%AFAPP-%E4%B8%8B%E8%BD%BD-https-apps-apple-com-mz-app-fugu-2-id6452590635/">NaiveProxy ios 端APP 下载 https://apps.apple.com/mz/app/fugu-2/id6452590635</a>
+          </li>
+        
+          <li>
             <a href="/2024/10/19/%E6%B7%B1%E5%9C%B3IOS%E8%8B%B9%E6%9E%9C-Shadowrocket%E5%B0%8F%E7%81%AB%E7%AE%AD%E4%B8%8B%E8%BD%BD%E4%B8%8D%E8%8A%B1%E9%92%B1%EF%BC%8C0%E5%85%83%E8%B4%AD%EF%BC%9F2024%E5%B9%B4IOS-%E6%97%A0%E9%9C%80Apple-Id-%E5%AE%89%E8%A3%85shadowrocket-%E6%88%91%E8%A6%81%E7%BF%BB%E5%A2%99%EF%BC%81%E7%82%B9%E5%87%BB-https-whaleapp-net-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/">深圳IOS苹果 Shadowrocket小火箭下载不花钱，0元购？2024年IOS 无需Apple Id 安装shadowrocket - 我要翻墙！点击 https://whaleapp.net 下载安装</a>
           </li>
         
@@ -546,10 +554,6 @@
         
           <li>
             <a href="/2024/05/11/rsync-recv-generator-mkdir-Users-user1-Library-Developer-Xcode-DerivedData-Calculator-cobikaqikitjeogmiablymjcbskv-Build-Products-Debug-iphonesimulator-Calculator-app-Frameworks-SnapKit-framework-SnapKit-Privacy-bundle-failed-Operation-not-permitted-1/">rsync: recv_generator: mkdir /Users/user1/Library/Developer/Xcode/DerivedData/Calculator-cobikaqikitjeogmiablymjcbskv/Build/Products/Debug-iphonesimulator/Calculator.app/Frameworks/SnapKit.framework/SnapKit_Privacy.bundle failed: Operation not permitted (1)</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/18/ld-multiple-errors-archive-member-not-a-mach-o-file-in-Users-xxx-Desktop-libapps-a/">ld: multiple errors: archive member &#39;/&#39; not a mach-o file in &#39;/Users/xxx/Desktop/libapps.a&#39;;</a>
           </li>
         
       </ul>
