@@ -69,6 +69,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/" class="article-date">
+  <time class="dt-published" datetime="2024-10-28T01:08:22.000Z" itemprop="datePublished">2024-10-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Assertion-failed-aliasSectionNum-sectionNum-“alias-and-its-target-must-be-located-in-the-same-section”-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358"><a href="#Assertion-failed-aliasSectionNum-sectionNum-“alias-and-its-target-must-be-located-in-the-same-section”-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358" class="headerlink" title="Assertion failed: (aliasSectionNum &#x3D;&#x3D; sectionNum &amp;&amp; “alias and its target must be located in the same section”), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358."></a>Assertion failed: (aliasSectionNum &#x3D;&#x3D; sectionNum &amp;&amp; “alias and its target must be located in the same section”), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</h1><p>clang: error: linker command failed with exit code 1 (use -v to see invocation)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解决方案：Build Settings -&gt; Other Linker Flags 中增加 -ld64</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/" data-id="cm2sbmau3000039kt1l3n9e0h" data-title="section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358." class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-NaiveProxy-ios-端APP-下载-https-apps-apple-com-mz-app-fugu-2-id6452590635" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/10/24/NaiveProxy-ios-%E7%AB%AFAPP-%E4%B8%8B%E8%BD%BD-https-apps-apple-com-mz-app-fugu-2-id6452590635/" class="article-date">
@@ -420,45 +460,6 @@
 
 
   
-    <article id="post-core-ext-kernel-require-rb-83-in-require-cannot-load-such-file-openssl-LoadError" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/24/core-ext-kernel-require-rb-83-in-require-cannot-load-such-file-openssl-LoadError/" class="article-date">
-  <time class="dt-published" datetime="2023-03-24T00:58:12.000Z" itemprop="datePublished">2023-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/24/core-ext-kernel-require-rb-83-in-require-cannot-load-such-file-openssl-LoadError/">core_ext/kernel_require.rb:83:in &#39;require&#39;: cannot load such file -- openssl (LoadError)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="core-ext-kernel-require-rb-83-in-‘require’-cannot-load-such-file-–-openssl-LoadError-ld-library-not-found-for-lnsl"><a href="#core-ext-kernel-require-rb-83-in-‘require’-cannot-load-such-file-–-openssl-LoadError-ld-library-not-found-for-lnsl" class="headerlink" title="core_ext&#x2F;kernel_require.rb:83:in ‘require’: cannot load such file – openssl (LoadError) ld: library not found for -lnsl"></a>core_ext&#x2F;kernel_require.rb:83:in ‘require’: cannot load such file – openssl (LoadError) ld: library not found for -lnsl</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install openssl@1.1 readline libyaml</span><br><span class="line">PKG_CONFIG_PATH=/usr/local/Cellar/openssl@1.1/1.1.1t/lib/pkgconfig rvm reinstall 2.7.6 --with-openssl-lib=/usr/local/Cellar/openssl@1.1/1.1.1t --with-openssl-include=/usr/local/Cellar/openssl@1.1/1.1.1t/include</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/24/core-ext-kernel-require-rb-83-in-require-cannot-load-such-file-openssl-LoadError/" data-id="cm2fv7u1h006e2zkt7g4hfuld" data-title="core_ext/kernel_require.rb:83:in &#39;require&#39;: cannot load such file -- openssl (LoadError)" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -516,6 +517,10 @@
       <ul>
         
           <li>
+            <a href="/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
+          </li>
+        
+          <li>
             <a href="/2024/10/24/NaiveProxy-ios-%E7%AB%AFAPP-%E4%B8%8B%E8%BD%BD-https-apps-apple-com-mz-app-fugu-2-id6452590635/">NaiveProxy ios 端APP 下载 https://apps.apple.com/mz/app/fugu-2/id6452590635</a>
           </li>
         
@@ -529,10 +534,6 @@
         
           <li>
             <a href="/2024/07/29/Called-object-type-facebook-flipper-SocketEventHandler-aka-int-is-not-a-function-or-function-pointer/">Called object type &#39;facebook::flipper::SocketEventHandler&#39; (aka &#39;int&#39;) is not a function or function pointer</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/11/rsync-recv-generator-mkdir-Users-user1-Library-Developer-Xcode-DerivedData-Calculator-cobikaqikitjeogmiablymjcbskv-Build-Products-Debug-iphonesimulator-Calculator-app-Frameworks-SnapKit-framework-SnapKit-Privacy-bundle-failed-Operation-not-permitted-1/">rsync: recv_generator: mkdir /Users/user1/Library/Developer/Xcode/DerivedData/Calculator-cobikaqikitjeogmiablymjcbskv/Build/Products/Debug-iphonesimulator/Calculator.app/Frameworks/SnapKit.framework/SnapKit_Privacy.bundle failed: Operation not permitted (1)</a>
           </li>
         
       </ul>
