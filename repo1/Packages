@@ -1,0 +1,16 @@
+Package: com.0xkuj.iparanger
+Version: 1.9-2+debug
+Architecture: iphoneos-arm64
+Maintainer: 0xkuj
+Installed-Size: 3640
+Depends: gawk, unzip, plutil
+Filename: ./Files/IPARanger/com.0xkuj.iparanger_1.9-2+debug_iphoneos-arm64.deb
+Size: 1203114
+MD5sum: 56c23c101bf1dbf2e3516bbfebd91e86
+SHA1: 49fd5883e8b2344cc297d8af2eb47990ce8d63f2
+SHA256: 7842ae1d5431d461d718a09c5f03288d3fc7148b1b36a8ab59dca4b388a3deb8
+Section: Applications
+Description: GUI Based Application for ipatool
+Author: 0xkuj
+Name: IPA Ranger
+

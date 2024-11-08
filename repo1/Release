@@ -1,0 +1,8 @@
+Origin: Xinam1ne's repo
+Label: Xinam1ne's repo
+Suite: stable
+Version: 1.1
+Codename: Xinam1ne
+Architectures: iphoneos-arm64
+Components: main
+Description: Xinam1ne's Cydia Repository
