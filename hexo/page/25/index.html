@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-05-12-install_name_change" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2016/05/12/install_name_change/" class="article-date">
+  <time class="dt-published" datetime="2016-05-11T22:06:16.000Z" itemprop="datePublished">2016-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2016/05/12/install_name_change/">install_name_change</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Using otool -D lib.dylib returns the path that is presented by that library to the compiler. To change it you can use install_name_change with the argument -<span class="built_in">id</span>.</span><br><span class="line"></span><br><span class="line">install_name_tool -<span class="built_in">id</span> “@executable_path/../Plugins/lib.dylib” lib.dylib</span><br><span class="line"></span><br><span class="line">This alters the relative path of lib.dylib to the plugins folder of your bundle. Next you need to change each path <span class="keyword">in</span> the main executable. You can find out the dependencies and their expected path of the executable using otool -L. For each dependency that needs changing use install_name_tool again with the argument -change.</span><br><span class="line"></span><br><span class="line">install_name_tool -change “/usr/lib/lib.dylib” “@executable_path/../Plugins/lib.dylib” applicationname</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2016/05/12/install_name_change/" data-id="cm2fv7u0y000a2zkte6lt2abu" data-title="install_name_change" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2016-03-21-e6808ee4b988e59ca8e6b2a1e8b68ae78bb1e79a84iphonee6898be69cbae4b88ae5ae89e8a385e68f92e4bbb6efbc8ce6808ee4b988e59ca8e6b2a1e8b68ae78bb1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2016/03/21/%E6%80%8E%E4%B9%88%E5%9C%A8%E6%B2%A1%E8%B6%8A%E7%8B%B1%E7%9A%84iphone%E6%89%8B%E6%9C%BA%E4%B8%8A%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%EF%BC%8C%E6%80%8E%E4%B9%88%E5%9C%A8%E6%B2%A1%E8%B6%8A%E7%8B%B1/" class="article-date">
@@ -483,6 +522,10 @@ _THEOS_TARGET_LDFLAGS += -compatibility_version 1.0.0```
       <ul>
         
           <li>
+            <a href="/hexo/2024/11/21/ERROR-failed-to-solve-debian-bookworm-slim-failed-to-resolve-source-metadata-for-docker-io-library-debian-bookworm-slim-error-getting-credentials-err-exit-status-1-out/">ERROR: failed to solve: debian:bookworm-slim: failed to resolve source metadata for docker.io/library/debian:bookworm-slim: error getting credentials - err: exit status 1, out:</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2024/11/11/%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83App%EF%BC%8CIn-App-Purchase-%E6%97%A0%E6%B3%95submit-for-review/">首次发布App，In-App Purchase 无法submit for review</a>
           </li>
         
@@ -496,10 +539,6 @@ _THEOS_TARGET_LDFLAGS += -compatibility_version 1.0.0```
         
           <li>
             <a href="/hexo/2024/10/19/%E6%B7%B1%E5%9C%B3IOS%E8%8B%B9%E6%9E%9C-Shadowrocket%E5%B0%8F%E7%81%AB%E7%AE%AD%E4%B8%8B%E8%BD%BD%E4%B8%8D%E8%8A%B1%E9%92%B1%EF%BC%8C0%E5%85%83%E8%B4%AD%EF%BC%9F2024%E5%B9%B4IOS-%E6%97%A0%E9%9C%80Apple-Id-%E5%AE%89%E8%A3%85shadowrocket-%E6%88%91%E8%A6%81%E7%BF%BB%E5%A2%99%EF%BC%81%E7%82%B9%E5%87%BB-https-whaleapp-net-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/">深圳IOS苹果 Shadowrocket小火箭下载不花钱，0元购？2024年IOS 无需Apple Id 安装shadowrocket - 我要翻墙！点击 https://whaleapp.net 下载安装</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/08/08/Reason-no-LC-RPATH-s-found/">Reason: no LC_RPATH&#39;s found&#39;</a>
           </li>
         
       </ul>

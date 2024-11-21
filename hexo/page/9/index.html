@@ -69,6 +69,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2020-03-16-ssh-port-forward" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2020/03/16/ssh-port-forward/" class="article-date">
+  <time class="dt-published" datetime="2020-03-15T18:43:55.000Z" itemprop="datePublished">2020-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2020/03/16/ssh-port-forward/">ssh port forward</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>ssh port forward</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -q  -i <span class="variable">$IFPOD_HOME</span>/etc/ln1.pem   root@17.8.27.17 -p 22 -N -g -L  3333:localhost:2222</span><br><span class="line"></span><br><span class="line">ssh -D 9000  -N wd1@127.0.0.1 -p 3333</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2020/03/16/ssh-port-forward/" data-id="cm2fv7u1a004p2zkt6urhd9ld" data-title="ssh port forward" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2020-03-16-itunes-account-auth" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2020/03/16/itunes-account-auth/" class="article-date">
@@ -429,46 +469,6 @@
 
 
   
-    <article id="post-2020-01-17-raspberry-locale-cannot-set-lc_ctype-to-default-locale-no-such-file-or-directory" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2020/01/17/raspberry-locale-cannot-set-lc_ctype-to-default-locale-no-such-file-or-directory/" class="article-date">
-  <time class="dt-published" datetime="2020-01-16T18:44:37.000Z" itemprop="datePublished">2020-01-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2020/01/17/raspberry-locale-cannot-set-lc_ctype-to-default-locale-no-such-file-or-directory/">raspberry locale: Cannot set LC_CTYPE to default locale: No such file or directory</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>raspberry locale: Cannot set LC_CTYPE to default locale: No such file or directory</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Edit /etc/locale.gen and uncomment the line with en_US.UTF-8</span><br><span class="line"><span class="built_in">sudo</span> locale-gen en_US.UTF-8</span><br><span class="line"><span class="built_in">sudo</span> update-locale en_US.UTF-8</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2020/01/17/raspberry-locale-cannot-set-lc_ctype-to-default-locale-no-such-file-or-directory/" data-id="cm2fv7u19004h2zkt8v3v1ib2" data-title="raspberry locale: Cannot set LC_CTYPE to default locale: No such file or directory" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -526,6 +526,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2024/11/21/ERROR-failed-to-solve-debian-bookworm-slim-failed-to-resolve-source-metadata-for-docker-io-library-debian-bookworm-slim-error-getting-credentials-err-exit-status-1-out/">ERROR: failed to solve: debian:bookworm-slim: failed to resolve source metadata for docker.io/library/debian:bookworm-slim: error getting credentials - err: exit status 1, out:</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2024/11/11/%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83App%EF%BC%8CIn-App-Purchase-%E6%97%A0%E6%B3%95submit-for-review/">首次发布App，In-App Purchase 无法submit for review</a>
           </li>
         
@@ -539,10 +543,6 @@
         
           <li>
             <a href="/hexo/2024/10/19/%E6%B7%B1%E5%9C%B3IOS%E8%8B%B9%E6%9E%9C-Shadowrocket%E5%B0%8F%E7%81%AB%E7%AE%AD%E4%B8%8B%E8%BD%BD%E4%B8%8D%E8%8A%B1%E9%92%B1%EF%BC%8C0%E5%85%83%E8%B4%AD%EF%BC%9F2024%E5%B9%B4IOS-%E6%97%A0%E9%9C%80Apple-Id-%E5%AE%89%E8%A3%85shadowrocket-%E6%88%91%E8%A6%81%E7%BF%BB%E5%A2%99%EF%BC%81%E7%82%B9%E5%87%BB-https-whaleapp-net-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/">深圳IOS苹果 Shadowrocket小火箭下载不花钱，0元购？2024年IOS 无需Apple Id 安装shadowrocket - 我要翻墙！点击 https://whaleapp.net 下载安装</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/08/08/Reason-no-LC-RPATH-s-found/">Reason: no LC_RPATH&#39;s found&#39;</a>
           </li>
         
       </ul>

@@ -69,6 +69,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-crypto-free-double-free" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2021/03/25/crypto-free-double-free/" class="article-date">
+  <time class="dt-published" datetime="2021-03-25T12:34:55.000Z" itemprop="datePublished">2021-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2021/03/25/crypto-free-double-free/">crypto_free double free</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="openssl-crypto-free-double-free"><a href="#openssl-crypto-free-double-free" class="headerlink" title="openssl crypto_free double free"></a>openssl crypto_free double free</h3><p>the crash is occurring in SSL_library_init(). This should be called in a single thread before any other threads start using OpenSSL</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/openssl/openssl/issues/2809">link</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2021/03/25/crypto-free-double-free/" data-id="cm2fv7u1h006f2zkt08sh6o9a" data-title="crypto_free double free" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-libcurl-thread-safety" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2021/03/25/libcurl-thread-safety/" class="article-date">
@@ -456,48 +496,6 @@
 
 
   
-    <article id="post-flutter-gradle-task-assembledebug-failed" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2020/11/25/flutter-gradle-task-assembledebug-failed/" class="article-date">
-  <time class="dt-published" datetime="2020-11-25T02:44:52.000Z" itemprop="datePublished">2020-11-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2020/11/25/flutter-gradle-task-assembledebug-failed/">flutter-gradle-task-assembledebug-failed</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="Flutter-Gradle-task-assembleDebug-failed-configuring-root-project-‘android’"><a href="#Flutter-Gradle-task-assembleDebug-failed-configuring-root-project-‘android’" class="headerlink" title="Flutter: Gradle task assembleDebug failed (configuring root project ‘android’)"></a>Flutter: Gradle task assembleDebug failed (configuring root project ‘android’)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">AILURE: Build failed with an exception.</span><br><span class="line"></span><br><span class="line">* What went wrong:</span><br><span class="line">A problem occurred configuring root project <span class="string">&#x27;android&#x27;</span>.</span><br><span class="line">&gt; Could not resolve all artifacts <span class="keyword">for</span> configuration <span class="string">&#x27;:classpath&#x27;</span>.</span><br><span class="line">   &gt; Could not resolve com.android.tools.build:gradle:3.5.0.</span><br><span class="line">     Required by:</span><br><span class="line">         project :</span><br><span class="line">      &gt; Could not resolve com.android.tools.build:gradle:3.5.0.</span><br><span class="line">         &gt; Could not get resource <span class="string">&#x27;https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle/3.5.0/gradle-3.5.0.pom&#x27;</span>.</span><br><span class="line">            &gt; Could not GET <span class="string">&#x27;https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle/3.5.0/gradle-3.5.0.pom&#x27;</span>.</span><br><span class="line">               &gt; Connect to 127.0.0.1:8123 [/127.0.0.1] failed: Connection refused: connect</span><br><span class="line">      &gt; Could not resolve com.android.tools.build:gradle:3.5.0.</span><br><span class="line">         &gt; Could not get resource <span class="string">&#x27;https://jcenter.bintray.com/com/android/tools/build/gradle/3.5.0/gradle-3.5.0.pom&#x27;</span>.</span><br><span class="line">            &gt; Could not GET <span class="string">&#x27;https://jcenter.bintray.com/com/android/tools/build/gradle/3.5.0/gradle-3.5.0.pom&#x27;</span>.</span><br><span class="line">               &gt; Connect to 127.0.0.1:8123 [/127.0.0.1] failed: Connection refused: connect</span><br><span class="line"></span><br><span class="line">* Try:</span><br><span class="line">Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more <span class="built_in">log</span> output. Run with --scan to get full insights.</span><br><span class="line"></span><br><span class="line">* Get more <span class="built_in">help</span> at https://help.gradle.org</span><br><span class="line"></span><br><span class="line">BUILD FAILED <span class="keyword">in</span> 20s</span><br><span class="line">Finished with error: Gradle task assembleDebug failed with <span class="built_in">exit</span> code 1</span><br></pre></td></tr></table></figure>
-<p>原因<br>gradle 缓存了代理信息，没有时实更新</p>
-<p>解决方法</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> -rf ~/.gradle</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2020/11/25/flutter-gradle-task-assembledebug-failed/" data-id="cm2fv7u1h006n2zktco0tcfc4" data-title="flutter-gradle-task-assembledebug-failed" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -555,6 +553,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2024/11/21/ERROR-failed-to-solve-debian-bookworm-slim-failed-to-resolve-source-metadata-for-docker-io-library-debian-bookworm-slim-error-getting-credentials-err-exit-status-1-out/">ERROR: failed to solve: debian:bookworm-slim: failed to resolve source metadata for docker.io/library/debian:bookworm-slim: error getting credentials - err: exit status 1, out:</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2024/11/11/%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83App%EF%BC%8CIn-App-Purchase-%E6%97%A0%E6%B3%95submit-for-review/">首次发布App，In-App Purchase 无法submit for review</a>
           </li>
         
@@ -568,10 +570,6 @@
         
           <li>
             <a href="/hexo/2024/10/19/%E6%B7%B1%E5%9C%B3IOS%E8%8B%B9%E6%9E%9C-Shadowrocket%E5%B0%8F%E7%81%AB%E7%AE%AD%E4%B8%8B%E8%BD%BD%E4%B8%8D%E8%8A%B1%E9%92%B1%EF%BC%8C0%E5%85%83%E8%B4%AD%EF%BC%9F2024%E5%B9%B4IOS-%E6%97%A0%E9%9C%80Apple-Id-%E5%AE%89%E8%A3%85shadowrocket-%E6%88%91%E8%A6%81%E7%BF%BB%E5%A2%99%EF%BC%81%E7%82%B9%E5%87%BB-https-whaleapp-net-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/">深圳IOS苹果 Shadowrocket小火箭下载不花钱，0元购？2024年IOS 无需Apple Id 安装shadowrocket - 我要翻墙！点击 https://whaleapp.net 下载安装</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/08/08/Reason-no-LC-RPATH-s-found/">Reason: no LC_RPATH&#39;s found&#39;</a>
           </li>
         
       </ul>

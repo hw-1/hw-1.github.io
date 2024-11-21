@@ -69,6 +69,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-db-mysql-wrapper-single-mysql-stmt-execute-driver-error-4031-The-client-was-disconnected-by-the-server-because-of-inactivity-See-wait-timeout-and" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2021/06/29/db-mysql-wrapper-single-mysql-stmt-execute-driver-error-4031-The-client-was-disconnected-by-the-server-because-of-inactivity-See-wait-timeout-and/" class="article-date">
+  <time class="dt-published" datetime="2021-06-29T10:59:23.000Z" itemprop="datePublished">2021-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2021/06/29/db-mysql-wrapper-single-mysql-stmt-execute-driver-error-4031-The-client-was-disconnected-by-the-server-because-of-inactivity-See-wait-timeout-and/">:db_mysql:wrapper_single_mysql_stmt_execute: driver error (4031): The client was disconnected by the server because of inactivity. See wait_timeout and</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="db-mysql-wrapper-single-mysql-stmt-execute-driver-error-4031-The-client"><a href="#db-mysql-wrapper-single-mysql-stmt-execute-driver-error-4031-The-client" class="headerlink" title=":db_mysql:wrapper_single_mysql_stmt_execute: driver error (4031): The client"></a>:db_mysql:wrapper_single_mysql_stmt_execute: driver error (4031): The client</h3><p>was disconnected by the server because of inactivity. See wait_timeout and</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#mysql</span></span><br><span class="line">interactive_timeout <span class="keyword">for</span> configuring this behavior.</span><br><span class="line">SHOW SESSION VARIABLES LIKE <span class="string">&#x27;%timeout%&#x27;</span>;</span><br><span class="line"><span class="comment">#config</span></span><br><span class="line"><span class="built_in">sudo</span> vim /etc/mysql/mysql.conf.d/mysqld.cnf</span><br><span class="line">wait_timeout = 2880000</span><br><span class="line">interactive_timeout = 2880000</span><br><span class="line"><span class="built_in">sudo</span> service mysql restart</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2021/06/29/db-mysql-wrapper-single-mysql-stmt-execute-driver-error-4031-The-client-was-disconnected-by-the-server-because-of-inactivity-See-wait-timeout-and/" data-id="cm2fv7u1h006h2zkt7n7y2csj" data-title=":db_mysql:wrapper_single_mysql_stmt_execute: driver error (4031): The client was disconnected by the server because of inactivity. See wait_timeout and" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-ERROR-proto-tls-tls-read-req-failed-to-do-pre-tls-reading" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2021/06/23/ERROR-proto-tls-tls-read-req-failed-to-do-pre-tls-reading/" class="article-date">
@@ -430,46 +471,6 @@
 
 
   
-    <article id="post-crypto-free-double-free" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2021/03/25/crypto-free-double-free/" class="article-date">
-  <time class="dt-published" datetime="2021-03-25T12:34:55.000Z" itemprop="datePublished">2021-03-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2021/03/25/crypto-free-double-free/">crypto_free double free</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="openssl-crypto-free-double-free"><a href="#openssl-crypto-free-double-free" class="headerlink" title="openssl crypto_free double free"></a>openssl crypto_free double free</h3><p>the crash is occurring in SSL_library_init(). This should be called in a single thread before any other threads start using OpenSSL</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/openssl/openssl/issues/2809">link</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2021/03/25/crypto-free-double-free/" data-id="cm2fv7u1h006f2zkt08sh6o9a" data-title="crypto_free double free" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -527,6 +528,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2024/11/21/ERROR-failed-to-solve-debian-bookworm-slim-failed-to-resolve-source-metadata-for-docker-io-library-debian-bookworm-slim-error-getting-credentials-err-exit-status-1-out/">ERROR: failed to solve: debian:bookworm-slim: failed to resolve source metadata for docker.io/library/debian:bookworm-slim: error getting credentials - err: exit status 1, out:</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2024/11/11/%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83App%EF%BC%8CIn-App-Purchase-%E6%97%A0%E6%B3%95submit-for-review/">首次发布App，In-App Purchase 无法submit for review</a>
           </li>
         
@@ -540,10 +545,6 @@
         
           <li>
             <a href="/hexo/2024/10/19/%E6%B7%B1%E5%9C%B3IOS%E8%8B%B9%E6%9E%9C-Shadowrocket%E5%B0%8F%E7%81%AB%E7%AE%AD%E4%B8%8B%E8%BD%BD%E4%B8%8D%E8%8A%B1%E9%92%B1%EF%BC%8C0%E5%85%83%E8%B4%AD%EF%BC%9F2024%E5%B9%B4IOS-%E6%97%A0%E9%9C%80Apple-Id-%E5%AE%89%E8%A3%85shadowrocket-%E6%88%91%E8%A6%81%E7%BF%BB%E5%A2%99%EF%BC%81%E7%82%B9%E5%87%BB-https-whaleapp-net-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/">深圳IOS苹果 Shadowrocket小火箭下载不花钱，0元购？2024年IOS 无需Apple Id 安装shadowrocket - 我要翻墙！点击 https://whaleapp.net 下载安装</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/08/08/Reason-no-LC-RPATH-s-found/">Reason: no LC_RPATH&#39;s found&#39;</a>
           </li>
         
       </ul>

@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2019-06-26-wireshark-expression-usage" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2019/06/26/wireshark-expression-usage/" class="article-date">
+  <time class="dt-published" datetime="2019-06-26T00:17:01.000Z" itemprop="datePublished">2019-06-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2019/06/26/wireshark-expression-usage/">wireshark expression usage</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="wireshark-expression-usage"><a href="#wireshark-expression-usage" class="headerlink" title="wireshark expression usage"></a>wireshark expression usage</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ip.addr == 192.168.0.1</span><br><span class="line">ip.addr == 129.111.0.0/16</span><br><span class="line">http.host matches <span class="string">&quot;acme\.(org|com|net)&quot;</span></span><br><span class="line"></span><br><span class="line">http.request.uri == <span class="string">&quot;https://www.wireshark.org/&quot;</span></span><br><span class="line">udp contains 81:60:03</span><br><span class="line">sip.To contains <span class="string">&quot;a1762&quot;</span></span><br><span class="line"></span><br><span class="line">tcp.port <span class="keyword">in</span> &#123;80 443 8080&#125;</span><br><span class="line">tcp.port <span class="keyword">in</span> &#123;443 4430..4434&#125;</span><br><span class="line">tcp.port == 80 || tcp.port == 443 || tcp.port == 8080</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http.request.method <span class="keyword">in</span> &#123;<span class="string">&quot;HEAD&quot;</span> <span class="string">&quot;GET&quot;</span>&#125;</span><br><span class="line">ip.addr <span class="keyword">in</span> &#123;10.0.0.5 .. 10.0.0.9 192.168.1.1..192.168.1.9&#125;</span><br><span class="line">frame.time_delta <span class="keyword">in</span> &#123;10 .. 10.5&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2019/06/26/wireshark-expression-usage/" data-id="cm2fv7u18003v2zkt90cngh96" data-title="wireshark expression usage" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2019-05-17-make-ubuntu-startup-usb" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2019/05/17/make-ubuntu-startup-usb/" class="article-date">
@@ -458,45 +497,6 @@
 
 
   
-    <article id="post-2019-03-22-raspberry-redsocks-forward" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2019/03/22/raspberry-redsocks-forward/" class="article-date">
-  <time class="dt-published" datetime="2019-03-22T06:13:17.000Z" itemprop="datePublished">2019-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2019/03/22/raspberry-redsocks-forward/">raspberry redsocks forward</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;br /&amp;gt;<span class="built_in">sudo</span> apt install redsocks</span><br><span class="line"></span><br><span class="line">/etc/sysctl.conf:</span><br><span class="line">net.ipv4.ip_forward = 1</span><br><span class="line"><span class="built_in">sudo</span> sysctl -p /etc/sysctl.conf</span><br><span class="line"><span class="built_in">sudo</span> sysctl -w net.ipv4.ip_forward=1</span><br><span class="line"><span class="comment">#sudo service networking restart</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat  -L -n</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> iptables -F</span><br><span class="line"><span class="built_in">sudo</span> iptables -X</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -F</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -X</span><br><span class="line"><span class="built_in">sudo</span> iptables -t mangle -F</span><br><span class="line"><span class="built_in">sudo</span> iptables -t mangle -X</span><br><span class="line"><span class="built_in">sudo</span> iptables -P INPUT ACCEPT</span><br><span class="line"><span class="built_in">sudo</span> iptables -P FORWARD ACCEPT</span><br><span class="line"><span class="built_in">sudo</span> iptables -P OUTPUT ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># interface forward</span></span><br><span class="line"><span class="built_in">sudo</span> iptables -A FORWARD -i wlan0 -o lo -m state --state RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line"> <span class="built_in">sudo</span> iptables -A FORWARD -i lo -o wlan0 -j ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># Allow established connections</span></span><br><span class="line"><span class="built_in">sudo</span> iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</span><br><span class="line"><span class="built_in">sudo</span> iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># Masquerade</span></span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> redsocks</span><br><span class="line"><span class="built_in">sudo</span> vim /etc/redsocks.conf</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">curl --socks5 127.0.0.1:31338  https://viewerport.com/app/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -N REDSOCKS</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A REDSOCKS -d 0.0.0.0/8 -j RETURN</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A REDSOCKS -d 10.0.0.0/8 -j RETURN</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A REDSOCKS -d 127.0.0.0/8 -j RETURN</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A REDSOCKS -d 169.254.0.0/16 -j RETURN</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A REDSOCKS -d 172.16.0.0/12 -j RETURN</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A REDSOCKS -d 192.168.0.0/16 -j RETUR</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A REDSOCKS -d 172.24.0.0/16 -j RETURN</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A REDSOCKS -d 224.0.0.0/4 -j RETURN</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A REDSOCKS -d 240.0.0.0/4 -j RETURN</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A REDSOCKS -p tcp -j REDIRECT --to-ports 31338</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A PREROUTING --in-interface lo -p tcp -j REDSOCKS</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A PREROUTING --in-interface wlan0 -p tcp -j REDSOCKS</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> iptables-restore &amp;lt; /home/pi/redsocks.ip</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> iptables-save</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2019/03/22/raspberry-redsocks-forward/" data-id="cm2fv7u17003k2zkta55h5aok" data-title="raspberry redsocks forward" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -554,6 +554,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2024/11/21/ERROR-failed-to-solve-debian-bookworm-slim-failed-to-resolve-source-metadata-for-docker-io-library-debian-bookworm-slim-error-getting-credentials-err-exit-status-1-out/">ERROR: failed to solve: debian:bookworm-slim: failed to resolve source metadata for docker.io/library/debian:bookworm-slim: error getting credentials - err: exit status 1, out:</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2024/11/11/%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83App%EF%BC%8CIn-App-Purchase-%E6%97%A0%E6%B3%95submit-for-review/">首次发布App，In-App Purchase 无法submit for review</a>
           </li>
         
@@ -567,10 +571,6 @@
         
           <li>
             <a href="/hexo/2024/10/19/%E6%B7%B1%E5%9C%B3IOS%E8%8B%B9%E6%9E%9C-Shadowrocket%E5%B0%8F%E7%81%AB%E7%AE%AD%E4%B8%8B%E8%BD%BD%E4%B8%8D%E8%8A%B1%E9%92%B1%EF%BC%8C0%E5%85%83%E8%B4%AD%EF%BC%9F2024%E5%B9%B4IOS-%E6%97%A0%E9%9C%80Apple-Id-%E5%AE%89%E8%A3%85shadowrocket-%E6%88%91%E8%A6%81%E7%BF%BB%E5%A2%99%EF%BC%81%E7%82%B9%E5%87%BB-https-whaleapp-net-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/">深圳IOS苹果 Shadowrocket小火箭下载不花钱，0元购？2024年IOS 无需Apple Id 安装shadowrocket - 我要翻墙！点击 https://whaleapp.net 下载安装</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/08/08/Reason-no-LC-RPATH-s-found/">Reason: no LC_RPATH&#39;s found&#39;</a>
           </li>
         
       </ul>
