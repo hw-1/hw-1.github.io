@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-AttributeError-module-tensorflow-python-keras-utils-generic-utils-has-no-attribute-populate-dict-with-module-objects" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2021/07/09/AttributeError-module-tensorflow-python-keras-utils-generic-utils-has-no-attribute-populate-dict-with-module-objects/" class="article-date">
+  <time class="dt-published" datetime="2021-07-09T00:26:00.000Z" itemprop="datePublished">2021-07-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2021/07/09/AttributeError-module-tensorflow-python-keras-utils-generic-utils-has-no-attribute-populate-dict-with-module-objects/">AttributeError: module &#39;tensorflow.python.keras.utils.generic_utils&#39; has no attribute &#39;populate_dict_with_module_objects&#39;</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="Volumes-wd1-APP-hw-1-github-io-source-posts-AttributeError-module-tensorflow-python-keras-utils-generic-utils-has-no-attribute-populate-dict-with-module-objects-md"><a href="#Volumes-wd1-APP-hw-1-github-io-source-posts-AttributeError-module-tensorflow-python-keras-utils-generic-utils-has-no-attribute-populate-dict-with-module-objects-md" class="headerlink" title="&#x2F;Volumes&#x2F;wd1&#x2F;APP&#x2F;hw-1.github.io&#x2F;source&#x2F;_posts&#x2F;AttributeError-module-tensorflow-python-keras-utils-generic-utils-has-no-attribute-populate-dict-with-module-objects.md"></a>&#x2F;Volumes&#x2F;wd1&#x2F;APP&#x2F;hw-1.github.io&#x2F;source&#x2F;_posts&#x2F;AttributeError-module-tensorflow-python-keras-utils-generic-utils-has-no-attribute-populate-dict-with-module-objects.md</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## keras to tensorflow.python.keras</span></span><br><span class="line">replace: from keras.utils import generic_utils</span><br><span class="line">with: from tensorflow.python.keras.utils import generic_utils</span><br><span class="line"></span><br><span class="line"><span class="comment">## keras.applications to tensorflow.keras.applications</span></span><br><span class="line">from keras.preprocessing.image import load_img</span><br><span class="line">from keras.preprocessing.image import img_to_array</span><br><span class="line">from keras.applications.vgg16 import preprocess_input</span><br><span class="line">from keras.applications.vgg16 import decode_predictions</span><br><span class="line">from keras.applications.vgg16 import VGG16</span><br><span class="line">became this:</span><br><span class="line">from tensorflow.keras.preprocessing.image import load_img</span><br><span class="line">from tensorflow.keras.preprocessing.image import img_to_array</span><br><span class="line">from tensorflow.keras.applications.vgg16 import preprocess_input</span><br><span class="line">from tensorflow.keras.applications.vgg16 import decode_predictions</span><br><span class="line">from tensorflow.keras.applications.vgg16 import VGG16</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2021/07/09/AttributeError-module-tensorflow-python-keras-utils-generic-utils-has-no-attribute-populate-dict-with-module-objects/" data-id="cm2fv7u1c005f2zktcibd8usn" data-title="AttributeError: module &#39;tensorflow.python.keras.utils.generic_utils&#39; has no attribute &#39;populate_dict_with_module_objects&#39;" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-db-mysql-wrapper-single-mysql-stmt-execute-driver-error-4031-The-client-was-disconnected-by-the-server-because-of-inactivity-See-wait-timeout-and" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2021/06/29/db-mysql-wrapper-single-mysql-stmt-execute-driver-error-4031-The-client-was-disconnected-by-the-server-because-of-inactivity-See-wait-timeout-and/" class="article-date">
@@ -430,47 +469,6 @@
 
 
   
-    <article id="post-ios上libevent在dns解析时崩溃的解决" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2021/03/25/ios%E4%B8%8Alibevent%E5%9C%A8dns%E8%A7%A3%E6%9E%90%E6%97%B6%E5%B4%A9%E6%BA%83%E7%9A%84%E8%A7%A3%E5%86%B3/" class="article-date">
-  <time class="dt-published" datetime="2021-03-25T12:39:58.000Z" itemprop="datePublished">2021-03-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2021/03/25/ios%E4%B8%8Alibevent%E5%9C%A8dns%E8%A7%A3%E6%9E%90%E6%97%B6%E5%B4%A9%E6%BA%83%E7%9A%84%E8%A7%A3%E5%86%B3/">ios上libevent在dns解析时崩溃的解决</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="ios上libevent在dns解析时崩溃的解决"><a href="#ios上libevent在dns解析时崩溃的解决" class="headerlink" title="ios上libevent在dns解析时崩溃的解决"></a>ios上libevent在dns解析时崩溃的解决</h3><p>libevent版本：2.0.11-stable   在DNS解析时需要使用ARC4RANDOM算法生成transaction id，而ios自带的算法库有问题，会导致崩溃。还好，libevents提供了另一套替代的算法库，使用该算法库可以不崩溃。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_dns_base = evdns_base_new(_base, 0);</span><br><span class="line">evdns_base_nameserver_ip_add(_dns_base, <span class="string">&quot;8.8.8.8&quot;</span>);</span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/optman/article/details/83943963">link</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2021/03/25/ios%E4%B8%8Alibevent%E5%9C%A8dns%E8%A7%A3%E6%9E%90%E6%97%B6%E5%B4%A9%E6%BA%83%E7%9A%84%E8%A7%A3%E5%86%B3/" data-id="cm2fv7u1i006s2zktg5ml2uyf" data-title="ios上libevent在dns解析时崩溃的解决" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -515,7 +513,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2024/11/">November 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/03/">March 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2025/05/">May 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2024/11/">November 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexo/archives/2016/03/">March 2016</a></li></ul>
     </div>
   </div>
 
@@ -526,6 +524,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/hexo/2025/05/15/Xcode-16-plist-xcode-cstddef-file-not-found/">Xcode 16 plist xcode &#39;cstddef&#39; file not found</a>
+          </li>
         
           <li>
             <a href="/hexo/2024/11/21/ERROR-failed-to-solve-debian-bookworm-slim-failed-to-resolve-source-metadata-for-docker-io-library-debian-bookworm-slim-error-getting-credentials-err-exit-status-1-out/">ERROR: failed to solve: debian:bookworm-slim: failed to resolve source metadata for docker.io/library/debian:bookworm-slim: error getting credentials - err: exit status 1, out:</a>
@@ -541,10 +543,6 @@
         
           <li>
             <a href="/hexo/2024/10/24/NaiveProxy-ios-%E7%AB%AFAPP-%E4%B8%8B%E8%BD%BD-https-apps-apple-com-mz-app-fugu-2-id6452590635/">NaiveProxy ios 端APP 下载 https://apps.apple.com/mz/app/fugu-2/id6452590635</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/19/%E6%B7%B1%E5%9C%B3IOS%E8%8B%B9%E6%9E%9C-Shadowrocket%E5%B0%8F%E7%81%AB%E7%AE%AD%E4%B8%8B%E8%BD%BD%E4%B8%8D%E8%8A%B1%E9%92%B1%EF%BC%8C0%E5%85%83%E8%B4%AD%EF%BC%9F2024%E5%B9%B4IOS-%E6%97%A0%E9%9C%80Apple-Id-%E5%AE%89%E8%A3%85shadowrocket-%E6%88%91%E8%A6%81%E7%BF%BB%E5%A2%99%EF%BC%81%E7%82%B9%E5%87%BB-https-whaleapp-net-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/">深圳IOS苹果 Shadowrocket小火箭下载不花钱，0元购？2024年IOS 无需Apple Id 安装shadowrocket - 我要翻墙！点击 https://whaleapp.net 下载安装</a>
           </li>
         
       </ul>
