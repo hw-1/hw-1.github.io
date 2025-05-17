@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ld-multiple-errors-archive-member-not-a-mach-o-file-in-Users-xxx-Desktop-libapps-a" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2024/03/18/ld-multiple-errors-archive-member-not-a-mach-o-file-in-Users-xxx-Desktop-libapps-a/" class="article-date">
+  <time class="dt-published" datetime="2024-03-18T09:38:44.000Z" itemprop="datePublished">2024-03-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2024/03/18/ld-multiple-errors-archive-member-not-a-mach-o-file-in-Users-xxx-Desktop-libapps-a/">ld: multiple errors: archive member &#39;/&#39; not a mach-o file in &#39;/Users/xxx/Desktop/libapps.a&#39;;</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="ld-multiple-errors-archive-member-‘-‘-not-a-mach-o-file-in-‘-Users-xxx-Desktop-libapps-a’"><a href="#ld-multiple-errors-archive-member-‘-‘-not-a-mach-o-file-in-‘-Users-xxx-Desktop-libapps-a’" class="headerlink" title="ld: multiple errors: archive member ‘&#x2F;‘ not a mach-o file in ‘&#x2F;Users&#x2F;xxx&#x2F;Desktop&#x2F;libapps.a’;"></a>ld: multiple errors: archive member ‘&#x2F;‘ not a mach-o file in ‘&#x2F;Users&#x2F;xxx&#x2F;Desktop&#x2F;libapps.a’;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">using GCC instead of XCode-provided CLang</span><br><span class="line">having Coreutils or Binutils <span class="keyword">in</span> your <span class="built_in">env</span> PATH.</span><br><span class="line">Try to remove any reference from your <span class="built_in">env</span> PATH before compiling again.</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2024/03/18/ld-multiple-errors-archive-member-not-a-mach-o-file-in-Users-xxx-Desktop-libapps-a/" data-id="cm2fv7u1i006v2zkthz9lc6kv" data-title="ld: multiple errors: archive member &#39;/&#39; not a mach-o file in &#39;/Users/xxx/Desktop/libapps.a&#39;;" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-The-provided-entity-includes-an-unknown-attribute-startDate-is-not-an-attribute-on-the-resource-appPrices-included-0-attributes-startDate" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2023/07/24/The-provided-entity-includes-an-unknown-attribute-startDate-is-not-an-attribute-on-the-resource-appPrices-included-0-attributes-startDate/" class="article-date">
@@ -420,51 +459,11 @@
 
 
   
-    <article id="post-userauth-pubkey-key-type-ssh-rsa-not-in-PubkeyAcceptedAlgorithms-preauth" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2022/07/11/userauth-pubkey-key-type-ssh-rsa-not-in-PubkeyAcceptedAlgorithms-preauth/" class="article-date">
-  <time class="dt-published" datetime="2022-07-11T12:44:54.000Z" itemprop="datePublished">2022-07-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2022/07/11/userauth-pubkey-key-type-ssh-rsa-not-in-PubkeyAcceptedAlgorithms-preauth/">userauth_pubkey: key type ssh-rsa not in PubkeyAcceptedAlgorithms [preauth]</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="userauth-pubkey-key-type-ssh-rsa-not-in-PubkeyAcceptedAlgorithms-preauth"><a href="#userauth-pubkey-key-type-ssh-rsa-not-in-PubkeyAcceptedAlgorithms-preauth" class="headerlink" title="userauth_pubkey: key type ssh-rsa not in PubkeyAcceptedAlgorithms [preauth]"></a>userauth_pubkey: key type ssh-rsa not in PubkeyAcceptedAlgorithms [preauth]</h3><p>OpenSSH 7.0 以上已经默认关闭了 ssh-rsa 了，我们看一下我们的 ssh 版本：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ssh -V</span><br><span class="line"><span class="built_in">sudo</span> vim /etc/ssh/sshd_config</span><br><span class="line">PubkeyAuthentication <span class="built_in">yes</span></span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-rsa</span><br><span class="line"><span class="built_in">sudo</span> service sshd restart</span><br><span class="line"></span><br><span class="line">ssh -Q key</span><br><span class="line">ssh -Q PubkeyAcceptedAlgorithms | grep rsa</span><br><span class="line">ssh -G user@somehost.example.com</span><br><span class="line"></span><br><span class="line">LogLevel INFO</span><br><span class="line">loglevel QUIET</span><br><span class="line"><span class="built_in">tail</span> -f /var/log/auth.log</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2022/07/11/userauth-pubkey-key-type-ssh-rsa-not-in-PubkeyAcceptedAlgorithms-preauth/" data-id="cm2fv7u1j00742zkt7uryhfs7" data-title="userauth_pubkey: key type ssh-rsa not in PubkeyAcceptedAlgorithms [preauth]" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/hexo/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="page-number current">2</span><a class="page-number" href="/hexo/page/3/">3</a><a class="page-number" href="/hexo/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/25/">25</a><a class="extend next" rel="next" href="/hexo/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/hexo/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="page-number current">2</span><a class="page-number" href="/hexo/page/3/">3</a><a class="page-number" href="/hexo/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/26/">26</a><a class="extend next" rel="next" href="/hexo/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -517,6 +516,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/15/Xcode-16-plist-xcode-cstddef-file-not-found/">Xcode 16 plist xcode &#39;cstddef&#39; file not found</a>
           </li>
         
@@ -530,10 +533,6 @@
         
           <li>
             <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/24/NaiveProxy-ios-%E7%AB%AFAPP-%E4%B8%8B%E8%BD%BD-https-apps-apple-com-mz-app-fugu-2-id6452590635/">NaiveProxy ios 端APP 下载 https://apps.apple.com/mz/app/fugu-2/id6452590635</a>
           </li>
         
       </ul>

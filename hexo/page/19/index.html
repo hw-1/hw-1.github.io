@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2018-01-12-how-to-install-x11-desktop-and-enable-vnc-server-on-raspberry-lite" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2018/01/12/how-to-install-x11-desktop-and-enable-vnc-server-on-raspberry-lite/" class="article-date">
+  <time class="dt-published" datetime="2018-01-11T18:56:12.000Z" itemprop="datePublished">2018-01-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2018/01/12/how-to-install-x11-desktop-and-enable-vnc-server-on-raspberry-lite/">how to install x11 desktop and enable vnc server on raspberry lite</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="how-to-install-x11-desktop-and-enable-vnc-server-on-raspberry-lite"><a href="#how-to-install-x11-desktop-and-enable-vnc-server-on-raspberry-lite" class="headerlink" title="how to install x11 desktop and enable vnc server on raspberry lite"></a>how to install x11 desktop and enable vnc server on raspberry lite</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;br /&amp;gt;#install X11 Desktop</span><br><span class="line"><span class="built_in">sudo</span> apt-get install cups</span><br><span class="line"><span class="built_in">sudo</span> apt install xrdp</span><br><span class="line"><span class="built_in">sudo</span> apt-get install --no-install-recommends xserver-xorg</span><br><span class="line"><span class="built_in">sudo</span> apt-get install --no-install-recommends xinit</span><br><span class="line"><span class="built_in">sudo</span> apt-get install raspberrypi-ui-mods</span><br><span class="line"><span class="built_in">sudo</span> apt-get install lightdm</span><br><span class="line"><span class="built_in">sudo</span> reboot</span><br><span class="line"></span><br><span class="line"> <span class="comment">#install VNC</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get update</span><br><span class="line"><span class="built_in">sudo</span> apt-get install realvnc-vnc-server</span><br><span class="line"><span class="built_in">sudo</span> apt-get install realvnc-vnc-viewer</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable VNC</span></span><br><span class="line">Alternatively, run the <span class="built_in">command</span> <span class="built_in">sudo</span> raspi-config, navigate to Interfacing Options &amp;gt; VNC and <span class="keyword">select</span> Yes.</span><br><span class="line"></span><br><span class="line"><span class="comment">#resize GPU Memory</span></span><br><span class="line">run <span class="built_in">sudo</span> raspi-config, navigate to Advanced options &amp;gt; Memory Split, and ensure your GPU has at least 128MB.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2018/01/12/how-to-install-x11-desktop-and-enable-vnc-server-on-raspberry-lite/" data-id="cm2fv7u13001z2zktgtm04kwk" data-title="how to install x11 desktop and enable vnc server on raspberry lite" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2018-01-12-raspberry-enable-ssh-via-command" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2018/01/12/raspberry-enable-ssh-via-command/" class="article-date">
@@ -433,50 +472,11 @@
 
 
   
-    <article id="post-2017-09-15-apt-get-action-via-http-proxy" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2017/09/15/apt-get-action-via-http-proxy/" class="article-date">
-  <time class="dt-published" datetime="2017-09-14T20:42:52.000Z" itemprop="datePublished">2017-09-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2017/09/15/apt-get-action-via-http-proxy/">apt-get action via  http proxy</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="apt-get-action-via-http-proxy"><a href="#apt-get-action-via-http-proxy" class="headerlink" title="apt-get action via http proxy"></a>apt-get action via http proxy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get -o Acquire::http::proxy=<span class="string">&quot;http://127.0.0.1:8118&quot;</span> update</span><br><span class="line"><span class="built_in">sudo</span> apt-get -o Acquire::socks::proxy=<span class="string">&quot;socks://127.0.0.1:7070&quot;</span> update</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2017/09/15/apt-get-action-via-http-proxy/" data-id="cm2fv7u13001s2zkt3qxxbj54" data-title="apt-get action via  http proxy" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/hexo/page/18/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/17/">17</a><a class="page-number" href="/hexo/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/hexo/page/20/">20</a><a class="page-number" href="/hexo/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/25/">25</a><a class="extend next" rel="next" href="/hexo/page/20/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/hexo/page/18/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/17/">17</a><a class="page-number" href="/hexo/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/hexo/page/20/">20</a><a class="page-number" href="/hexo/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/26/">26</a><a class="extend next" rel="next" href="/hexo/page/20/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -529,6 +529,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/15/Xcode-16-plist-xcode-cstddef-file-not-found/">Xcode 16 plist xcode &#39;cstddef&#39; file not found</a>
           </li>
         
@@ -542,10 +546,6 @@
         
           <li>
             <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/24/NaiveProxy-ios-%E7%AB%AFAPP-%E4%B8%8B%E8%BD%BD-https-apps-apple-com-mz-app-fugu-2-id6452590635/">NaiveProxy ios 端APP 下载 https://apps.apple.com/mz/app/fugu-2/id6452590635</a>
           </li>
         
       </ul>

@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2019-01-25-jenkinse5bf98e8aeb0e7aea1e79086e59198e8b4a6e58fb7e799bbe5bd95e5af86e7a081e5a682e4bd95e4bfaee694b9e7aea1e79086e59198e8b4a6e58fb7" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2019/01/25/jenkins%E5%BF%98%E8%AE%B0%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E5%8F%B7/" class="article-date">
+  <time class="dt-published" datetime="2019-01-24T22:31:19.000Z" itemprop="datePublished">2019-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2019/01/25/jenkins%E5%BF%98%E8%AE%B0%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E5%8F%B7/">jenkins忘记管理员账号登录密码如何修改管理员账号</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="jenkins忘记管理员账号登录密码如何修改管理员账号"><a href="#jenkins忘记管理员账号登录密码如何修改管理员账号" class="headerlink" title="jenkins忘记管理员账号登录密码如何修改管理员账号"></a>jenkins忘记管理员账号登录密码如何修改管理员账号</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">（1）用命令打开：</span><br><span class="line"><span class="built_in">sudo</span> vi /Users/Shared/Jenkins/Home/users/admin/config.xml </span><br><span class="line">（2）找到&amp;lt;passwordHash&amp;gt;节点</span><br><span class="line">将节点内的&amp;lt;passwordHash&amp;gt;#jbcrypt:$2a$10<span class="variable">$lbyWNEX8qFyS47ddBYHgHOOIdnsijELWhprkGA0aZQRfapnzGeVl6</span>&amp;lt;/passwordHash&amp;gt;的值改为：</span><br><span class="line"><span class="comment">#jbcrypt:$2a$10$DdaWzN64JgUtLdvxWIflcuQu2fgrrMSAMabF5TSrGK5nXitqK9ZMS  （该字符串默认密码为6个1）</span></span><br><span class="line">注意前后不要输入空格。按Esc键-&amp;gt;：-&amp;gt;wq保存。</span><br><span class="line">3/重启Jenkins：jenkins restart</span><br><span class="line">4／打开localhost:8080,输入管理员账号，密码为6个1，点击【登录】登录成功</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2019/01/25/jenkins%e5%bf%98%e8%ae%b0%e7%ae%a1%e7%90%86%e5%91%98%e8%b4%a6%e5%8f%b7%e7%99%bb%e5%bd%95%e5%af%86%e7%a0%81%e5%a6%82%e4%bd%95%e4%bf%ae%e6%94%b9%e7%ae%a1%e7%90%86%e5%91%98%e8%b4%a6%e5%8f%b7/" data-id="cm2fv7u17003d2zktd49shbg7" data-title="jenkins忘记管理员账号登录密码如何修改管理员账号" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2019-01-25-ios-e695b0e7bb84e99b86e59088e6938de4bd9cefbc88e4baa4e99b86efbc8ce5b9b6e99b86efbc8ce5b7aee99b86efbc8ce5ad90e99b86efbc89" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2019/01/25/ios-%E6%95%B0%E7%BB%84%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C%EF%BC%88%E4%BA%A4%E9%9B%86%EF%BC%8C%E5%B9%B6%E9%9B%86%EF%BC%8C%E5%B7%AE%E9%9B%86%EF%BC%8C%E5%AD%90%E9%9B%86%EF%BC%89/" class="article-date">
@@ -423,50 +462,11 @@
 
 
   
-    <article id="post-2018-12-24-uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/" class="article-date">
-  <time class="dt-published" datetime="2018-12-24T05:05:14.000Z" itemprop="datePublished">2018-12-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/">UIGraphicsBeginImageContextWithOptions &amp;#8211; returned Image has a unwanted border</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="UIGraphicsBeginImageContextWithOptions-8211-returned-Image-has-a-unwanted-border"><a href="#UIGraphicsBeginImageContextWithOptions-8211-returned-Image-has-a-unwanted-border" class="headerlink" title="UIGraphicsBeginImageContextWithOptions &#8211; returned Image has a unwanted border"></a>UIGraphicsBeginImageContextWithOptions &#8211; returned Image has a unwanted border</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">func UIGraphicsBeginImageContextWithOptions(_ size: CGSize, _ opaque: Bool, _ scale: CGFloat).</span><br><span class="line">A Boolean flag indicating whether the bitmap is opaque. If you know the bitmap is fully opaque, specify YES to ignore the alpha channel and optimize the bitmap’s storage. Specifying NO means that the bitmap must include an alpha channel to handle any partially transparent pixels.</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/" data-id="cm2fv7u1600332zkt9fud8wz5" data-title="UIGraphicsBeginImageContextWithOptions &amp;#8211; returned Image has a unwanted border" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/hexo/page/13/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/12/">12</a><a class="page-number" href="/hexo/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/hexo/page/15/">15</a><a class="page-number" href="/hexo/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/25/">25</a><a class="extend next" rel="next" href="/hexo/page/15/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/hexo/page/13/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/12/">12</a><a class="page-number" href="/hexo/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/hexo/page/15/">15</a><a class="page-number" href="/hexo/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/26/">26</a><a class="extend next" rel="next" href="/hexo/page/15/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -519,6 +519,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/15/Xcode-16-plist-xcode-cstddef-file-not-found/">Xcode 16 plist xcode &#39;cstddef&#39; file not found</a>
           </li>
         
@@ -532,10 +536,6 @@
         
           <li>
             <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/24/NaiveProxy-ios-%E7%AB%AFAPP-%E4%B8%8B%E8%BD%BD-https-apps-apple-com-mz-app-fugu-2-id6452590635/">NaiveProxy ios 端APP 下载 https://apps.apple.com/mz/app/fugu-2/id6452590635</a>
           </li>
         
       </ul>

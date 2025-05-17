@@ -69,6 +69,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2019-03-23-set-ulimit-n-open-files-permanently-in-ubuntu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2019/03/23/set-ulimit-n-open-files-permanently-in-ubuntu/" class="article-date">
+  <time class="dt-published" datetime="2019-03-22T18:43:40.000Z" itemprop="datePublished">2019-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2019/03/23/set-ulimit-n-open-files-permanently-in-ubuntu/">Set  ulimit -n / open files Permanently  in ubuntu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Set ulimit -n &#x2F; open files Permanently in ubuntu</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># available limit</span></span><br><span class="line">user@ubuntu:~$ <span class="built_in">ulimit</span> -n</span><br><span class="line">1024</span><br><span class="line"></span><br><span class="line"><span class="comment"># To increase the available limit to say 65535</span></span><br><span class="line">user@ubuntu:~$ <span class="built_in">sudo</span> vim /etc/sysctl.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># add the following line to it</span></span><br><span class="line">fs.file-max = 65535</span><br><span class="line"></span><br><span class="line"><span class="comment"># run this to refresh with new config</span></span><br><span class="line">user@ubuntu:~$ <span class="built_in">sudo</span> sysctl -p</span><br></pre></td></tr></table></figure>
+
+
+<p>if you got error “sysctl: permission denied on key ‘fs.file-max’” or not effect , you can skip that step, then you doing steps as below :</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># edit the following file</span></span><br><span class="line">user@ubuntu:~$ <span class="built_in">sudo</span> vim /etc/security/limits.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># add following lines to it</span></span><br><span class="line">* soft     <span class="built_in">nproc</span>          65535</span><br><span class="line">* hard     <span class="built_in">nproc</span>          65535</span><br><span class="line">* soft     nofile         65535</span><br><span class="line">* hard     nofile         65535</span><br><span class="line">root soft     <span class="built_in">nproc</span>          65535</span><br><span class="line">root hard     <span class="built_in">nproc</span>          65535</span><br><span class="line">root soft     nofile         65535</span><br><span class="line">root hard     nofile         65535</span><br><span class="line"></span><br><span class="line"><span class="comment"># edit the following file</span></span><br><span class="line">user@ubuntu:~$ <span class="built_in">sudo</span> vim /etc/pam.d/common-session</span><br><span class="line"></span><br><span class="line"><span class="comment"># add this line to it</span></span><br><span class="line">session required pam_limits.so</span><br><span class="line"></span><br><span class="line"><span class="comment"># logout and login and try the following command</span></span><br><span class="line">user@ubuntu:~$ <span class="built_in">ulimit</span> -n</span><br><span class="line">65535</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2019/03/23/set-ulimit-n-open-files-permanently-in-ubuntu/" data-id="cm2fv7u17003m2zkt6r476k14" data-title="Set  ulimit -n / open files Permanently  in ubuntu" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2019-03-23-ios-appe590afe58aa8e9809fe5baa6e4bc98e58c96e79a84e4b880e4ba9be7bb8fe9aa8c" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2019/03/23/ios-app%E5%90%AF%E5%8A%A8%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C/" class="article-date">
@@ -479,50 +523,11 @@
 
 
   
-    <article id="post-2019-01-25-jenkinse5bf98e8aeb0e7aea1e79086e59198e8b4a6e58fb7e799bbe5bd95e5af86e7a081e5a682e4bd95e4bfaee694b9e7aea1e79086e59198e8b4a6e58fb7" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2019/01/25/jenkins%E5%BF%98%E8%AE%B0%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E5%8F%B7/" class="article-date">
-  <time class="dt-published" datetime="2019-01-24T22:31:19.000Z" itemprop="datePublished">2019-01-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2019/01/25/jenkins%E5%BF%98%E8%AE%B0%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E5%8F%B7/">jenkins忘记管理员账号登录密码如何修改管理员账号</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="jenkins忘记管理员账号登录密码如何修改管理员账号"><a href="#jenkins忘记管理员账号登录密码如何修改管理员账号" class="headerlink" title="jenkins忘记管理员账号登录密码如何修改管理员账号"></a>jenkins忘记管理员账号登录密码如何修改管理员账号</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">（1）用命令打开：</span><br><span class="line"><span class="built_in">sudo</span> vi /Users/Shared/Jenkins/Home/users/admin/config.xml </span><br><span class="line">（2）找到&amp;lt;passwordHash&amp;gt;节点</span><br><span class="line">将节点内的&amp;lt;passwordHash&amp;gt;#jbcrypt:$2a$10<span class="variable">$lbyWNEX8qFyS47ddBYHgHOOIdnsijELWhprkGA0aZQRfapnzGeVl6</span>&amp;lt;/passwordHash&amp;gt;的值改为：</span><br><span class="line"><span class="comment">#jbcrypt:$2a$10$DdaWzN64JgUtLdvxWIflcuQu2fgrrMSAMabF5TSrGK5nXitqK9ZMS  （该字符串默认密码为6个1）</span></span><br><span class="line">注意前后不要输入空格。按Esc键-&amp;gt;：-&amp;gt;wq保存。</span><br><span class="line">3/重启Jenkins：jenkins restart</span><br><span class="line">4／打开localhost:8080,输入管理员账号，密码为6个1，点击【登录】登录成功</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2019/01/25/jenkins%e5%bf%98%e8%ae%b0%e7%ae%a1%e7%90%86%e5%91%98%e8%b4%a6%e5%8f%b7%e7%99%bb%e5%bd%95%e5%af%86%e7%a0%81%e5%a6%82%e4%bd%95%e4%bf%ae%e6%94%b9%e7%ae%a1%e7%90%86%e5%91%98%e8%b4%a6%e5%8f%b7/" data-id="cm2fv7u17003d2zktd49shbg7" data-title="jenkins忘记管理员账号登录密码如何修改管理员账号" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/hexo/page/12/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/11/">11</a><a class="page-number" href="/hexo/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/hexo/page/14/">14</a><a class="page-number" href="/hexo/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/25/">25</a><a class="extend next" rel="next" href="/hexo/page/14/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/hexo/page/12/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/11/">11</a><a class="page-number" href="/hexo/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/hexo/page/14/">14</a><a class="page-number" href="/hexo/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/26/">26</a><a class="extend next" rel="next" href="/hexo/page/14/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -575,6 +580,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/15/Xcode-16-plist-xcode-cstddef-file-not-found/">Xcode 16 plist xcode &#39;cstddef&#39; file not found</a>
           </li>
         
@@ -588,10 +597,6 @@
         
           <li>
             <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/24/NaiveProxy-ios-%E7%AB%AFAPP-%E4%B8%8B%E8%BD%BD-https-apps-apple-com-mz-app-fugu-2-id6452590635/">NaiveProxy ios 端APP 下载 https://apps.apple.com/mz/app/fugu-2/id6452590635</a>
           </li>
         
       </ul>

@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Library-not-loaded-rpath-libplist-2-0-4-dylib" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/" class="article-date">
+  <time class="dt-published" datetime="2025-05-17T06:18:28.000Z" itemprop="datePublished">2025-05-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="Library-not-loaded-rpath-libplist-2-0-4-dylib-Reason-no-LC-RPATHs-found"><a href="#Library-not-loaded-rpath-libplist-2-0-4-dylib-Reason-no-LC-RPATHs-found" class="headerlink" title="Library not loaded: @rpath&#x2F;libplist-2.0.4.dylib Reason: no LC_RPATHs found"></a>Library not loaded: @rpath&#x2F;libplist-2.0.4.dylib Reason: no LC_RPATHs found</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1,</span><br><span class="line">install_name_tool -add_rpath /path/to/libplist_folder executable_path</span><br><span class="line"></span><br><span class="line">2</span><br><span class="line"><span class="built_in">export</span> DYLD_LIBRARY_PATH=/path/to/libplist_folder</span><br><span class="line">./executable_path</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/" data-id="cmaru7g5r0000o9ktfwqh86kv" data-title="Library not loaded: @rpath/libplist-2.0.4.dylib" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Xcode-16-plist-xcode-cstddef-file-not-found" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2025/05/15/Xcode-16-plist-xcode-cstddef-file-not-found/" class="article-date">
@@ -424,50 +463,11 @@
 
 
   
-    <article id="post-ld-multiple-errors-archive-member-not-a-mach-o-file-in-Users-xxx-Desktop-libapps-a" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2024/03/18/ld-multiple-errors-archive-member-not-a-mach-o-file-in-Users-xxx-Desktop-libapps-a/" class="article-date">
-  <time class="dt-published" datetime="2024-03-18T09:38:44.000Z" itemprop="datePublished">2024-03-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2024/03/18/ld-multiple-errors-archive-member-not-a-mach-o-file-in-Users-xxx-Desktop-libapps-a/">ld: multiple errors: archive member &#39;/&#39; not a mach-o file in &#39;/Users/xxx/Desktop/libapps.a&#39;;</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="ld-multiple-errors-archive-member-‘-‘-not-a-mach-o-file-in-‘-Users-xxx-Desktop-libapps-a’"><a href="#ld-multiple-errors-archive-member-‘-‘-not-a-mach-o-file-in-‘-Users-xxx-Desktop-libapps-a’" class="headerlink" title="ld: multiple errors: archive member ‘&#x2F;‘ not a mach-o file in ‘&#x2F;Users&#x2F;xxx&#x2F;Desktop&#x2F;libapps.a’;"></a>ld: multiple errors: archive member ‘&#x2F;‘ not a mach-o file in ‘&#x2F;Users&#x2F;xxx&#x2F;Desktop&#x2F;libapps.a’;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">using GCC instead of XCode-provided CLang</span><br><span class="line">having Coreutils or Binutils <span class="keyword">in</span> your <span class="built_in">env</span> PATH.</span><br><span class="line">Try to remove any reference from your <span class="built_in">env</span> PATH before compiling again.</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2024/03/18/ld-multiple-errors-archive-member-not-a-mach-o-file-in-Users-xxx-Desktop-libapps-a/" data-id="cm2fv7u1i006v2zkthz9lc6kv" data-title="ld: multiple errors: archive member &#39;/&#39; not a mach-o file in &#39;/Users/xxx/Desktop/libapps.a&#39;;" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/hexo/page/2/">2</a><a class="page-number" href="/hexo/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/25/">25</a><a class="extend next" rel="next" href="/hexo/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/hexo/page/2/">2</a><a class="page-number" href="/hexo/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/26/">26</a><a class="extend next" rel="next" href="/hexo/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -520,6 +520,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/15/Xcode-16-plist-xcode-cstddef-file-not-found/">Xcode 16 plist xcode &#39;cstddef&#39; file not found</a>
           </li>
         
@@ -533,10 +537,6 @@
         
           <li>
             <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/24/NaiveProxy-ios-%E7%AB%AFAPP-%E4%B8%8B%E8%BD%BD-https-apps-apple-com-mz-app-fugu-2-id6452590635/">NaiveProxy ios 端APP 下载 https://apps.apple.com/mz/app/fugu-2/id6452590635</a>
           </li>
         
       </ul>

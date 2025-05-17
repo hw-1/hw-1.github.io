@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-08-08-ubuntu-install-squid3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2016/08/08/ubuntu-install-squid3/" class="article-date">
+  <time class="dt-published" datetime="2016-08-08T04:21:30.000Z" itemprop="datePublished">2016-08-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2016/08/08/ubuntu-install-squid3/">ubuntu install squid3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">ubuntu install squid3</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> apt-get install python-setuptools</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> apt-get install build-essential autoconf libtool pkg-config python-opengl python-imaging python-pyrex python-pyside.qtopengl idle-python2.7 qt4-dev-tools qt4-designer libqtgui4 libqtcore4 libqt4-xml libqt4-test libqt4-script libqt4-network libqt4-dbus python-qt4 python-qt4-gl libgle3 python-dev</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> apt install squid3 imagemagick</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> easy_install twisted</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> apt install openssl php</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /var/www/tmp</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> -R proxy:proxy  /var/www/tmp</span><br><span class="line"><span class="built_in">sudo</span> twistd web  --path=/var/www --port=8080</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> perl -MCPAN -e<span class="string">&#x27;install &quot;LWP::Simple&quot;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> iptables -L --line-number -t nat</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat  -A PREROUTING -s 172.26.0.0/255.255.255.0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 172.26.1.1</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j REDIRECT --to-port 3128</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -D PREROUTING 2</span><br><span class="line"></span><br><span class="line">//DEBUG</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> vim /etc/squid3/squid.conf</span><br><span class="line"><span class="built_in">sudo</span> squid -k reconfigure</span><br><span class="line">netstat -na|grep 3128</span><br><span class="line"><span class="built_in">sudo</span> /etc/init.d/squid3 restart</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> -R root:root flip.pl</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">tail</span> -F /tmp/flipImages_debug.<span class="built_in">log</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">tail</span> -F /var/log/squid3/access.log</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">tail</span> -F /var/log/squid3/cache.log</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">OSX</span><br><span class="line"><span class="built_in">sudo</span> sysctl -w net.inet.ip.forwarding=1</span><br><span class="line"><span class="built_in">sudo</span> pfctl -f pf.conf</span><br><span class="line"><span class="built_in">sudo</span> pfctl -e</span><br><span class="line"><span class="built_in">sudo</span> /sbin/pfctl -s state</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Ubuntu</span><br><span class="line"><span class="built_in">sudo</span> sysctl -w net.ipv4.ip_forward=1</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3128</span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 3128</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2016/08/08/ubuntu-install-squid3/" data-id="cm2fv7u0y000e2zktehgfghd9" data-title="ubuntu install squid3" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2016-07-11-raspberry-support-zh-cn" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2016/07/11/raspberry-support-zh-cn/" class="article-date">
@@ -461,54 +500,11 @@ _THEOS_TARGET_LDFLAGS += -compatibility_version 1.0.0```
 
 
   
-    <article id="post-2016-03-01-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2016/03/01/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2016-02-29T21:20:20.000Z" itemprop="datePublished">2016-03-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hexo/categories/Uncategorized/">Uncategorized</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2016/03/01/hello-world/">Hello world!</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2016/03/01/hello-world/" data-id="cm2fv7u0t00002zkt7jlfc1jj" data-title="Hello world!" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/hexo/page/24/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/23/">23</a><a class="page-number" href="/hexo/page/24/">24</a><span class="page-number current">25</span>
+    <a class="extend prev" rel="prev" href="/hexo/page/24/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/23/">23</a><a class="page-number" href="/hexo/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/hexo/page/26/">26</a><a class="extend next" rel="next" href="/hexo/page/26/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -561,6 +557,10 @@ _THEOS_TARGET_LDFLAGS += -compatibility_version 1.0.0```
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/15/Xcode-16-plist-xcode-cstddef-file-not-found/">Xcode 16 plist xcode &#39;cstddef&#39; file not found</a>
           </li>
         
@@ -574,10 +574,6 @@ _THEOS_TARGET_LDFLAGS += -compatibility_version 1.0.0```
         
           <li>
             <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/24/NaiveProxy-ios-%E7%AB%AFAPP-%E4%B8%8B%E8%BD%BD-https-apps-apple-com-mz-app-fugu-2-id6452590635/">NaiveProxy ios 端APP 下载 https://apps.apple.com/mz/app/fugu-2/id6452590635</a>
           </li>
         
       </ul>

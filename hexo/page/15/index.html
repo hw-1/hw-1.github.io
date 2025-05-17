@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2018-12-24-uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/" class="article-date">
+  <time class="dt-published" datetime="2018-12-24T05:05:14.000Z" itemprop="datePublished">2018-12-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/">UIGraphicsBeginImageContextWithOptions &amp;#8211; returned Image has a unwanted border</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="UIGraphicsBeginImageContextWithOptions-8211-returned-Image-has-a-unwanted-border"><a href="#UIGraphicsBeginImageContextWithOptions-8211-returned-Image-has-a-unwanted-border" class="headerlink" title="UIGraphicsBeginImageContextWithOptions &#8211; returned Image has a unwanted border"></a>UIGraphicsBeginImageContextWithOptions &#8211; returned Image has a unwanted border</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">func UIGraphicsBeginImageContextWithOptions(_ size: CGSize, _ opaque: Bool, _ scale: CGFloat).</span><br><span class="line">A Boolean flag indicating whether the bitmap is opaque. If you know the bitmap is fully opaque, specify YES to ignore the alpha channel and optimize the bitmap’s storage. Specifying NO means that the bitmap must include an alpha channel to handle any partially transparent pixels.</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2018/12/24/uigraphicsbeginimagecontextwithoptions-returned-image-has-a-unwanted-border/" data-id="cm2fv7u1600332zkt9fud8wz5" data-title="UIGraphicsBeginImageContextWithOptions &amp;#8211; returned Image has a unwanted border" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2018-12-20-swift-print-object-address" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2018/12/20/swift-print-object-address/" class="article-date">
@@ -427,50 +466,11 @@
 
 
   
-    <article id="post-2018-10-17-ubuntu-install-nginx-and-srs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2018/10/17/ubuntu-install-nginx-and-srs/" class="article-date">
-  <time class="dt-published" datetime="2018-10-16T17:58:50.000Z" itemprop="datePublished">2018-10-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2018/10/17/ubuntu-install-nginx-and-srs/">ubuntu install nginx and srs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="ubuntu-install-nginx-and-srs"><a href="#ubuntu-install-nginx-and-srs" class="headerlink" title="ubuntu install nginx and srs"></a>ubuntu install nginx and srs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//for Ubuntu</span><br><span class="line"><span class="built_in">sudo</span> add-apt-repository  -y ppa:ubuntu-toolchain-r/test</span><br><span class="line"><span class="built_in">sudo</span> apt-get update -y</span><br><span class="line"><span class="built_in">sudo</span> apt-get install -y gcc-5 g++-5</span><br><span class="line"><span class="built_in">sudo</span> update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/ossrs/srs.git</span><br><span class="line"><span class="built_in">cd</span> srs/trunk</span><br><span class="line">./configure --with-nginx</span><br><span class="line"> make</span><br><span class="line"></span><br><span class="line">./objs/srs -c conf/http.hls.conf</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>((;;)); <span class="keyword">do</span> \</span><br><span class="line">    ffmpeg -re -i   /home/ubuntu/Rogue\ One\ -\ A\ Star\ Wars\ Story\ -\ Trailer\ 2.mp4 \</span><br><span class="line">    -vf  scale=360:-2 -c:v libx264 -acodec copy \</span><br><span class="line">    -f flv -y rtmp://172.104.12.1:1935/live/livestream; \</span><br><span class="line">    <span class="built_in">sleep</span> 1; \</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2018/10/17/ubuntu-install-nginx-and-srs/" data-id="cm2fv7u16002w2zktchur25j6" data-title="ubuntu install nginx and srs" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/hexo/page/14/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/13/">13</a><a class="page-number" href="/hexo/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/hexo/page/16/">16</a><a class="page-number" href="/hexo/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/25/">25</a><a class="extend next" rel="next" href="/hexo/page/16/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/hexo/page/14/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/13/">13</a><a class="page-number" href="/hexo/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/hexo/page/16/">16</a><a class="page-number" href="/hexo/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/26/">26</a><a class="extend next" rel="next" href="/hexo/page/16/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -523,6 +523,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/15/Xcode-16-plist-xcode-cstddef-file-not-found/">Xcode 16 plist xcode &#39;cstddef&#39; file not found</a>
           </li>
         
@@ -536,10 +540,6 @@
         
           <li>
             <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/24/NaiveProxy-ios-%E7%AB%AFAPP-%E4%B8%8B%E8%BD%BD-https-apps-apple-com-mz-app-fugu-2-id6452590635/">NaiveProxy ios 端APP 下载 https://apps.apple.com/mz/app/fugu-2/id6452590635</a>
           </li>
         
       </ul>

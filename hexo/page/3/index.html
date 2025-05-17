@@ -69,6 +69,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-userauth-pubkey-key-type-ssh-rsa-not-in-PubkeyAcceptedAlgorithms-preauth" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2022/07/11/userauth-pubkey-key-type-ssh-rsa-not-in-PubkeyAcceptedAlgorithms-preauth/" class="article-date">
+  <time class="dt-published" datetime="2022-07-11T12:44:54.000Z" itemprop="datePublished">2022-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2022/07/11/userauth-pubkey-key-type-ssh-rsa-not-in-PubkeyAcceptedAlgorithms-preauth/">userauth_pubkey: key type ssh-rsa not in PubkeyAcceptedAlgorithms [preauth]</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="userauth-pubkey-key-type-ssh-rsa-not-in-PubkeyAcceptedAlgorithms-preauth"><a href="#userauth-pubkey-key-type-ssh-rsa-not-in-PubkeyAcceptedAlgorithms-preauth" class="headerlink" title="userauth_pubkey: key type ssh-rsa not in PubkeyAcceptedAlgorithms [preauth]"></a>userauth_pubkey: key type ssh-rsa not in PubkeyAcceptedAlgorithms [preauth]</h3><p>OpenSSH 7.0 以上已经默认关闭了 ssh-rsa 了，我们看一下我们的 ssh 版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ssh -V</span><br><span class="line"><span class="built_in">sudo</span> vim /etc/ssh/sshd_config</span><br><span class="line">PubkeyAuthentication <span class="built_in">yes</span></span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-rsa</span><br><span class="line"><span class="built_in">sudo</span> service sshd restart</span><br><span class="line"></span><br><span class="line">ssh -Q key</span><br><span class="line">ssh -Q PubkeyAcceptedAlgorithms | grep rsa</span><br><span class="line">ssh -G user@somehost.example.com</span><br><span class="line"></span><br><span class="line">LogLevel INFO</span><br><span class="line">loglevel QUIET</span><br><span class="line"><span class="built_in">tail</span> -f /var/log/auth.log</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2022/07/11/userauth-pubkey-key-type-ssh-rsa-not-in-PubkeyAcceptedAlgorithms-preauth/" data-id="cm2fv7u1j00742zkt7uryhfs7" data-title="userauth_pubkey: key type ssh-rsa not in PubkeyAcceptedAlgorithms [preauth]" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-configure-ac-146-error-possibly-undefined-macro-AC-CHECK-HEADERS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2022/04/20/configure-ac-146-error-possibly-undefined-macro-AC-CHECK-HEADERS/" class="article-date">
@@ -420,50 +460,11 @@
 
 
   
-    <article id="post-Failed-to-ping-owner-of-lock-for-file-hash-cache-fileHashes" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2022/02/14/Failed-to-ping-owner-of-lock-for-file-hash-cache-fileHashes/" class="article-date">
-  <time class="dt-published" datetime="2022-02-14T07:30:44.000Z" itemprop="datePublished">2022-02-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2022/02/14/Failed-to-ping-owner-of-lock-for-file-hash-cache-fileHashes/">Failed to ping owner of lock for file hash cache fileHashes</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="Failed-to-ping-owner-of-lock-for-file-hash-cache-fileHashes"><a href="#Failed-to-ping-owner-of-lock-for-file-hash-cache-fileHashes" class="headerlink" title="Failed to ping owner of lock for file hash cache fileHashes"></a>Failed to ping owner of lock for file hash cache fileHashes</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find ~/.gradle -<span class="built_in">type</span> f -name <span class="string">&quot;*.lock&quot;</span> -delete</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2022/02/14/Failed-to-ping-owner-of-lock-for-file-hash-cache-fileHashes/" data-id="cm2fv7u1f005t2zkt88x74bco" data-title="Failed to ping owner of lock for file hash cache fileHashes" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/hexo/page/2/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><a class="page-number" href="/hexo/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/hexo/page/4/">4</a><a class="page-number" href="/hexo/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/25/">25</a><a class="extend next" rel="next" href="/hexo/page/4/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/hexo/page/2/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><a class="page-number" href="/hexo/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/hexo/page/4/">4</a><a class="page-number" href="/hexo/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/26/">26</a><a class="extend next" rel="next" href="/hexo/page/4/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -516,6 +517,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/15/Xcode-16-plist-xcode-cstddef-file-not-found/">Xcode 16 plist xcode &#39;cstddef&#39; file not found</a>
           </li>
         
@@ -529,10 +534,6 @@
         
           <li>
             <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/24/NaiveProxy-ios-%E7%AB%AFAPP-%E4%B8%8B%E8%BD%BD-https-apps-apple-com-mz-app-fugu-2-id6452590635/">NaiveProxy ios 端APP 下载 https://apps.apple.com/mz/app/fugu-2/id6452590635</a>
           </li>
         
       </ul>

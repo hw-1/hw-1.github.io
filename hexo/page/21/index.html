@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2017-05-27-build-http-protal-git-server-for-xampp-on-osx" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2017/05/27/build-http-protal-git-server-for-xampp-on-osx/" class="article-date">
+  <time class="dt-published" datetime="2017-05-27T04:39:42.000Z" itemprop="datePublished">2017-05-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2017/05/27/build-http-protal-git-server-for-xampp-on-osx/">build http protal git server for xampp on osx</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="build-http-protal-git-server-for-xampp-on-osx"><a href="#build-http-protal-git-server-for-xampp-on-osx" class="headerlink" title="build http protal git server for xampp on osx"></a>build http protal git server for xampp on osx</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">1,intsall xampp</span><br><span class="line">2,add &amp;#039;git.conf&amp;#039; to httpd.conf</span><br><span class="line">//git.conf</span><br><span class="line">&amp;lt;VirtualHost *:80&amp;gt;</span><br><span class="line">    SetEnv GIT_PROJECT_ROOT /home/leo/git/   <span class="comment">#git目录</span></span><br><span class="line">    SetEnv GIT_HTTP_EXPORT_ALL</span><br><span class="line">    ScriptAlias / /usr/libexec/git-core/git-http-backend/ <span class="comment">#将/上的请求转发给git</span></span><br><span class="line">    &amp;lt;Location &amp;quot;/&amp;quot;&amp;gt;</span><br><span class="line">        DAV on           <span class="comment">#开启dav扩展</span></span><br><span class="line">        Order allow,deny</span><br><span class="line">        Allow from all</span><br><span class="line">        AuthType Basic   <span class="comment">#开启密码验证</span></span><br><span class="line">        AuthName &amp;quot;Git&amp;quot;</span><br><span class="line">        AuthUserFile /path/to/apache/conf/vhost/git.passwd</span><br><span class="line">        Require valid-user</span><br><span class="line">    &amp;lt;/Location&amp;gt;</span><br><span class="line">&amp;lt;/VirtualHost&amp;gt;</span><br><span class="line">3,create user and password <span class="keyword">for</span> http access</span><br><span class="line">/path/to/apache/bin/htpasswd -c git.passwd leo</span><br><span class="line">4,create a simple git repo</span><br><span class="line">    <span class="built_in">mkdir</span> -p /home/leo/git/leo_git_test</span><br><span class="line">    <span class="built_in">cd</span> /home/leo/git/leo_git_test</span><br><span class="line">    git init --bare</span><br><span class="line">    git update-server-info</span><br><span class="line">5,restart apache <span class="keyword">in</span> xampp</span><br><span class="line">6, <span class="built_in">test</span> git</span><br><span class="line"> git <span class="built_in">clone</span> http://local/path/leo_git_test</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2017/05/27/build-http-protal-git-server-for-xampp-on-osx/" data-id="cm2fv7u12001f2zkt2dg7eyzz" data-title="build http protal git server for xampp on osx" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2017-05-27-e5ae8ce7be8ee8a7a3e6b1bacydiae8b7b3e587bacould-not-open-file-varlibdpkgstatuse7b485e5ad97e98cafe8aaa4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2017/05/27/%E5%AE%8C%E7%BE%8E%E8%A7%A3%E6%B1%BAcydia%E8%B7%B3%E5%87%BAcould-not-open-file-varlibdpkgstatus%E7%B4%85%E5%AD%97%E9%8C%AF%E8%AA%A4/" class="article-date">
@@ -449,50 +488,11 @@
 
 
   
-    <article id="post-2017-03-27-xcode-8-error-project-error-xcode-not-set-up-properly-even-though-the-license-has-been-accepted" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2017/03/27/xcode-8-error-project-error-xcode-not-set-up-properly-even-though-the-license-has-been-accepted/" class="article-date">
-  <time class="dt-published" datetime="2017-03-27T03:06:52.000Z" itemprop="datePublished">2017-03-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2017/03/27/xcode-8-error-project-error-xcode-not-set-up-properly-even-though-the-license-has-been-accepted/">XCode 8 error “Project ERROR: Xcode not set up properly”, even though the license has been accepted</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="XCode-8-error-“Project-ERROR-Xcode-not-set-up-properly”-even-though-the-license-has-been-accepted"><a href="#XCode-8-error-“Project-ERROR-Xcode-not-set-up-properly”-even-though-the-license-has-been-accepted" class="headerlink" title="XCode 8 error “Project ERROR: Xcode not set up properly”, even though the license has been accepted"></a>XCode 8 error “Project ERROR: Xcode not set up properly”, even though the license has been accepted</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> xcode-select -switch /Applications/Xcode.app/Contents/Developer</span><br><span class="line">xcodebuild -license</span><br><span class="line"><span class="built_in">cd</span> /Applications/Xcode.app/Contents/Developer/usr/bin/</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">ln</span> -s xcodebuild xcrun</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2017/03/27/xcode-8-error-project-error-xcode-not-set-up-properly-even-though-the-license-has-been-accepted/" data-id="cm2fv7u1100162zktde0uhrws" data-title="XCode 8 error “Project ERROR: Xcode not set up properly”, even though the license has been accepted" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/hexo/page/20/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/19/">19</a><a class="page-number" href="/hexo/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/hexo/page/22/">22</a><a class="page-number" href="/hexo/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/25/">25</a><a class="extend next" rel="next" href="/hexo/page/22/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/hexo/page/20/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/19/">19</a><a class="page-number" href="/hexo/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/hexo/page/22/">22</a><a class="page-number" href="/hexo/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/26/">26</a><a class="extend next" rel="next" href="/hexo/page/22/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -545,6 +545,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/15/Xcode-16-plist-xcode-cstddef-file-not-found/">Xcode 16 plist xcode &#39;cstddef&#39; file not found</a>
           </li>
         
@@ -558,10 +562,6 @@
         
           <li>
             <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/24/NaiveProxy-ios-%E7%AB%AFAPP-%E4%B8%8B%E8%BD%BD-https-apps-apple-com-mz-app-fugu-2-id6452590635/">NaiveProxy ios 端APP 下载 https://apps.apple.com/mz/app/fugu-2/id6452590635</a>
           </li>
         
       </ul>

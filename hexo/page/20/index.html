@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2017-09-15-apt-get-action-via-http-proxy" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2017/09/15/apt-get-action-via-http-proxy/" class="article-date">
+  <time class="dt-published" datetime="2017-09-14T20:42:52.000Z" itemprop="datePublished">2017-09-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2017/09/15/apt-get-action-via-http-proxy/">apt-get action via  http proxy</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="apt-get-action-via-http-proxy"><a href="#apt-get-action-via-http-proxy" class="headerlink" title="apt-get action via http proxy"></a>apt-get action via http proxy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get -o Acquire::http::proxy=<span class="string">&quot;http://127.0.0.1:8118&quot;</span> update</span><br><span class="line"><span class="built_in">sudo</span> apt-get -o Acquire::socks::proxy=<span class="string">&quot;socks://127.0.0.1:7070&quot;</span> update</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2017/09/15/apt-get-action-via-http-proxy/" data-id="cm2fv7u13001s2zkt3qxxbj54" data-title="apt-get action via  http proxy" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2017-09-14-code-signing-error-xxx-not-support-provisioning-profiles-xxx-not-support-provisioning-profiles-provisioning-profile-no_signing-manually-specified-set-provisioning-profi" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2017/09/14/code-signing-error-xxx-not-support-provisioning-profiles-xxx-not-support-provisioning-profiles-provisioning-profile-no_signing-manually-specified-set-provisioning-profi/" class="article-date">
@@ -463,50 +502,11 @@
 
 
   
-    <article id="post-2017-05-27-build-http-protal-git-server-for-xampp-on-osx" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2017/05/27/build-http-protal-git-server-for-xampp-on-osx/" class="article-date">
-  <time class="dt-published" datetime="2017-05-27T04:39:42.000Z" itemprop="datePublished">2017-05-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2017/05/27/build-http-protal-git-server-for-xampp-on-osx/">build http protal git server for xampp on osx</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="build-http-protal-git-server-for-xampp-on-osx"><a href="#build-http-protal-git-server-for-xampp-on-osx" class="headerlink" title="build http protal git server for xampp on osx"></a>build http protal git server for xampp on osx</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">1,intsall xampp</span><br><span class="line">2,add &amp;#039;git.conf&amp;#039; to httpd.conf</span><br><span class="line">//git.conf</span><br><span class="line">&amp;lt;VirtualHost *:80&amp;gt;</span><br><span class="line">    SetEnv GIT_PROJECT_ROOT /home/leo/git/   <span class="comment">#git目录</span></span><br><span class="line">    SetEnv GIT_HTTP_EXPORT_ALL</span><br><span class="line">    ScriptAlias / /usr/libexec/git-core/git-http-backend/ <span class="comment">#将/上的请求转发给git</span></span><br><span class="line">    &amp;lt;Location &amp;quot;/&amp;quot;&amp;gt;</span><br><span class="line">        DAV on           <span class="comment">#开启dav扩展</span></span><br><span class="line">        Order allow,deny</span><br><span class="line">        Allow from all</span><br><span class="line">        AuthType Basic   <span class="comment">#开启密码验证</span></span><br><span class="line">        AuthName &amp;quot;Git&amp;quot;</span><br><span class="line">        AuthUserFile /path/to/apache/conf/vhost/git.passwd</span><br><span class="line">        Require valid-user</span><br><span class="line">    &amp;lt;/Location&amp;gt;</span><br><span class="line">&amp;lt;/VirtualHost&amp;gt;</span><br><span class="line">3,create user and password <span class="keyword">for</span> http access</span><br><span class="line">/path/to/apache/bin/htpasswd -c git.passwd leo</span><br><span class="line">4,create a simple git repo</span><br><span class="line">    <span class="built_in">mkdir</span> -p /home/leo/git/leo_git_test</span><br><span class="line">    <span class="built_in">cd</span> /home/leo/git/leo_git_test</span><br><span class="line">    git init --bare</span><br><span class="line">    git update-server-info</span><br><span class="line">5,restart apache <span class="keyword">in</span> xampp</span><br><span class="line">6, <span class="built_in">test</span> git</span><br><span class="line"> git <span class="built_in">clone</span> http://local/path/leo_git_test</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2017/05/27/build-http-protal-git-server-for-xampp-on-osx/" data-id="cm2fv7u12001f2zkt2dg7eyzz" data-title="build http protal git server for xampp on osx" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/hexo/page/19/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/18/">18</a><a class="page-number" href="/hexo/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/hexo/page/21/">21</a><a class="page-number" href="/hexo/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/25/">25</a><a class="extend next" rel="next" href="/hexo/page/21/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/hexo/page/19/">&laquo; Prev</a><a class="page-number" href="/hexo/">1</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/18/">18</a><a class="page-number" href="/hexo/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/hexo/page/21/">21</a><a class="page-number" href="/hexo/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/hexo/page/26/">26</a><a class="extend next" rel="next" href="/hexo/page/21/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -559,6 +559,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/15/Xcode-16-plist-xcode-cstddef-file-not-found/">Xcode 16 plist xcode &#39;cstddef&#39; file not found</a>
           </li>
         
@@ -572,10 +576,6 @@
         
           <li>
             <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/24/NaiveProxy-ios-%E7%AB%AFAPP-%E4%B8%8B%E8%BD%BD-https-apps-apple-com-mz-app-fugu-2-id6452590635/">NaiveProxy ios 端APP 下载 https://apps.apple.com/mz/app/fugu-2/id6452590635</a>
           </li>
         
       </ul>
