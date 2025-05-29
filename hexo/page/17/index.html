@@ -69,6 +69,61 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2018-08-03-osx-plist-file-format" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2018/08/03/osx-plist-file-format/" class="article-date">
+  <time class="dt-published" datetime="2018-08-02T23:55:12.000Z" itemprop="datePublished">2018-08-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2018/08/03/osx-plist-file-format/">osx plist file format</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="osx-plist-file-format"><a href="#osx-plist-file-format" class="headerlink" title="osx plist file format"></a>osx plist file format</h3><p>Plist is short for property list. It is just a filetype used by Apple to store data.<br>it has three format<br>format enum:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">enum &#123;</span><br><span class="line">   NSPropertyListOpenStepFormat = kCFPropertyListOpenStepFormat,</span><br><span class="line">   NSPropertyListXMLFormat_v1_0 = kCFPropertyListXMLFormat_v1_0,</span><br><span class="line">   NSPropertyListBinaryFormat_v1_0 = kCFPropertyListBinaryFormat_v1_0</span><br><span class="line">&#125;; NSPropertyListFormat;</span><br></pre></td></tr></table></figure>
+
+
+<p>how to convert format</p>
+<h4 id="Converting-a-plist-File-to-XML-from-Binary"><a href="#Converting-a-plist-File-to-XML-from-Binary" class="headerlink" title="Converting a plist File to XML from Binary"></a>Converting a plist File to XML from Binary</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plutil -convert xml1 ExampleBinary.plist</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="Converting-a-plist-Binary-File-to-XML-Format"><a href="#Converting-a-plist-Binary-File-to-XML-Format" class="headerlink" title="Converting a plist Binary File to XML Format"></a>Converting a plist Binary File to XML Format</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plutil -convert binary1 Example.plist</span><br></pre></td></tr></table></figure>
+
+
+<p>what is OpenStepFormat?<br>it is like this</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">Filter =&#123;</span><br><span class="line">    Bundles =     (</span><br><span class="line">         <span class="built_in">test</span>,</span><br><span class="line">         verb</span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="Converting-a-plist-openstep-File-to-XML-Format"><a href="#Converting-a-plist-openstep-File-to-XML-Format" class="headerlink" title="Converting a plist openstep File to XML Format"></a>Converting a plist openstep File to XML Format</h4><p>no tool found<br>but you can use this code</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">NSError *error;</span><br><span class="line">    NSData *data = [NSData dataWithContentsOfFile: path</span><br><span class="line">                           options: 0</span><br><span class="line">                           error: &amp;amp;error;];</span><br><span class="line">    <span class="keyword">if</span> (data == nil) &#123;</span><br><span class="line">        NSLog (@&amp;quot;error reading %@: %@&amp;quot;, path, error);</span><br><span class="line">        <span class="built_in">return</span> nil;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    NSPropertyListFormat format;</span><br><span class="line">    <span class="built_in">id</span> plist = [NSPropertyListSerialization        propertyListWithData: data</span><br><span class="line">               options: NSPropertyListImmutable</span><br><span class="line">                     format: &amp;amp;format</span><br><span class="line">             error: &amp;amp;error];</span><br><span class="line"> <span class="keyword">if</span> (plist == nil) &#123;</span><br><span class="line">        NSLog (@&amp;quot;could not deserialize %@: %@&amp;quot;, path, error);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">        <span class="keyword">if</span> (![NSPropertyListSerialization</span><br><span class="line">             propertyList: plist</span><br><span class="line">             isValidForFormat: kCFPropertyListXMLFormat_v1_0]) &#123;</span><br><span class="line">        NSLog (@&amp;quot;can&amp;#039;t save as XML&amp;quot;);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">     BOOL writeStatus = [data writeToFile: @&amp;quot;plist.txt&amp;quot;</span><br><span class="line">                             options: NSDataWritingAtomic</span><br><span class="line">                             error: &amp;amp;error;];</span><br><span class="line">    <span class="keyword">if</span> (!writeStatus) &#123;</span><br><span class="line">        NSLog (@&amp;quot;error writing to file: %@&amp;quot;, error);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2018/08/03/osx-plist-file-format/" data-id="cm2fv7u15002k2zktbrtqg3vs" data-title="osx plist file format" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2018-07-30-show-all-hiden-file-in-osx" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2018/07/30/show-all-hiden-file-in-osx/" class="article-date">
@@ -423,45 +478,6 @@
 
 
   
-    <article id="post-2018-03-20-exif-commands" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2018/03/20/exif-commands/" class="article-date">
-  <time class="dt-published" datetime="2018-03-19T17:54:33.000Z" itemprop="datePublished">2018-03-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2018/03/20/exif-commands/">exif commands</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="exif-commands"><a href="#exif-commands" class="headerlink" title="exif commands"></a>exif commands</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#exif commands</span></span><br><span class="line"><span class="comment">#remove gps info of jpg</span></span><br><span class="line">exiftool -gps:all= *.jpg</span><br><span class="line">exiftool -geotag= foo.jpg</span><br><span class="line"><span class="comment">#remove exif info</span></span><br><span class="line">exiftool -all= foo.jpg</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2018/03/20/exif-commands/" data-id="cm2fv7u14002b2zkthix723oc" data-title="exif commands" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -519,6 +535,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/29/xcrun-error-invalid-active-developer-path-Applications-Xcode-app-Contents-Developer-missing-xcrun-at-Applications-Xcode-app-Contents-Developer-usr-bin-xcrun/"> xcrun: error: invalid active developer path (/Applications/Xcode.app/Contents/Developer), missing xcrun at: /Applications/Xcode.app/Contents/Developer/usr/bin/xcrun</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
           </li>
         
@@ -532,10 +552,6 @@
         
           <li>
             <a href="/hexo/2024/11/11/%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83App%EF%BC%8CIn-App-Purchase-%E6%97%A0%E6%B3%95submit-for-review/">首次发布App，In-App Purchase 无法submit for review</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
           </li>
         
       </ul>

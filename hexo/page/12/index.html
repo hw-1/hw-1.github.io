@@ -69,6 +69,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2019-07-27-operation-not-permitted-while-system-integrity-protection-is-engaged" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2019/07/27/operation-not-permitted-while-system-integrity-protection-is-engaged/" class="article-date">
+  <time class="dt-published" datetime="2019-07-26T18:28:25.000Z" itemprop="datePublished">2019-07-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2019/07/27/operation-not-permitted-while-system-integrity-protection-is-engaged/">Operation not permitted while System Integrity Protection is engaged</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Operation not permitted while System Integrity Protection is engaged</p>
+<p>To boot into recovery mode, restart your Mac and hold Command+R as it boots. You’ll enter the recovery environment. Click the “Utilities” menu and select “Terminal” to open a terminal window.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">csrutil status</span><br><span class="line">csrutil <span class="built_in">disable</span></span><br><span class="line">csrutil <span class="built_in">enable</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2019/07/27/operation-not-permitted-while-system-integrity-protection-is-engaged/" data-id="cm2fv7u1800402zkt76c95yjy" data-title="Operation not permitted while System Integrity Protection is engaged" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2019-07-05-networkextension-connect-no-route-to-host" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2019/07/05/networkextension-connect-no-route-to-host/" class="article-date">
@@ -426,45 +467,6 @@
 
 
   
-    <article id="post-2019-04-01-cocoapods-pospec-file-config" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2019/04/01/cocoapods-pospec-file-config/" class="article-date">
-  <time class="dt-published" datetime="2019-04-01T00:24:27.000Z" itemprop="datePublished">2019-04-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2019/04/01/cocoapods-pospec-file-config/">cocoapods  pospec file  config</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="cocoapods-pospec-file-config"><a href="#cocoapods-pospec-file-config" class="headerlink" title="cocoapods pospec file config"></a>cocoapods pospec file config</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s.xcconfig = &#123; <span class="string">&#x27;LIBRARY_SEARCH_PATHS&#x27;</span> =&amp;gt; <span class="string">&#x27; &quot;$(PODS_ROOT)/VendorModule/VendorModule/WeChat&quot; &quot;$(PODS_ROOT)/VendorModule/VendorModule/Weibo&quot;&#x27;</span>  ,<span class="string">&#x27;OTHER_LDFLAGS&#x27;</span> =&amp;gt; <span class="string">&#x27;-all_load&#x27;</span> &#125;</span><br><span class="line"></span><br><span class="line">  s.frameworks   = <span class="string">&#x27;Photos&#x27;</span>, <span class="string">&#x27;ImageIO&#x27;</span>, <span class="string">&#x27;SystemConfiguration&#x27;</span>, <span class="string">&#x27;CoreText&#x27;</span>, <span class="string">&#x27;QuartzCore&#x27;</span>, <span class="string">&#x27;Security&#x27;</span>, <span class="string">&#x27;UIKit&#x27;</span>, <span class="string">&#x27;Foundation&#x27;</span>, <span class="string">&#x27;CoreGraphics&#x27;</span>,<span class="string">&#x27;CoreTelephony&#x27;</span></span><br><span class="line">  s.libraries = <span class="string">&#x27;sqlite3&#x27;</span>, <span class="string">&#x27;z&#x27;</span>,<span class="string">&#x27;c++&#x27;</span>,<span class="string">&#x27;WeiboSDK&#x27;</span>,<span class="string">&#x27;WeChatSDK&#x27;</span></span><br><span class="line"></span><br><span class="line">s.static_framework =  <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2019/04/01/cocoapods-pospec-file-config/" data-id="cm2fv7u17003n2zkt6pmrg4n4" data-title="cocoapods  pospec file  config" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -522,6 +524,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/29/xcrun-error-invalid-active-developer-path-Applications-Xcode-app-Contents-Developer-missing-xcrun-at-Applications-Xcode-app-Contents-Developer-usr-bin-xcrun/"> xcrun: error: invalid active developer path (/Applications/Xcode.app/Contents/Developer), missing xcrun at: /Applications/Xcode.app/Contents/Developer/usr/bin/xcrun</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
           </li>
         
@@ -535,10 +541,6 @@
         
           <li>
             <a href="/hexo/2024/11/11/%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83App%EF%BC%8CIn-App-Purchase-%E6%97%A0%E6%B3%95submit-for-review/">首次发布App，In-App Purchase 无法submit for review</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
           </li>
         
       </ul>

@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2018-03-20-exif-commands" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2018/03/20/exif-commands/" class="article-date">
+  <time class="dt-published" datetime="2018-03-19T17:54:33.000Z" itemprop="datePublished">2018-03-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2018/03/20/exif-commands/">exif commands</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="exif-commands"><a href="#exif-commands" class="headerlink" title="exif commands"></a>exif commands</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#exif commands</span></span><br><span class="line"><span class="comment">#remove gps info of jpg</span></span><br><span class="line">exiftool -gps:all= *.jpg</span><br><span class="line">exiftool -geotag= foo.jpg</span><br><span class="line"><span class="comment">#remove exif info</span></span><br><span class="line">exiftool -all= foo.jpg</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2018/03/20/exif-commands/" data-id="cm2fv7u14002b2zkthix723oc" data-title="exif commands" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2018-03-19-error-parsing-file-applications-macports-x11-apperror-parsing-file-applications-macports-python27" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2018/03/19/error-parsing-file-applications-macports-x11-apperror-parsing-file-applications-macports-python27/" class="article-date">
@@ -442,45 +481,6 @@
 
 
   
-    <article id="post-2018-01-12-how-to-enable-ssh-keepalive-socat-keep-alive" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2018/01/12/how-to-enable-ssh-keepalive-socat-keep-alive/" class="article-date">
-  <time class="dt-published" datetime="2018-01-11T19:55:55.000Z" itemprop="datePublished">2018-01-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2018/01/12/how-to-enable-ssh-keepalive-socat-keep-alive/">how to enable ssh keepalive ,socat keep alive</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="how-to-enable-ssh-keepalive-socat-keep-alive"><a href="#how-to-enable-ssh-keepalive-socat-keep-alive" class="headerlink" title="how to enable ssh keepalive ,socat keep alive"></a>how to enable ssh keepalive ,socat keep alive</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ssh enable keepalive</span></span><br><span class="line"><span class="comment"># via config</span></span><br><span class="line"><span class="built_in">sudo</span> vim /etc/ssh/sshd_config</span><br><span class="line">...</span><br><span class="line">ClientAliveInterval 30</span><br><span class="line">TCPKeepAlive <span class="built_in">yes</span></span><br><span class="line">ClientAliveCountMax 2</span><br><span class="line"><span class="comment">#via command opt</span></span><br><span class="line">ssh -o ServerAliveInterval=60 myname@myhost.com</span><br><span class="line"></span><br><span class="line"><span class="comment">#restart sshd</span></span><br><span class="line"><span class="built_in">sudo</span> service sshd restart</span><br><span class="line"></span><br><span class="line"><span class="comment">#socat TCPKeepAlive</span></span><br><span class="line">socat TCP-LISTEN:8000,reuseaddr,fork,keepalive,keepidle=10,keepintvl=30,keepcnt=2  TCP:127.0.0.1:80</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2018/01/12/how-to-enable-ssh-keepalive-socat-keep-alive/" data-id="cm2fv7u13001y2zktd3mf06zv" data-title="how to enable ssh keepalive ,socat keep alive" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -538,6 +538,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/29/xcrun-error-invalid-active-developer-path-Applications-Xcode-app-Contents-Developer-missing-xcrun-at-Applications-Xcode-app-Contents-Developer-usr-bin-xcrun/"> xcrun: error: invalid active developer path (/Applications/Xcode.app/Contents/Developer), missing xcrun at: /Applications/Xcode.app/Contents/Developer/usr/bin/xcrun</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
           </li>
         
@@ -551,10 +555,6 @@
         
           <li>
             <a href="/hexo/2024/11/11/%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83App%EF%BC%8CIn-App-Purchase-%E6%97%A0%E6%B3%95submit-for-review/">首次发布App，In-App Purchase 无法submit for review</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
           </li>
         
       </ul>

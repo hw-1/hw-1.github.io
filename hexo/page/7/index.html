@@ -69,6 +69,65 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Loading-onion-on-device-The-Internet-connection-appears-to-be-offline" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2021/01/13/Loading-onion-on-device-The-Internet-connection-appears-to-be-offline/" class="article-date">
+  <time class="dt-published" datetime="2021-01-13T02:17:14.000Z" itemprop="datePublished">2021-01-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2021/01/13/Loading-onion-on-device-The-Internet-connection-appears-to-be-offline/">Loading .onion on device &#34;The Internet connection appears to be offline&#34;</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="Loading-onion-on-device-“The-Internet-connection-appears-to-be-offline”"><a href="#Loading-onion-on-device-“The-Internet-connection-appears-to-be-offline”" class="headerlink" title="Loading .onion on device “The Internet connection appears to be offline”"></a>Loading .onion on device “The Internet connection appears to be offline”</h3><p>for some reason this bubbled to the top of the thread list today, so I thought I’d post a quick summary of what I’ve since learnt about the issue.</p>
+<p>First, RFC 7686 explains that</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.onion</span><br></pre></td></tr></table></figure>
+
+<p>names are special, in the sense defined by RFC 6761.</p>
+<p>By default, iOS has a policy that blocks all traffic associated with that domain, and it’s this policy that’s causing the</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSURLErrorNotConnectedToInternet</span><br></pre></td></tr></table></figure>
+
+<p>(-1009) error.</p>
+<p>It’s possible to disable this policy deeper in the system [1], but it’s not possible to disable it within a specific app.  I haven’t yet come to a conclusion as to whether there’s a solution for lsease’s high-level problem.</p>
+<p>Share and Enjoy<br>—<br>Quinn “The Eskimo!”<br>Apple Developer Relations, Developer Technical Support, Core OS&#x2F;Hardware</p>
+<p>let myEmail &#x3D; “eskimo” + “1” + “@apple.com”</p>
+<p>[1] Specifically, if you configure a VPN interface with a</p>
+<p>SupplementalMatchDomains</p>
+<p>property that includes</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onion</span><br></pre></td></tr></table></figure>
+
+<p>, the policy is disabled for just that interface. See Configuration Profile Reference for more about</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SupplementalMatchDomains</span><br></pre></td></tr></table></figure>
+
+<p>link:<a target="_blank" rel="noopener" href="https://developer.apple.com/forums/thread/116033">https://developer.apple.com/forums/thread/116033</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2021/01/13/Loading-onion-on-device-The-Internet-connection-appears-to-be-offline/" data-id="cm2fv7u1f005w2zkthx7vgygn" data-title="Loading .onion on device &#34;The Internet connection appears to be offline&#34;" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-openssl-post-APNS-error-verify-error-num-10-certificate-has-expired" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2020/11/28/openssl-post-APNS-error-verify-error-num-10-certificate-has-expired/" class="article-date">
@@ -473,50 +532,6 @@
 
 
   
-    <article id="post-2020-11-03-sourcetree-set-git-repo-username-password" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2020/11/03/sourcetree-set-git-repo-username-password/" class="article-date">
-  <time class="dt-published" datetime="2020-11-03T10:31:13.000Z" itemprop="datePublished">2020-11-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hexo/categories/Uncategorized/">Uncategorized</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2020/11/03/sourcetree-set-git-repo-username-password/">sourceTree set git repo username password</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>sourceTree set git repo username password</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#project settings Remotes Edit config file</span></span><br><span class="line">[credential]</span><br><span class="line">        helper = store</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2020/11/03/sourcetree-set-git-repo-username-password/" data-id="cm2fv7u1b00552zkt92xohr50" data-title="sourceTree set git repo username password" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -574,6 +589,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/29/xcrun-error-invalid-active-developer-path-Applications-Xcode-app-Contents-Developer-missing-xcrun-at-Applications-Xcode-app-Contents-Developer-usr-bin-xcrun/"> xcrun: error: invalid active developer path (/Applications/Xcode.app/Contents/Developer), missing xcrun at: /Applications/Xcode.app/Contents/Developer/usr/bin/xcrun</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
           </li>
         
@@ -587,10 +606,6 @@
         
           <li>
             <a href="/hexo/2024/11/11/%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83App%EF%BC%8CIn-App-Purchase-%E6%97%A0%E6%B3%95submit-for-review/">首次发布App，In-App Purchase 无法submit for review</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
           </li>
         
       </ul>

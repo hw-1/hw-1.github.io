@@ -69,6 +69,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-11-18-delete-osx-account-on-command" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2016/11/18/delete-osx-account-on-command/" class="article-date">
+  <time class="dt-published" datetime="2016-11-17T18:04:44.000Z" itemprop="datePublished">2016-11-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2016/11/18/delete-osx-account-on-command/">delete osx account on command</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <pre><code class="bash">dscl localhost delete /Local/Default/Users/bobross
+rm -rf /Users/bobross```
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2016/11/18/delete-osx-account-on-command/" data-id="cm2fv7u0z000n2zktfvsu0am5" data-title="delete osx account on command" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2016-11-02-raspberry-pi3-wifi-config" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2016/11/02/raspberry-pi3-wifi-config/" class="article-date">
@@ -443,45 +484,6 @@ sudo ln -s xcodebuild xcrun```
 
 
   
-    <article id="post-2016-08-08-disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2016/08/08/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux/" class="article-date">
-  <time class="dt-published" datetime="2016-08-08T05:10:34.000Z" itemprop="datePublished">2016-08-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2016/08/08/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux/">Disable or Enable SSH Root Login and Limit SSH Access in Linux</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim /etc/ssh/sshd_config</span><br><span class="line">//disable</span><br><span class="line">PermitRootLogin no</span><br><span class="line">//enable</span><br><span class="line">PermitRootLogin <span class="built_in">yes</span></span><br><span class="line">//restart ssh</span><br><span class="line"><span class="built_in">sudo</span> /etc/init.d/sshd restart</span><br><span class="line"></span><br><span class="line">//</span><br><span class="line"><span class="built_in">cat</span> pub.pem &amp;gt;  ~/.ssh/authorized_keys</span><br><span class="line"><span class="built_in">chmod</span> o-w ~/; <span class="built_in">chmod</span> 700 ~/.ssh; <span class="built_in">chmod</span> 600 ~/.ssh/authorized_keys</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2016/08/08/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux/" data-id="cm2fv7u0y000b2zkt85v49r5h" data-title="Disable or Enable SSH Root Login and Limit SSH Access in Linux" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -539,6 +541,10 @@ sudo ln -s xcodebuild xcrun```
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/29/xcrun-error-invalid-active-developer-path-Applications-Xcode-app-Contents-Developer-missing-xcrun-at-Applications-Xcode-app-Contents-Developer-usr-bin-xcrun/"> xcrun: error: invalid active developer path (/Applications/Xcode.app/Contents/Developer), missing xcrun at: /Applications/Xcode.app/Contents/Developer/usr/bin/xcrun</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
           </li>
         
@@ -552,10 +558,6 @@ sudo ln -s xcodebuild xcrun```
         
           <li>
             <a href="/hexo/2024/11/11/%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83App%EF%BC%8CIn-App-Purchase-%E6%97%A0%E6%B3%95submit-for-review/">首次发布App，In-App Purchase 无法submit for review</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
           </li>
         
       </ul>

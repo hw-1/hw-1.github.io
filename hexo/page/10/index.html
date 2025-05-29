@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2020-02-23-itunes-auth" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2020/02/23/itunes-auth/" class="article-date">
+  <time class="dt-published" datetime="2020-02-23T07:15:27.000Z" itemprop="datePublished">2020-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2020/02/23/itunes-auth/">itunes auth</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">itunes auth </span><br><span class="line"></span><br><span class="line">key=GetValue string=FairPlayCertificate --&amp;gt; cert</span><br><span class="line">generate grappaID  grappaData</span><br><span class="line">Grappa(grappaData) --&amp;gt; afsync.rq</span><br><span class="line">cert  rq --&amp;gt;  rsbuffer</span><br><span class="line">rsbuffer GrappaID --&amp;gt;  sigBuffer (afsync.rs)</span><br><span class="line"></span><br><span class="line">/AirFair/sync/afsync.rq</span><br><span class="line">/AirFair/sync/afsync.rs</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2020/02/23/itunes-auth/" data-id="cm2fv7u19004g2zkt3jy0dbgz" data-title="itunes auth" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2020-02-23-libimobiledevice-install" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2020/02/23/libimobiledevice-install/" class="article-date">
@@ -428,46 +467,6 @@
 
 
   
-    <article id="post-2019-12-11-debugserver-e4bdbfe794a8" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2019/12/11/debugserver-%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time class="dt-published" datetime="2019-12-10T21:41:11.000Z" itemprop="datePublished">2019-12-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2019/12/11/debugserver-%E4%BD%BF%E7%94%A8/">debugserver 使用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>debugserver 使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/Library/Developer/CommandLineTools/Library/PrivateFrameworks/LLDB.framework/Versions/A/Resources/debugserver</span><br><span class="line"></span><br><span class="line">debugserver  -x backboard  ::ffff:192.168.1.111:6666 /var/containers/Bundle/Application/B7770CE1-9339-4FBA-81FF-671900CE537E/netdisk_iPhone.app/netdisk_iPhone</span><br><span class="line"></span><br><span class="line">lldb</span><br><span class="line">process connect connect://192.168.1.108:6666</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2019/12/11/debugserver-%e4%bd%bf%e7%94%a8/" data-id="cm2fv7u1900452zkt5vh8cm93" data-title="debugserver 使用" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -525,6 +524,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/29/xcrun-error-invalid-active-developer-path-Applications-Xcode-app-Contents-Developer-missing-xcrun-at-Applications-Xcode-app-Contents-Developer-usr-bin-xcrun/"> xcrun: error: invalid active developer path (/Applications/Xcode.app/Contents/Developer), missing xcrun at: /Applications/Xcode.app/Contents/Developer/usr/bin/xcrun</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
           </li>
         
@@ -538,10 +541,6 @@
         
           <li>
             <a href="/hexo/2024/11/11/%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83App%EF%BC%8CIn-App-Purchase-%E6%97%A0%E6%B3%95submit-for-review/">首次发布App，In-App Purchase 无法submit for review</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
           </li>
         
       </ul>

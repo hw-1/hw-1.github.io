@@ -69,6 +69,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Error-The-method-inheritFromWidgetOfExactType-isn‘t-defined-for-the-class-BuildContext" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo/2021/03/26/Error-The-method-inheritFromWidgetOfExactType-isn%E2%80%98t-defined-for-the-class-BuildContext/" class="article-date">
+  <time class="dt-published" datetime="2021-03-26T07:43:02.000Z" itemprop="datePublished">2021-03-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/hexo/2021/03/26/Error-The-method-inheritFromWidgetOfExactType-isn%E2%80%98t-defined-for-the-class-BuildContext/"> Error: The method &#39;inheritFromWidgetOfExactType&#39; isn‘t defined for the class &#39;BuildContext&#39;.</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="Error-The-method-‘inheritFromWidgetOfExactType’-isn‘t-defined-for-the-class-‘BuildContext’"><a href="#Error-The-method-‘inheritFromWidgetOfExactType’-isn‘t-defined-for-the-class-‘BuildContext’" class="headerlink" title="Error: The method ‘inheritFromWidgetOfExactType’ isn‘t defined for the class ‘BuildContext’."></a>Error: The method ‘inheritFromWidgetOfExactType’ isn‘t defined for the class ‘BuildContext’.</h3><p>Example of a replacement:</p>
+<p>Before : with InheritFromWidgetOfExactType</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static Name of(BuildContext context) &#123;</span><br><span class="line">  <span class="built_in">return</span> context.inheritFromWidgetOfExactType(Name);  //before</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Now with dependOnInheritedWidgetOfExactType (Recommanded)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static Name of(BuildContext context) &#123;</span><br><span class="line">  <span class="built_in">return</span> context.dependOnInheritedWidgetOfExactType&lt;Name&gt;();  //after</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/hexo/2021/03/26/Error-The-method-inheritFromWidgetOfExactType-isn%E2%80%98t-defined-for-the-class-BuildContext/" data-id="cm2fv7u1e005s2zkth76i93kf" data-title=" Error: The method &#39;inheritFromWidgetOfExactType&#39; isn‘t defined for the class &#39;BuildContext&#39;." class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-This-can-happen-if-layout-contains-custom-windows-and-there-are-compile-errors-in-the-project-问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2021/03/26/This-can-happen-if-layout-contains-custom-windows-and-there-are-compile-errors-in-the-project-%E9%97%AE%E9%A2%98/" class="article-date">
@@ -436,65 +480,6 @@
 
 
   
-    <article id="post-Loading-onion-on-device-The-Internet-connection-appears-to-be-offline" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2021/01/13/Loading-onion-on-device-The-Internet-connection-appears-to-be-offline/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T02:17:14.000Z" itemprop="datePublished">2021-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2021/01/13/Loading-onion-on-device-The-Internet-connection-appears-to-be-offline/">Loading .onion on device &#34;The Internet connection appears to be offline&#34;</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="Loading-onion-on-device-“The-Internet-connection-appears-to-be-offline”"><a href="#Loading-onion-on-device-“The-Internet-connection-appears-to-be-offline”" class="headerlink" title="Loading .onion on device “The Internet connection appears to be offline”"></a>Loading .onion on device “The Internet connection appears to be offline”</h3><p>for some reason this bubbled to the top of the thread list today, so I thought I’d post a quick summary of what I’ve since learnt about the issue.</p>
-<p>First, RFC 7686 explains that</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.onion</span><br></pre></td></tr></table></figure>
-
-<p>names are special, in the sense defined by RFC 6761.</p>
-<p>By default, iOS has a policy that blocks all traffic associated with that domain, and it’s this policy that’s causing the</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSURLErrorNotConnectedToInternet</span><br></pre></td></tr></table></figure>
-
-<p>(-1009) error.</p>
-<p>It’s possible to disable this policy deeper in the system [1], but it’s not possible to disable it within a specific app.  I haven’t yet come to a conclusion as to whether there’s a solution for lsease’s high-level problem.</p>
-<p>Share and Enjoy<br>—<br>Quinn “The Eskimo!”<br>Apple Developer Relations, Developer Technical Support, Core OS&#x2F;Hardware</p>
-<p>let myEmail &#x3D; “eskimo” + “1” + “@apple.com”</p>
-<p>[1] Specifically, if you configure a VPN interface with a</p>
-<p>SupplementalMatchDomains</p>
-<p>property that includes</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onion</span><br></pre></td></tr></table></figure>
-
-<p>, the policy is disabled for just that interface. See Configuration Profile Reference for more about</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SupplementalMatchDomains</span><br></pre></td></tr></table></figure>
-
-<p>link:<a target="_blank" rel="noopener" href="https://developer.apple.com/forums/thread/116033">https://developer.apple.com/forums/thread/116033</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/hexo/2021/01/13/Loading-onion-on-device-The-Internet-connection-appears-to-be-offline/" data-id="cm2fv7u1f005w2zkthx7vgygn" data-title="Loading .onion on device &#34;The Internet connection appears to be offline&#34;" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -552,6 +537,10 @@
       <ul>
         
           <li>
+            <a href="/hexo/2025/05/29/xcrun-error-invalid-active-developer-path-Applications-Xcode-app-Contents-Developer-missing-xcrun-at-Applications-Xcode-app-Contents-Developer-usr-bin-xcrun/"> xcrun: error: invalid active developer path (/Applications/Xcode.app/Contents/Developer), missing xcrun at: /Applications/Xcode.app/Contents/Developer/usr/bin/xcrun</a>
+          </li>
+        
+          <li>
             <a href="/hexo/2025/05/17/Library-not-loaded-rpath-libplist-2-0-4-dylib/">Library not loaded: @rpath/libplist-2.0.4.dylib</a>
           </li>
         
@@ -565,10 +554,6 @@
         
           <li>
             <a href="/hexo/2024/11/11/%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83App%EF%BC%8CIn-App-Purchase-%E6%97%A0%E6%B3%95submit-for-review/">首次发布App，In-App Purchase 无法submit for review</a>
-          </li>
-        
-          <li>
-            <a href="/hexo/2024/10/28/section-function-assignAliasAtomOffsetInSection-file-Layout-cpp-line-3358/">section), function assignAliasAtomOffsetInSection, file Layout.cpp, line 3358.</a>
           </li>
         
       </ul>
